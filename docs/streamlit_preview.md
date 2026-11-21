@@ -71,7 +71,7 @@ e período próprios. Cada comparação deve ser lida dentro de sua amostra.
 
 O app publicado está em
 [https://tax-pricing-ai.streamlit.app/](https://tax-pricing-ai.streamlit.app/).
-O acesso depende do convite e da configuração no Streamlit Cloud.
+O app publicado é aberto: https://tax-pricing-ai.streamlit.app/
 
 ## Verificações
 

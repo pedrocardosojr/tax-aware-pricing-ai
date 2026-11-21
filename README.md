@@ -11,14 +11,36 @@ either analyses an existing selling price or asks for a price reference.
 The app combines the observed market range with contribution margin, an estimated
 tax breakdown, price simulations and answers grounded in project sources.
 
-[Open the app](https://tax-pricing-ai.streamlit.app/) ·
+**[▶ Open the live app](https://tax-pricing-ai.streamlit.app/)** ·
 [Café Pilão demo and validation](docs/cafe_demo_2026-11-19.md) ·
-[Run locally](docs/streamlit_preview.md)
+[Run locally](#run-locally)
+
+![Café Pilão price analysis with a demonstrative tax profile](docs/imagens/cafe-diagnostico-2026-11-19.jpg)
+
+## Highlights
+
+- **50 real grocery products** with market references built from about 216,000
+  public price observations from the City of Curitiba (Clique Economia).
+- **Tax-aware contribution margin** for Simples Nacional, Lucro Presumido and
+  Lucro Real, plus a 2027 tax-reform (IBS/CBS) sensitivity scenario.
+- **Price simulation**: margin at another price and the sales volume needed to
+  keep the same total contribution.
+- **Sourced answers (RAG)**: TF-IDF retrieval over a curated corpus and a
+  language model that may only use retrieved excerpts and calculated facts;
+  numbers and citations are checked before anything is shown.
+- **Market intelligence**: sector seasonality (IBGE), climate (INMET), retail
+  calendar and a 7-day weather forecast as context.
+- **Engineering**: 194 automated tests, lint and type checks in GitHub Actions.
+
+**Stack:** Python · pandas · scikit-learn · Plotly · Streamlit · Gemini API
+(OpenAI-compatible endpoint) · official RTC tax calculator · GitHub Actions.
+
+| Market range and network prices | Price simulation | Sourced answers |
+|---|---|---|
+| ![Market range](docs/imagens/cafe-mercado-2026-11-19.jpg) | ![Simulation](docs/imagens/cafe-simulacao-2026-11-19.jpg) | ![Sourced answers](docs/imagens/cafe-rag-2026-11-19.jpg) |
 
 This public repository is the portfolio snapshot of the project. The team
 develops in a private working repository; this copy is refreshed at milestones.
-
-![Café Pilão price analysis with a demonstrative tax profile](docs/imagens/cafe-diagnostico-2026-11-19.jpg)
 
 ## Business problem
 
@@ -45,15 +67,6 @@ make team-preview
 Open the local URL printed by Streamlit, usually
 [http://127.0.0.1:8501](http://127.0.0.1:8501).
 
-To update an existing checkout, stop Streamlit with Ctrl+C, then run:
-
-```bash
-git switch main
-git pull --ff-only origin main
-python -m pip install -r requirements.txt
-make team-preview
-```
-
 The bundled references cover all 50 selected SKUs. An explicitly configured
 `TAX_PRICING_MARKET_DIR` overrides that dataset. Remove an old override to use
 the team's final bundled references.
@@ -73,7 +86,7 @@ make test lint typecheck
 | Product identity | The production price pipeline uses reviewed catalogue EANs. Description matching and NLP were investigated to recover candidate records, with brand, variant and package checks before accepting links. |
 | Market range | One median per store-month, then per store. P25/P50/P75 describe the distribution across stores. Each chart point summarises one network. A three- or six-month window is selected per SKU using the team's bootstrap precision rule. |
 | Fiscal reference | [Receita Federal NCM](https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/classificacao-fiscal-de-mercadorias/download-ncm-nomenclatura-comum-do-mercosul), a team-reviewed EAN–NCM catalogue checked against the official table (raw responses from the lookup service used during research are not redistributed), and the [official RTC calculator](https://consumo.tributos.gov.br/servico/calcular-tributos-consumo/calculadora/calculadora-offline). |
-| Contribution | Python computes selling price minus net acquisition cost, estimated sale taxes and any configured variable expenses. Profiles for Simples Nacional, Lucro Presumido and Lucro Real are demonstrative and versioned. |
+| Contribution | Python computes selling price minus net acquisition cost and estimated sale taxes. Profiles for Simples Nacional, Lucro Presumido and Lucro Real are demonstrative and versioned. |
 | Price simulation | The same calculation is rerun at another price. The app reports the contribution and volume change required to preserve the original total contribution. |
 | 2027 tax transition | The [official timeline](https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/perguntas-e-respostas/como-sera-a-transicao-para) is paired with a contribution sensitivity analysis for the selected SKU. The app holds price, acquisition cost and purchase credits constant and varies sales taxes by one percentage point. These scenarios use illustrative changes, with no assumed statutory 2027 effective rate. |
 | Forecast | The team's versioned next-month price forecasts and temporal model evaluation are available in Details. These estimates do not identify future promotions. |
@@ -155,7 +168,7 @@ contribuição, tributação estimada, posicionamento frente à concorrência e 
 efeito de simular outro preço. A camada de RAG responde perguntas com fontes
 sobre o método e o contexto do varejo.
 
-Projeto em desenvolvimento no Le Wagon, com Demo Day previsto para 28/11/2026.
+Projeto final do bootcamp Le Wagon Data Science & AI, com Demo Day em 28/11/2026.
 As premissas fiscais são demonstrativas e a data de cada referência de mercado
 permanece visível.
 
@@ -170,5 +183,5 @@ Curitiba open-data portal and official tax tables keep their own terms.
 [Market analysis methods](docs/analises_mercado_mvp.md) ·
 [Retrieval and generation experiments](pesquisas/ia_fontes_2026-11-14/README.md)
 
-Work is integrated through feature branches and pull requests, with repository
-tests, lint and type checks in GitHub Actions.
+In the team's working repository, work was integrated through feature branches
+and pull requests, with tests, lint and type checks in GitHub Actions.
