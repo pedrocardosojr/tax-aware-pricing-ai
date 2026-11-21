@@ -45,7 +45,7 @@ class TeamAppTests(unittest.TestCase):
             app.selectbox(key='regime').select('simples_nacional').run()
             app.button(key='analyze').click().run()
             self.assertFalse(app.exception)
-            self.assertTrue(any('Faixa típica entre lojas' in item.value
+            self.assertTrue(any('metade central dos preços por loja' in item.value
                                 for item in app.caption))
             app.selectbox(key='group').select('Arroz').run()
             app.selectbox(key='product').select('7893500020158').run()
@@ -65,7 +65,7 @@ class TeamAppTests(unittest.TestCase):
             options = app.selectbox(key='product').options
             pepsi = next(label for label in options if 'Pepsi' in label)
             self.assertNotIn('Coca', pepsi)
-            self.assertTrue(any('Coca Cola' in label for label in options))
+            self.assertTrue(any('Coca-Cola' in label for label in options))
             app.selectbox(key='regime').select('simples_nacional').run()
             for ean, median in (('7894900027013', '11.98'), ('7892840800246', '8.99')):
                 app.selectbox(key='product').select(ean).run()

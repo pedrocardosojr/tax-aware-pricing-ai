@@ -10,7 +10,7 @@ The retailer selects a product and tax regime, enters the acquisition cost, and
 either analyses an existing selling price or asks for a price reference.
 The app combines the observed market range with contribution margin, an estimated
 tax breakdown, price simulations and answers grounded in project sources.
-Results are organised in four tabs: price and market, price simulation,
+Results are organised in four tabs: price and market, margin and promotion,
 market intelligence and details.
 
 **[▶ Open the live app](https://tax-pricing-ai.streamlit.app/)** ·
@@ -25,21 +25,21 @@ market intelligence and details.
   public price observations from the City of Curitiba (Clique Economia).
 - **Tax-aware contribution margin** for Simples Nacional, Lucro Presumido and
   Lucro Real, plus a 2027 tax-reform (IBS/CBS) sensitivity scenario.
-- **Price simulation**: margin at another price and the sales volume needed to
-  keep the same total contribution.
+- **Margin and promotion**: current margin, the minimum price that covers cost and
+  taxes, and the sales volume a discount needs to keep the same total contribution.
 - **Sourced answers (RAG)**: TF-IDF retrieval over a curated corpus and a
   language model that may only use retrieved excerpts and calculated facts;
   numbers and citations are checked before anything is shown.
 - **Market intelligence**: sector seasonality (IBGE), climate (INMET), retail
   calendar and a 7-day weather forecast as context.
-- **Engineering**: 195 automated tests, lint and type checks in GitHub Actions.
+- **Engineering**: 202 automated tests, lint and type checks in GitHub Actions.
 
 **Stack:** Python · pandas · scikit-learn · Plotly · Streamlit · Gemini API
 (OpenAI-compatible endpoint) · official RTC tax calculator · GitHub Actions.
 
-| Market range and network prices | Price simulation | Sourced answers |
+| Market range and network prices | Margin and promotion | Sourced answers |
 |---|---|---|
-| ![Market range](docs/imagens/cafe-mercado-2026-11-21.jpg) | ![Simulation](docs/imagens/cafe-simulacao-2026-11-21.jpg) | ![Sourced answers](docs/imagens/cafe-rag-2026-11-21.jpg) |
+| ![Market range](docs/imagens/cafe-mercado-2026-11-21.jpg) | ![Margin and promotion](docs/imagens/cafe-simulacao-2026-11-21.jpg) | ![Sourced answers](docs/imagens/cafe-rag-2026-11-21.jpg) |
 
 This public repository is the portfolio snapshot of the project. The team
 develops in a private working repository; this copy is refreshed at milestones.

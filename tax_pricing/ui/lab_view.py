@@ -1,6 +1,6 @@
 """Render analytical views while keeping source coverage visible."""
 from datetime import datetime
-from decimal import Decimal
+from decimal import ROUND_HALF_UP, Decimal
 from html import escape
 import re
 from zoneinfo import ZoneInfo
@@ -58,39 +58,113 @@ def distribution(result: dict) -> None:
 
 
 def _comparison_cards(result: dict, sim: dict) -> None:
-    """Compare the two scenarios while keeping the required volume distinct."""
+    """Show the initial and simulated scenarios side by side with the same labels."""
     comparison = sim['position']
     baseline_position = result['market_position'] if comparison is not None else None
     baseline = result['analysis']['personalized']['margin']
-    change = sim['volume_change_percent']
-    current, simulated, volume = st.columns(3)
-    with current, st.container(border=True):
-        label = 'Preço atual' if result['price_origin'] == 'user_price' else 'Preço de partida'
-        st.metric(label, brl(result['evaluated_price_brl']))
-        cost = baseline['net_cost_brl'] + result['assumptions']['credit_brl']
-        st.caption('Custo de compra ' + brl(cost))
-        st.metric('Contribuição de partida', brl(baseline['contribution_brl']))
-        st.caption(percent(baseline['contribution_percent']) + ' do preço de partida')
-        st.metric('Posição de partida', percent(baseline_position['gap_percent'], signed=True)
-                  if baseline_position is not None else '—')
-    with simulated, st.container(border=True):
-        st.metric('Preço simulado', brl(sim['price_brl']))
-        st.caption('Custo simulado ' + brl(sim['acquisition_cost_brl']))
-        st.metric('Contribuição simulada', brl(sim['contribution_brl']))
-        st.caption(percent(sim['contribution_percent']) + ' do preço simulado')
-        st.metric('Preço simulado vs. mediana', percent(comparison['gap_percent'], signed=True)
-                  if comparison is not None else '—')
-    with volume, st.container(border=True):
-        st.metric('Variação de volume necessária',
-                  percent(change, signed=True) if change is not None else '—')
-        st.caption('Para manter a contribuição total do cenário de partida.')
-        if sim['units_per_100'] is not None:
-            st.write(f"**Exemplo:** a cada 100 unidades no cenário de partida, "
-                     f"seriam necessárias **{sim['units_per_100']} unidades** "
-                     'no cenário simulado.')
+    own = result['price_origin'] == 'user_price'
+    cost = baseline['net_cost_brl'] + result['assumptions']['credit_brl']
+    start = 'atual' if own else 'de partida'
+    scenarios_shown = (
+        ((f'Cenário {start}', f'Preço {start}', f'Margem {start}'),
+         (result['evaluated_price_brl'], cost, baseline, baseline_position)),
+        (('Cenário simulado', 'Preço simulado', 'Margem simulada'),
+         (sim['price_brl'], sim['acquisition_cost_brl'], sim, comparison)))
+    for column, (labels, values) in zip(st.columns(2), scenarios_shown):
+        with column, st.container(border=True):
+            _scenario_card(labels, values)
 
 
-def _volume_control(result: dict, curve: list[dict]) -> tuple[Decimal, Decimal]:
+def _scenario_card(labels: tuple[str, str, str], values: tuple) -> None:
+    """Fill one scenario card in the same order for both sides."""
+    title, price_label, margin_label = labels
+    price, purchase, margin, position = values
+    st.markdown(f'**{title}**')
+    st.metric(price_label, brl(price))
+    st.caption('Custo de compra ' + brl(purchase))
+    st.metric(margin_label, brl(margin['contribution_brl']))
+    st.caption(percent(margin['contribution_percent']) + ' do preço de venda')
+    st.metric('Frente ao meio do mercado',
+              percent(position['gap_percent'], signed=True)
+              if position is not None else '—')
+
+
+def _baseline_margin_summary(result: dict, floor: Decimal) -> None:
+    """Describe the submitted price and its distance from the price floor."""
+    margin = result['analysis']['personalized']['margin']
+    price = result['evaluated_price_brl']
+    value = margin['contribution_brl']
+    rate = percent(margin['contribution_percent'])
+    label = 'Margem atual' if result['price_origin'] == 'user_price' else 'Margem de partida'
+    with st.container(border=True):
+        st.markdown(f'#### {label}')
+        if value > 0:
+            st.write(f"A {brl_markdown(price)}, sobram **{brl_markdown(value)} por unidade** "
+                     f"({rate} do preço).")
+        elif value < 0:
+            st.write(f"A {brl_markdown(price)}, você perde **{brl_markdown(abs(value))} "
+                     f"por unidade** ({rate} de margem).")
+        else:
+            st.write(f"A {brl_markdown(price)}, a margem por unidade é **zero**.")
+        if price != floor:
+            distance = brl_markdown(abs(price - floor))
+            position = 'acima' if price > floor else 'abaixo'
+            st.write(f"Com o custo informado, esse preço está **{distance} {position}** "
+                     f"do mínimo de **{brl_markdown(floor)}** para cobrir os gastos da venda.")
+        else:
+            st.write('Esse é o menor preço que cobre os gastos da venda com o custo informado.')
+        cost_label = ('custo de compra após créditos' if result['assumptions']['credit_brl']
+                      else 'custo de compra')
+        expenses = ' − despesas variáveis' if margin['expense_brl'] else ''
+        st.caption(f'Cálculo: preço de venda − {cost_label} − tributos estimados{expenses}.')
+
+def _promotion_summary(result: dict, sim: dict, floor: Decimal) -> None:
+    """Explain the result with calculated amounts and the applicable volume case."""
+    margin = sim['contribution_brl']
+    units = sim['units_per_100']
+    baseline = result['analysis']['personalized']['margin']
+    unchanged = (sim['price_brl'] == result['evaluated_price_brl'] and
+                 sim['acquisition_cost_brl'] ==
+                 baseline['net_cost_brl'] + result['assumptions']['credit_brl'])
+    with st.container(border=True):
+        st.markdown('#### Resumo da simulação')
+        if unchanged:
+            st.write('Mova o preço de venda ou o custo de compra para simular uma promoção.')
+            st.write(f"**Preço mínimo para cobrir custo e tributos: {brl_markdown(floor)}.** "
+                     'Abaixo desse valor, cada venda dá prejuízo.')
+            return
+        price = brl_markdown(sim['price_brl'])
+        amount = brl_markdown(abs(margin))
+        if margin > 0:
+            st.write(f"Se vender por {price}, sobram **{amount} por unidade** "
+                     f"({percent(sim['contribution_percent'])} do preço).")
+        elif margin < 0:
+            st.warning(f"Se vender por {price}, você perde **{amount} por unidade**.")
+        else:
+            st.warning(f"A {price}, a venda cobre os gastos, mas não sobra nada.")
+        if units is not None:
+            change = sim['volume_change_percent']
+            rounded = int(abs(change).to_integral_value(rounding=ROUND_HALF_UP))
+            direction = 'a mais' if change > 0 else 'a menos'
+            detail = f' (cerca de {rounded}% {direction})' if rounded else ''
+            st.write('Para sobrar o mesmo que em 100 vendas nas condições iniciais, '
+                     f'você precisa vender pelo menos **{units} unidades**{detail}.')
+        elif margin < 0:
+            st.write('Cada unidade a mais aumenta o prejuízo.')
+        elif margin == 0:
+            st.write('A margem total fica em zero mesmo se o volume aumentar.')
+        else:
+            st.write('O cenário inicial tinha margem zero ou negativa.')
+        revenue_units = sim['revenue_units_per_100']
+        if revenue_units is not None and revenue_units != units:
+            st.write(f"Para manter só o faturamento, o mínimo é de **{revenue_units} unidades**.")
+        st.write(f"**Preço mínimo para cobrir custo e tributos: {brl_markdown(floor)}.** "
+                 'Abaixo desse valor, cada venda dá prejuízo.')
+        st.caption('Unidades arredondadas para cima. A reação dos clientes ao preço '
+                   'depende da sua loja.')
+
+
+def _volume_control(result: dict, curve: list[dict]) -> dict:
     """Keep the submitted scenario fixed while moving price and purchase cost."""
     low, high = (float(curve[i]['price_brl']) for i in (0, -1))
     initial = float(result['evaluated_price_brl'])
@@ -107,17 +181,12 @@ def _volume_control(result: dict, curve: list[dict]) -> tuple[Decimal, Decimal]:
         'Custo simulado (R$)', min_value=0.0, max_value=max(.01, float(cost) * 1.5),
         value=float(cost), step=.01, key=f'volume_cost_{signature}')
     price_value, cost_value = Decimal(str(price)), Decimal(str(chosen_cost))
-    sim = volume_scenario(result, price_value, acquisition_cost=cost_value)
-    _comparison_cards(result, sim)
-    if sim['contribution_brl'] <= 0:
-        st.warning('Com contribuição unitária zero ou negativa, aumentar '
-                   'o volume não gera contribuição positiva.')
-    elif sim['volume_change_percent'] is None:
-        st.info('O preço de partida tem contribuição zero ou negativa. '
-                'A comparação de volume exige uma contribuição inicial positiva.')
-    st.caption('O exemplo em unidades é arredondado para cima. '
-               'A reação dos clientes à mudança de preço depende da sua loja.')
-    return price_value, cost_value
+    if low < high:
+        price_col.caption(f'**{brl_markdown(price_value)}** · de {brl_markdown(str(low))} '
+                          f'a {brl_markdown(str(high))}')
+    cost_col.caption(f'**{brl_markdown(cost_value)}** · custo informado: '
+                     f'{brl_markdown(cost)}')
+    return volume_scenario(result, price_value, acquisition_cost=cost_value)
 
 
 def scenarios(result: dict) -> None:
@@ -128,10 +197,17 @@ def scenarios(result: dict) -> None:
     result : dict
         Ready demonstration result. All calculations reuse the same profile.
     """
-    st.markdown('### Simule preço e custo')
+    st.markdown('### Margem de contribuição')
     analysis = scenario_analysis(result)
-    simulated, cost = _volume_control(result, analysis['curve'])
-    analysis = scenario_analysis(result, acquisition_cost=cost)
+    _baseline_margin_summary(result, analysis['zero_contribution_price_brl'])
+    st.markdown('#### Simule uma promoção')
+    st.caption('Altere o preço de venda ou o custo de compra para comparar os cenários.')
+    sim = _volume_control(result, analysis['curve'])
+    cost = sim['acquisition_cost_brl']
+    analysis = scenario_analysis(result, acquisition_cost=cost,
+                                 simulated_price=sim['price_brl'])
+    _promotion_summary(result, sim, analysis['zero_contribution_price_brl'])
+    _comparison_cards(result, sim)
     if analysis['band_status'] == 'all_negative':
         st.warning('Toda a faixa central observada gera contribuição negativa '
                    'com esse custo e as premissas do cenário. Revise o custo '
@@ -140,16 +216,16 @@ def scenarios(result: dict) -> None:
         st.warning('Parte da faixa observada gera contribuição negativa. '
                    'Compare os pontos antes de decidir o preço.')
     st.markdown('#### Como uma promoção muda a margem por unidade?')
-    st.caption('A curva usa o custo simulado. O ponto azul mostra o preço de partida '
-               'e o verde mostra o preço simulado quando ele muda.')
+    st.caption('Leia o preço no eixo horizontal e a margem por unidade no vertical. '
+               'A curva e seus pontos usam o custo de compra simulado. Abaixo '
+               'da linha pontilhada de margem zero, a venda gera perda por unidade.')
     st.plotly_chart(contribution_curve(analysis, result['market'],
                                        result['evaluated_price_brl'],
-                                       simulated=simulated),
+                                       simulated=sim['price_brl']),
                     width='stretch', config={'displayModeBar': False})
     with st.expander('Ver os detalhes da simulação'):
-        st.info('Preço com contribuição zero neste cenário: **' +
-                brl(analysis['zero_contribution_price_brl']) +
-                '**. Abaixo dele, a venda não cobre custo e tributos.')
+        st.caption('No preço mínimo, o arredondamento em centavos pode resultar '
+                   'em uma margem ligeiramente acima de zero.')
         points = [volume_scenario(result, p['price_brl'], acquisition_cost=cost)
                   for p in result['corridor_points']]
         if points:

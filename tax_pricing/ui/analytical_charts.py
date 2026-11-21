@@ -61,12 +61,14 @@ def contribution_curve(scenarios: dict, snapshot: dict, price: Decimal,
     figure = go.Figure(go.Scatter(
         x=xs, y=ys, mode='lines', line={'color': TEAL, 'width': 3},
         fill='tozeroy', fillcolor='rgba(0,105,99,.10)',
-        name='Margem de contribuição por unidade',
+        name='Quanto sobra por unidade',
         hovertemplate='Preço R$ %{x:.2f}<br>Margem R$ %{y:.2f}<extra></extra>'))
-    figure.add_hline(y=0, line_color='#C25B5B', line_width=1, line_dash='dot')
+    figure.add_hline(y=0, line_color='#C25B5B', line_width=2, line_dash='dot',
+                     name='Margem zero', showlegend=True, legendrank=40)
     if snapshot.get('usable_for_band'):
         figure.add_vrect(x0=float(snapshot['p25']), x1=float(snapshot['p75']),
-                         fillcolor='rgba(112,135,220,.19)', line_width=0, layer='below')
+                         fillcolor='rgba(112,135,220,.19)', line_width=0, layer='below',
+                         name='Faixa típica do mercado', showlegend=True, legendrank=50)
     points = [(float(scenarios['zero_contribution_price_brl']), 'Margem zero', '#C25B5B')]
     if snapshot.get('usable_for_band'):
         points += [(float(snapshot['p25']), 'Início da faixa', '#4F6B1F'),
@@ -79,23 +81,25 @@ def contribution_curve(scenarios: dict, snapshot: dict, price: Decimal,
             hovertemplate=f'{label}<br>Preço R$ %{{x:.2f}}<br>Margem R$ %{{y:.2f}}<extra></extra>'))
     own = _interpolate(xs, ys, float(price))
     figure.add_trace(go.Scatter(
-        x=[float(price)], y=[own], mode='markers', showlegend=False,
+        x=[float(price)], y=[own], mode='markers', name='Preço de partida',
         marker={'size': 15, 'color': PRICE, 'line': {'color': 'white', 'width': 3}},
-        hovertemplate='Seu preço R$ %{x:.2f}<br>Margem R$ %{y:.2f}<extra></extra>'))
+        hovertemplate='Preço de partida R$ %{x:.2f}<br>Margem R$ %{y:.2f}<extra></extra>'))
     if simulated is not None and simulated != price:
         sim = _interpolate(xs, ys, float(simulated))
         figure.add_vline(x=float(simulated), line_dash='dot', line_width=2,
                          line_color='#4F6B1F')
         figure.add_trace(go.Scatter(
-            x=[float(simulated)], y=[sim], mode='markers', showlegend=False,
+            x=[float(simulated)], y=[sim], mode='markers', name='Preço simulado',
             marker={'size': 15, 'color': '#B9D557', 'line': {'color': '#4F6B1F', 'width': 3}},
             hovertemplate='Preço simulado R$ %{x:.2f}<br>Margem R$ %{y:.2f}<extra></extra>'))
-    figure.update_xaxes(title='Preço de venda (R$)', tickformat='.2f', nticks=5,
+    figure.update_xaxes(title='Preço de venda', tickprefix='R$ ', tickformat='.2f', nticks=5,
                         tickangle=0, showgrid=False)
-    figure.update_yaxes(title='Margem por unidade (R$)', tickformat='.2f',
+    figure.update_yaxes(title='Margem por unidade', tickprefix='R$ ', tickformat='.2f',
                         gridcolor='#E7ECF6')
-    figure.update_layout(showlegend=False)
-    return _layout(figure, 400)
+    figure = _layout(figure, 450)
+    figure.update_layout(legend={'y': 1.04, 'yanchor': 'bottom'},
+                         margin={'t': 86})
+    return figure
 
 
 def _interpolate(xs: list[float], ys: list[float], x: float) -> float:

@@ -36,12 +36,16 @@ def volume_scenario(result: dict, price: Decimal, *,
         'volume_change_percent': (
             (baseline / proposed - 1) * 100
             if baseline > 0 and proposed > 0 else None),
+        'revenue_units_per_100': (int((result['evaluated_price_brl'] * 100 / price)
+                                     .to_integral_value(rounding=ROUND_CEILING))
+                                  if price > 0 else None),
         'position': (market_position(price, market['median'])
                      if market['status'] == 'current_reference' else None),
     }
 
 
-def _curve(result: dict, cost: Decimal, demo: dict, floor: Decimal) -> list[dict]:
+def _curve(result: dict, cost: Decimal, demo: dict, floor: Decimal,
+           simulated_price: Decimal | None) -> list[dict]:
     """Include the actual price and floor in a bounded illustrative curve."""
     current = result['evaluated_price_brl']
     market = result['market']
@@ -49,10 +53,16 @@ def _curve(result: dict, cost: Decimal, demo: dict, floor: Decimal) -> list[dict
     low = min(current, Decimal(str(market['p25']))) if band else current
     high = max(current, Decimal(str(market['p75']))) if band else current
     start = max(CENT, (low * Decimal('.85')).quantize(CENT))
-    end = (max(high, floor) * Decimal('1.1')).quantize(CENT)
+    start = min(start, floor)
+    end = max(high, floor)
+    if simulated_price is not None:
+        start, end = min(start, simulated_price), max(end, simulated_price)
+    end = (end * Decimal('1.1')).quantize(CENT)
     prices = {max(CENT, (start + (end - start) * i / 30).quantize(
         CENT, rounding=ROUND_HALF_UP)) for i in range(31)}
     prices.update((current, floor))
+    if simulated_price is not None:
+        prices.add(simulated_price)
     return [_at_price(price, cost, demo) for price in sorted(prices)]
 
 
@@ -92,7 +102,8 @@ def _floor(cost: Decimal, demo: dict) -> Decimal:
     return CENT * high
 
 
-def scenario_analysis(result: dict, *, acquisition_cost: Decimal | None = None) -> dict:
+def scenario_analysis(result: dict, *, acquisition_cost: Decimal | None = None,
+                      simulated_price: Decimal | None = None) -> dict:
     """Cross the observed band with contribution and internal cost sensitivity.
 
     Parameters
@@ -102,6 +113,8 @@ def scenario_analysis(result: dict, *, acquisition_cost: Decimal | None = None) 
         applies to the configured monotone profiles, not arbitrary fiscal rules.
     acquisition_cost : Decimal, optional
         Replaces the purchase cost for this simulation, preserving the input result.
+    simulated_price : Decimal, optional
+        Adds the simulated price as an exact observation on the curve.
 
     Returns
     -------
@@ -129,5 +142,5 @@ def scenario_analysis(result: dict, *, acquisition_cost: Decimal | None = None) 
                 'contribution_brl'],
             'previous_cent_contribution_brl': (previous['contribution_brl']
                                                if previous else None),
-            'curve': _curve(result, cost, demo, floor), 'band_status': status,
+            'curve': _curve(result, cost, demo, floor, simulated_price), 'band_status': status,
             **_sensitivity(result, cost, floor)}

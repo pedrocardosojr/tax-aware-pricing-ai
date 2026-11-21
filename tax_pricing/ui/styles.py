@@ -58,6 +58,9 @@ h1 {font-size: clamp(1.85rem, 3.7vw, 2.85rem) !important; line-height: 1.12 !imp
 .market-legend i {display:inline-block; width:1.4rem;}
 .market-own {border-top:2px dashed #354BB5;}
 .market-median {border-top:2px dotted #62508B;}
+.st-key-price_simulator [data-testid="stSliderThumbValue"],
+.st-key-price_simulator [data-testid="stSliderTickBar"] {display:none;}
+.market-band {height:.58rem; background:#D7DFF8; border:1px solid #7486C0; border-radius:2px;}
 .market-legend .market-observed {background:#7486C0; width:.58rem; height:.58rem; border-radius:50%;}
 
 .st-key-scenario_intro [data-testid="stVerticalBlockBorderWrapper"],

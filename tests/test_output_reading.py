@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from tax_pricing.mvp_analysis import analyze_mvp
 from tax_pricing.pricing_scenarios import volume_scenario
-from tax_pricing.ui.formatting import brl_markdown, percent
+from tax_pricing.ui.formatting import brl_markdown, network_name, percent, product_name
 from tax_pricing.ui.charts import price_tree
 from tax_pricing.ui.price_questions import answer_question, match_topic
 from tax_pricing.ui.reading import decision_text, observed_spread
@@ -166,3 +166,13 @@ class OutputReadingTests(unittest.TestCase):
         answer = answer_question('Vale a pena promoção por R$ 11,48 no Natal?', result)
         self.assertIn(brl_markdown(Decimal('11.48')), answer)
         self.assertIn('Diferença para a mediana de mercado', answer)
+
+    def test_display_names_restore_accents_and_units(self):
+        """Labels read naturally while catalog and network keys stay unchanged."""
+        self.assertEqual(product_name('CAFE VACUO - PILAO - 500 GR'),
+                         'Café a Vácuo · Pilão · 500 g')
+        self.assertEqual(product_name('REFRIGERANTE - COCA COLA - 2 LITRO'),
+                         'Refrigerante · Coca-Cola · 2 L')
+        self.assertEqual(network_name('SACOLÃO POPULAR'), 'Sacolão Popular')
+        self.assertEqual(network_name('MIG ATACADO E VAREJO'), 'Mig Atacado e Varejo')
+        self.assertEqual(network_name('Armazem da Maria'), 'Armazém da Maria')

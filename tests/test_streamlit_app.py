@@ -160,7 +160,7 @@ class StreamlitAppTests(unittest.TestCase):
         self.app.number_input(key='price').set_value(27.90)
         self.app.button(key='analyze').click().run()
         self.assertFalse(self.app.exception)
-        navigation = ['Preço e mercado', 'Simular preço', 'Inteligência de mercado', 'Detalhes']
+        navigation = ['Preço e mercado', 'Margem e promoção', 'Inteligência de mercado', 'Detalhes']
         self.assertEqual([tab.label for tab in self.app.tabs if tab.label in navigation],
                          navigation)
         labels = [panel.label for panel in self.app.expander
@@ -204,7 +204,8 @@ class StreamlitAppTests(unittest.TestCase):
         self.assertFalse(self.app.exception)
         self.assertTrue(any('Toda a faixa central' in w.value
                             for w in self.app.warning))
-        self.assertTrue(any('13,39' in info.value for info in self.app.info))
+        self.assertTrue(any('Preço mínimo' in item.value and '13,39' in item.value
+                            for item in self.app.markdown))
         self.assertEqual(self.rtc_mock.call_count, 1)
 
     def test_price_slider_recalculates_without_another_rtc_call(self):
@@ -215,8 +216,12 @@ class StreamlitAppTests(unittest.TestCase):
         slider.set_value(11.48).run()
         self.assertFalse(self.app.exception)
         metrics = {metric.label: metric.value for metric in self.app.metric}
-        self.assertEqual(metrics['Contribuição simulada'], 'R$ 4,48')
-        self.assertEqual(metrics['Variação de volume necessária'], '+11,61%')
+        self.assertEqual(metrics['Margem simulada'], 'R$ 4,48')
+        self.assertNotIn('Variação de volume necessária', metrics)
+        self.assertTrue(any('**112 unidades** (cerca de 12% a mais)' in item.value
+                            for item in self.app.markdown))
+        self.assertTrue(any('faturamento' in item.value and '**105 unidades**' in item.value
+                            for item in self.app.markdown))
         self.assertEqual(self.app.session_state['analysis_result'][
             'evaluated_price_brl'], 12)
         self.assertEqual(self.rtc_mock.call_count, 1)
@@ -278,12 +283,17 @@ class StreamlitAppTests(unittest.TestCase):
         self.app.selectbox(key='regime').select('lucro_real').run()
         self.app.button(key='analyze').click().run()
         cost = next(slider for slider in self.app.slider if slider.label == 'Custo simulado (R$)')
+        baseline = next(item.value for item in self.app.markdown
+                        if item.value.startswith('A R') and 'sobram **' in item.value)
+        self.assertIn('5,00 por unidade', baseline)
         cost.set_value(8.0).run()
+        self.assertIn(baseline, [item.value for item in self.app.markdown])
         self.assertFalse(self.app.exception)
         metrics = {metric.label: metric.value for metric in self.app.metric}
-        self.assertEqual(metrics['Contribuição simulada'], 'R$ 4,00')
+        self.assertEqual(metrics['Margem simulada'], 'R$ 4,00')
         self.assertEqual(self.app.session_state['analysis_result'][
             'analysis']['personalized']['margin']['net_cost_brl'], 7)
         self.assertEqual(self.rtc_mock.call_count, 1)
         self.assertFalse(any('Simular outro preço' == item.label for item in self.app.expander))
-        self.assertTrue(any('a cada 100 unidades' in item.value for item in self.app.markdown))
+        self.assertTrue(any('sobrar o mesmo que em 100 vendas' in item.value
+                            for item in self.app.markdown))

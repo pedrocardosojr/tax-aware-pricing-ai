@@ -15,7 +15,7 @@ from tax_pricing.demo_profile import demo_settings
 from tax_pricing.team_market import STORE_AGGREGATION
 from tax_pricing.ui.charts import market_chart, price_tree
 from tax_pricing.ui.formatting import (
-    brl, brl_markdown, display_date, display_month, percent, product_name,
+    brl, brl_markdown, display_date, display_month, network_name, percent, product_name,
 )
 from tax_pricing.source_search import (
     build_messages, citations_are_valid, find_sources, strip_fact_tags,
@@ -162,11 +162,11 @@ def _tax_line(result: dict, *, brief: bool = False) -> str:
 def _network_table(market: dict, price: Decimal) -> None:
     """Use the same per-network values the chart already plots."""
     with st.expander('Ver preços por rede'):
-        rows = []
+        rows: list[dict] = []
         for name, value in market['per_network_brl'].items():
             if value is not None:
                 amount = Decimal(str(value))
-                rows.append({'Rede': name, 'Preço observado': float(amount),
+                rows.append({'Rede': network_name(name), 'Preço observado': float(amount),
                              'Diferença para seu preço': float(amount - price)})
         columns = {label: st.column_config.NumberColumn(label, format='R$ %.2f')
                    for label in ('Preço observado', 'Diferença para seu preço')}
@@ -183,23 +183,28 @@ def _market_view(result: dict) -> None:
     if figure is None:
         st.info('Sem preços observados por rede para exibir neste cenário.')
         return
+    has_band = market.get('p25') is not None and market.get('p75') is not None
+    band_legend = ('<span><i class="market-band"></i>Faixa típica de preços</span>'
+                   if has_band else '')
     st.markdown(
         '<div class="market-legend">'
         f'<span><i class="market-own"></i>Seu preço <strong>{brl(price)}</strong></span>'
         f'<span><i class="market-median"></i>Preço do meio do mercado '
         f'<strong>{brl(market["median"])}</strong></span>'
-        '<span><i class="market-observed"></i>Preço da rede</span></div>',
+        '<span><i class="market-observed"></i>Preço observado da rede</span>'
+        f'{band_legend}</div>',
         unsafe_allow_html=True)
     st.plotly_chart(figure, width='stretch', config={'displayModeBar': False})
     source = market.get('source_label', market['source'])
-    unit = 'lojas' if market.get('aggregation') == STORE_AGGREGATION else 'redes'
+    unit = 'loja' if market.get('aggregation') == STORE_AGGREGATION else 'rede'
     coverage = f"{market['network_count']} redes"
     if market.get('store_count'):
         coverage = f"{market['store_count']} lojas · " + coverage
     st.caption(f'{source} · {_period(market)} · {coverage}')
-    if market.get('p25') is not None and market.get('p75') is not None:
-        st.caption(f"Cada ponto é o preço de uma rede. **Faixa típica entre {unit}: "
-                   f"{brl_markdown(market['p25'])} a {brl_markdown(market['p75'])}.**")
+    if has_band:
+        st.caption(f"Cada ponto é uma rede. A área sombreada reúne a metade central "
+                   f"dos preços por {unit}: **{brl_markdown(market['p25'])} "
+                   f"a {brl_markdown(market['p75'])}.**")
     else:
         st.caption('Cada ponto é o preço de uma rede.')
     _network_table(market, price)
@@ -330,7 +335,7 @@ def _overview(result: dict) -> None:
 def source_facts(result: dict) -> dict[str, str]:
     """Attach the selected product and its actual demo assumptions to retrieval."""
     facts = {name: str(text) for name, text in explanation_facts(result).items()}
-    facts['product'] = result['product']['description']
+    facts['product'] = product_name(result['product']['description'])
     facts['tax'] = _tax_line(result)
     assumed = (result['assumptions'].get('product_tax') or {}).get('purchase_icms_st_assumed')
     facts['purchase_st'] = (
@@ -548,6 +553,34 @@ def _transition(result: dict) -> None:
     """Estimate margin sensitivity using this SKU's price, cost and current tax."""
     st.write(f"**{product_name(result['product']['description'])}** · "
              f"{REGIME_LABELS[result['assumptions']['regime']]}")
+    margin = result['analysis']['personalized']['margin']
+    price = result['evaluated_price_brl']
+    tax = margin['tax_brl']
+    contribution = margin['contribution_brl']
+    st.markdown('**Quanto sua margem pode mudar em 2027?**')
+    st.write('A tabela compara a margem de 2026 com duas hipóteses para 2027: '
+             'se a tributação na venda cair ou subir 1 ponto percentual do preço.')
+    st.caption(f"Preço de venda: {brl_markdown(price)}. Custo de compra: "
+               f"{brl_markdown(result['submitted_inputs']['acquisition_cost'])} por unidade. "
+               'Preço, custo e créditos de compra são os mesmos em todas as linhas.')
+    step = (price / 100).quantize(Decimal('.01'), rounding=ROUND_HALF_UP)
+    rows = []
+    for label, delta in (('2026 · referência do app', Decimal(0)),
+                         ('2027 · hipótese com menos tributos', -step),
+                         ('2027 · hipótese com mais tributos', step)):
+        if tax + delta < 0:
+            continue
+        rows.append({'Cenário': label,
+                     'Tributação por unidade': brl(tax + delta),
+                     'Margem por unidade': brl(contribution - delta)})
+    st.dataframe(rows, hide_index=True, width='stretch')
+    st.caption(f"Para este preço, 1 ponto percentual equivale a {brl_markdown(step)} "
+               'por unidade. A tabela ilustra o efeito na margem. A carga real de 2027 '
+               'depende do enquadramento e dos créditos da empresa.')
+    if tax < step:
+        st.caption('A hipótese de redução fica indisponível quando levaria '
+                   'os tributos abaixo de zero.')
+    st.markdown('**O que muda no calendário da reforma**')
     st.write('Em 2027, a CBS substitui PIS/Cofins e o IBS segue em transição. '
              'Em 2029, começa a substituição gradual de ICMS e ISS pelo IBS, '
              'com conclusão em 2033.')
@@ -561,26 +594,6 @@ def _transition(result: dict) -> None:
     st.caption(f"NCM do catálogo: {result['product']['ncm']}. Confira o enquadramento fiscal "
                'do produto e do fornecedor para o novo período.')
 
-    margin = result['analysis']['personalized']['margin']
-    price = result['evaluated_price_brl']
-    tax = margin['tax_brl']
-    contribution = margin['contribution_brl']
-    st.markdown('**Quanto sua margem pode mudar em 2027?**')
-    st.caption(f'Cenários com o mesmo preço de {brl_markdown(price)} e custo de aquisição '
-               f"de {brl_markdown(result['submitted_inputs']['acquisition_cost'])} por unidade. "
-               'Os créditos de compra do cenário ficam fixos. As variações são hipóteses '
-               'sobre os tributos da venda, em pontos percentuais do preço.')
-    rows = []
-    for label, points in (('2026 · cenário do app', 0),
-                          ('2027 · carga 1 ponto percentual menor', -1),
-                          ('2027 · carga 1 ponto percentual maior', 1)):
-        delta = (price * points / 100).quantize(Decimal('.01'), rounding=ROUND_HALF_UP)
-        if tax + delta < 0:
-            continue
-        rows.append({'Cenário': label,
-                     'Tributação por unidade': brl(tax + delta),
-                     'Margem por unidade': brl(contribution - delta)})
-    st.dataframe(rows, hide_index=True, width='stretch')
     st.markdown('[Cronograma oficial da reforma](https://www.gov.br/fazenda/pt-br/'
                 'acesso-a-informacao/acoes-e-programas/reforma-tributaria/'
                 'perguntas-e-respostas/como-sera-a-transicao-para) · '
@@ -632,7 +645,7 @@ def results(result: dict) -> None:
     st.caption(f"{price_kind} · {brl(result['evaluated_price_brl'])} · "
                f"{REGIME_LABELS[result['assumptions']['regime']]}")
     market, simulation, intelligence, details = st.tabs(
-        ['Preço e mercado', 'Simular preço', 'Inteligência de mercado', 'Detalhes'])
+        ['Preço e mercado', 'Margem e promoção', 'Inteligência de mercado', 'Detalhes'])
     with market:
         _price_and_market(result)
     with simulation, st.container(border=True, key='price_simulator'):

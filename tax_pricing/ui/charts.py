@@ -3,7 +3,7 @@ from decimal import Decimal
 
 import plotly.graph_objects as go
 
-from tax_pricing.ui.formatting import brl
+from tax_pricing.ui.formatting import brl, network_name
 
 TEAL = '#08715D'
 INK = '#192844'
@@ -16,7 +16,8 @@ def _layout(figure: go.Figure, height: int) -> go.Figure:
     """Apply a consistent readable chart theme."""
     figure.update_layout(
         height=height, margin={'l': 8, 'r': 18, 't': 18, 'b': 10},
-        font={'family': 'Arial, sans-serif', 'size': 13, 'color': INK},
+        font={'family': '"Source Sans", "Source Sans Pro", sans-serif',
+              'size': 13, 'color': INK},
         paper_bgcolor='white', plot_bgcolor='white', separators=',.',
         legend={'orientation': 'h', 'y': 1.12, 'x': 0},
         hoverlabel={'bgcolor': 'white'})
@@ -43,7 +44,8 @@ def market_chart(snapshot: dict, price: Decimal) -> go.Figure | None:
     observations = snapshot.get('per_network_brl')
     if not observations or snapshot.get('kind') != 'observed':
         return None
-    ordered = sorted(((name, float(value)) for name, value in observations.items()
+    ordered = sorted(((network_name(name), float(value))
+                      for name, value in observations.items()
                       if value is not None), key=lambda item: item[1])
     if not ordered:
         return None
@@ -65,7 +67,7 @@ def market_chart(snapshot: dict, price: Decimal) -> go.Figure | None:
                          layer='below')
     left, right = min(boundaries), max(boundaries)
     padding = max((right - left) * .08, .05)
-    figure.update_xaxes(title='Preço por unidade (R$)', tickformat='.2f',
+    figure.update_xaxes(title='Preço por unidade', tickprefix='R$ ', tickformat='.2f',
                         nticks=5, tickangle=0, gridcolor='#E7ECF6', zeroline=False,
                         range=[max(0, left - padding), right + padding])
     figure.update_yaxes(autorange='reversed', showgrid=False, tickmode='array',

@@ -8,6 +8,17 @@ MONTH_NAMES = ('janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julh
                'agosto', 'setembro', 'outubro', 'novembro', 'dezembro')
 
 
+_WORDS = {
+    'Joao': 'João', 'Feijao': 'Feijão', 'Pe': 'Pé', 'Macarrao': 'Macarrão',
+    'Com': 'com', 'De': 'de', 'Orquidea': 'Orquídea', 'Acucar': 'Açúcar',
+    'Uniao': 'União', 'Cafe': 'Café', 'Vacuo': 'a Vácuo', 'Coracoes': 'Corações',
+    'Pilao': 'Pilão', 'Guarana': 'Guaraná', 'Antartica': 'Antarctica',
+    'Antártica': 'Antarctica', 'Agua': 'Água', 'Oleo': 'Óleo',
+}
+_UNITS = {'Kg': 'kg', 'Gr': 'g', 'Ml': 'ml', 'Litro': 'L', 'Litros': 'L'}
+_NETWORKS = {'Armazem da Maria': 'Armazém da Maria', 'Rio verde': 'Rio Verde'}
+
+
 def product_name(description: str) -> str:
     """Make catalog separators readable without changing product identity.
 
@@ -19,9 +30,20 @@ def product_name(description: str) -> str:
     Returns
     -------
     str
-        Display label. The original catalog remains unchanged.
+        Display label with accents and units. The original catalog remains unchanged.
     """
-    return re.sub(r'\s*-\s*', ' · ', description.title())
+    text = re.sub(r'\s*-\s*', ' · ', description.title())
+    words = re.sub(r'\b(\w+)\b', lambda match: _WORDS.get(match.group(1), match.group(1)),
+                   text).replace('Coca Cola', 'Coca-Cola')
+    return re.sub(r'\b(\d+) (Kg|Gr|Ml|Litros?)\b',
+                  lambda match: f'{match.group(1)} {_UNITS[match.group(2)]}', words)
+
+
+def network_name(name: str) -> str:
+    """Show network names in one consistent case without changing the data key."""
+    text = name.title() if name.isupper() else name
+    text = re.sub(r'(?<=\s)(E|De|Da|Do)\b', lambda match: match.group(1).lower(), text)
+    return _NETWORKS.get(text, text)
 
 
 def brl(value: Decimal | str) -> str:
