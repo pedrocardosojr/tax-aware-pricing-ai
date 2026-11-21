@@ -1,15 +1,19 @@
 """Render the next-month price forecast from a reviewed team file."""
+from datetime import date, timedelta
 import json
 from pathlib import Path
 
 import streamlit as st
 
 from tax_pricing.demo_profile import ROOT
-from tax_pricing.ui.formatting import brl, percent
+from tax_pricing.ui.formatting import brl, display_month, percent
 
 FORECAST = ROOT / 'evidencias/previsao_2026-11-14/previsao.json'
-ORIGINS = {'preco_rede': 'Preço da rede no mês base',
-           'nivel_rede': 'Nível típico da rede (modelo)'}
+ORIGINS = {'preco_rede': 'Repete o preço observado para a rede',
+           'nivel_rede': 'Estimado pelo padrão de preços da rede'}
+MODELS = {'baseline 1: referência do mês anterior': 'Repetir o preço do mercado',
+          'baseline 2: preço da rede no mês anterior': 'Repetir o preço da rede',
+          'híbrido': 'Modelo do projeto'}
 STAGES = {'validacao': 'Validação', 'teste': 'Teste'}
 
 
@@ -53,11 +57,24 @@ def forecast_rows(item: dict) -> list[dict]:
     list of dict
         One row per network, cheapest first.
     """
-    return [{'Rede': row['rede'], 'Previsto': brl(str(row['previsto'])),
-             'Base da previsão': ORIGINS[row['origem']],
-             'Preço no mês base': (brl(str(row['preco_mes_base']))
-                                   if row['preco_mes_base'] is not None else '—')}
+    base = 'Preço em ' + display_month(item['mes_base'])
+    return [{'Rede': row['rede'], 'Preço estimado': brl(str(row['previsto'])),
+             'Como estimamos': ORIGINS[row['origem']],
+             base: (brl(str(row['preco_mes_base']))
+                    if row['preco_mes_base'] is not None else '—')}
             for row in item['redes']]
+
+
+def _stage_label(stage: str, cut: dict) -> str:
+    """Use the dates of the versioned assessment when they are available."""
+    if not cut:
+        return STAGES.get(stage, stage)
+    start = date.fromisoformat(cut['treino_ate'] + '-01') + timedelta(days=31)
+    start_label = display_month(start.strftime('%Y-%m'))
+    end = cut['avaliacao_ate']
+    if str(start.year) == end[:4]:
+        start_label = start_label.split(' de ', maxsplit=1)[0]
+    return f'{STAGES.get(stage, stage)} de {start_label} a {display_month(end)}'
 
 
 def evaluation_rows(bundle: dict) -> list[dict]:
@@ -73,10 +90,12 @@ def evaluation_rows(bundle: dict) -> list[dict]:
     list of dict
         One row per split and model, with the same three metrics.
     """
-    return [{'Etapa': STAGES[stage], 'Modelo': row['modelo'],
-             'Erro médio': brl(str(row['mae_brl'])),
-             'Erro típico': percent(str(row['mdape_pct'])),
-             'Erro de até 5%': percent(str(row['erro_ate_5_pct']))}
+    cuts = bundle.get('cortes', {})
+    return [{'Período avaliado': _stage_label(stage, cuts.get(stage, {})),
+             'Método': MODELS.get(row['modelo'], row['modelo']),
+             'Erro médio em reais': brl(str(row['mae_brl'])),
+             'Erro percentual mediano': percent(str(row['mdape_pct'])),
+             'Previsões com erro de até 5%': percent(str(row['erro_ate_5_pct']))}
             for stage, rows in bundle['avaliacao'].items() for row in rows]
 
 
@@ -87,17 +106,20 @@ def _points(value: float) -> str:
 
 def _quality(bundle: dict) -> None:
     """Explain how the model was validated against simple rules."""
-    with st.expander('Quão bom é este modelo?'):
+    with st.expander('Qual foi o erro nos testes?'):
         st.dataframe(evaluation_rows(bundle), hide_index=True, width='stretch')
         boot = bundle['bootstrap_teste']
-        gain, low, high = (_points(v) for v in (boot['ganho_medio_pp'],
-                                                *boot['ic95_pp']))
-        st.write(f'No teste, o híbrido erra em média **{gain} ponto percentual** '
-                 f'a menos que repetir o preço da rede (IC 95% sorteando lojas: '
-                 f'{low} a {high}). Quando há preço da rede no mês anterior, '
-                 'os dois coincidem; o ganho vem das redes sem coleta recente.')
-        st.caption('Treino no passado e avaliação nos meses seguintes, sem sorteio '
-                   'de linhas. Erro típico é a mediana do erro percentual.')
+        gain = _points(boot['ganho_medio_pp'])
+        low, high = boot['ic95_pp']
+        st.write('Comparado à regra de repetir o preço da rede, o modelo teve '
+                 f'vantagem média de **{gain} ponto percentual** no teste. '
+                 f'Intervalo de 95%: **{_points(low)} a {_points(high)} p.p.**, '
+                 'calculado por reamostragem de lojas.')
+        if low <= 0 <= high:
+            st.info('O intervalo inclui zero. Com estes dados, a vantagem sobre '
+                    'a regra simples ainda é incerta.')
+        st.caption('O treino usa os meses anteriores à avaliação. Em metade das '
+                   'observações, o erro percentual ficou até o valor mediano.')
 
 
 def forecast(ean: str) -> None:
@@ -108,7 +130,7 @@ def forecast(ean: str) -> None:
     ean : str
         Selected catalog identifier.
     """
-    st.subheader('Quanto este produto deve custar no próximo mês?')
+    st.subheader('Estimativa de preço por rede')
     try:
         bundle = load_forecast()
     except (ValueError, KeyError, json.JSONDecodeError):
@@ -123,16 +145,20 @@ def forecast(ean: str) -> None:
         st.info('Este produto não foi coletado na última rodada, então não há '
                 'base recente para prever o mês seguinte.')
         return
+    observed = display_month(item['mes_base'])
+    target = display_month(item['mes_previsto'])
     columns = st.columns(2)
-    columns[0].metric(f"Mediana prevista ({item['mes_previsto']})",
-                      brl(str(item['mediana_prevista'])))
-    columns[1].metric(f"Referência em {item['mes_base']}",
-                      brl(str(item['referencia_mes_base'])))
+    columns[0].metric(f'Preço estimado em {target}',
+                      brl(str(item['mediana_prevista'])),
+                      help='Preço do meio entre as estimativas das redes.')
+    columns[1].metric(f'Preço observado em {observed}',
+                      brl(str(item['referencia_mes_base'])),
+                      help='Preço do meio entre as redes com coleta no mês.')
+    st.caption('Os dois valores resumem redes em um único mês. '
+               'A faixa de mercado do diagnóstico resume lojas em vários meses.')
     st.dataframe(forecast_rows(item), hide_index=True, width='stretch')
-    st.caption('Quando a rede foi coletada no mês base, a previsão repete esse '
-               'preço: preços de supermercado mudam pouco de um mês para o outro. '
-               'Quando não foi, o modelo parte da referência do mercado e aplica o '
-               'nível típico da rede e do produto.')
+    st.caption('Para uma rede com coleta no último mês, a estimativa repete o preço '
+               'observado. Para as demais, o modelo usa o histórico do produto e da rede.')
     _quality(bundle)
-    st.caption('Previsão de um mês à frente. Não antecipa promoções nem choques '
-               f"de custo. Fonte: {bundle['fonte'].split(';', 1)[0]}.")
+    st.caption('A estimativa não antecipa promoções nem choques de custo. '
+               f"Fonte: {bundle['fonte'].split(';', 1)[0]}.")

@@ -452,9 +452,10 @@ def _market_intelligence(result: dict) -> None:
                'antes de fazer uma promoção.')
     with st.container(border=True, key='ask_box'):
         _questions(result)
-    with st.expander('Sazonalidade e clima de Curitiba', icon=':material/calendar_month:'):
-        group = result['product']['group']
-        lab_view.insight_cards(group)
+    group = result['product']['group']
+    st.markdown('#### Época do ano e clima')
+    lab_view.insight_cards(group)
+    with st.expander('Ver calendário e histórico do setor', icon=':material/calendar_month:'):
         lab_view.season_panel(group)
 
 
@@ -601,23 +602,13 @@ def _details(result: dict) -> None:
     with st.expander('Comparar regimes tributários'):
         lab_view.compare_regimes(result, REGIME_LABELS)
     with st.expander('Previsão do preço no próximo mês'):
-        if result['market'].get('aggregation') == STORE_AGGREGATION:
-            st.caption('A previsão usa a coleta mensal por rede. A faixa de mercado usa '
-                       'preços por loja no período indicado no gráfico.')
         forecast_view.forecast(result['product']['ean'])
     with st.expander('Reforma tributária · Cenário 2027'):
         _transition(result)
 
 
-def results(result: dict) -> None:
-    """Present the checked scenario before optional research and sources."""
-    if result['status'] == 'pending_market_data':
-        _missing_suggestion(result)
-        return
-    price_kind = ('Preço informado' if result['price_origin'] == 'user_price'
-                  else 'Preço para testar, pela referência de mercado')
-    st.caption(f"{price_kind} · {brl(result['evaluated_price_brl'])} · "
-               f"{REGIME_LABELS[result['assumptions']['regime']]}")
+def _price_and_market(result: dict) -> None:
+    """Open with the price, market chart and interpretation for this SKU."""
     _overview(result)
     market = result['market']
     contribution = result['analysis']['personalized']['margin']['contribution_brl']
@@ -628,8 +619,25 @@ def results(result: dict) -> None:
         _market_view(result)
         _market_history(result)
     _price_brief(result)
-    with st.container(border=True, key='price_simulator'):
-        lab_view.scenarios(result)
-    _market_intelligence(result)
     _download(result)
-    _details(result)
+
+
+def results(result: dict) -> None:
+    """Keep the scenario visible and show a single section at a time."""
+    if result['status'] == 'pending_market_data':
+        _missing_suggestion(result)
+        return
+    price_kind = ('Preço informado' if result['price_origin'] == 'user_price'
+                  else 'Preço para testar, pela referência de mercado')
+    st.caption(f"{price_kind} · {brl(result['evaluated_price_brl'])} · "
+               f"{REGIME_LABELS[result['assumptions']['regime']]}")
+    market, simulation, intelligence, details = st.tabs(
+        ['Preço e mercado', 'Simular preço', 'Inteligência de mercado', 'Detalhes'])
+    with market:
+        _price_and_market(result)
+    with simulation, st.container(border=True, key='price_simulator'):
+        lab_view.scenarios(result)
+    with intelligence:
+        _market_intelligence(result)
+    with details:
+        _details(result)

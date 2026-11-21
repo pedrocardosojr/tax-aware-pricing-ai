@@ -65,15 +65,15 @@ class ForecastViewTests(unittest.TestCase):
     def test_rows_show_origin_and_missing_base_price(self) -> None:
         """Model-based rows have no base-month price to display."""
         rows = forecast_rows(self.load(bundle())['previsoes'][CAFE])
-        self.assertEqual(rows[0]['Previsto'], 'R$ 21,49')
-        self.assertEqual(rows[1]['Base da previsão'], 'Nível típico da rede (modelo)')
-        self.assertEqual(rows[1]['Preço no mês base'], '—')
+        self.assertEqual(rows[0]['Preço estimado'], 'R$ 21,49')
+        self.assertEqual(rows[1]['Como estimamos'], 'Estimado pelo padrão de preços da rede')
+        self.assertEqual(rows[1]['Preço em outubro de 2026'], '—')
 
     def test_evaluation_uses_the_same_metrics(self) -> None:
         """Each model row carries the three comparison metrics."""
         row = evaluation_rows(bundle())[0]
-        self.assertEqual(row['Etapa'], 'Teste')
-        self.assertEqual(row['Erro típico'], '4,64%')
+        self.assertEqual(row['Período avaliado'], 'Teste')
+        self.assertEqual(row['Erro percentual mediano'], '4,64%')
 
     def test_published_bundle_beats_the_network_baseline(self) -> None:
         """The versioned file covers the demo SKU and keeps the validated result."""
@@ -85,7 +85,16 @@ class ForecastViewTests(unittest.TestCase):
             models = {row['modelo']: row for row in data['avaliacao'][stage]}
             self.assertLess(models['híbrido']['mae_brl'],
                             models['baseline 2: preço da rede no mês anterior']['mae_brl'])
-        self.assertGreater(data['bootstrap_teste']['ic95_pp'][0], 0)
+        self.assertIn('diário de outubro', data['fonte'])
+        cafe = data['previsoes'][CAFE]
+        self.assertEqual((cafe['referencia_mes_base'], cafe['mediana_prevista']),
+                         (26.59, 26.85))
+
+    def test_evaluation_names_months_when_the_split_is_versioned(self) -> None:
+        """Dates are taken from the evidence instead of hardcoding the demo year."""
+        cuts = {'teste': {'treino_ate': '2026-07', 'avaliacao_ate': '2026-10'}}
+        row = evaluation_rows(bundle(cortes=cuts))[0]
+        self.assertEqual(row['Período avaliado'], 'Teste de agosto a outubro de 2026')
 
 
 if __name__ == '__main__':

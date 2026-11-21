@@ -139,16 +139,17 @@ def scenarios(result: dict) -> None:
     elif analysis['band_status'] == 'partially_viable':
         st.warning('Parte da faixa observada gera contribuição negativa. '
                    'Compare os pontos antes de decidir o preço.')
+    st.markdown('#### Como uma promoção muda a margem por unidade?')
+    st.caption('A curva usa o custo simulado. O ponto azul mostra o preço de partida '
+               'e o verde mostra o preço simulado quando ele muda.')
+    st.plotly_chart(contribution_curve(analysis, result['market'],
+                                       result['evaluated_price_brl'],
+                                       simulated=simulated),
+                    width='stretch', config={'displayModeBar': False})
     with st.expander('Ver os detalhes da simulação'):
         st.info('Preço com contribuição zero neste cenário: **' +
                 brl(analysis['zero_contribution_price_brl']) +
                 '**. Abaixo dele, a venda não cobre custo e tributos.')
-        st.caption('Ponto azul: preço de partida com o custo simulado. '
-                   'Ponto verde-claro: preço simulado, quando diferente.')
-        st.plotly_chart(contribution_curve(analysis, result['market'],
-                                           result['evaluated_price_brl'],
-                                           simulated=simulated),
-                        width='stretch', config={'displayModeBar': False})
         points = [volume_scenario(result, p['price_brl'], acquisition_cost=cost)
                   for p in result['corridor_points']]
         if points:

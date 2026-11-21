@@ -10,12 +10,14 @@ The retailer selects a product and tax regime, enters the acquisition cost, and
 either analyses an existing selling price or asks for a price reference.
 The app combines the observed market range with contribution margin, an estimated
 tax breakdown, price simulations and answers grounded in project sources.
+Results are organised in four tabs: price and market, price simulation,
+market intelligence and details.
 
 **[▶ Open the live app](https://tax-pricing-ai.streamlit.app/)** ·
 [Café Pilão demo and validation](docs/cafe_demo_2026-11-19.md) ·
 [Run locally](#run-locally)
 
-![Café Pilão price analysis with a demonstrative tax profile](docs/imagens/cafe-diagnostico-2026-11-19.jpg)
+![Café Pilão price analysis with a demonstrative tax profile](docs/imagens/cafe-diagnostico-2026-11-21.jpg)
 
 ## Highlights
 
@@ -30,14 +32,14 @@ tax breakdown, price simulations and answers grounded in project sources.
   numbers and citations are checked before anything is shown.
 - **Market intelligence**: sector seasonality (IBGE), climate (INMET), retail
   calendar and a 7-day weather forecast as context.
-- **Engineering**: 194 automated tests, lint and type checks in GitHub Actions.
+- **Engineering**: 195 automated tests, lint and type checks in GitHub Actions.
 
 **Stack:** Python · pandas · scikit-learn · Plotly · Streamlit · Gemini API
 (OpenAI-compatible endpoint) · official RTC tax calculator · GitHub Actions.
 
 | Market range and network prices | Price simulation | Sourced answers |
 |---|---|---|
-| ![Market range](docs/imagens/cafe-mercado-2026-11-19.jpg) | ![Simulation](docs/imagens/cafe-simulacao-2026-11-19.jpg) | ![Sourced answers](docs/imagens/cafe-rag-2026-11-19.jpg) |
+| ![Market range](docs/imagens/cafe-mercado-2026-11-21.jpg) | ![Simulation](docs/imagens/cafe-simulacao-2026-11-21.jpg) | ![Sourced answers](docs/imagens/cafe-rag-2026-11-21.jpg) |
 
 This public repository is the portfolio snapshot of the project. The team
 develops in a private working repository; this copy is refreshed at milestones.
@@ -89,7 +91,7 @@ make test lint typecheck
 | Contribution | Python computes selling price minus net acquisition cost and estimated sale taxes. Profiles for Simples Nacional, Lucro Presumido and Lucro Real are demonstrative and versioned. |
 | Price simulation | The same calculation is rerun at another price. The app reports the contribution and volume change required to preserve the original total contribution. |
 | 2027 tax transition | The [official timeline](https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/perguntas-e-respostas/como-sera-a-transicao-para) is paired with a contribution sensitivity analysis for the selected SKU. The app holds price, acquisition cost and purchase credits constant and varies sales taxes by one percentage point. These scenarios use illustrative changes, with no assumed statutory 2027 effective rate. |
-| Forecast | The team's versioned next-month price forecasts and temporal model evaluation are available in Details. These estimates do not identify future promotions. |
+| Forecast | The model uses the monthly price archive and the October daily supplement, like the market reference. Details compares the latest observed network prices with next-month estimates and shows the results of a temporal backtest. The market range in the main view summarises stores across a longer window. |
 | Retrieval and language model | TF-IDF over words and character fragments retrieves excerpts from the curated corpus. The configured model answers using those excerpts and calculated scenario facts. Citations and numerical membership are checked before display. |
 | Seasonal context | Versioned [IBGE supermarket-sector data](https://sidra.ibge.gov.br/tabela/8882), [INMET climate normals](https://portal.inmet.gov.br/normais) and sourced retail-calendar research. These describe sector signals. |
 

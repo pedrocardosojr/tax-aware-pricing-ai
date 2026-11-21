@@ -38,6 +38,13 @@ Na abertura, a versão atual mostra divisórias entre os campos e a opção
 **Sugira um preço**. Após analisar, **Editar cenário** permite alterar os
 valores e enviar a nova análise.
 
+O resultado tem quatro abas no topo. **Preço e mercado** abre primeiro, com
+os indicadores e o gráfico. **Simular preço** reúne os controles de venda e
+custo e a curva de margem para testar uma promoção. **Inteligência de mercado**
+reúne as perguntas com fontes e os sinais de sazonalidade e clima. **Detalhes**
+inclui composição, regimes, previsão e o cenário tributário de 2027. As abas
+usam o mesmo cenário, e a simulação permanece ao voltar à sua aba.
+
 ## Demo com Café Pilão
 
 [Cenário, números, perguntas e validação](cafe_demo_2026-11-19.md).
@@ -66,7 +73,7 @@ O detalhe oficial de IBS/CBS depende do RTC em execução, normalmente em
 essa condição. O detalhe do RTC permanece separado da dedução da margem.
 
 A fonte principal usa mediana por loja e um ponto por rede no gráfico.
-Em **Detalhes**, o histórico exploratório pode usar outro recorte, com fonte
+Em **Preço e mercado**, o histórico exploratório pode usar outro recorte, com fonte
 e período próprios. Cada comparação deve ser lida dentro de sua amostra.
 
 O app publicado está em

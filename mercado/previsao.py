@@ -6,7 +6,8 @@ Regra do modelo híbrido:
   ajustada pelo nível típico do produto, do grupo e da rede.
 
 O script refaz a avaliação do notebook (validação mai-jul, teste ago-out/2026,
-bootstrap por loja), treina com todos os meses e grava a previsão do mês
+bootstrap por loja) na base mensal complementada pelo diário de outubro,
+treina com todos os meses e grava a previsão do mês
 seguinte à última rodada. A aba "Previsão" do app só lê o JSON gerado.
 
 Uso: python -m mercado.previsao
@@ -18,7 +19,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from mercado.base_precos import carregar_base, carregar_catalogo, limpar
+from mercado.exportar_cafe import bases
 
 SAIDA = Path("evidencias/previsao_2026-11-14/previsao.json")
 CATEGORIAS = ["id_produto", "grupo", "rede"]
@@ -207,7 +208,7 @@ def gerar(obs, commit):
         "schema_version": 1,
         "metodo": ("híbrido: preço da rede no mês anterior quando existe; "
                    "senão Ridge (alpha=1) com produto, grupo, rede e log da referência"),
-        "fonte": f"Clique Economia (mensal); mercado/previsao.py@{commit}",
+        "fonte": f"Clique Economia (mensal + diário de outubro); mercado/previsao.py@{commit}",
         "cortes": {etapa: {"treino_ate": t, "avaliacao_ate": a}
                    for etapa, (t, a) in ETAPAS.items()},
         "avaliacao": avaliacao,
@@ -221,7 +222,7 @@ def main():
     """Gera evidencias/previsao_2026-11-14/previsao.json."""
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"],
                             capture_output=True, text=True, check=True).stdout.strip()
-    obs = limpar(carregar_base(), carregar_catalogo())
+    obs = bases()["mensal_diario"]
     conteudo = gerar(obs, commit)
     SAIDA.parent.mkdir(parents=True, exist_ok=True)
     SAIDA.write_text(json.dumps(conteudo, ensure_ascii=False, indent=2) + "\n",

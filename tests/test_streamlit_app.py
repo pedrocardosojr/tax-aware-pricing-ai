@@ -160,8 +160,11 @@ class StreamlitAppTests(unittest.TestCase):
         self.app.number_input(key='price').set_value(27.90)
         self.app.button(key='analyze').click().run()
         self.assertFalse(self.app.exception)
+        navigation = ['Preço e mercado', 'Simular preço', 'Inteligência de mercado', 'Detalhes']
+        self.assertEqual([tab.label for tab in self.app.tabs if tab.label in navigation],
+                         navigation)
         labels = [panel.label for panel in self.app.expander
-                  if panel.label != 'Quão bom é este modelo?']
+                  if panel.label != 'Qual foi o erro nos testes?']
         self.assertEqual(labels[-4:], [
             'Premissas e composição do preço', 'Comparar regimes tributários',
             'Previsão do preço no próximo mês', 'Reforma tributária · Cenário 2027'])
