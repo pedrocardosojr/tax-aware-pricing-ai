@@ -1,0 +1,43 @@
+inicio,fim,evento,tipo,fonte_id,grupos_do_catalogo,fonte_url
+2026-01-01,2026-01-01,Confraternização Universal,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-02-13,2026-02-17,Carnaval,data comemorativa,saz_carnaval,Água mineral;Refrigerante 2 L;Cerveja,https://supervarejo.com.br/economia/bebidas-nao-alcoolicas-avancam-53-em-janeiro
+2026-03-22,2026-04-05,Páscoa,data comemorativa,saz_pascoa,,https://supervarejo.com.br/economia/itens-de-pascoa-apresentou-crescimento-de-5-no-faturamento-no-inicio-de-marco
+2026-04-03,2026-04-03,Sexta-feira Santa,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-04-21,2026-04-21,Tiradentes,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-05-01,2026-05-01,Dia do Trabalho,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-05-03,2026-05-10,Dia das Mães,data comemorativa,saz_maes,,https://supervarejo.com.br/economia/alimentos-sao-os-responsaveis-pelo-crescimento-da-cesta-de-dia-das-maes
+2026-06-01,2026-07-31,Festas juninas,data comemorativa,saz_junina,,https://gironews.com/supermercado/cesta-junina-cresce-17-entre-os-meses-de-junho-e-julho/
+2026-06-04,2026-06-04,Corpus Christi,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-06-05,2026-06-12,Dia dos Namorados,data comemorativa,saz_namorados,,https://supervarejo.com.br/varejo/muito-alem-do-presente-a-nova-cesta-do-dia-dos-namorados
+2026-08-02,2026-08-09,Dia dos Pais,data comemorativa,saz_dia_dos_pais,Cerveja,https://supervarejo.com.br/varejo/dia-dos-pais-aquece-vendas-de-carnes-e-bebidas-nos-supermercados
+2026-09-07,2026-09-07,Independência,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-09-08,2026-09-08,Nossa Senhora da Luz dos Pinhais (Curitiba),feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-10-05,2026-10-12,Dia das Crianças,data comemorativa,saz_criancas,,https://jornaldobras.com.br/noticia/40191/vendas-de-brinquedos-na-semana-das-criancas-apresentam-uma-queda-de-15-5-no-varejo-alimentar
+2026-10-12,2026-10-12,Nossa Senhora Aparecida,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-11-02,2026-11-02,Finados,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-11-15,2026-11-15,Proclamação da República,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-11-20,2026-11-20,Dia da Consciência Negra,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2026-11-23,2026-11-29,Black Friday,data comemorativa,saz_black_friday,Óleo de soja;Café;Refrigerante 2 L;Cerveja;Água mineral,https://www.supervarejo.com.br/varejo/black-friday-registrou-aumento-de-196-nas-vendas-em-2024
+2026-12-18,2026-12-31,Natal e Ano Novo,data comemorativa,saz_natal_bebidas,Refrigerante 2 L;Cerveja,https://www.supervarejo.com.br/economia/supermercados-cresceram-30-em-vendas-na-semana-do-natal
+2026-12-25,2026-12-25,Natal,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-01-01,2027-01-01,Confraternização Universal,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-02-05,2027-02-09,Carnaval,data comemorativa,saz_carnaval,Água mineral;Refrigerante 2 L;Cerveja,https://supervarejo.com.br/economia/bebidas-nao-alcoolicas-avancam-53-em-janeiro
+2027-03-14,2027-03-28,Páscoa,data comemorativa,saz_pascoa,,https://supervarejo.com.br/economia/itens-de-pascoa-apresentou-crescimento-de-5-no-faturamento-no-inicio-de-marco
+2027-03-26,2027-03-26,Sexta-feira Santa,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-04-21,2027-04-21,Tiradentes,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-05-01,2027-05-01,Dia do Trabalho,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-05-02,2027-05-09,Dia das Mães,data comemorativa,saz_maes,,https://supervarejo.com.br/economia/alimentos-sao-os-responsaveis-pelo-crescimento-da-cesta-de-dia-das-maes
+2027-05-27,2027-05-27,Corpus Christi,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-06-01,2027-07-31,Festas juninas,data comemorativa,saz_junina,,https://gironews.com/supermercado/cesta-junina-cresce-17-entre-os-meses-de-junho-e-julho/
+2027-06-05,2027-06-12,Dia dos Namorados,data comemorativa,saz_namorados,,https://supervarejo.com.br/varejo/muito-alem-do-presente-a-nova-cesta-do-dia-dos-namorados
+2027-08-01,2027-08-08,Dia dos Pais,data comemorativa,saz_dia_dos_pais,Cerveja,https://supervarejo.com.br/varejo/dia-dos-pais-aquece-vendas-de-carnes-e-bebidas-nos-supermercados
+2027-09-07,2027-09-07,Independência,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-09-08,2027-09-08,Nossa Senhora da Luz dos Pinhais (Curitiba),feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-10-05,2027-10-12,Dia das Crianças,data comemorativa,saz_criancas,,https://jornaldobras.com.br/noticia/40191/vendas-de-brinquedos-na-semana-das-criancas-apresentam-uma-queda-de-15-5-no-varejo-alimentar
+2027-10-12,2027-10-12,Nossa Senhora Aparecida,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-11-02,2027-11-02,Finados,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-11-15,2027-11-15,Proclamação da República,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-11-20,2027-11-20,Dia da Consciência Negra,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm
+2027-11-22,2027-11-28,Black Friday,data comemorativa,saz_black_friday,Óleo de soja;Café;Refrigerante 2 L;Cerveja;Água mineral,https://www.supervarejo.com.br/varejo/black-friday-registrou-aumento-de-196-nas-vendas-em-2024
+2027-12-18,2027-12-31,Natal e Ano Novo,data comemorativa,saz_natal_bebidas,Refrigerante 2 L;Cerveja,https://www.supervarejo.com.br/economia/supermercados-cresceram-30-em-vendas-na-semana-do-natal
+2027-12-25,2027-12-25,Natal,feriado,saz_feriados,,https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm

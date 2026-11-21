@@ -1,0 +1,29 @@
+{
+  "ean": "7894900027013",
+  "date": "2026-10-01",
+  "kind": "observed",
+  "source": "dados/clique_economia_mensal_2024_2026.parquet",
+  "median": "11.99",
+  "p25": "11.9900",
+  "p75": "12.9650",
+  "network_count": 7,
+  "store_count": 9,
+  "duplicate_count": 0,
+  "per_network_brl": {
+    "Palmeira": "11.85",
+    "Triunfo": "12.98",
+    "Araucária": "11.99",
+    "Atacadão": "11.99",
+    "Telêmaco": "11.99",
+    "Gabão": "12.95",
+    "Super Curitiba": "12.98"
+  },
+  "aggregation": "unique_store_then_network_median_equal_weight",
+  "mean_stores_brl": "12.30111111111111111111111111",
+  "mean_networks_brl": "12.39",
+  "iqr_brl": "0.9750",
+  "iqr_relative_percent": "8.131776480400333611342785655",
+  "mad_brl": "0.14",
+  "source_label": "Clique Economia · Prefeitura de Curitiba",
+  "source_sha256": "597253ad5be385308ecc0e3c8205bcacbd448c75da3a101e95696571dee04fc6"
+}

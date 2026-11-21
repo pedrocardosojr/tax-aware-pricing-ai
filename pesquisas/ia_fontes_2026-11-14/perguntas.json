@@ -1,0 +1,70 @@
+[
+ [
+  "Por que a referência do Café Pilão é por loja se cada ponto do gráfico é uma rede?",
+  "cafe_metodo"
+ ],
+ [
+  "Como consolidam várias coletas do mesmo endereço no mês?",
+  "cafe_metodo"
+ ],
+ [
+  "De onde vêm os quartis P25 e P75 da referência por loja?",
+  "cafe_metodo"
+ ],
+ [
+  "Por que comparar a janela de seis meses com três meses?",
+  "cafe_janela"
+ ],
+ [
+  "O diário aumentou a cobertura de lojas e redes do Café?",
+  "cafe_janela"
+ ],
+ [
+  "De onde vieram os preços do Clique Economia?",
+  "clique_origem"
+ ],
+ [
+  "Qual é a origem dos preços regulares adicionais de outubro em Curitiba?",
+  "clique_origem"
+ ],
+ [
+  "Como calcular o volume necessário para manter a contribuição total?",
+  "simulador"
+ ],
+ [
+  "O simulador prevê a demanda quando mudo o preço de venda?",
+  "simulador"
+ ],
+ [
+  "Posso sugerir uma faixa atual se a referência for histórica?",
+  "disponibilidade"
+ ],
+ [
+  "Sem preço de mercado ainda consigo analisar um preço informado?",
+  "disponibilidade"
+ ],
+ [
+  "O cálculo de tributos é uma apuração fiscal real?",
+  "premissas_tributarias"
+ ],
+ [
+  "Como o app evita mostrar um número errado na explicação?",
+  "validador"
+ ],
+ [
+  "O café está em promoção hoje?",
+  null
+ ],
+ [
+  "Qual o estoque atual no Condor?",
+  null
+ ],
+ [
+  "Qual é a alíquota de ICMS da minha empresa?",
+  null
+ ],
+ [
+  "Quais marcas vendem mais no Natal?",
+  null
+ ]
+]

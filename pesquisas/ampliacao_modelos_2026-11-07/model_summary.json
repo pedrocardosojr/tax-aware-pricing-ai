@@ -1,0 +1,94 @@
+{
+  "source_sha256": "597253ad5be385308ecc0e3c8205bcacbd448c75da3a101e95696571dee04fc6",
+  "clean_rows": 15739,
+  "monthly_observed_targets": 1242,
+  "possible_2026_targets": 463,
+  "sklearn": "1.9.1",
+  "protocol": "Expanding training; Jan-Jun 2026 development; Jul-Oct 2026 holdout. Targets: observed SKU monthly network medians, >=3 networks. Lag features use prior observations only; lag1 must be previous calendar month. Fixed model parameters; no random split or future-filled values.",
+  "selected_on_development": "last_month",
+  "holdout_results": [
+    {
+      "phase": "holdout",
+      "method": "last_month",
+      "macro_mae_brl": 0.6408786231884057,
+      "macro_mape_percent": 5.004432366573473,
+      "sku_count": 46,
+      "sku_months": 183
+    },
+    {
+      "phase": "holdout",
+      "method": "random_forest",
+      "macro_mae_brl": 0.6936480797918363,
+      "macro_mape_percent": 5.087889064662598,
+      "sku_count": 46,
+      "sku_months": 183
+    },
+    {
+      "phase": "holdout",
+      "method": "ridge",
+      "macro_mae_brl": 0.7011727660605828,
+      "macro_mape_percent": 5.351222774517103,
+      "sku_count": 46,
+      "sku_months": 183
+    },
+    {
+      "phase": "holdout",
+      "method": "mean_previous_3",
+      "macro_mae_brl": 0.7297056159420288,
+      "macro_mape_percent": 5.422038065967508,
+      "sku_count": 46,
+      "sku_months": 183
+    },
+    {
+      "phase": "holdout",
+      "method": "median_previous_3",
+      "macro_mae_brl": 0.7241893115942027,
+      "macro_mape_percent": 5.489463905998561,
+      "sku_count": 46,
+      "sku_months": 183
+    }
+  ],
+  "development_results": [
+    {
+      "phase": "development",
+      "method": "last_month",
+      "macro_mae_brl": 0.5336333333333334,
+      "macro_mape_percent": 4.703652515772211,
+      "sku_count": 50,
+      "sku_months": 278
+    },
+    {
+      "phase": "development",
+      "method": "ridge",
+      "macro_mae_brl": 0.5803514774469405,
+      "macro_mape_percent": 4.990400060711146,
+      "sku_count": 50,
+      "sku_months": 278
+    },
+    {
+      "phase": "development",
+      "method": "random_forest",
+      "macro_mae_brl": 0.5913361863779252,
+      "macro_mape_percent": 5.085244446317604,
+      "sku_count": 50,
+      "sku_months": 278
+    },
+    {
+      "phase": "development",
+      "method": "mean_previous_3",
+      "macro_mae_brl": 0.5831416666666666,
+      "macro_mape_percent": 5.1358068856965815,
+      "sku_count": 50,
+      "sku_months": 278
+    },
+    {
+      "phase": "development",
+      "method": "median_previous_3",
+      "macro_mae_brl": 0.5874166666666667,
+      "macro_mape_percent": 5.196847912610155,
+      "sku_count": 50,
+      "sku_months": 278
+    }
+  ],
+  "limitations": "Forecast of aggregate reference, not inference of individual store quotes, cold-start SKUs, 9-month beer extrapolation or additional real observations."
+}

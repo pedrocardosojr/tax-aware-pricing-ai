@@ -1,0 +1,22 @@
+{
+  "base_commit": "83be4c06d83d55d0c1ff183c4494cb8062e60a2f",
+  "scope": "RTC and identifiers audit, fixed tax base, years 2026/2033",
+  "source_sha256": {
+    "tax_pricing/catalog.py": "f5c92dab35c5bb828fea58adf477a2c6ed4ac3ea31ae5932720f62e0988dd9bb",
+    "tax_pricing/__init__.py": "6111e7db15494fa47492c788e993cead09985a29f82d5172c19b4b47b1baeb62",
+    "tax_pricing/rtc.py": "4c083f113abd834241f63be2264eb2bfd346a46d5b64a5f90dcf99a2a23b69e4",
+    "scripts/test_catalog_rtc.py": "f06529a9c417c3e8f8933a7f5f59cc4917fcfa08c99e578ed7fd127edbb775a5",
+    "dados/catalogo/skus_50.json": "167b8bb0f58983cdece1ea3a062dbcf2ab733fa66c4e6a2df687241f69d48942",
+    "dados/catalogo/classificacoes_experimentais.json": "3b6e8653e3d1e6009290abdb7f85832572ca37b65f9cda3a0427cff4dff5f951"
+  },
+  "validation": {
+    "unit_tests_passed": 9,
+    "pylint": "10.00/10",
+    "mypy": "no issues in 4 source files",
+    "live_cases": 100,
+    "passed": 92,
+    "blocked": 8,
+    "unexpected_errors": 0
+  },
+  "notes": "Eight 2033 cases require IS data. All independent fiscal reviews pending. 2033 nominal rates are illustrative. First oil candidate 200003 rejected and corrected to 200034 after explicit engine consultation."
+}

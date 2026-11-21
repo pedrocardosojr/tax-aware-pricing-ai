@@ -1,0 +1,5 @@
+~/.pyenv/versions/lewagon/bin/python -m pylint --persistent=n tax_pricing scripts/test_catalog_rtc.py scripts/demo_commercial.py scripts/demo_profile.py scripts/verify_current_tax.py scripts/demo_personalized.py tests
+
+------------------------------------
+Your code has been rated at 10.00/10
+

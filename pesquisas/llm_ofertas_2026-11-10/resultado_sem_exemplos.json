@@ -1,0 +1,149 @@
+{
+  "model_id": "mlx-community/Qwen2.5-3B-Instruct-4bit",
+  "mlx_lm_version": "0.32.2",
+  "evaluation_date": "2026-11-10",
+  "sample_count": 10,
+  "correct_by_field": {
+    "identidade": 3,
+    "volume_ml": 6,
+    "mecanica": 4,
+    "preco_unidade_brl": 2,
+    "preco_combo_brl": 5,
+    "quantidade_minima": 4,
+    "selo_clube": 6,
+    "inicio": 3,
+    "fim": 3,
+    "praca": 6
+  },
+  "results": [
+    {
+      "id": "natal-combo",
+      "response": "{\"identidade\": \"combo_misto\", \"volume_ml\": 2000, \"mecanica\": \"combo_misto\", \"preco_unidade_brl\": \"10.49\", \"preco_combo_brl\": \"20.38\", \"quantidade_minima\": 1, \"selo_clube\": true, \"inicio\": \"08/12/2025\", \"fim\": \"24/12/2025\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 9.72,
+      "valid_json": true,
+      "correct_fields": [
+        "volume_ml",
+        "mecanica",
+        "preco_unidade_brl",
+        "preco_combo_brl",
+        "selo_clube",
+        "praca"
+      ],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "natal-fanta",
+      "response": "{\"identidade\": \"exato\", \"volume_ml\": 600, \"mecanica\": \"combo_misto\", \"preco_unidade_brl\": null, \"preco_combo_brl\": \"R$ 8,98\", \"quantidade_minima\": 1, \"selo_clube\": true, \"inicio\": \"08/12/2025\", \"fim\": \"24/12/2025\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 6.53,
+      "valid_json": true,
+      "correct_fields": [
+        "volume_ml",
+        "mecanica",
+        "selo_clube",
+        "praca"
+      ],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "natal-light",
+      "response": "{\"identidade\": \"outro\", \"volume_ml\": 310, \"mecanica\": \"quantidade\", \"preco_unidade_brl\": \"2,26\", \"preco_combo_brl\": null, \"quantidade_minima\": 6, \"selo_clube\": true, \"inicio\": \"08/12/2025\", \"fim\": \"24/12/2025\", \"praca\": \"Curitiba\"}",
+      "elapsed_s": 6.28,
+      "valid_json": true,
+      "correct_fields": [
+        "identidade",
+        "volume_ml",
+        "mecanica",
+        "preco_combo_brl",
+        "quantidade_minima",
+        "selo_clube"
+      ],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "natal-3l",
+      "response": "{\"identidade\": \"outro\", \"volume_ml\": 3000000, \"mecanica\": \"quantidade\", \"preco_unidade_brl\": null, \"preco_combo_brl\": null, \"quantidade_minima\": 1, \"selo_clube\": false, \"inicio\": \"08/12/2025\", \"fim\": \"24/12/2025\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 6.3,
+      "valid_json": true,
+      "correct_fields": [
+        "identidade",
+        "preco_combo_brl",
+        "quantidade_minima",
+        "selo_clube",
+        "praca"
+      ],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "natal-sprite",
+      "response": "{\"identidade\": \"outro\", \"volume_ml\": 1500, \"mecanica\": \"quantidade\", \"preco_unidade_brl\": \"5,69\", \"quantidade_minima\": 1, \"selo_clube\": null, \"inicio\": \"08/12/2025\", \"fim\": \"24/12/2025\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 6.0,
+      "valid_json": false,
+      "correct_fields": [],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "abril-combo",
+      "response": "{\"identidade\": \"exato\", \"volume_ml\": 2000, \"mecanica\": \"combo_misto\", \"preco_unidade_brl\": null, \"preco_combo_brl\": \"17,49\", \"quantidade_minima\": 1, \"selo_clube\": false, \"inicio\": \"2026-04-22\", \"fim\": \"2026-05-10\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 6.57,
+      "valid_json": true,
+      "correct_fields": [
+        "volume_ml",
+        "mecanica",
+        "preco_unidade_brl",
+        "selo_clube",
+        "inicio",
+        "fim",
+        "praca"
+      ],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "abril-pepsi",
+      "response": "{\"identidade\": \"outro\", \"volume_ml\": 2000, \"mecanica\": \"quantidade\", \"preco_unidade_brl\": null, \"preco_combo_brl\": null, \"quantidade_minima\": 1, \"selo_clube\": false, \"inicio\": \"2026-04-22\", \"fim\": \"2026-05-10\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 6.65,
+      "valid_json": true,
+      "correct_fields": [
+        "identidade",
+        "volume_ml",
+        "preco_combo_brl",
+        "quantidade_minima",
+        "inicio",
+        "fim",
+        "praca"
+      ],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "abril-guarana",
+      "response": "{\"identidade\": \"exato\", \"volume_ml\": 2000, \"mecanica\": \"quantidade\", \"preco_unidade_brl\": null, \"preco_combo_brl\": null, \"quantidade_minima\": 1, \"selo_clube\": true, \"inicio\": \"2026-04-22\", \"fim\": \"2026-05-10\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 7.74,
+      "valid_json": true,
+      "correct_fields": [
+        "volume_ml",
+        "preco_combo_brl",
+        "quantidade_minima",
+        "selo_clube",
+        "inicio",
+        "fim",
+        "praca"
+      ],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "abril-fanta-sprite",
+      "response": "{\"identidade\": \"outro\", \"volume_ml\": 2000, \"mecanica\": \"quantidade\", \"preco_unidade_brl\": \"8,99\", \"quantidade_minima\": 1, \"selo_clube\": null, \"inicio\": \"2026-04-22\", \"fim\": \"2026-05-10\", \"praca\": \"Paraná\"}",
+      "elapsed_s": 6.99,
+      "valid_json": false,
+      "correct_fields": [],
+      "current_unit_benchmark": false
+    },
+    {
+      "id": "abril-budweiser",
+      "response": "{\"identidade\": \"outro\", \"volume_ml\": 350, \"mecanica\": \"quantidade\", \"preco_unidade_brl\": \"R$ 3,99\", \"quantidade_minima\": 1, \"selo_clube\": false, \"inicio\": \"2026-04-22\", \"fim\": \"2026-05-10\", \"praca\": \"Curitiba\"}",
+      "elapsed_s": 6.59,
+      "valid_json": false,
+      "correct_fields": [],
+      "current_unit_benchmark": false
+    }
+  ]
+}

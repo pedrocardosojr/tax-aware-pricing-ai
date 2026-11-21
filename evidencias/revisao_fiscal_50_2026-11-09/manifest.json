@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-09",
+  "products": 50,
+  "regimes": 3,
+  "arithmetic_checks": 300,
+  "rtc": "not_called",
+  "market_data": "not_used",
+  "conditions": "assumed_not_invoice_verified",
+  "sha256": {
+    "dados/tributos/revisao_2026_11.json": "ac7bd90d5e7fb621c2779896c20dc6633f0372bf337c2db6b7354d5bb8988158",
+    "dados/tributos/perfis_demo_mvp.json": "247ef9a93558a54664d09ed6d7c0df5348ab82bb2386034636ed01ea82adb2e9",
+    "dados/catalogo/skus_50.json": "167b8bb0f58983cdece1ea3a062dbcf2ab733fa66c4e6a2df687241f69d48942"
+  }
+}

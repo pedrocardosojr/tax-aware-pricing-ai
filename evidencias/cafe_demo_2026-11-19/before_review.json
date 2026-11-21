@@ -1,0 +1,194 @@
+{
+  "date": "2026-11-19T19:41:53.537290-03:00",
+  "base_commit": "268acfb",
+  "scenario_cost_is_hypothetical": true,
+  "rtc": "simulated unavailable for UI test",
+  "scenarios": [
+    {
+      "regime": "simples_nacional",
+      "mode": "current",
+      "price": "27.9",
+      "contribution": "8.8596090",
+      "tax": "1.0403910",
+      "store_count": 57,
+      "network_count": 25,
+      "discount_scenario": {
+        "price_brl": "23.20",
+        "contribution_brl": "4.33487200",
+        "volume_change_percent": "104.3799447826833179849370408"
+      }
+    },
+    {
+      "regime": "simples_nacional",
+      "mode": "suggestion",
+      "price": "25.89",
+      "contribution": "6.92456190",
+      "tax": "0.96543810",
+      "store_count": 57,
+      "network_count": 25,
+      "discount_scenario": {
+        "price_brl": "23.20",
+        "contribution_brl": "4.33487200",
+        "volume_change_percent": "59.74086201391875008074056170"
+      }
+    },
+    {
+      "regime": "lucro_presumido",
+      "mode": "current",
+      "price": "27.9",
+      "contribution": "9.900000",
+      "tax": "0.000000",
+      "store_count": 57,
+      "network_count": 25,
+      "discount_scenario": {
+        "price_brl": "23.20",
+        "contribution_brl": "5.200000",
+        "volume_change_percent": "90.38461538461538461538461540"
+      }
+    },
+    {
+      "regime": "lucro_presumido",
+      "mode": "suggestion",
+      "price": "25.89",
+      "contribution": "7.890000",
+      "tax": "0.000000",
+      "store_count": 57,
+      "network_count": 25,
+      "discount_scenario": {
+        "price_brl": "23.20",
+        "contribution_brl": "5.200000",
+        "volume_change_percent": "51.73076923076923076923076920"
+      }
+    },
+    {
+      "regime": "lucro_real",
+      "mode": "current",
+      "price": "27.9",
+      "contribution": "9.900000",
+      "tax": "0.000000",
+      "store_count": 57,
+      "network_count": 25,
+      "discount_scenario": {
+        "price_brl": "23.20",
+        "contribution_brl": "5.200000",
+        "volume_change_percent": "90.38461538461538461538461540"
+      }
+    },
+    {
+      "regime": "lucro_real",
+      "mode": "suggestion",
+      "price": "25.89",
+      "contribution": "7.890000",
+      "tax": "0.000000",
+      "store_count": 57,
+      "network_count": 25,
+      "discount_scenario": {
+        "price_brl": "23.20",
+        "contribution_brl": "5.200000",
+        "volume_change_percent": "51.73076923076923076923076920"
+      }
+    }
+  ],
+  "rag": [
+    {
+      "question": "Por que a referência é por loja?",
+      "retrieval_status": "ok",
+      "retrieved_ids": [
+        "cafe_metodo",
+        "disponibilidade"
+      ],
+      "seconds": 1.069,
+      "accepted": true,
+      "answer": "A referência do Café Pilão 500 g usa a mediana por loja, calculando um preço mediano por endereço em cada mês e, depois, a mediana dos meses de cada loja [cafe_metodo]. Para consolidar, os quartis P25 e P75 vêm da distribuição desses valores por loja [cafe_metodo]. Além disso, o gráfico resume a amostra com um ponto por rede, enquanto o número principal usa as lojas [cafe_metodo]."
+    },
+    {
+      "question": "Qual a fonte dos preços do Clique Economia?",
+      "retrieval_status": "ok",
+      "retrieved_ids": [
+        "clique_origem"
+      ],
+      "seconds": 1.092,
+      "accepted": true,
+      "answer": "Os preços observados vêm da pesquisa pública Clique Economia de Curitiba [clique_origem]. O diário de outubro amplia a base mensal com preços regulares observados de 46 códigos exatos, e os arquivos adicionais trazem preços coletados entre 2 e 29 de outubro de 2026, com origem registrada no manifesto [clique_origem]."
+    },
+    {
+      "question": "Como interpretar a faixa P25–P75?",
+      "retrieval_status": "ok",
+      "retrieved_ids": [
+        "disponibilidade"
+      ],
+      "seconds": 0.837,
+      "accepted": true,
+      "answer": "Para sugerir uma faixa de preços, a referência deve ser observada, recente e ter cobertura suficiente, com quartis disponíveis, enquanto referências antigas aparecem como históricas [disponibilidade]. Na ausência de preço de mercado, ainda é possível analisar a contribuição de um preço de venda informado [disponibilidade]. Compare a contribuição nos cenários da faixa antes de alterar o preço."
+    },
+    {
+      "question": "Vale promoção nesta época do ano?",
+      "retrieval_status": "ok",
+      "retrieved_ids": [
+        "saz_supermercados_pr"
+      ],
+      "seconds": 1.077,
+      "accepted": true,
+      "answer": "A margem de contribuição atual é de R$ 8,86 por unidade (31,75%), e o preço avaliado está R$ 2,01 acima da mediana. Antes de alterar o preço, compare a contribuição nos cenários da faixa, pois um valor maior pode reduzir o volume vendido. Como sugestão do setor, a Black Friday de 23/11 a 29/11 cita café entre as categorias associadas à data, embora isso não seja uma previsão para a sua loja. Além disso, os supermercados do Paraná registram em novembro um volume de vendas 3% acima da média do ano, sendo esta uma tendência do setor no estado e não de um produto específico [saz_supermercados_pr]."
+    },
+    {
+      "question": "Quais são as premissas da tributação estimada?",
+      "retrieval_status": "ok",
+      "retrieved_ids": [
+        "premissas_tributarias"
+      ],
+      "seconds": 0.97,
+      "accepted": true,
+      "answer": "A tributação estimada usa perfis demonstrativos do Simples Nacional, do Lucro Presumido e do Lucro Real [premissas_tributarias]. O cenário é um varejista de Curitiba vendendo para consumidor final, com ICMS-ST já recolhido e incluído no custo bruto informado [premissas_tributarias]. As condições são fictícias e visíveis na tela [premissas_tributarias]. O modelo não realiza apuração fiscal de uma empresa real nem homologação dos produtos [premissas_tributarias]."
+    },
+    {
+      "question": "O que a pesquisa diz sobre bebidas no Natal?",
+      "retrieval_status": "ok",
+      "retrieved_ids": [
+        "saz_natal_bebidas"
+      ],
+      "seconds": 1.2,
+      "accepted": true,
+      "answer": "Segundo pesquisa do SuperVarejo citada nas fontes, na semana do Natal de 2023 comparada à de 2022, as vendas de refrigerante cresceram 28,9% e as de cerveja 23,3% em supermercados e atacarejos [saz_natal_bebidas]. A matéria não especifica se esse crescimento se refere ao volume ou ao faturamento [saz_natal_bebidas]. Ressalta-se que esses dados de sazonalidade são apenas sugestões do setor, e não previsões para a sua loja ou produto [saz_natal_bebidas]."
+    },
+    {
+      "question": "Por que a referência do Café Pilão é R$ 25,89?",
+      "retrieval_status": "ok",
+      "retrieved_ids": [
+        "cafe_metodo"
+      ],
+      "seconds": 1.096,
+      "accepted": true,
+      "answer": "A referência do Café Pilão 500 g é calculada utilizando a mediana por loja, consolidando um preço mediano por endereço em cada mês e, depois, a mediana dos meses de cada loja [cafe_metodo]. Além disso, em 29/10/2026, o preço avaliado está R$ 2,01 (7,76%) acima da mediana observada, sendo que o índice usa a mediana como referência 100. Depois de custo e tributos, a margem de contribuição é de R$ 8,86 por unidade (31,75%). Como sugestão do setor, a Black Friday (de 23/11 a 29/11) cita café entre as categorias associadas à data, lembrando que se trata de uma sugestão de pesquisa de mercado e não de uma previsão para a sua loja [season]."
+    },
+    {
+      "question": "O Café está em promoção hoje?",
+      "retrieval_status": "fora_do_escopo",
+      "retrieved_ids": [],
+      "accepted": true,
+      "answer": "O app usa preços já coletados, com data da última coleta. Não consulta preço, promoção ou estoque em tempo real."
+    },
+    {
+      "question": "Quanto de imposto minha empresa paga?",
+      "retrieval_status": "fora_do_escopo",
+      "retrieved_ids": [],
+      "accepted": true,
+      "answer": "A tributação do app usa perfis demonstrativos por regime. Não tem os dados fiscais da sua empresa; para a carga real, consulte a sua contabilidade."
+    }
+  ],
+  "model": "gemini-flash-lite-latest",
+  "market": {
+    "date": "2026-10-29",
+    "median": "25.89",
+    "p25": "23.2",
+    "p75": "26.99",
+    "store_count": 57,
+    "network_count": 25,
+    "observation_count": 200,
+    "window": [
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source": "dados/clique_economia_mensal_2024_2026.parquet",
+  "source_sha256": "597253ad5be385308ecc0e3c8205bcacbd448c75da3a101e95696571dee04fc6",
+  "catalog_sha256": "167b8bb0f58983cdece1ea3a062dbcf2ab733fa66c4e6a2df687241f69d48942",
+  "selected_ean": "7894900027013",
+  "snapshot_date": "2026-10-01",
+  "identity_method": "exact_source_code_only_pending_team_review",
+  "excluded_rows_in_cohort": {
+    "missing_nonpositive_regular_price": 16
+  },
+  "store_identity_rule": "company_id_else_normalized_full_address",
+  "catalog_note": "Original Pepsi description also mentions Coca Cola; kept unchanged, separate display label for review.",
+  "limitations": "Exploratory exact-code subset, no recovered aliases. No shopper profile, demand or forecasting model."
+}

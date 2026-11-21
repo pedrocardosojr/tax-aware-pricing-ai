@@ -1,0 +1,20 @@
+{
+  "conjunto": "reservado1",
+  "fontes_corretas": 10,
+  "perguntas_com_fonte": 11,
+  "recusas_corretas": 5,
+  "perguntas_fora_do_acervo": 5,
+  "erros": [
+    {
+      "pergunta": "Quantas lojas entram na referência do café quando se usa o diário?",
+      "esperado": "cafe_janela",
+      "recuperado": "cafe_metodo",
+      "status": "ok",
+      "pontuacao": 0.2575,
+      "fontes": [
+        "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/mercado/pilao_referencia.py",
+        "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/dados/pilao_sem_e_com_diario.csv"
+      ]
+    }
+  ]
+}

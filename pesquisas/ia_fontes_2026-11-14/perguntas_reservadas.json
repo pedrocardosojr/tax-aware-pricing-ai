@@ -1,0 +1,18 @@
+[
+  ["Por que o número principal usa as lojas e o gráfico mostra redes?", "cafe_metodo"],
+  ["Se uma loja tem várias coletas no mesmo mês, como isso entra na conta?", "cafe_metodo"],
+  ["Quantas lojas entram na referência do café quando se usa o diário?", "cafe_janela"],
+  ["Por que usar seis meses e não três?", "cafe_janela"],
+  ["Quem coleta esses preços de supermercado?", "clique_origem"],
+  ["Os preços observados são de qual cidade?", "clique_origem"],
+  ["Se eu baixar o preço, quanto preciso vender a mais para ganhar o mesmo?", "simulador"],
+  ["O app garante que vou vender mais se reduzir o preço?", "simulador"],
+  ["Por que um produto com referência antiga fica sem faixa de preço sugerida?", "disponibilidade"],
+  ["Como o app calcula o imposto em cada regime?", "premissas_tributarias"],
+  ["Os números da explicação podem ser inventados pelo modelo?", "validador"],
+  ["Quanto de imposto eu pago no Lucro Real com o meu faturamento?", null],
+  ["Qual crédito de PIS e Cofins a minha loja pode aproveitar?", null],
+  ["Qual supermercado está com o café mais barato agora?", null],
+  ["Quanto o Carrefour vai cobrar pelo café em dezembro?", null],
+  ["Vai chover amanhã em Curitiba?", null]
+]

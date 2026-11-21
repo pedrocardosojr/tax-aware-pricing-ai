@@ -1,0 +1,43 @@
+{
+  "cenario": "mensal",
+  "reference": {
+    "id_produto": "7896089011357",
+    "camada": "observado",
+    "janela": [
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "aggregation": "median_across_stores",
+    "mediana": 25.98,
+    "p25": 24.07,
+    "p75": 28.67,
+    "n_obs": 26,
+    "n_lojas": 26,
+    "n_redes": 14,
+    "ultima_obs": "2026-10-01",
+    "cobertura_ok": true
+  },
+  "per_network_brl": {
+    "Araucária": 26.99,
+    "Assaí": 24.85,
+    "Atacadão": 21.49,
+    "Carrefour": 24.99,
+    "Condor": 29.49,
+    "Festval": 36.9,
+    "Gabão": 28.9,
+    "Jacomar": 25.98,
+    "Max Atacadista": 21.9,
+    "Palmeira": 34.95,
+    "Stall": 28.98,
+    "Super Curitiba": 27.99,
+    "Super Muffato": 21.9,
+    "Telêmaco": 27.99
+  },
+  "por_rede": {
+    "mediana": 27.49,
+    "p25": 24.88,
+    "p75": 28.96
+  },
+  "source": "Clique Economia (mensal); janela 2026-08..2026-10; loja-mes -> loja -> rede; mercado/estatisticas.py@9b9d4f8"
+}

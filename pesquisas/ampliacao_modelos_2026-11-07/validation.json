@@ -1,0 +1,16 @@
+{
+  "validation_date": "2026-11-07",
+  "research_tests_passed": 6,
+  "existing_tests_passed": 103,
+  "pylint_score": 10.0,
+  "mypy_source_files": 4,
+  "mypy_ignore_missing_imports": true,
+  "sha256": {
+    "dados/clique_economia_mensal_2024_2026.parquet": "597253ad5be385308ecc0e3c8205bcacbd448c75da3a101e95696571dee04fc6",
+    "dados/catalogo/skus_50.json": "167b8bb0f58983cdece1ea3a062dbcf2ab733fa66c4e6a2df687241f69d48942",
+    "scripts/pilot_daily_prices.py": "3e3195aa6add9645502746bcceeefa3036ef9c2520a9a0008cd234724ca58776",
+    "scripts/pilot_description_prices.py": "9a1d5b1948a2fd28027750a346e9684e6954264993d515f823acf7dcc4200d41",
+    "scripts/benchmark_price_estimates.py": "9a4ca71cd76665dd17e36bcc3957d71bb7134c1c7bb4fcf62df4e6d7ab973160",
+    "pesquisas/ampliacao_modelos_2026-11-07/test_research.py": "83eaea8614fd77f2be9e48ec01c40732b0ec8b679318f03bc50a0921c911ea54"
+  }
+}

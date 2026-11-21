@@ -1,0 +1,29 @@
+{
+  "conjunto": "reservado2",
+  "fontes_corretas": 10,
+  "perguntas_com_fonte": 11,
+  "recusas_corretas": 3,
+  "perguntas_fora_do_acervo": 4,
+  "erros": [
+    {
+      "pergunta": "Com o diário a referência ficou mais precisa?",
+      "esperado": "cafe_janela",
+      "recuperado": "disponibilidade",
+      "status": "ok",
+      "pontuacao": 0.2759,
+      "fontes": [
+        "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/tax_pricing/mvp_analysis.py"
+      ]
+    },
+    {
+      "pergunta": "Qual é o melhor time de futebol de Curitiba?",
+      "esperado": null,
+      "recuperado": "saz_clima_curitiba",
+      "status": "ok",
+      "pontuacao": 0.2361,
+      "fontes": [
+        "https://portal.inmet.gov.br/normais"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "base_commit": "59b1bc5ebb6793e8916e7b17f3fa3c7e06d67c9e",
+  "statistics_commit": "bd8fc396dd933272f1b5978b809f39cc55cc446e",
+  "main_commit": "9b13fc93001a1f32db3d46a41ea24e95ad534ff6",
+  "clean_rows": 15730,
+  "catalog_source": "dados/catalogo/skus_50.json",
+  "dataset_sha256": "597253ad5be385308ecc0e3c8205bcacbd448c75da3a101e95696571dee04fc6",
+  "integration_status": "first_snapshot_integration_pending_team_review",
+  "daily_additions_included": false,
+  "aliases_applied": false,
+  "rtc_live_calls": 0
+}

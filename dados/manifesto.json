@@ -1,0 +1,17 @@
+[
+  {
+    "arquivo": "dados/clique_economia_mensal_2024_2026.parquet",
+    "bytes": 1000004,
+    "sha256": "597253ad5be385308ecc0e3c8205bcacbd448c75da3a101e95696571dee04fc6"
+  },
+  {
+    "arquivo": "dados/ncm_oficial/ncm_siscomex.json",
+    "bytes": 3149450,
+    "sha256": "df17637359620b37a1039800b7a24788cc3234b149f75ecfabf357e6acc02b9e"
+  },
+  {
+    "arquivo": "dados/ncm_oficial/ncm8_texto_hierarquico.parquet",
+    "bytes": 735250,
+    "sha256": "1cedd653c40cf9962e5f79d99df202cb63f39ad4f7ffc87b496ac02a98a1292b"
+  }
+]

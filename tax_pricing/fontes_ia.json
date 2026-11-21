@@ -1,0 +1,155 @@
+[
+ {
+  "id": "cafe_metodo",
+  "title": "Como se calcula a referência do Café Pilão",
+  "url": "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/mercado/pilao_referencia.py",
+  "text": "A referência do Café Pilão 500 g usa mediana por loja. Para consolidar, calcula-se um preço mediano por endereço em cada mês e depois a mediana dos meses de cada loja. Os quartis P25 e P75 vêm da distribuição desses valores por loja. O gráfico resume a amostra com um ponto por rede, enquanto o número principal usa as lojas.",
+  "terms": "mediana preço central por loja endereço várias coletas consolidar quartis P25 P75 rede gráfico ponto por rede"
+ },
+ {
+  "id": "cafe_janela",
+  "title": "Comparativo das janelas do Café com e sem diário",
+  "url": "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/dados/pilao_sem_e_com_diario.csv",
+  "text": "O comparativo do Café testa três ou seis meses, com e sem diário. De maio a outubro, o diário amplia a cobertura de 43 para 60 lojas, passa de 20 para 27 redes e tem última coleta em 29/10/2026. Nesse recorte, a largura relativa do intervalo bootstrap da mediana passa de 11,12% para 5,44%.",
+  "terms": "quantas lojas e redes cobertura janela de meses seis três diário período última coleta intervalo incerteza precisão"
+ },
+ {
+  "id": "clique_origem",
+  "title": "Origem dos preços do Clique Economia",
+  "url": "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/pesquisas/ampliacao_modelos_2026-11-07/README.md",
+  "text": "Os preços observados vêm da pesquisa pública Clique Economia de Curitiba. O diário de outubro amplia a base mensal com preços regulares observados de 46 códigos exatos. Os arquivos adicionais trazem preços coletados entre 2 e 29 de outubro de 2026, com origem registrada no manifesto.",
+  "terms": "quem coleta pesquisa pública de preços supermercados Curitiba cidade origem fonte dos dados"
+ },
+ {
+  "id": "simulador",
+  "title": "Simulador de contribuição e volume",
+  "url": "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/tax_pricing/pricing_scenarios.py",
+  "text": "O simulador recalcula a contribuição por unidade para outro preço de venda com as mesmas premissas. Mostra a variação de volume necessária para manter a contribuição total quando as contribuições são positivas. Este cálculo é um cenário, sem previsão de demanda ou volume de vendas.",
+  "terms": "baixar subir reduzir aumentar o preço desconto vender a mais volume unidades quantidade contribuição margem ganhar o mesmo garante vendas demanda"
+ },
+ {
+  "id": "disponibilidade",
+  "title": "Disponibilidade da referência e da faixa de preço",
+  "url": "https://github.com/pedrocardosojr/tax-pricing/blob/268acfb829b83febdd222bee9395de04f48b2299/mercado/estatisticas.py",
+  "text": "Referência antiga aparece como histórica e não pode sugerir faixa atual. Para sugerir faixa de preços, a referência deve ser observada, recente e ter cobertura suficiente, com quartis disponíveis. Na ausência de preço de mercado, ainda é possível analisar a contribuição de um preço de venda informado. A faixa P25–P75 reúne a metade central dos valores consolidados por loja. P25 é o primeiro quartil (percentil 25) e P75 é o terceiro quartil (percentil 75). Eles descrevem dispersão dos preços observados e não são um intervalo de confiança nem um preço ótimo.",
+  "terms": "referência antiga histórica sem faixa sugerida preço ausente sem preço de mercado cobertura insuficiente"
+ },
+ {
+  "id": "premissas_tributarias",
+  "title": "Premissas da tributação estimada nos três regimes",
+  "url": "https://github.com/pedrocardosojr/tax-pricing/blob/268acfb829b83febdd222bee9395de04f48b2299/tax_pricing/demo_profile.py",
+  "text": "A tributação estimada usa perfis demonstrativos do Simples Nacional, do Lucro Presumido e do Lucro Real para um varejista de Curitiba vendendo ao consumidor final. O tratamento varia por produto e regime. ICMS-ST retido na compra e incluído no custo só se aplica quando essa premissa estiver indicada no cenário selecionado. As condições são fictícias e visíveis na tela. A margem usa as parcelas e créditos desse perfil. O cálculo oficial de IBS/CBS é um detalhe separado e não deve ser somado novamente à dedução da margem. Não é apuração fiscal de uma empresa real nem homologação dos produtos.",
+  "terms": "imposto impostos tributos tributação regime Simples Nacional Lucro Presumido Lucro Real ICMS ICMS-ST PIS Cofins DAS exemplo demonstrativo cálculo calcula calcular imposto em cada regime"
+ },
+ {
+  "id": "validador",
+  "title": "Como a explicação escrita pelo modelo é conferida",
+  "url": "https://github.com/pedrocardosojr/tax-pricing/blob/86cf6479531e3696b639ed0fa7c291d259ef7548/tax_pricing/ui/grounded_explanation.py",
+  "text": "O modelo de linguagem escreve a explicação a partir dos números calculados pelo app. Antes de mostrar, um validador confere cada seção, contribuição, posição frente ao mercado e ação, com os fatos dessa seção. Se algum número não vier do cálculo ou estiver na métrica errada, a tela mostra o texto padrão do app.",
+  "terms": "modelo de linguagem IA texto explicação números inventados confiar conferido validado"
+ },
+ {
+  "id": "saz_supermercados_pr",
+  "external": true,
+  "title": "Em que meses os supermercados do Paraná vendem mais (IBGE)",
+  "url": "https://sidra.ibge.gov.br/tabela/8882",
+  "text": "Volume de vendas de hiper e supermercados no Paraná, Pesquisa Mensal de Comércio do IBGE. Na média de 2022 a 2025, dezembro fica 21% acima da média do ano (entre 18% e 25%), novembro 3% acima e outubro 1% acima. Fevereiro é o mês mais fraco, 8% abaixo; junho fica 6% abaixo e janeiro 5% abaixo. É o setor inteiro no estado, não um produto nem uma loja. Cópia em dados/externo/ibge_pmc_pr_supermercados_sazonalidade.csv.",
+  "terms": "época do ano mês que vende mais sazonalidade sazonal movimento fim de ano dezembro natal fevereiro supermercado Paraná vale a pena promoção"
+ },
+ {
+  "id": "saz_clima_curitiba",
+  "external": true,
+  "title": "Estações do ano em Curitiba (INMET)",
+  "url": "https://portal.inmet.gov.br/normais",
+  "text": "Normais climatológicas 1991–2020 do INMET para a estação de Curitiba. A temperatura média vai de 21,3 °C em janeiro e 21,4 °C em fevereiro a 13,8 °C em julho, com mínima média de 9,3 °C em julho. No verão, de dezembro a março, as máximas médias ficam entre 26 e 27 °C; no inverno, de junho a agosto, entre 20 e 22 °C. Cópia em dados/externo/inmet_normais_1991_2020_curitiba.csv.",
+  "terms": "estação do ano estações verão inverno frio calor clima temperatura Curitiba época"
+ },
+ {
+  "id": "saz_datas_abras",
+  "external": true,
+  "title": "Datas de maior impacto nos supermercados (ABRAS)",
+  "url": "https://static.abras.com.br/pdf/release-dia-dos-supermercados.pdf",
+  "text": "Segundo a Associação Brasileira de Supermercados, em release de 2022, as datas de maior impacto para os supermercados no Brasil são a Páscoa, o Dia das Mães e o Natal.",
+  "terms": "datas comemorativas festivas calendário promocional Páscoa Dia das Mães Natal"
+ },
+ {
+  "id": "saz_natal_bebidas",
+  "external": true,
+  "title": "Bebidas na semana do Natal",
+  "url": "https://www.supervarejo.com.br/economia/supermercados-cresceram-30-em-vendas-na-semana-do-natal",
+  "text": "Na semana do Natal de 2023, comparada à de 2022, as vendas de refrigerante cresceram 28,9% e as de cerveja 23,3% em supermercados e atacarejos, segundo o SuperVarejo (25/01/2024). A matéria não diz se é volume ou faturamento.",
+  "terms": "natal ano novo fim de ano festas dezembro bebidas refrigerante cerveja suco"
+ },
+ {
+  "id": "saz_dia_dos_pais",
+  "external": true,
+  "title": "Dia dos Pais nos supermercados",
+  "url": "https://supervarejo.com.br/varejo/dia-dos-pais-aquece-vendas-de-carnes-e-bebidas-nos-supermercados",
+  "text": "No Dia dos Pais de 2025, comparado a 2024, cresceram em volume pão de alho (7,2%), carne bovina (6,2%), cerveja (4,4%), carne suína (3,8%), linguiça (2,8%) e farofa (2,1%), com dados da Scanntech citados pelo SuperVarejo (31/07/2026).",
+  "terms": "dia dos pais agosto churrasco carne cerveja data comemorativa"
+ },
+ {
+  "id": "saz_carnaval",
+  "external": true,
+  "title": "Carnaval nos supermercados",
+  "url": "https://supervarejo.com.br/economia/bebidas-nao-alcoolicas-avancam-53-em-janeiro",
+  "text": "Em janeiro de 2026, com a proximidade do Carnaval, a água cresceu 11,4% contra janeiro de 2025 e foi a bebida que mais contribuiu para o resultado; refrigerantes cresceram 3,6% e cerveja 3,9%, segundo estudo da Scanntech citado pelo SuperVarejo (19/02/2026). A matéria não diz se é volume ou faturamento.",
+  "terms": "carnaval fevereiro folia água refrigerante cerveja bebidas"
+ },
+ {
+  "id": "saz_pascoa",
+  "external": true,
+  "title": "Páscoa nos supermercados",
+  "url": "https://supervarejo.com.br/economia/itens-de-pascoa-apresentou-crescimento-de-5-no-faturamento-no-inicio-de-marco",
+  "text": "A cesta pré-Páscoa cresceu 5,1% em faturamento na semana de 1 a 7 de março de 2026 contra 2025, segundo a Scanntech (SuperVarejo, 01/04/2026). Ovo de Páscoa liderou (+105,5% em faturamento no primeiro bimestre); chocolate +7,0%, bacalhau +7,8% e sardinha enlatada +29,2%; azeite caiu 18,8% e creme de leite 8,5%. Nenhum produto do catálogo do app está nessa cesta.",
+  "terms": "páscoa março abril chocolate ovo bacalhau peixe semana santa"
+ },
+ {
+  "id": "saz_maes",
+  "external": true,
+  "title": "Dia das Mães nos supermercados",
+  "url": "https://supervarejo.com.br/economia/alimentos-sao-os-responsaveis-pelo-crescimento-da-cesta-de-dia-das-maes",
+  "text": "Segundo a Scanntech, o Dia das Mães foi a terceira data mais importante para o varejo alimentar em 2024 e respondeu por 16,9% das vendas da semana anterior; alimentos explicaram 75,7% do crescimento da cesta. Em abril de 2025, leite condensado (+36,5%), vinho (+32,2%) e creme de leite (+21,9%) cresceram em faturamento (SuperVarejo, 09/05/2025).",
+  "terms": "dia das mães maio almoço presente data comemorativa"
+ },
+ {
+  "id": "saz_namorados",
+  "external": true,
+  "title": "Dia dos Namorados nos supermercados",
+  "url": "https://supervarejo.com.br/varejo/muito-alem-do-presente-a-nova-cesta-do-dia-dos-namorados",
+  "text": "Em 2025, o jantar em casa foi a principal ocasião do Dia dos Namorados no varejo alimentar: fondue vendeu 13 vezes a média das quintas-feiras anteriores, espumante cresceu 217,9%, vinho 174,5% e frutos do mar 133%, segundo a Scanntech (SuperVarejo, 11/06/2026).",
+  "terms": "dia dos namorados junho jantar vinho espumante fondue"
+ },
+ {
+  "id": "saz_junina",
+  "external": true,
+  "title": "Festas juninas nos supermercados",
+  "url": "https://gironews.com/supermercado/cesta-junina-cresce-17-entre-os-meses-de-junho-e-julho/",
+  "text": "Em junho e julho, a cesta junina vende 17% acima da média do ano, segundo a Scanntech (Giro News, 05/06/2024): doces industrializados +28%, vinho +27%, milho de pipoca +23%, coco ralado +20% e amendoim +19%. Em Curitiba, coincide com o início do frio.",
+  "terms": "festa junina são joão junho julho quentão pipoca amendoim milho"
+ },
+ {
+  "id": "saz_criancas",
+  "external": true,
+  "title": "Dia das Crianças nos supermercados",
+  "url": "https://jornaldobras.com.br/noticia/40191/vendas-de-brinquedos-na-semana-das-criancas-apresentam-uma-queda-de-15-5-no-varejo-alimentar",
+  "text": "Na semana do Dia das Crianças de 2024, as vendas de brinquedos em supermercados e atacarejos ficaram 194,9% acima da média do ano, abaixo dos 239,7% de 2023, segundo a Scanntech (Jornal do Brás, 24/10/2024). A matéria não traz dados de alimentos ou bebidas.",
+  "terms": "dia das crianças outubro brinquedo doces"
+ },
+ {
+  "id": "saz_black_friday",
+  "external": true,
+  "title": "Black Friday nos supermercados",
+  "url": "https://www.supervarejo.com.br/varejo/black-friday-registrou-aumento-de-196-nas-vendas-em-2024",
+  "text": "Na semana da Black Friday de 2024, o varejo alimentar cresceu 19,6% contra 2023, segundo a Scanntech (SuperVarejo, 10/12/2024). Nos supermercados, a mercearia básica cresceu 25,4% e as bebidas 21,9% em faturamento; óleo e café foram os itens que mais contribuíram para o faturamento da mercearia básica.",
+  "terms": "black friday novembro promoção desconto mercearia básica óleo café bebidas"
+ },
+ {
+  "id": "saz_feriados",
+  "external": true,
+  "title": "Feriados nacionais e de Curitiba",
+  "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm",
+  "text": "Feriados nacionais: 1º de janeiro, 21 de abril, 1º de maio, 7 de setembro, 2 e 15 de novembro e 25 de dezembro (Lei 662/1949, redação da Lei 10.607/2002), 12 de outubro (Lei 6.802/1980) e 20 de novembro (Lei 14.759/2023). Em Curitiba também são feriado 8 de setembro, dia de Nossa Senhora da Luz dos Pinhais, Sexta-feira Santa e Corpus Christi. Carnaval é ponto facultativo. O app não tem dado de vendas por feriado.",
+  "terms": "feriado feriados prolongado calendário folga"
+ }
+]

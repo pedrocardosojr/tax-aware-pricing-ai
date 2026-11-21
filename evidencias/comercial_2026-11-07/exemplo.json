@@ -1,0 +1,43 @@
+{
+  "scenario_kind": "illustrative_arithmetic",
+  "fiscal_assessment_status": "pending",
+  "business_regime": "not_selected",
+  "market_reference_source": "fictional_example",
+  "assumptions": {
+    "gross_cost_brl": "6.00",
+    "usable_credit_brl": "0",
+    "selling_price_brl": "10.00",
+    "market_reference_brl": "12.00",
+    "target_fraction": ".25",
+    "tax_rate": "0.10",
+    "expense_rate": "0.05",
+    "expense_per_unit": "0.50"
+  },
+  "current": {
+    "selling_price_brl": "10",
+    "net_cost_brl": "6",
+    "tax_brl": "1.00",
+    "expense_brl": "1.00",
+    "contribution_brl": "2.00",
+    "contribution_percent": "20.00"
+  },
+  "current_market": {
+    "price_index": "83.33333333333333333333333333",
+    "gap_brl": "-2",
+    "gap_percent": "-16.66666666666666666666666667"
+  },
+  "target_price_brl": "10.84",
+  "target": {
+    "selling_price_brl": "10.84",
+    "net_cost_brl": "6",
+    "tax_brl": "1.0840",
+    "expense_brl": "1.0420",
+    "contribution_brl": "2.7140",
+    "contribution_percent": "25.03690036900369003690036900"
+  },
+  "target_market": {
+    "price_index": "90.33333333333333333333333333",
+    "gap_brl": "-1.16",
+    "gap_percent": "-9.666666666666666666666666670"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "conjunto": "construcao",
+  "fontes_corretas": 13,
+  "perguntas_com_fonte": 13,
+  "recusas_corretas": 3,
+  "perguntas_fora_do_acervo": 4,
+  "erros": [
+    {
+      "pergunta": "Quais marcas vendem mais no Natal?",
+      "esperado": null,
+      "recuperado": "saz_supermercados_pr",
+      "status": "ok",
+      "pontuacao": 0.178,
+      "fontes": [
+        "https://sidra.ibge.gov.br/tabela/8882"
+      ]
+    }
+  ]
+}

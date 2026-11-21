@@ -1,0 +1,43 @@
+{
+  "reference": {
+    "id_produto": "7896279600750",
+    "camada": "observado",
+    "janela": [
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "aggregation": "median_across_stores",
+    "mediana": 23.94,
+    "p25": 20.92,
+    "p75": 24.64,
+    "n_obs": 135,
+    "n_lojas": 39,
+    "n_redes": 15,
+    "ultima_obs": "2026-10-29",
+    "cobertura_ok": true
+  },
+  "per_network_brl": {
+    "Araucária": 24.99,
+    "Atacadão": 20.9,
+    "Condor": 23.94,
+    "Fuchspan": 22.48,
+    "Harger": 22.99,
+    "Hipermercado Condor Novo Mundo": 24.49,
+    "Jacomar": 23.98,
+    "Max Atacadista": 19.89,
+    "Palmeira": 28.2,
+    "REDE MASTER": 36.9,
+    "Super Curitiba": 24.99,
+    "Super Dia": 28.98,
+    "Super Muffato": 18.09,
+    "Tissi": 32.9,
+    "Zamprogna": 14.99
+  },
+  "por_rede": {
+    "mediana": 23.98,
+    "p25": 21.69,
+    "p75": 26.6
+  },
+  "source": "Clique Economia (mensal + diário); janela 2026-08..2026-10; loja-mes -> loja -> rede; status atual; mercado/exportar.py@3dd3188"
+}

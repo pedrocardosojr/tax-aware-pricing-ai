@@ -1,0 +1,977 @@
+{
+  "mode": "demonstration",
+  "fictional_values": "company profiles, cost, current price and fees",
+  "observed_values": "the supplied dated market snapshot only",
+  "cases": 6,
+  "ready": 6,
+  "rows": [
+    {
+      "inputs": {
+        "ean": "7894900027013",
+        "regime": "simples_nacional",
+        "acquisition_cost": "7",
+        "selling_price": "12"
+      },
+      "result": {
+        "mode": "demonstration",
+        "notice": "Tributação estimada com perfil demonstrativo. A margem de contribuição usa as premissas exibidas; não é a apuração fiscal real da empresa.",
+        "labels": {
+          "margin": "Margem de contribuição",
+          "tax": "Tributação estimada",
+          "margin_note": "Calculada com a tributação estimada e as despesas do cenário."
+        },
+        "product": {
+          "ean": "7894900027013",
+          "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+          "group": "Refrigerante 2 L",
+          "type": "cola",
+          "package": "2 L",
+          "ncm": "22021000",
+          "supplier_review_status": "confirmado",
+          "fiscal_review_status": "pending",
+          "ncm_trace": {
+            "grupo": "Refrigerante 2 L",
+            "id_produto": "7894900027013",
+            "descricao": "REFRIGERANTE -COCA COLA -2 LITRO",
+            "ncm_final": "22021000",
+            "status_ncm": "confirmado",
+            "revisor": "Rodrigo",
+            "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+          }
+        },
+        "assumptions": {
+          "mode": "demonstration",
+          "regime": "simples_nacional",
+          "profile": {
+            "rbt12_brl": "360000",
+            "nominal_fraction": "0.073",
+            "deduction_brl": "5940",
+            "purchase_credit_fraction": "0",
+            "components": [
+              {
+                "name": "DAS",
+                "formula": "simples_effective_rate",
+                "basis": "selling_price"
+              }
+            ]
+          },
+          "credit_fraction": "0",
+          "credit_brl": "0.00",
+          "expense_rate": "0.05",
+          "expense_per_unit_brl": "0.50",
+          "rtc_base_rule": "scenario_selling_price_as_demonstration_base"
+        },
+        "market": {
+          "ean": "7894900027013",
+          "date": "2026-10-01",
+          "median": "11.99",
+          "p25": "11.99",
+          "p75": "12.965",
+          "network_count": 7,
+          "kind": "observed",
+          "source": "research/precos-e-outputs:pesquisas/precos_2026-11-05/precos_por_rede_refrigerantes.csv",
+          "source_sha256": "66aafd59b7c6af4a6cee16135b60ec2b775a5562ae427255a593928e5c0897f2",
+          "per_network_brl": {
+            "Araucária": "11.99",
+            "Atacadão": "11.99",
+            "Gabão": "12.95",
+            "Palmeira": "11.85",
+            "Super Curitiba": "12.98",
+            "Telêmaco": "11.99",
+            "Triunfo": "12.98"
+          },
+          "age_days": 37,
+          "status": "current_reference",
+          "usable_for_band": true
+        },
+        "corridor_points": [
+          {
+            "price_brl": "11.99",
+            "contribution_brl": "3.213065",
+            "contribution_percent": "26.79787322768974145120934112"
+          },
+          {
+            "price_brl": "12.96",
+            "contribution_brl": "4.079760",
+            "contribution_percent": "31.47962962962962962962962963"
+          }
+        ],
+        "corridor_method": "provisional_observed_P25_P75_with_scenario_margins",
+        "price_origin": "user_price",
+        "evaluated_price_brl": "12",
+        "analysis": {
+          "ean": "7894900027013",
+          "ncm": "22021000",
+          "price_origin": "user_price",
+          "personalized": {
+            "regime": "simples_nacional",
+            "competence": "2026-11",
+            "status": "calculated_from_supplied_profile",
+            "missing_fields": [],
+            "scope": "MVP demonstration, not actual taxpayer liability",
+            "fiscal_validation": "not_certified",
+            "margin": {
+              "selling_price_brl": "12",
+              "net_cost_brl": "7.00",
+              "tax_brl": "0.6780",
+              "expense_brl": "1.10",
+              "contribution_brl": "3.2220",
+              "contribution_percent": "26.8500"
+            },
+            "tax_components": [
+              {
+                "name": "DAS",
+                "base_brl": "12",
+                "rate": "0.0565",
+                "amount_brl": "0.6780",
+                "basis": "selling_price",
+                "source": "versioned hypothetical MVP assumptions"
+              }
+            ],
+            "tax_total_brl": "0.6780",
+            "purchase_credit_source": "configured hypothetical purchase fraction"
+          },
+          "rtc": {
+            "status": "unavailable",
+            "result": null,
+            "reason": "RTC unavailable; no tax estimate produced."
+          },
+          "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+        },
+        "market_position": {
+          "price_index": "100.0834028356964136780650542",
+          "gap_brl": "0.01",
+          "gap_percent": "0.083402835696413678065054200"
+        },
+        "status": "ready",
+        "pending_internal_data": [],
+        "insights": [
+          "Contribuição no cenário: R$ 3.22 por unidade (26.8%).",
+          "Na referência de 2026-10-01, o preço está 0.1% acima da mediana observada."
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "ean": "7894900027013",
+        "regime": "simples_nacional",
+        "acquisition_cost": "7",
+        "selling_price": null
+      },
+      "result": {
+        "mode": "demonstration",
+        "notice": "Tributação estimada com perfil demonstrativo. A margem de contribuição usa as premissas exibidas; não é a apuração fiscal real da empresa.",
+        "labels": {
+          "margin": "Margem de contribuição",
+          "tax": "Tributação estimada",
+          "margin_note": "Calculada com a tributação estimada e as despesas do cenário."
+        },
+        "product": {
+          "ean": "7894900027013",
+          "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+          "group": "Refrigerante 2 L",
+          "type": "cola",
+          "package": "2 L",
+          "ncm": "22021000",
+          "supplier_review_status": "confirmado",
+          "fiscal_review_status": "pending",
+          "ncm_trace": {
+            "grupo": "Refrigerante 2 L",
+            "id_produto": "7894900027013",
+            "descricao": "REFRIGERANTE -COCA COLA -2 LITRO",
+            "ncm_final": "22021000",
+            "status_ncm": "confirmado",
+            "revisor": "Rodrigo",
+            "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+          }
+        },
+        "assumptions": {
+          "mode": "demonstration",
+          "regime": "simples_nacional",
+          "profile": {
+            "rbt12_brl": "360000",
+            "nominal_fraction": "0.073",
+            "deduction_brl": "5940",
+            "purchase_credit_fraction": "0",
+            "components": [
+              {
+                "name": "DAS",
+                "formula": "simples_effective_rate",
+                "basis": "selling_price"
+              }
+            ]
+          },
+          "credit_fraction": "0",
+          "credit_brl": "0.00",
+          "expense_rate": "0.05",
+          "expense_per_unit_brl": "0.50",
+          "rtc_base_rule": "scenario_selling_price_as_demonstration_base"
+        },
+        "market": {
+          "ean": "7894900027013",
+          "date": "2026-10-01",
+          "median": "11.99",
+          "p25": "11.99",
+          "p75": "12.965",
+          "network_count": 7,
+          "kind": "observed",
+          "source": "research/precos-e-outputs:pesquisas/precos_2026-11-05/precos_por_rede_refrigerantes.csv",
+          "source_sha256": "66aafd59b7c6af4a6cee16135b60ec2b775a5562ae427255a593928e5c0897f2",
+          "per_network_brl": {
+            "Araucária": "11.99",
+            "Atacadão": "11.99",
+            "Gabão": "12.95",
+            "Palmeira": "11.85",
+            "Super Curitiba": "12.98",
+            "Telêmaco": "11.99",
+            "Triunfo": "12.98"
+          },
+          "age_days": 37,
+          "status": "current_reference",
+          "usable_for_band": true
+        },
+        "corridor_points": [
+          {
+            "price_brl": "11.99",
+            "contribution_brl": "3.213065",
+            "contribution_percent": "26.79787322768974145120934112"
+          },
+          {
+            "price_brl": "12.96",
+            "contribution_brl": "4.079760",
+            "contribution_percent": "31.47962962962962962962962963"
+          }
+        ],
+        "corridor_method": "provisional_observed_P25_P75_with_scenario_margins",
+        "price_origin": "corridor_scenario",
+        "evaluated_price_brl": "11.99",
+        "analysis": {
+          "ean": "7894900027013",
+          "ncm": "22021000",
+          "price_origin": "corridor_scenario",
+          "personalized": {
+            "regime": "simples_nacional",
+            "competence": "2026-11",
+            "status": "calculated_from_supplied_profile",
+            "missing_fields": [],
+            "scope": "MVP demonstration, not actual taxpayer liability",
+            "fiscal_validation": "not_certified",
+            "margin": {
+              "selling_price_brl": "11.99",
+              "net_cost_brl": "7.00",
+              "tax_brl": "0.677435",
+              "expense_brl": "1.0995",
+              "contribution_brl": "3.213065",
+              "contribution_percent": "26.79787322768974145120934112"
+            },
+            "tax_components": [
+              {
+                "name": "DAS",
+                "base_brl": "11.99",
+                "rate": "0.0565",
+                "amount_brl": "0.677435",
+                "basis": "selling_price",
+                "source": "versioned hypothetical MVP assumptions"
+              }
+            ],
+            "tax_total_brl": "0.677435",
+            "purchase_credit_source": "configured hypothetical purchase fraction"
+          },
+          "rtc": {
+            "status": "unavailable",
+            "result": null,
+            "reason": "RTC unavailable; no tax estimate produced."
+          },
+          "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+        },
+        "market_position": {
+          "price_index": "100",
+          "gap_brl": "0.00",
+          "gap_percent": "0"
+        },
+        "status": "ready",
+        "pending_internal_data": [],
+        "insights": [
+          "Contribuição no cenário: R$ 3.21 por unidade (26.8%).",
+          "O preço coincide com a mediana da referência de mercado informada."
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "ean": "7894900027013",
+        "regime": "lucro_presumido",
+        "acquisition_cost": "7",
+        "selling_price": "12"
+      },
+      "result": {
+        "mode": "demonstration",
+        "notice": "Tributação estimada com perfil demonstrativo. A margem de contribuição usa as premissas exibidas; não é a apuração fiscal real da empresa.",
+        "labels": {
+          "margin": "Margem de contribuição",
+          "tax": "Tributação estimada",
+          "margin_note": "Calculada com a tributação estimada e as despesas do cenário."
+        },
+        "product": {
+          "ean": "7894900027013",
+          "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+          "group": "Refrigerante 2 L",
+          "type": "cola",
+          "package": "2 L",
+          "ncm": "22021000",
+          "supplier_review_status": "confirmado",
+          "fiscal_review_status": "pending",
+          "ncm_trace": {
+            "grupo": "Refrigerante 2 L",
+            "id_produto": "7894900027013",
+            "descricao": "REFRIGERANTE -COCA COLA -2 LITRO",
+            "ncm_final": "22021000",
+            "status_ncm": "confirmado",
+            "revisor": "Rodrigo",
+            "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+          }
+        },
+        "assumptions": {
+          "mode": "demonstration",
+          "regime": "lucro_presumido",
+          "profile": {
+            "purchase_credit_fraction": "0",
+            "components": [
+              {
+                "name": "ICMS",
+                "rate": "0.18",
+                "basis": "selling_price"
+              },
+              {
+                "name": "PIS",
+                "rate": "0.0065",
+                "basis": "selling_price_less_icms"
+              },
+              {
+                "name": "COFINS",
+                "rate": "0.03",
+                "basis": "selling_price_less_icms"
+              }
+            ]
+          },
+          "credit_fraction": "0",
+          "credit_brl": "0.00",
+          "expense_rate": "0.05",
+          "expense_per_unit_brl": "0.50",
+          "rtc_base_rule": "scenario_selling_price_as_demonstration_base"
+        },
+        "market": {
+          "ean": "7894900027013",
+          "date": "2026-10-01",
+          "median": "11.99",
+          "p25": "11.99",
+          "p75": "12.965",
+          "network_count": 7,
+          "kind": "observed",
+          "source": "research/precos-e-outputs:pesquisas/precos_2026-11-05/precos_por_rede_refrigerantes.csv",
+          "source_sha256": "66aafd59b7c6af4a6cee16135b60ec2b775a5562ae427255a593928e5c0897f2",
+          "per_network_brl": {
+            "Araucária": "11.99",
+            "Atacadão": "11.99",
+            "Gabão": "12.95",
+            "Palmeira": "11.85",
+            "Super Curitiba": "12.98",
+            "Telêmaco": "11.99",
+            "Triunfo": "12.98"
+          },
+          "age_days": 37,
+          "status": "current_reference",
+          "usable_for_band": true
+        },
+        "corridor_points": [
+          {
+            "price_brl": "11.99",
+            "contribution_brl": "1.37343930",
+            "contribution_percent": "11.45487322768974145120934112"
+          },
+          {
+            "price_brl": "12.96",
+            "contribution_brl": "2.09130720",
+            "contribution_percent": "16.13662962962962962962962963"
+          }
+        ],
+        "corridor_method": "provisional_observed_P25_P75_with_scenario_margins",
+        "price_origin": "user_price",
+        "evaluated_price_brl": "12",
+        "analysis": {
+          "ean": "7894900027013",
+          "ncm": "22021000",
+          "price_origin": "user_price",
+          "personalized": {
+            "regime": "lucro_presumido",
+            "competence": "2026-11",
+            "status": "calculated_from_supplied_profile",
+            "missing_fields": [],
+            "scope": "MVP demonstration, not actual taxpayer liability",
+            "fiscal_validation": "not_certified",
+            "margin": {
+              "selling_price_brl": "12",
+              "net_cost_brl": "7.00",
+              "tax_brl": "2.519160",
+              "expense_brl": "1.10",
+              "contribution_brl": "1.380840",
+              "contribution_percent": "11.507000"
+            },
+            "tax_components": [
+              {
+                "name": "ICMS",
+                "base_brl": "12",
+                "rate": "0.18",
+                "amount_brl": "2.16",
+                "basis": "selling_price",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "PIS",
+                "base_brl": "9.84",
+                "rate": "0.0065",
+                "amount_brl": "0.063960",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "COFINS",
+                "base_brl": "9.84",
+                "rate": "0.03",
+                "amount_brl": "0.2952",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              }
+            ],
+            "tax_total_brl": "2.519160",
+            "purchase_credit_source": "configured hypothetical purchase fraction"
+          },
+          "rtc": {
+            "status": "unavailable",
+            "result": null,
+            "reason": "RTC unavailable; no tax estimate produced."
+          },
+          "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+        },
+        "market_position": {
+          "price_index": "100.0834028356964136780650542",
+          "gap_brl": "0.01",
+          "gap_percent": "0.083402835696413678065054200"
+        },
+        "status": "ready",
+        "pending_internal_data": [],
+        "insights": [
+          "Contribuição no cenário: R$ 1.38 por unidade (11.5%).",
+          "Na referência de 2026-10-01, o preço está 0.1% acima da mediana observada."
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "ean": "7894900027013",
+        "regime": "lucro_presumido",
+        "acquisition_cost": "7",
+        "selling_price": null
+      },
+      "result": {
+        "mode": "demonstration",
+        "notice": "Tributação estimada com perfil demonstrativo. A margem de contribuição usa as premissas exibidas; não é a apuração fiscal real da empresa.",
+        "labels": {
+          "margin": "Margem de contribuição",
+          "tax": "Tributação estimada",
+          "margin_note": "Calculada com a tributação estimada e as despesas do cenário."
+        },
+        "product": {
+          "ean": "7894900027013",
+          "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+          "group": "Refrigerante 2 L",
+          "type": "cola",
+          "package": "2 L",
+          "ncm": "22021000",
+          "supplier_review_status": "confirmado",
+          "fiscal_review_status": "pending",
+          "ncm_trace": {
+            "grupo": "Refrigerante 2 L",
+            "id_produto": "7894900027013",
+            "descricao": "REFRIGERANTE -COCA COLA -2 LITRO",
+            "ncm_final": "22021000",
+            "status_ncm": "confirmado",
+            "revisor": "Rodrigo",
+            "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+          }
+        },
+        "assumptions": {
+          "mode": "demonstration",
+          "regime": "lucro_presumido",
+          "profile": {
+            "purchase_credit_fraction": "0",
+            "components": [
+              {
+                "name": "ICMS",
+                "rate": "0.18",
+                "basis": "selling_price"
+              },
+              {
+                "name": "PIS",
+                "rate": "0.0065",
+                "basis": "selling_price_less_icms"
+              },
+              {
+                "name": "COFINS",
+                "rate": "0.03",
+                "basis": "selling_price_less_icms"
+              }
+            ]
+          },
+          "credit_fraction": "0",
+          "credit_brl": "0.00",
+          "expense_rate": "0.05",
+          "expense_per_unit_brl": "0.50",
+          "rtc_base_rule": "scenario_selling_price_as_demonstration_base"
+        },
+        "market": {
+          "ean": "7894900027013",
+          "date": "2026-10-01",
+          "median": "11.99",
+          "p25": "11.99",
+          "p75": "12.965",
+          "network_count": 7,
+          "kind": "observed",
+          "source": "research/precos-e-outputs:pesquisas/precos_2026-11-05/precos_por_rede_refrigerantes.csv",
+          "source_sha256": "66aafd59b7c6af4a6cee16135b60ec2b775a5562ae427255a593928e5c0897f2",
+          "per_network_brl": {
+            "Araucária": "11.99",
+            "Atacadão": "11.99",
+            "Gabão": "12.95",
+            "Palmeira": "11.85",
+            "Super Curitiba": "12.98",
+            "Telêmaco": "11.99",
+            "Triunfo": "12.98"
+          },
+          "age_days": 37,
+          "status": "current_reference",
+          "usable_for_band": true
+        },
+        "corridor_points": [
+          {
+            "price_brl": "11.99",
+            "contribution_brl": "1.37343930",
+            "contribution_percent": "11.45487322768974145120934112"
+          },
+          {
+            "price_brl": "12.96",
+            "contribution_brl": "2.09130720",
+            "contribution_percent": "16.13662962962962962962962963"
+          }
+        ],
+        "corridor_method": "provisional_observed_P25_P75_with_scenario_margins",
+        "price_origin": "corridor_scenario",
+        "evaluated_price_brl": "11.99",
+        "analysis": {
+          "ean": "7894900027013",
+          "ncm": "22021000",
+          "price_origin": "corridor_scenario",
+          "personalized": {
+            "regime": "lucro_presumido",
+            "competence": "2026-11",
+            "status": "calculated_from_supplied_profile",
+            "missing_fields": [],
+            "scope": "MVP demonstration, not actual taxpayer liability",
+            "fiscal_validation": "not_certified",
+            "margin": {
+              "selling_price_brl": "11.99",
+              "net_cost_brl": "7.00",
+              "tax_brl": "2.51706070",
+              "expense_brl": "1.0995",
+              "contribution_brl": "1.37343930",
+              "contribution_percent": "11.45487322768974145120934112"
+            },
+            "tax_components": [
+              {
+                "name": "ICMS",
+                "base_brl": "11.99",
+                "rate": "0.18",
+                "amount_brl": "2.1582",
+                "basis": "selling_price",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "PIS",
+                "base_brl": "9.8318",
+                "rate": "0.0065",
+                "amount_brl": "0.06390670",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "COFINS",
+                "base_brl": "9.8318",
+                "rate": "0.03",
+                "amount_brl": "0.294954",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              }
+            ],
+            "tax_total_brl": "2.51706070",
+            "purchase_credit_source": "configured hypothetical purchase fraction"
+          },
+          "rtc": {
+            "status": "unavailable",
+            "result": null,
+            "reason": "RTC unavailable; no tax estimate produced."
+          },
+          "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+        },
+        "market_position": {
+          "price_index": "100",
+          "gap_brl": "0.00",
+          "gap_percent": "0"
+        },
+        "status": "ready",
+        "pending_internal_data": [],
+        "insights": [
+          "Contribuição no cenário: R$ 1.37 por unidade (11.5%).",
+          "O preço coincide com a mediana da referência de mercado informada."
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "ean": "7894900027013",
+        "regime": "lucro_real",
+        "acquisition_cost": "7",
+        "selling_price": "12"
+      },
+      "result": {
+        "mode": "demonstration",
+        "notice": "Tributação estimada com perfil demonstrativo. A margem de contribuição usa as premissas exibidas; não é a apuração fiscal real da empresa.",
+        "labels": {
+          "margin": "Margem de contribuição",
+          "tax": "Tributação estimada",
+          "margin_note": "Calculada com a tributação estimada e as despesas do cenário."
+        },
+        "product": {
+          "ean": "7894900027013",
+          "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+          "group": "Refrigerante 2 L",
+          "type": "cola",
+          "package": "2 L",
+          "ncm": "22021000",
+          "supplier_review_status": "confirmado",
+          "fiscal_review_status": "pending",
+          "ncm_trace": {
+            "grupo": "Refrigerante 2 L",
+            "id_produto": "7894900027013",
+            "descricao": "REFRIGERANTE -COCA COLA -2 LITRO",
+            "ncm_final": "22021000",
+            "status_ncm": "confirmado",
+            "revisor": "Rodrigo",
+            "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+          }
+        },
+        "assumptions": {
+          "mode": "demonstration",
+          "regime": "lucro_real",
+          "profile": {
+            "purchase_credit_fraction": "0.05",
+            "components": [
+              {
+                "name": "ICMS",
+                "rate": "0.18",
+                "basis": "selling_price"
+              },
+              {
+                "name": "PIS",
+                "rate": "0.0165",
+                "basis": "selling_price_less_icms"
+              },
+              {
+                "name": "COFINS",
+                "rate": "0.076",
+                "basis": "selling_price_less_icms"
+              }
+            ]
+          },
+          "credit_fraction": "0.05",
+          "credit_brl": "0.35",
+          "expense_rate": "0.05",
+          "expense_per_unit_brl": "0.50",
+          "rtc_base_rule": "scenario_selling_price_as_demonstration_base"
+        },
+        "market": {
+          "ean": "7894900027013",
+          "date": "2026-10-01",
+          "median": "11.99",
+          "p25": "11.99",
+          "p75": "12.965",
+          "network_count": 7,
+          "kind": "observed",
+          "source": "research/precos-e-outputs:pesquisas/precos_2026-11-05/precos_por_rede_refrigerantes.csv",
+          "source_sha256": "66aafd59b7c6af4a6cee16135b60ec2b775a5562ae427255a593928e5c0897f2",
+          "per_network_brl": {
+            "Araucária": "11.99",
+            "Atacadão": "11.99",
+            "Gabão": "12.95",
+            "Palmeira": "11.85",
+            "Super Curitiba": "12.98",
+            "Telêmaco": "11.99",
+            "Triunfo": "12.98"
+          },
+          "age_days": 37,
+          "status": "current_reference",
+          "usable_for_band": true
+        },
+        "corridor_points": [
+          {
+            "price_brl": "11.99",
+            "contribution_brl": "1.17285850",
+            "contribution_percent": "9.781972477064220183486238532"
+          },
+          {
+            "price_brl": "12.96",
+            "contribution_brl": "1.84618400",
+            "contribution_percent": "14.24524691358024691358024691"
+          }
+        ],
+        "corridor_method": "provisional_observed_P25_P75_with_scenario_margins",
+        "price_origin": "user_price",
+        "evaluated_price_brl": "12",
+        "analysis": {
+          "ean": "7894900027013",
+          "ncm": "22021000",
+          "price_origin": "user_price",
+          "personalized": {
+            "regime": "lucro_real",
+            "competence": "2026-11",
+            "status": "calculated_from_supplied_profile",
+            "missing_fields": [],
+            "scope": "MVP demonstration, not actual taxpayer liability",
+            "fiscal_validation": "not_certified",
+            "margin": {
+              "selling_price_brl": "12",
+              "net_cost_brl": "6.65",
+              "tax_brl": "3.070200",
+              "expense_brl": "1.10",
+              "contribution_brl": "1.179800",
+              "contribution_percent": "9.831666666666666666666666667"
+            },
+            "tax_components": [
+              {
+                "name": "ICMS",
+                "base_brl": "12",
+                "rate": "0.18",
+                "amount_brl": "2.16",
+                "basis": "selling_price",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "PIS",
+                "base_brl": "9.84",
+                "rate": "0.0165",
+                "amount_brl": "0.162360",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "COFINS",
+                "base_brl": "9.84",
+                "rate": "0.076",
+                "amount_brl": "0.74784",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              }
+            ],
+            "tax_total_brl": "3.070200",
+            "purchase_credit_source": "configured hypothetical purchase fraction"
+          },
+          "rtc": {
+            "status": "unavailable",
+            "result": null,
+            "reason": "RTC unavailable; no tax estimate produced."
+          },
+          "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+        },
+        "market_position": {
+          "price_index": "100.0834028356964136780650542",
+          "gap_brl": "0.01",
+          "gap_percent": "0.083402835696413678065054200"
+        },
+        "status": "ready",
+        "pending_internal_data": [],
+        "insights": [
+          "Contribuição no cenário: R$ 1.18 por unidade (9.8%).",
+          "Na referência de 2026-10-01, o preço está 0.1% acima da mediana observada."
+        ]
+      }
+    },
+    {
+      "inputs": {
+        "ean": "7894900027013",
+        "regime": "lucro_real",
+        "acquisition_cost": "7",
+        "selling_price": null
+      },
+      "result": {
+        "mode": "demonstration",
+        "notice": "Tributação estimada com perfil demonstrativo. A margem de contribuição usa as premissas exibidas; não é a apuração fiscal real da empresa.",
+        "labels": {
+          "margin": "Margem de contribuição",
+          "tax": "Tributação estimada",
+          "margin_note": "Calculada com a tributação estimada e as despesas do cenário."
+        },
+        "product": {
+          "ean": "7894900027013",
+          "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+          "group": "Refrigerante 2 L",
+          "type": "cola",
+          "package": "2 L",
+          "ncm": "22021000",
+          "supplier_review_status": "confirmado",
+          "fiscal_review_status": "pending",
+          "ncm_trace": {
+            "grupo": "Refrigerante 2 L",
+            "id_produto": "7894900027013",
+            "descricao": "REFRIGERANTE -COCA COLA -2 LITRO",
+            "ncm_final": "22021000",
+            "status_ncm": "confirmado",
+            "revisor": "Rodrigo",
+            "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+          }
+        },
+        "assumptions": {
+          "mode": "demonstration",
+          "regime": "lucro_real",
+          "profile": {
+            "purchase_credit_fraction": "0.05",
+            "components": [
+              {
+                "name": "ICMS",
+                "rate": "0.18",
+                "basis": "selling_price"
+              },
+              {
+                "name": "PIS",
+                "rate": "0.0165",
+                "basis": "selling_price_less_icms"
+              },
+              {
+                "name": "COFINS",
+                "rate": "0.076",
+                "basis": "selling_price_less_icms"
+              }
+            ]
+          },
+          "credit_fraction": "0.05",
+          "credit_brl": "0.35",
+          "expense_rate": "0.05",
+          "expense_per_unit_brl": "0.50",
+          "rtc_base_rule": "scenario_selling_price_as_demonstration_base"
+        },
+        "market": {
+          "ean": "7894900027013",
+          "date": "2026-10-01",
+          "median": "11.99",
+          "p25": "11.99",
+          "p75": "12.965",
+          "network_count": 7,
+          "kind": "observed",
+          "source": "research/precos-e-outputs:pesquisas/precos_2026-11-05/precos_por_rede_refrigerantes.csv",
+          "source_sha256": "66aafd59b7c6af4a6cee16135b60ec2b775a5562ae427255a593928e5c0897f2",
+          "per_network_brl": {
+            "Araucária": "11.99",
+            "Atacadão": "11.99",
+            "Gabão": "12.95",
+            "Palmeira": "11.85",
+            "Super Curitiba": "12.98",
+            "Telêmaco": "11.99",
+            "Triunfo": "12.98"
+          },
+          "age_days": 37,
+          "status": "current_reference",
+          "usable_for_band": true
+        },
+        "corridor_points": [
+          {
+            "price_brl": "11.99",
+            "contribution_brl": "1.17285850",
+            "contribution_percent": "9.781972477064220183486238532"
+          },
+          {
+            "price_brl": "12.96",
+            "contribution_brl": "1.84618400",
+            "contribution_percent": "14.24524691358024691358024691"
+          }
+        ],
+        "corridor_method": "provisional_observed_P25_P75_with_scenario_margins",
+        "price_origin": "corridor_scenario",
+        "evaluated_price_brl": "11.99",
+        "analysis": {
+          "ean": "7894900027013",
+          "ncm": "22021000",
+          "price_origin": "corridor_scenario",
+          "personalized": {
+            "regime": "lucro_real",
+            "competence": "2026-11",
+            "status": "calculated_from_supplied_profile",
+            "missing_fields": [],
+            "scope": "MVP demonstration, not actual taxpayer liability",
+            "fiscal_validation": "not_certified",
+            "margin": {
+              "selling_price_brl": "11.99",
+              "net_cost_brl": "6.65",
+              "tax_brl": "3.06764150",
+              "expense_brl": "1.0995",
+              "contribution_brl": "1.17285850",
+              "contribution_percent": "9.781972477064220183486238532"
+            },
+            "tax_components": [
+              {
+                "name": "ICMS",
+                "base_brl": "11.99",
+                "rate": "0.18",
+                "amount_brl": "2.1582",
+                "basis": "selling_price",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "PIS",
+                "base_brl": "9.8318",
+                "rate": "0.0165",
+                "amount_brl": "0.16222470",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              },
+              {
+                "name": "COFINS",
+                "base_brl": "9.8318",
+                "rate": "0.076",
+                "amount_brl": "0.7472168",
+                "basis": "selling_price_less_icms",
+                "source": "versioned hypothetical MVP assumptions"
+              }
+            ],
+            "tax_total_brl": "3.06764150",
+            "purchase_credit_source": "configured hypothetical purchase fraction"
+          },
+          "rtc": {
+            "status": "unavailable",
+            "result": null,
+            "reason": "RTC unavailable; no tax estimate produced."
+          },
+          "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+        },
+        "market_position": {
+          "price_index": "100",
+          "gap_brl": "0.00",
+          "gap_percent": "0"
+        },
+        "status": "ready",
+        "pending_internal_data": [],
+        "insights": [
+          "Contribuição no cenário: R$ 1.17 por unidade (9.8%).",
+          "O preço coincide com a mediana da referência de mercado informada."
+        ]
+      }
+    }
+  ]
+}

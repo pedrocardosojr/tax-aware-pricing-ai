@@ -1,0 +1,40 @@
+{
+  "reference": {
+    "id_produto": "7898007290196",
+    "camada": "observado",
+    "janela": [
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "aggregation": "median_across_stores",
+    "mediana": 7.89,
+    "p25": 7.89,
+    "p75": 7.99,
+    "n_obs": 142,
+    "n_lojas": 38,
+    "n_redes": 12,
+    "ultima_obs": "2026-10-29",
+    "cobertura_ok": true
+  },
+  "per_network_brl": {
+    "Armazem da Maria": 7.64,
+    "Assaí": 8.14,
+    "Atacadão": 7.89,
+    "Carrefour": 8.19,
+    "Condor": 7.89,
+    "Gabão": 6.29,
+    "Harger": 7.99,
+    "Jacomar": 7.98,
+    "Max Atacadista": 8.69,
+    "Super Curitiba": 8.95,
+    "Super Muffato": 7.99,
+    "Tissi": 11.49
+  },
+  "por_rede": {
+    "mediana": 7.99,
+    "p25": 7.89,
+    "p75": 8.32
+  },
+  "source": "Clique Economia (mensal + diário); janela 2026-08..2026-10; loja-mes -> loja -> rede; status atual; mercado/exportar.py@3dd3188"
+}

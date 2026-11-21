@@ -1,0 +1,37 @@
+{
+  "retrieved_on": "2026-11-09",
+  "ricms_pr": {
+    "url": "https://www.sefanet.pr.gov.br/dados/SEFADOCUMENTOS/106201707871.pdf",
+    "sha256": "dc917a25da84668a0df124bfa65f32521e93cf8f1f3d9b16db8c5f2f7ce721e2",
+    "bytes": 24860125,
+    "version_on_cover": "Atualizado ate Decreto 15.266 de 05/10/2026",
+    "pages_read_for_uht": [
+      3222,
+      3223
+    ],
+    "simples_page": 3632,
+    "note": "PDF oficial conferido; retencao na compra de cada SKU e premissa, nao NF-e verificada."
+  },
+  "conditional_review": "Arroz parboilizado: elegibilidade estadual assumida, sem consulta individual do PR encontrada; sabonete Ex01 e agua natural dependem de rotulo/documento.",
+  "source_urls": {
+    "sn": "https://www2.camara.leg.br/legin/fed/leicom/2006/leicomplementar-123-14-dezembro-2006-548099-normaatualizada-pl.html",
+    "beverages": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13097-19-janeiro-2015-780071-normaatualizada-pl.html",
+    "beverage_guidance": "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/restituicao-ressarcimento-reembolso-e-compensacao/conformidade-tributaria/Creditos-Indevidos-de-PIS-Pasep-Cofins-Setor-Supermercadista",
+    "dental": "https://www2.camara.leg.br/legin/fed/lei/2004/lei-10925-23-julho-2004-533112-normaatualizada-pl.html",
+    "lc224": "https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-224-26-dezembro-2025-798608-normaatualizada-pl.html",
+    "st_beverages": "https://www.fazenda.pr.gov.br/Pagina/Pauta-de-bebidas",
+    "st_dental": "https://www.legislacao.pr.gov.br/legislacao/listarAtosAno.do?action=exibirImpressao&codAto=381258",
+    "sn_rules": "https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=92278",
+    "sn_zero": "https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/PerguntaoSN.pdf",
+    "pr_modal": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=321803&codItemAto=2038037",
+    "credit_base": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14592.htm",
+    "st_base_exclusion": "https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?cod_tema_final=1125&cod_tema_inicial=1125&novaConsulta=true&tipo_pesquisa=T",
+    "food_federal": "https://www2.camara.leg.br/legin/fed/lei/2004/lei-10925-23-julho-2004-533112-normaatualizada-pl.html",
+    "food_annex": "https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html",
+    "food_pr": "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibirImpressao&codAto=284",
+    "sn_pr": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=553&codItemAto=31414",
+    "ricms_pr": "https://www.sefanet.pr.gov.br/dados/SEFADOCUMENTOS/106201707871.pdf",
+    "fecop_pr": "https://atendimento.fazenda.pr.gov.br/sacsefa/portal/assuntosReferente/16",
+    "water_ex": "https://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=69369"
+  }
+}

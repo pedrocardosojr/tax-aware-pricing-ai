@@ -1,0 +1,296 @@
+{
+  "evidence_source": "tests/fixtures/rtc_2026_examples.json",
+  "new_rtc_call": false,
+  "rtc_role": "IBS/CBS evidence, not added to company deduction",
+  "fictional_commercial_inputs": {
+    "sale_brl": "30.00",
+    "gross_cost_brl": "20.00",
+    "expense_rate": "0.05",
+    "expense_per_unit": "0.50"
+  },
+  "recorded_products": [
+    {
+      "product": "ARROZ POLIDO -TIO JOAO -5 KG",
+      "rtc_request": {
+        "id": "experiment-7893500020158-2026-65",
+        "versao": "0.0.1",
+        "dhFatoGerador": "2026-11-05T12:00:00-03:00",
+        "municipio": 4106902,
+        "uf": "PR",
+        "tpDoc": 65,
+        "itens": [
+          {
+            "numero": 1,
+            "ncm": "10063021",
+            "cst": "200",
+            "cClassTrib": "200003",
+            "baseCalculo": 30.0,
+            "quantidade": 1,
+            "unidade": "UN"
+          }
+        ]
+      },
+      "rtc_summary": {
+        "tax_base_brl": "30.00",
+        "classification": {
+          "cst": "200",
+          "cclass": "200003"
+        },
+        "simulated": false,
+        "components": [
+          {
+            "label": "CBS",
+            "reference_rate_percent": "0.90",
+            "reduction_percent": "100.00",
+            "effective_rate_percent": "0.00",
+            "amount_brl": "0.00"
+          },
+          {
+            "label": "IBS estadual",
+            "reference_rate_percent": "0.10",
+            "reduction_percent": "100.00",
+            "effective_rate_percent": "0.00",
+            "amount_brl": "0.00"
+          },
+          {
+            "label": "IBS municipal",
+            "reference_rate_percent": "0.00",
+            "reduction_percent": "100.00",
+            "effective_rate_percent": "0.00",
+            "amount_brl": "0.00"
+          }
+        ],
+        "ibs_official_total_brl": "0.00",
+        "total_ibs_cbs_brl": "0.00",
+        "coverage": "IBS/CBS calculated by RTC",
+        "total_tax_burden_calculated": false,
+        "payment_assessment": "requires_taxpayer_profile",
+        "other_taxes": {
+          "ICMS": "outside_response",
+          "PIS/COFINS": "outside_response",
+          "DAS": "outside_response"
+        }
+      },
+      "company_results": [
+        {
+          "business_regime": "simples_nacional",
+          "competence": "2026-11",
+          "status": "pending_profile",
+          "missing_fields": [
+            "tax_rate",
+            "usable_credit_brl",
+            "tax_source",
+            "credit_source",
+            "coverage",
+            "assessment_status"
+          ],
+          "coverage": "",
+          "sources": {
+            "tax": "",
+            "credit": ""
+          },
+          "margin": null
+        },
+        {
+          "business_regime": "lucro_presumido",
+          "competence": "2026-11",
+          "status": "pending_profile",
+          "missing_fields": [
+            "tax_rate",
+            "usable_credit_brl",
+            "tax_source",
+            "credit_source",
+            "coverage",
+            "assessment_status"
+          ],
+          "coverage": "",
+          "sources": {
+            "tax": "",
+            "credit": ""
+          },
+          "margin": null
+        },
+        {
+          "business_regime": "lucro_real",
+          "competence": "2026-11",
+          "status": "pending_profile",
+          "missing_fields": [
+            "tax_rate",
+            "usable_credit_brl",
+            "tax_source",
+            "credit_source",
+            "coverage",
+            "assessment_status"
+          ],
+          "coverage": "",
+          "sources": {
+            "tax": "",
+            "credit": ""
+          },
+          "margin": null
+        }
+      ]
+    },
+    {
+      "product": "REFRIGERANTE -COCA COLA -2 LITRO",
+      "rtc_request": {
+        "id": "experiment-7894900027013-2026-65",
+        "versao": "0.0.1",
+        "dhFatoGerador": "2026-11-05T12:00:00-03:00",
+        "municipio": 4106902,
+        "uf": "PR",
+        "tpDoc": 65,
+        "itens": [
+          {
+            "numero": 1,
+            "ncm": "22021000",
+            "cst": "000",
+            "cClassTrib": "000001",
+            "baseCalculo": 30.0,
+            "quantidade": 1,
+            "unidade": "UN"
+          }
+        ]
+      },
+      "rtc_summary": {
+        "tax_base_brl": "30.00",
+        "classification": {
+          "cst": "000",
+          "cclass": "000001"
+        },
+        "simulated": false,
+        "components": [
+          {
+            "label": "CBS",
+            "reference_rate_percent": "0.90",
+            "reduction_percent": "0",
+            "effective_rate_percent": "0.90",
+            "amount_brl": "0.27"
+          },
+          {
+            "label": "IBS estadual",
+            "reference_rate_percent": "0.10",
+            "reduction_percent": "0",
+            "effective_rate_percent": "0.10",
+            "amount_brl": "0.03"
+          },
+          {
+            "label": "IBS municipal",
+            "reference_rate_percent": "0.00",
+            "reduction_percent": "0",
+            "effective_rate_percent": "0.00",
+            "amount_brl": "0.00"
+          }
+        ],
+        "ibs_official_total_brl": "0.03",
+        "total_ibs_cbs_brl": "0.30",
+        "coverage": "IBS/CBS calculated by RTC",
+        "total_tax_burden_calculated": false,
+        "payment_assessment": "requires_taxpayer_profile",
+        "other_taxes": {
+          "ICMS": "outside_response",
+          "PIS/COFINS": "outside_response",
+          "DAS": "outside_response"
+        }
+      },
+      "company_results": [
+        {
+          "business_regime": "simples_nacional",
+          "competence": "2026-11",
+          "status": "pending_profile",
+          "missing_fields": [
+            "tax_rate",
+            "usable_credit_brl",
+            "tax_source",
+            "credit_source",
+            "coverage",
+            "assessment_status"
+          ],
+          "coverage": "",
+          "sources": {
+            "tax": "",
+            "credit": ""
+          },
+          "margin": null
+        },
+        {
+          "business_regime": "lucro_presumido",
+          "competence": "2026-11",
+          "status": "pending_profile",
+          "missing_fields": [
+            "tax_rate",
+            "usable_credit_brl",
+            "tax_source",
+            "credit_source",
+            "coverage",
+            "assessment_status"
+          ],
+          "coverage": "",
+          "sources": {
+            "tax": "",
+            "credit": ""
+          },
+          "margin": null
+        },
+        {
+          "business_regime": "lucro_real",
+          "competence": "2026-11",
+          "status": "pending_profile",
+          "missing_fields": [
+            "tax_rate",
+            "usable_credit_brl",
+            "tax_source",
+            "credit_source",
+            "coverage",
+            "assessment_status"
+          ],
+          "coverage": "",
+          "sources": {
+            "tax": "",
+            "credit": ""
+          },
+          "margin": null
+        }
+      ]
+    }
+  ],
+  "separate_simples_example": {
+    "rbt12_brl": "360000",
+    "nominal_fraction": ".073",
+    "deduction_brl": "5940",
+    "effective_fraction": "0.0565",
+    "conditional_margin": {
+      "business_regime": "simples_nacional",
+      "competence": "2026-11",
+      "status": "illustrative",
+      "missing_fields": [],
+      "coverage": "illustrative effective deduction, not actual per-SKU DAS",
+      "sources": {
+        "tax": "illustrative supplied bracket; no revenue segregation assessed",
+        "credit": "zero usable credit assumed only for this arithmetic example"
+      },
+      "margin": {
+        "selling_price_brl": "30",
+        "net_cost_brl": "20",
+        "tax_brl": "1.6950",
+        "expense_brl": "2.00",
+        "contribution_brl": "6.3050",
+        "contribution_percent": "21.01666666666666666666666667"
+      }
+    },
+    "missing_source_example": {
+      "business_regime": "simples_nacional",
+      "competence": "2026-11",
+      "status": "pending_profile",
+      "missing_fields": [
+        "tax_source"
+      ],
+      "coverage": "illustrative effective deduction, not actual per-SKU DAS",
+      "sources": {
+        "tax": "",
+        "credit": "zero usable credit assumed only for this arithmetic example"
+      },
+      "margin": null
+    }
+  }
+}

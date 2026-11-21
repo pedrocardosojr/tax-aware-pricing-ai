@@ -1,0 +1,423 @@
+{
+  "source_price_sha256": "597253ad5be385308ecc0e3c8205bcacbd448c75da3a101e95696571dee04fc6",
+  "rows": 215931,
+  "id_length_rows": {
+    "13": 118724,
+    "6": 95121,
+    "3": 613,
+    "7": 527,
+    "4": 369,
+    "12": 272,
+    "8": 221,
+    "2": 84
+  },
+  "distinct_ids": 1359,
+  "distinct_12_digit_ids": 11,
+  "valid_12_digit_distinct_ids": 11,
+  "valid_gtin_distinct_ids": 1056,
+  "catalog_products": 50,
+  "catalog_exact_matched": 50,
+  "catalog_valid_gtin": 50,
+  "checks": [
+    {
+      "ean": "7893500020158",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 330,
+      "positive_regular_rows": 326,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896267004102",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 319,
+      "positive_regular_rows": 315,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896038321032",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 468,
+      "positive_regular_rows": 464,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896290300011",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 331,
+      "positive_regular_rows": 329,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896038306039",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 473,
+      "positive_regular_rows": 471,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896267000135",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 338,
+      "positive_regular_rows": 323,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896290300332",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 302,
+      "positive_regular_rows": 302,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7898171400049",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 346,
+      "positive_regular_rows": 331,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7898007290202",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 390,
+      "positive_regular_rows": 373,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7898171400209",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 147,
+      "positive_regular_rows": 142,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896038388059",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 181,
+      "positive_regular_rows": 174,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896273900313",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 353,
+      "positive_regular_rows": 351,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7898007290196",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 139,
+      "positive_regular_rows": 138,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896022205744",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 220,
+      "positive_regular_rows": 215,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896412800122",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 166,
+      "positive_regular_rows": 164,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896005281710",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 87,
+      "positive_regular_rows": 87,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896005286579",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 189,
+      "positive_regular_rows": 189,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896022200282",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 474,
+      "positive_regular_rows": 474,
+      "last_positive_date": "2026-10-01",
+      "description_count": 3
+    },
+    {
+      "ean": "7896508200041",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 432,
+      "positive_regular_rows": 423,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896894900037",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 458,
+      "positive_regular_rows": 456,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7891910008353",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 253,
+      "positive_regular_rows": 253,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896019112116",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 554,
+      "positive_regular_rows": 553,
+      "last_positive_date": "2026-10-01",
+      "description_count": 4
+    },
+    {
+      "ean": "7896045102440",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 359,
+      "positive_regular_rows": 351,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896089011357",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 380,
+      "positive_regular_rows": 379,
+      "last_positive_date": "2026-10-01",
+      "description_count": 3
+    },
+    {
+      "ean": "7896279600750",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 105,
+      "positive_regular_rows": 105,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7891021006934",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 372,
+      "positive_regular_rows": 369,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896089016215",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 362,
+      "positive_regular_rows": 360,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896035733449",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 325,
+      "positive_regular_rows": 324,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896016700149",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 422,
+      "positive_regular_rows": 420,
+      "last_positive_date": "2026-10-01",
+      "description_count": 4
+    },
+    {
+      "ean": "7894900027013",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 370,
+      "positive_regular_rows": 369,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7892840800246",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 273,
+      "positive_regular_rows": 258,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7891991001342",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 361,
+      "positive_regular_rows": 357,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896188403077",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 367,
+      "positive_regular_rows": 363,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7891528029498",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 302,
+      "positive_regular_rows": 301,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7891024035047",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 526,
+      "positive_regular_rows": 523,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896262500050",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 291,
+      "positive_regular_rows": 289,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7898912374011",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 273,
+      "positive_regular_rows": 272,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7891097018251",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 303,
+      "positive_regular_rows": 303,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896034610017",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 272,
+      "positive_regular_rows": 270,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896256600223",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 449,
+      "positive_regular_rows": 447,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896275970611",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 338,
+      "positive_regular_rows": 337,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7898215157403",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 349,
+      "positive_regular_rows": 347,
+      "last_positive_date": "2026-10-01",
+      "description_count": 1
+    },
+    {
+      "ean": "7896036090244",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 349,
+      "positive_regular_rows": 348,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7896279600538",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 478,
+      "positive_regular_rows": 473,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7897001010014",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 307,
+      "positive_regular_rows": 307,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7898247780297",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 239,
+      "positive_regular_rows": 239,
+      "last_positive_date": "2026-10-01",
+      "description_count": 2
+    },
+    {
+      "ean": "7891149200504",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 265,
+      "positive_regular_rows": 260,
+      "last_positive_date": "2026-02-02",
+      "description_count": 1
+    },
+    {
+      "ean": "7891991000796",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 261,
+      "positive_regular_rows": 260,
+      "last_positive_date": "2026-02-02",
+      "description_count": 1
+    },
+    {
+      "ean": "7896045512317",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 265,
+      "positive_regular_rows": 265,
+      "last_positive_date": "2026-02-02",
+      "description_count": 1
+    },
+    {
+      "ean": "7891149010509",
+      "valid_gtin_checksum": true,
+      "exact_match_rows": 272,
+      "positive_regular_rows": 271,
+      "last_positive_date": "2026-02-02",
+      "description_count": 1
+    }
+  ]
+}

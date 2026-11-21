@@ -1,0 +1,141 @@
+[
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-01_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 463467,
+    "sha256": "08f4222d80f2b7d8746dc8b6512014bf613469d32260131407093c2d0a40a729",
+    "status": "read",
+    "rows": 3154
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-02_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 723438,
+    "sha256": "f6ef30e0ee12a4f689994162b1ba97013b1a46f6ea69751ee173efd204214197",
+    "status": "read",
+    "rows": 4739
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-05_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 499717,
+    "sha256": "1a64924c6b307cbbf45c020e79a5cc1c69c56f4c472f0803381f818753dac95c",
+    "status": "read",
+    "rows": 3274
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-06_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 457222,
+    "sha256": "6c1bd87d4163449a7689e4922782bd1594ce1947680a6e221852fee5d9dafbc2",
+    "status": "read",
+    "rows": 2993
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-07_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 708588,
+    "sha256": "aba17e33ba14689dbf146a6bce9f718e2619ccb3ebc575f9d73aaf489653d0db",
+    "status": "read",
+    "rows": 4672
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-08_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 578997,
+    "sha256": "39f864a6f683adcd65df54a7a80ef241d294120fdbf9d2be06e70ba77f69f25c",
+    "status": "read",
+    "rows": 3901
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-09_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 707742,
+    "sha256": "2e3c19ed942bafafb09ce3fb8d14c60265c5d0d2792a369e5986997ec8a2ba83",
+    "status": "read",
+    "rows": 4646
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-13_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 453488,
+    "sha256": "31334bf277766d2297ac2ebef49cc6dbef5c172119bfa91195259e4ff9c1aa39",
+    "status": "read",
+    "rows": 2971
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-14_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 705840,
+    "sha256": "4c0d5214a1756c4a3df49f105ceb7f6e041f1099837a0b655e60ecfea137d918",
+    "status": "read",
+    "rows": 4657
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-15_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 583249,
+    "sha256": "df8c0991439631f56cf2fa540cc0466967d1f5485ecf1f4f6c9caf55a104bb1a",
+    "status": "read",
+    "rows": 3927
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-16_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 726910,
+    "sha256": "43f37a72fc501cf3998fd38e57e6c85acca8b5a79fb5e8def16e6142fb0d71fc",
+    "status": "read",
+    "rows": 4760
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-19_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 558509,
+    "sha256": "d38d59ccf3156a57696ba77b1144d03916c64c841fede324452b0c8b6da8f967",
+    "status": "read",
+    "rows": 3651
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-20_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 493729,
+    "sha256": "9eafc255ef3bd0ffcfa094c9d2624e008f89637ae2b740bd4f69d6ceabc5d696",
+    "status": "read",
+    "rows": 3279
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-21_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 629392,
+    "sha256": "6a77db4efa549c634cddbfe18d0e8078ca26486ee72468d045c9e5a26bf3c54d",
+    "status": "read",
+    "rows": 4135
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-22_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "empty"
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-23_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 773055,
+    "sha256": "17f730b7bc7caa19bdc89afc9b8dd8bf00099c62c8c169d09991a178bf160d0d",
+    "status": "read",
+    "rows": 5059
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-26_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 662030,
+    "sha256": "b7be3d934d327c1b952bfd7b8e8444e7ebedf79b83a1b11a064ea82771627c4d",
+    "status": "read",
+    "rows": 4312
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-27_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 506678,
+    "sha256": "c2173085b73e1750f92405a296d993773dc709141d86918828a520620ee81e17",
+    "status": "read",
+    "rows": 3382
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-28_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 720990,
+    "sha256": "d6d8d76c159649de29a66d1988d91ced3820c3fb5c2f364abfa92f86d6a59159",
+    "status": "read",
+    "rows": 4803
+  },
+  {
+    "url": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/2026-10-29_Clique_Economia_-_Cotacoes_-_Base_de_Dados.csv",
+    "bytes": 651292,
+    "sha256": "a22ad2ae98b8500a8d9c4a433fd77e82150b9609b7edb86f7012ad6ee5861a9b",
+    "status": "read",
+    "rows": 4340
+  }
+]

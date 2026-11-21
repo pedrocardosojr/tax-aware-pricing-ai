@@ -1,0 +1,37 @@
+{
+  "source": "https://dadosabertos.c3sl.ufpr.br/curitiba/CliqueEconomia/",
+  "scope": "October 2026 pilot; exact catalog codes only",
+  "listed_files": 20,
+  "read_files": 19,
+  "download_bytes": 11604333,
+  "raw_rows": 76655,
+  "invalid_dates": 0,
+  "conflicting_keys_excluded": 0,
+  "positive_selected_rows_before_dedup": 7881,
+  "unique_pilot_rows": 7881,
+  "distinct_pilot_dates": 19,
+  "old_october_rows": 335,
+  "october_snapshot_coverage": {
+    "rows": 335,
+    "products": 46,
+    "dates": 1,
+    "source_network_names": 8,
+    "network_address_pairs": 10,
+    "product_network_address_pairs": 335
+  },
+  "october_expanded_coverage": {
+    "rows": 7881,
+    "products": 46,
+    "dates": 19,
+    "source_network_names": 30,
+    "network_address_pairs": 73,
+    "product_network_address_pairs": 2424
+  },
+  "old_all_months_rows": 15739,
+  "additional_unique_rows": 7546,
+  "combined_rows": 23285,
+  "products_with_additions": 46,
+  "observation_date_min": "2026-10-01",
+  "observation_date_max": "2026-10-29",
+  "limitations": "One-month pilot, not full-history download; observed regular prices, not independent demand samples. Aliases remain pending team review."
+}

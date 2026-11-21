@@ -1,0 +1,17 @@
+[
+  ["Por que vocês usam a mediana das lojas e não a média?", "cafe_metodo"],
+  ["Uma rede com muitas lojas pesa mais na referência?", "cafe_metodo"],
+  ["Até que dia vai a coleta usada no café?", "cafe_janela"],
+  ["Com o diário a referência ficou mais precisa?", "cafe_janela"],
+  ["Esses preços são de nota fiscal ou de pesquisa?", "clique_origem"],
+  ["Se eu subir o preço em um real, o que acontece com a minha contribuição?", "simulador"],
+  ["Quantas unidades a mais eu preciso vender se der desconto?", "simulador"],
+  ["Por que a cerveja aparece como referência histórica?", "disponibilidade"],
+  ["O app considera ICMS-ST na compra?", "premissas_tributarias"],
+  ["A diferença entre Simples e Lucro Real no app é real ou é um exemplo?", "premissas_tributarias"],
+  ["Posso confiar no texto que a IA escreve sobre o meu preço?", "validador"],
+  ["Qual o preço do café no Atacadão hoje?", null],
+  ["Quanto vou pagar de DAS este mês?", null],
+  ["Qual será a inflação de alimentos em 2027?", null],
+  ["Qual é o melhor time de futebol de Curitiba?", null]
+]

@@ -1,0 +1,26 @@
+{
+  "source": "https://consumo.tributos.gov.br/servico/calcular-tributos-consumo/api-simples-nacional/api-docs",
+  "observed_on": "2026-11-07",
+  "calculation_path": "/calculadora/observabilidade/simples-nacional",
+  "item_fields": [
+    "numero",
+    "cAtivSN",
+    "cClassTrib",
+    "baseCalculo",
+    "valorImpostoSeletivo",
+    "pIBSSN",
+    "pCBSSN"
+  ],
+  "caller_supplied_effective_rates": [
+    "pIBSSN",
+    "pCBSSN"
+  ],
+  "per_item_states": [
+    "CALCULADO",
+    "NAO_CALCULADO",
+    "NAO_IMPLEMENTADO",
+    "INCONSISTENCIA_ENTRADA",
+    "FALHA_TECNICA"
+  ],
+  "rate_table_source": "external to this API, as stated in activities endpoint description"
+}

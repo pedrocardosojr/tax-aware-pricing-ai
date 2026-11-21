@@ -1,0 +1,378 @@
+{
+  "source_pr": "https://github.com/pedrocardosojr/tax-pricing/pull/6",
+  "source_commit": "d62870d1f1dd9d2bc42e67aa4ff2e75f23821cfa",
+  "source_xlsx_sha256": "0fb93198b7bd4952b9852d57782a494ef3983f4efa14bb4996976267a85001bb",
+  "note": "Snapshot for integration tests; preserves Rodrigo catalog, no fiscal approval implied. Package volumes made explicit from descriptions.",
+  "products": [
+    {
+      "ean": "7893500020158",
+      "description": "ARROZ POLIDO -TIO JOAO -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896267004102",
+      "description": "ARROZ POLIDO -BURITI -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896038321032",
+      "description": "ARROZ POLIDO -TIO URBANO -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896290300011",
+      "description": "ARROZ POLIDO -PRATO FINO -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896038306039",
+      "description": "ARROZ PARBOILIZADO -URBANO -5 KG",
+      "group": "Arroz",
+      "type": "parboilizado",
+      "package": "5 kg",
+      "ncm": "10063011",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896267000135",
+      "description": "ARROZ PARBOILIZADO -BURITI -5 KG",
+      "group": "Arroz",
+      "type": "parboilizado",
+      "package": "5 kg",
+      "ncm": "10063011",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896290300332",
+      "description": "ARROZ PARBOILIZADO -PRATO FINO -5 KG",
+      "group": "Arroz",
+      "type": "parboilizado",
+      "package": "5 kg",
+      "ncm": "10063011",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7898171400049",
+      "description": "FEIJAO PRETO -PE VERMELHO -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7898007290202",
+      "description": "FEIJAO PRETO -PONTAROLLO PREMIUM -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7898171400209",
+      "description": "FEIJAO PRETO -RESERVA -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896038388059",
+      "description": "FEIJAO PRETO -URBANO -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896273900313",
+      "description": "FEIJAO CARIOCA -CALDO BOM -1 KG",
+      "group": "Feijão",
+      "type": "carioca",
+      "package": "1 kg",
+      "ncm": "07133399",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7898007290196",
+      "description": "FEIJAO CARIOCA -PONTAROLLO -1 KG",
+      "group": "Feijão",
+      "type": "carioca",
+      "package": "1 kg",
+      "ncm": "07133399",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896022205744",
+      "description": "MACARRAO COM OVOS PENA -TODESCHINI -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos pena/penne",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896412800122",
+      "description": "MACARRAO COM OVOS PENA -ORQUIDEA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos pena/penne",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896005281710",
+      "description": "MACARRAO COM OVOS PENNE -DONA BENTA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos pena/penne",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896005286579",
+      "description": "MACARRAO COM OVOS ESPAGUETE -DONA BENTA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos espaguete",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896022200282",
+      "description": "MACARRAO COM OVOS ESPAGUETE -RENATA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos espaguete",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896508200041",
+      "description": "ACUCAR REFINADO -ALTO ALEGRE -5 KG",
+      "group": "Açúcar",
+      "type": "refinado",
+      "package": "5 kg",
+      "ncm": "17019900",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896894900037",
+      "description": "ACUCAR REFINADO -CARAVELAS -5 KG",
+      "group": "Açúcar",
+      "type": "refinado",
+      "package": "5 kg",
+      "ncm": "17019900",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7891910008353",
+      "description": "ACUCAR REFINADO -UNIAO -5 KG",
+      "group": "Açúcar",
+      "type": "refinado",
+      "package": "5 kg",
+      "ncm": "17019900",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896019112116",
+      "description": "CAFE VACUO -DAMASCO -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896045102440",
+      "description": "CAFE VACUO -3 CORACOES -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896089011357",
+      "description": "CAFE VACUO -PILAO -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896279600750",
+      "description": "CAFE VACUO -COAMO -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7891021006934",
+      "description": "CAFE VACUO EXTRA FORTE -MELITTA -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896089016215",
+      "description": "CAFE VACUO EXTRA FORTE -CABOCLO -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896035733449",
+      "description": "CAFE VACUO EXTRA FORTE -BOM JESUS -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896016700149",
+      "description": "CAFE VACUO EXTRA FORTE -ALVORADA -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7894900027013",
+      "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+      "group": "Refrigerante 2 L",
+      "type": "cola",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7892840800246",
+      "description": "REFRIGERANTE SABOR COLA - PEPSI - 2 LITROS",
+      "group": "Refrigerante 2 L",
+      "type": "cola",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7891991001342",
+      "description": "REFRIGERANTE GUARANA -ANTARTICA -2 LITRO",
+      "group": "Refrigerante 2 L",
+      "type": "guaraná",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896188403077",
+      "description": "REFRIGERANTE GUARANA -CINI -2 LITRO",
+      "group": "Refrigerante 2 L",
+      "type": "guaraná",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7891528029498",
+      "description": "CREME DENTAL TRIPLA LIMPEZA COMPLETA -SORRISO -70 GR",
+      "group": "Creme dental",
+      "type": "tripla limpeza",
+      "package": "70 g",
+      "ncm": "33061000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7891024035047",
+      "description": "SABONETE ANTIBACTERIANO -PROTEX -85 GR",
+      "group": "Sabonete",
+      "type": "barra antibacteriano",
+      "package": "85 g",
+      "ncm": "34011190",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7896262500050",
+      "description": "AGUA MINERAL -OURO FINO -500 ML",
+      "group": "Água mineral",
+      "type": "sem gás",
+      "package": "500 ml",
+      "ncm": "22011000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    },
+    {
+      "ean": "7898912374011",
+      "description": "AGUA MINERAL -FONT LIFE -510 ML",
+      "group": "Água mineral",
+      "type": "sem gás",
+      "package": "510 ml",
+      "ncm": "22011000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending"
+    }
+  ]
+}

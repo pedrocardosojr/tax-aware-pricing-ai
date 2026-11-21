@@ -1,0 +1,99 @@
+{
+  "conjunto": "grupo (escrito pelo Pedro, sem ver o acervo)",
+  "acertos": 6,
+  "total": 8,
+  "casos": [
+    {
+      "pergunta": "Esses numeros sao confiaveis? de onde vem?",
+      "aceitos": [
+        "clique_origem",
+        "cafe_metodo"
+      ],
+      "recuperado": "validador",
+      "status": "ok",
+      "pontuacao": 0.1884,
+      "motivo": "",
+      "acerto": false
+    },
+    {
+      "pergunta": "Esses nuemros sao de lojas reais e tem quantas lojas?",
+      "aceitos": [
+        "cafe_janela",
+        "clique_origem"
+      ],
+      "recuperado": "cafe_janela",
+      "status": "ok",
+      "pontuacao": 0.1722,
+      "motivo": "",
+      "acerto": true
+    },
+    {
+      "pergunta": "Se eu fizer uma promocação vai valer a pena?",
+      "aceitos": [
+        "simulador"
+      ],
+      "recuperado": null,
+      "status": "sem_evidencia",
+      "pontuacao": null,
+      "motivo": "Não encontrei essa informação nas fontes do projeto.",
+      "acerto": false
+    },
+    {
+      "pergunta": "Se eu trocar meu regime tributario vale a pena para esse SKU?",
+      "aceitos": [
+        "premissas_tributarias",
+        null
+      ],
+      "recuperado": "premissas_tributarias",
+      "status": "ok",
+      "pontuacao": 0.1766,
+      "motivo": "",
+      "acerto": true
+    },
+    {
+      "pergunta": "Nesse mes que eu to entrando faz sentido focar nesse SKU ou fazer promoção? Chegando dia dos pais ou Natal sei la",
+      "aceitos": [
+        null,
+        "simulador"
+      ],
+      "recuperado": null,
+      "status": "sem_evidencia",
+      "pontuacao": null,
+      "motivo": "Não encontrei essa informação nas fontes do projeto.",
+      "acerto": true
+    },
+    {
+      "pergunta": "Se eu pensar em sazonalinade e comportamrnto do consumidor nessa epoca do ano faz sentido?",
+      "aceitos": [
+        null
+      ],
+      "recuperado": null,
+      "status": "sem_evidencia",
+      "pontuacao": null,
+      "motivo": "Não encontrei essa informação nas fontes do projeto.",
+      "acerto": true
+    },
+    {
+      "pergunta": "Existe alguma forma de eu melhorar minha margem nesse cenario sem prejudicar tanto meu cliente?",
+      "aceitos": [
+        "simulador"
+      ],
+      "recuperado": "simulador",
+      "status": "ok",
+      "pontuacao": 0.1251,
+      "motivo": "",
+      "acerto": true
+    },
+    {
+      "pergunta": "Esse imposto eu pago em qual momento?",
+      "aceitos": [
+        null
+      ],
+      "recuperado": null,
+      "status": "fora_do_escopo",
+      "pontuacao": null,
+      "motivo": "A tributação do app usa perfis demonstrativos por regime. Não tem os dados fiscais da sua empresa; para a carga real, consulte a sua contabilidade.",
+      "acerto": true
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "modelo": "gemini-flash-lite-latest",
+  "conjunto": "reservado2",
+  "resumo": {
+    "perguntas": 15,
+    "com_fonte_esperada": 11,
+    "fora_do_acervo": 4,
+    "a_app": {
+      "recusas_corretas": 4
+    },
+    "b_modelo_com_dados": {
+      "sem_resposta": 0,
+      "numeros_do_calculo": 15,
+      "fonte_esperada_citada": 0,
+      "recusas_corretas": 4
+    },
+    "c_modelo_com_trechos": {
+      "sem_resposta": 0,
+      "numeros_do_calculo": 15,
+      "fonte_esperada_citada": 5,
+      "recusas_corretas": 4
+    }
+  },
+  "respostas": [
+    {
+      "pergunta": "Por que vocês usam a mediana das lojas e não a média?",
+      "esperado": [
+        "cafe_metodo"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para explicar por que usamos a mediana em vez da média. Em 01/10/2026, o preço avaliado está R$ 0,15 (1,27%) acima da mediana observada, sendo que o índice usa a mediana como referência 100 [position].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "A referência usa a mediana por loja porque consolida um preço mediano por endereço em cada mês e depois calcula a mediana dos meses de cada loja [cafe_metodo]. O gráfico resume a amostra com um ponto por rede, enquanto o número principal usa as lojas [cafe_metodo]. Em 01/10/2026, o índice utiliza essa mediana como referência 100 [position].",
+        "recuperado": [
+          "cafe_metodo"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Uma rede com muitas lojas pesa mais na referência?",
+      "esperado": [
+        "cafe_metodo"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para afirmar se uma rede com muitas lojas pesa mais na referência. As fontes apenas indicam que, em 01/10/2026, o preço avaliado está R$ 0,15 (1,27%) acima da mediana observada [position].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Não há evidência nas fontes do projeto sobre o peso de uma rede com muitas lojas na referência de preço. A referência do Café Pilão 500 g utiliza a mediana por loja, calculando-se um preço mediano por endereço em cada mês e, depois, a mediana dos meses de cada loja [cafe_metodo].",
+        "recuperado": [
+          "cafe_metodo"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": true,
+        "recusou": true,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Até que dia vai a coleta usada no café?",
+      "esperado": [
+        "cafe_janela"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para responder até que dia vai a coleta usada no café.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "A última coleta usada no comparativo do Café com diário, no recorte de maio a outubro, vai até 29/10/2026 [cafe_janela].",
+        "recuperado": [
+          "cafe_janela"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": true,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Com o diário a referência ficou mais precisa?",
+      "esperado": [
+        "cafe_janela"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para responder se a referência ficou mais precisa com o diário.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Não há evidência nas fontes do projeto para afirmar se a referência ficou mais precisa com o diário.",
+        "recuperado": [
+          "disponibilidade"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Esses preços são de nota fiscal ou de pesquisa?",
+      "esperado": [
+        "clique_origem"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para afirmar se os preços são de nota fiscal ou de pesquisa. O app utiliza como referência a mediana observada [position].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Os preços observados vêm da pesquisa pública Clique Economia de Curitiba [clique_origem]. Em 01/10/2026, o preço avaliado está R$ 0,15 (1,27%) acima da mediana observada [position].",
+        "recuperado": [
+          "clique_origem"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Se eu subir o preço em um real, o que acontece com a minha contribuição?",
+      "esperado": [
+        "simulador"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre o impacto exato na contribuição caso você suba o preço em um real. O aplicativo apenas sugere que você compare a contribuição nos cenários da faixa antes de alterar o preço, lembrando que um valor maior pode reduzir o volume vendido e que esse efeito ainda não é medido pelo app [action].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Com o preço atual, sobram R$ 3,56 por unidade (29,65%) para cobrir as despesas fixas e formar o resultado da operação [contribution]. Você pode comparar a contribuição nos cenários da faixa antes de alterar o preço, lembrando que um valor maior pode reduzir o volume vendido e esse efeito ainda não é medido pelo aplicativo [action]. O simulador recalcula a contribuição por unidade para outro preço de venda com as mesmas premissas e mostra a variação de volume necessária para manter a contribuição total quando as contribuições são positivas [simulador]. Este cálculo é um cenário, sem previsão de demanda ou volume de vendas [simulador].",
+        "recuperado": [
+          "simulador"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Quantas unidades a mais eu preciso vender se der desconto?",
+      "esperado": [
+        "simulador"
+      ],
+      "a_app": {
+        "texto": "No limite inferior da faixa central (R\\$ 11,48), a contribuição seria de R\\$ 3,08 por unidade, ante R\\$ 3,56 no preço avaliado. Para manter a mesma contribuição total, seria preciso vender 15,57% a mais. É uma simulação com as premissas atuais. A faixa observada não identifica promoções e o app não estima a reação da demanda.",
+        "recusou": false
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre quantas unidades a mais você precisa vender se der desconto [action]. A contribuição atual é de R$ 3,56 por unidade para cobrir despesas fixas e o resultado [contribution]. O preço avaliado está R$ 0,15 acima da mediana observada [position]. Além disso, pesquisas do setor citam mais vendas de refrigerante 2 L na Black Friday em 23/11, o que é apenas uma sugestão e não uma previsão para a sua loja [season].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Não há evidência nas fontes do projeto sobre quantas unidades a mais você precisa vender se der desconto. O simulador apenas recalcula a contribuição por unidade para outro preço de venda com as mesmas premissas e mostra a variação de volume necessária para manter a contribuição total [simulador]. Este cálculo é um cenário, sem previsão de demanda ou volume de vendas [simulador]. Além disso, a Black Friday em 23/11 conta com pesquisas do setor que citam mais vendas de refrigerante 2 L nessa data, sendo apenas uma sugestão do setor e não uma previsão para a sua loja [season].",
+        "recuperado": [
+          "simulador"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Por que a cerveja aparece como referência histórica?",
+      "esperado": [
+        "disponibilidade"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para explicar por que a cerveja aparece como referência histórica, pois os trechos disponíveis abordam apenas o preço avaliado em 01/10/2026 em relação à mediana e dados gerais de contribuição por unidade [position, contribution].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Não há evidência nas fontes do projeto para explicar por que a cerveja aparece especificamente como referência histórica. A única menção sobre referências indica que uma referência antiga aparece como histórica e não pode sugerir faixa atual, exigindo que a referência seja observada, recente e tenha cobertura suficiente com quartis disponíveis [disponibilidade].",
+        "recuperado": [
+          "disponibilidade"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": true,
+        "recusou": true,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "O app considera ICMS-ST na compra?",
+      "esperado": [
+        "premissas_tributarias"
+      ],
+      "a_app": {
+        "texto": "Tributação estimada na venda: R\\$ 0,34 por unidade (2,85% do preço) no perfil demonstrativo. Veja as premissas e o detalhe tributário abaixo.",
+        "recusou": false
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para afirmar se o app considera ICMS-ST na compra.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Não há evidência nas fontes do projeto sobre o app considerar ICMS-ST na compra, pois o texto menciona apenas que a tributação estimada utiliza um cenário onde o ICMS-ST já foi recolhido e incluído no custo bruto informado [premissas_tributarias].",
+        "recuperado": [
+          "premissas_tributarias"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": true,
+        "recusou": true,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "A diferença entre Simples e Lucro Real no app é real ou é um exemplo?",
+      "esperado": [
+        "premissas_tributarias"
+      ],
+      "a_app": {
+        "texto": "Tributação estimada na venda: R\\$ 0,34 por unidade (2,85% do preço) no perfil demonstrativo. Veja as premissas e o detalhe tributário abaixo.",
+        "recusou": false
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para responder se a diferença entre Simples e Lucro Real no app é real ou um exemplo.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "A tributação estimada usa perfis demonstrativos do Simples Nacional, do Lucro Presumido e do Lucro Real, baseados em condições fictícias visíveis na tela [premissas_tributarias]. Trata-se de uma estimativa com perfis demonstrativos, e não de uma apuração fiscal de uma empresa real ou homologação dos produtos [premissas_tributarias].",
+        "recuperado": [
+          "premissas_tributarias"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": true,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Posso confiar no texto que a IA escreve sobre o meu preço?",
+      "esperado": [
+        "validador"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre a confiabilidade do texto escrito pela IA. No entanto, o aplicativo aponta que um preço maior pode reduzir o volume vendido, e esse efeito ainda não é medido por ele [action]. O preço avaliado está R$ 0,15 acima da mediana observada e sobra uma contribuição de R$ 3,56 por unidade [contribution, position]. Como sugestão do setor, pesquisas citam mais vendas de refrigerante 2 L na Black Friday em 23/11, mas isso não é uma previsão para a sua loja [season].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Sim, você pode confiar porque um validador confere cada seção da explicação escrita pela inteligência artificial com os números calculados pelo app antes de exibi-la [validador]. Caso algum número não venha do cálculo ou esteja na métrica errada, a tela mostra o texto padrão do aplicativo [validador]. Em 01/10/2026, o preço avaliado está R$ 0,15 acima da mediana observada [position]. Além disso, como sugestão do setor (e não previsão para sua loja), pesquisas citam mais vendas de refrigerante 2 L na Black Friday em 23/11 [season].",
+        "recuperado": [
+          "validador"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Qual o preço do café no Atacadão hoje?",
+      "esperado": [
+        null
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre o preço do café no Atacadão hoje.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      },
+      "c_modelo_com_trechos": {
+        "texto": "O app usa preços já coletados, com data da última coleta. Não consulta preço, promoção ou estoque em tempo real.",
+        "recuperado": [],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      }
+    },
+    {
+      "pergunta": "Quanto vou pagar de DAS este mês?",
+      "esperado": [
+        null
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre o valor do DAS que você pagará este mês.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      },
+      "c_modelo_com_trechos": {
+        "texto": "A tributação do app usa perfis demonstrativos por regime. Não tem os dados fiscais da sua empresa; para a carga real, consulte a sua contabilidade.",
+        "recuperado": [],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      }
+    },
+    {
+      "pergunta": "Qual será a inflação de alimentos em 2027?",
+      "esperado": [
+        null
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre a inflação de alimentos em 2027.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      },
+      "c_modelo_com_trechos": {
+        "texto": "O app não prevê preços, vendas ou indicadores futuros. Mostra preços já coletados e simula cenários com as premissas da tela.",
+        "recuperado": [],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      }
+    },
+    {
+      "pergunta": "Qual é o melhor time de futebol de Curitiba?",
+      "esperado": [
+        null
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre qual é o melhor time de futebol de Curitiba.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Não há evidência nas fontes do projeto sobre qual é o melhor time de futebol de Curitiba.",
+        "recuperado": [
+          "saz_clima_curitiba"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      }
+    }
+  ]
+}

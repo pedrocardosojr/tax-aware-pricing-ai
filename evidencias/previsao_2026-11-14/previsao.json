@@ -1,0 +1,5671 @@
+{
+  "schema_version": 1,
+  "metodo": "híbrido: preço da rede no mês anterior quando existe; senão Ridge (alpha=1) com produto, grupo, rede e log da referência",
+  "fonte": "Clique Economia (mensal); mercado/previsao.py@a006ea6",
+  "cortes": {
+    "validacao": {
+      "treino_ate": "2026-04",
+      "avaliacao_ate": "2026-07"
+    },
+    "teste": {
+      "treino_ate": "2026-07",
+      "avaliacao_ate": "2026-10"
+    }
+  },
+  "avaliacao": {
+    "validacao": [
+      {
+        "modelo": "baseline 1: referência do mês anterior",
+        "mae_brl": 1.289,
+        "mdape_pct": 7.78,
+        "erro_ate_5_pct": 34.9
+      },
+      {
+        "modelo": "baseline 2: preço da rede no mês anterior",
+        "mae_brl": 1.103,
+        "mdape_pct": 6.08,
+        "erro_ate_5_pct": 43.9
+      },
+      {
+        "modelo": "híbrido",
+        "mae_brl": 1.043,
+        "mdape_pct": 5.86,
+        "erro_ate_5_pct": 44.3
+      }
+    ],
+    "teste": [
+      {
+        "modelo": "baseline 1: referência do mês anterior",
+        "mae_brl": 1.304,
+        "mdape_pct": 7.09,
+        "erro_ate_5_pct": 39.8
+      },
+      {
+        "modelo": "baseline 2: preço da rede no mês anterior",
+        "mae_brl": 1.005,
+        "mdape_pct": 4.76,
+        "erro_ate_5_pct": 50.9
+      },
+      {
+        "modelo": "híbrido",
+        "mae_brl": 0.93,
+        "mdape_pct": 4.64,
+        "erro_ate_5_pct": 51.8
+      }
+    ]
+  },
+  "segmentos_teste": [
+    {
+      "rede_tinha_preco": false,
+      "linhas": 437,
+      "baseline_2": {
+        "mae_brl": 1.308,
+        "mdape_pct": 7.34,
+        "erro_ate_5_pct": 36.4
+      },
+      "hibrido": {
+        "mae_brl": 1.12,
+        "mdape_pct": 6.34,
+        "erro_ate_5_pct": 38.4
+      }
+    },
+    {
+      "rede_tinha_preco": true,
+      "linhas": 647,
+      "baseline_2": {
+        "mae_brl": 0.801,
+        "mdape_pct": 3.03,
+        "erro_ate_5_pct": 60.7
+      },
+      "hibrido": {
+        "mae_brl": 0.801,
+        "mdape_pct": 3.03,
+        "erro_ate_5_pct": 60.7
+      }
+    }
+  ],
+  "bootstrap_teste": {
+    "ganho_medio_pp": 0.46,
+    "ic95_pp": [
+      0.07,
+      0.93
+    ],
+    "linhas_melhor_pct": 25.2,
+    "linhas_iguais_pct": 59.7,
+    "linhas_pior_pct": 15.1,
+    "reamostragens": 2000,
+    "semente": 42
+  },
+  "previsoes": {
+    "7891021006934": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 28.9,
+      "mediana_prevista": 28.98,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 23.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.9
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 25.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 25.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 27.17,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 27.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 27.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 28.07,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 28.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 28.67,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 28.7,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 28.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 28.9
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 28.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 28.9
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 28.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 28.98
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 28.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 28.99
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 29.03,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 29.64,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 29.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 29.96,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 29.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 29.99
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 30.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 30.35,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 31.36,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 31.58,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 31.79,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7891024035047": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 3.99,
+      "mediana_prevista": 3.97,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 2.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 2.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 3.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 3.8,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 3.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 3.85,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.85
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 3.86,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 3.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.9
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 3.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 3.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 3.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 3.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.99
+        },
+        {
+          "rede": "Stall",
+          "previsto": 4.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 4.09,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 4.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 4.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 4.32,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 4.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 4.78,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.78
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 4.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 4.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.99
+        }
+      ]
+    },
+    "7891097018251": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 5.89,
+      "mediana_prevista": 5.78,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 5.29,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.29
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 5.35,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 5.39,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 5.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 5.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 5.64,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 5.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 5.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 5.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 5.79,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.79
+        },
+        {
+          "rede": "Stall",
+          "previsto": 5.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 5.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 5.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 5.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 5.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.99
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 6.02,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 6.27,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 6.31,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7891528029498": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 3.64,
+      "mediana_prevista": 3.57,
+      "redes": [
+        {
+          "rede": "Telêmaco",
+          "previsto": 1.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.99
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 2.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 2.98
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 3.29,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.29
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 3.35,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 3.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 3.43,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 3.47,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 3.49,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 3.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 3.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 3.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 3.61,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 3.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 3.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 3.93,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 3.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 3.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.99
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 4.45,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.45
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 4.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.98
+        }
+      ]
+    },
+    "7891910008353": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 20.45,
+      "mediana_prevista": 20.38,
+      "redes": [
+        {
+          "rede": "Max Atacadista",
+          "previsto": 19.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 19.32,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 19.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 19.85,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 19.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.9
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 19.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.98
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 19.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.99
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 20.22,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 20.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 20.41,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 20.65,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 20.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 20.9
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 21.13,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 21.58,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 21.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 21.99
+        },
+        {
+          "rede": "Festval",
+          "previsto": 22.61,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 22.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 22.98
+        }
+      ]
+    },
+    "7891991001342": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 10.35,
+      "mediana_prevista": 10.18,
+      "redes": [
+        {
+          "rede": "Condor",
+          "previsto": 9.33,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 9.48,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 9.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.49
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 9.59,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 9.64,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 9.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 9.85,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 9.86,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 9.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 9.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.98
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 9.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.98
+        },
+        {
+          "rede": "Stall",
+          "previsto": 10.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 10.21,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 10.29,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 10.34,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 10.35,
+          "origem": "preco_rede",
+          "preco_mes_base": 10.35
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 10.42,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 10.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 10.85,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 10.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 11.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 11.49
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 11.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 11.99
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 12.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 12.95
+        }
+      ]
+    },
+    "7892840800246": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 9.89,
+      "mediana_prevista": 9.6,
+      "redes": [
+        {
+          "rede": "Condor",
+          "previsto": 8.98,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 9.12,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 9.19,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 9.22,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Supermercado Curitiba",
+          "previsto": 9.25,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 9.25,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.25
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 9.28,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 9.4,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 9.4,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.4
+        },
+        {
+          "rede": "Stall",
+          "previsto": 9.79,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 9.82,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 9.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.89
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 9.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 9.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.99
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 10.03,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 10.36,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 10.5,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 12.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 12.95
+        }
+      ]
+    },
+    "7893500020158": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 39.9,
+      "mediana_prevista": 38.84,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 33.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 33.99
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 35.34,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 35.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 36.16,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 36.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 37.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 37.56,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 37.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 38.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 38.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 38.93,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 39.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 39.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 39.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 39.9
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 39.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 39.9
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 39.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 39.98
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 39.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 39.99
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 41.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 41.66,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7894900027013": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 11.99,
+      "mediana_prevista": 11.99,
+      "redes": [
+        {
+          "rede": "Condor",
+          "previsto": 11.01,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 11.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 11.31,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 11.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 11.52,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 11.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 11.63,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 11.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 11.85,
+          "origem": "preco_rede",
+          "preco_mes_base": 11.85
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 11.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 11.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 11.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 11.99
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 11.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 11.99
+        },
+        {
+          "rede": "Stall",
+          "previsto": 12.01,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 12.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 12.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 12.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 12.3,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 12.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 12.8,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 12.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 12.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 12.95
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 12.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 12.98
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 12.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 12.98
+        }
+      ]
+    },
+    "7896005281710": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 3.69,
+      "mediana_prevista": 3.65,
+      "redes": [
+        {
+          "rede": "Condor",
+          "previsto": 3.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.49
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 3.51,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 3.55,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 3.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 3.65,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 3.65,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 3.69,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.69
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 3.69,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.69
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 3.86,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896005286579": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 3.69,
+      "mediana_prevista": 3.69,
+      "redes": [
+        {
+          "rede": "SACOLÃO POPULAR",
+          "previsto": 3.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 3.51,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 3.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 3.61,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 3.68,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 3.69,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.69
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 3.69,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.69
+        },
+        {
+          "rede": "Harger",
+          "previsto": 3.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 3.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 3.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 4.59,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.59
+        }
+      ]
+    },
+    "7896016700149": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 23.99,
+      "mediana_prevista": 23.88,
+      "redes": [
+        {
+          "rede": "Max Atacadista",
+          "previsto": 22.42,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 22.59,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 22.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 23.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 23.34,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 23.64,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 23.83,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 23.86,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 23.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.9
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 23.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.95
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 23.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.99
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 23.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.99
+        },
+        {
+          "rede": "Stall",
+          "previsto": 24.64,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 24.7,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 25.23,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896019112116": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 27.1,
+      "mediana_prevista": 27.1,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 21.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 21.9
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 23.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 25.07,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 25.46,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 25.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 25.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 26.24,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 26.45,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 26.48,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 26.79,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 26.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.9
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 27.1,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.1
+        },
+        {
+          "rede": "Stall",
+          "previsto": 27.36,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 27.42,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 27.64,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 27.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 27.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.95
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 27.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.99
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 28.01,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 28.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 29.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 29.34,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 29.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 29.99
+        }
+      ]
+    },
+    "7896022200282": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 4.99,
+      "mediana_prevista": 4.91,
+      "redes": [
+        {
+          "rede": "Super Curitiba",
+          "previsto": 4.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.49
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 4.59,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.59
+        },
+        {
+          "rede": "Condor",
+          "previsto": 4.65,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 4.73,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 4.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 4.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 4.87,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 4.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 4.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 4.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 4.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 4.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.99
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 4.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.99
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 5.05,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.05
+        },
+        {
+          "rede": "Stall",
+          "previsto": 5.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 5.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 5.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896022205744": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 4.29,
+      "mediana_prevista": 4.22,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 3.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.89
+        },
+        {
+          "rede": "Hipermercado Condor Novo Mundo",
+          "previsto": 3.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 3.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.99
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 3.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 3.99,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 4.06,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 4.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 4.13,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 4.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 4.21,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 4.22,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 4.27,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 4.29,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.29
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 4.35,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.35
+        },
+        {
+          "rede": "Stall",
+          "previsto": 4.36,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 4.4,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 4.42,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 4.61,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 4.67,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 4.75,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.75
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 4.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.99
+        }
+      ]
+    },
+    "7896034610017": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 5.49,
+      "mediana_prevista": 5.31,
+      "redes": [
+        {
+          "rede": "SACOLÃO POPULAR",
+          "previsto": 4.43,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 4.79,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.79
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 4.99,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 5.03,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 5.16,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 5.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 5.3,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 5.31,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 5.37,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 5.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.49
+        },
+        {
+          "rede": "Italo",
+          "previsto": 5.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 5.61,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 5.66,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 5.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 6.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.99
+        }
+      ]
+    },
+    "7896035733449": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 24.99,
+      "mediana_prevista": 25.2,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 20.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 20.9
+        },
+        {
+          "rede": "Condor",
+          "previsto": 23.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 23.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.99
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 24.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 24.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 24.6,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.6
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 24.68,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 25.0,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 25.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 25.23,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 26.06,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 26.34,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 26.46,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 26.68,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 27.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 27.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 27.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.9
+        },
+        {
+          "rede": "Festval",
+          "previsto": 27.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 27.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.99
+        }
+      ]
+    },
+    "7896036090244": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 7.99,
+      "mediana_prevista": 7.99,
+      "redes": [
+        {
+          "rede": "Gabão",
+          "previsto": 7.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.49
+        },
+        {
+          "rede": "Condor",
+          "previsto": 7.5,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 7.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 7.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 7.75,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 7.85,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.85
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 7.85,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 7.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 7.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 8.02,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 8.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 8.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 8.27,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 8.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 8.66,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 8.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 8.96,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896038306039": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 24.45,
+      "mediana_prevista": 24.9,
+      "redes": [
+        {
+          "rede": "Gabão",
+          "previsto": 21.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 21.9
+        },
+        {
+          "rede": "Condor",
+          "previsto": 23.11,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 23.47,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 23.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 23.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 23.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.99
+        },
+        {
+          "rede": "Harger",
+          "previsto": 24.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 24.41,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 24.45,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.45
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 24.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 24.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.9
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 24.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.95
+        },
+        {
+          "rede": "Stall",
+          "previsto": 25.21,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 25.27,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 25.48,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 25.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 25.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 26.45,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 26.67,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 26.86,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 27.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896038321032": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 26.85,
+      "mediana_prevista": 27.34,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 25.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 25.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 26.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 26.29,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 26.85,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 26.85,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.85
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 26.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 27.19,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 27.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.49
+        },
+        {
+          "rede": "Stall",
+          "previsto": 27.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 27.8,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.8
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 27.83,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 28.06,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 28.19,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 28.42,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 29.37,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 29.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 29.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 31.5,
+          "origem": "preco_rede",
+          "preco_mes_base": 31.5
+        }
+      ]
+    },
+    "7896038388059": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 4.99,
+      "mediana_prevista": 5.01,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 3.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 4.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 4.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 4.87,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 4.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 4.93,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 5.09,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 5.11,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 5.16,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 5.36,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 5.4,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 5.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.99
+        }
+      ]
+    },
+    "7896045102440": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 26.98,
+      "mediana_prevista": 26.99,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 22.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 22.9
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 22.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 22.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 25.41,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 25.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 26.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 26.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 26.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 26.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 26.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 26.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.9
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 26.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.98
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 26.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.99
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 27.1,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.1
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 27.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 27.72,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 27.79,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 27.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.99
+        },
+        {
+          "rede": "Italo",
+          "previsto": 28.02,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 28.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 28.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 29.33,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 29.53,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 29.73,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896089011357": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 27.99,
+      "mediana_prevista": 28.2,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 21.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 21.49
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 26.52,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 26.72,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 26.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.99
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 27.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 27.45,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 27.96,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 27.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 27.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 27.99
+        },
+        {
+          "rede": "Harger",
+          "previsto": 28.19,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 28.22,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 28.55,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 28.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 28.9
+        },
+        {
+          "rede": "Stall",
+          "previsto": 29.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 29.46,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 29.59,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 29.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 31.05,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 31.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 34.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 34.95
+        }
+      ]
+    },
+    "7896089016215": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 24.5,
+      "mediana_prevista": 24.98,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 20.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 20.9
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 22.7,
+          "origem": "preco_rede",
+          "preco_mes_base": 22.7
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 22.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 22.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 23.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 23.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 24.02,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 24.16,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 24.47,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 24.5,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.5
+        },
+        {
+          "rede": "Harger",
+          "previsto": 24.67,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 24.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 24.98,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Stall",
+          "previsto": 25.51,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 25.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 25.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 25.9,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 25.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 25.95
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 26.11,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 26.98,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 27.17,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 27.36,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896188403077": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 6.04,
+      "mediana_prevista": 6.11,
+      "redes": [
+        {
+          "rede": "Telêmaco",
+          "previsto": 5.29,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.29
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 5.59,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.59
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 5.6,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.6
+        },
+        {
+          "rede": "Condor",
+          "previsto": 5.65,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 5.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 5.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 5.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 5.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 5.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 5.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 6.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 6.17,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 6.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 6.23,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 6.32,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 6.48,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.48
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 6.53,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 6.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 6.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 6.75,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 6.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.99
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 10.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 10.89
+        }
+      ]
+    },
+    "7896256600223": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 5.49,
+      "mediana_prevista": 5.42,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 4.69,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.69
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 4.69,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.69
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 4.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.98
+        },
+        {
+          "rede": "Condor",
+          "previsto": 5.06,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 5.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 5.23,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 5.3,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 5.34,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 5.35,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 5.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.49
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 5.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.49
+        },
+        {
+          "rede": "Stall",
+          "previsto": 5.52,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 5.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 5.61,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 5.65,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 5.68,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.68
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 5.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 5.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.95
+        }
+      ]
+    },
+    "7896262500050": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 1.8,
+      "mediana_prevista": 1.8,
+      "redes": [
+        {
+          "rede": "Super Curitiba",
+          "previsto": 1.59,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.59
+        },
+        {
+          "rede": "Condor",
+          "previsto": 1.68,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 1.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 1.73,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 1.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 1.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 1.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 1.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 1.8,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 1.8,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.8
+        },
+        {
+          "rede": "Stall",
+          "previsto": 1.83,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 1.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 1.85,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 1.86,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 1.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 1.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.89
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 1.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 1.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896267000135": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 19.99,
+      "mediana_prevista": 19.97,
+      "redes": [
+        {
+          "rede": "Condor",
+          "previsto": 18.4,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 18.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 18.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 19.02,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 19.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 19.42,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 19.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 19.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.49
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 19.67,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 19.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.9
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 19.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.95
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 19.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.99
+        },
+        {
+          "rede": "Stall",
+          "previsto": 20.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 20.13,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 20.29,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 20.39,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 20.56,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 20.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 20.99
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 21.24,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 21.39,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 21.65,
+          "origem": "preco_rede",
+          "preco_mes_base": 21.65
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 21.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 21.98
+        }
+      ]
+    },
+    "7896267004102": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 25.1,
+      "mediana_prevista": 25.05,
+      "redes": [
+        {
+          "rede": "Condor",
+          "previsto": 23.4,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 23.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.49
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 23.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 23.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 23.99
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 24.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 24.18,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 24.49,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 24.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 24.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 24.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.98
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 25.0,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 25.1,
+          "origem": "preco_rede",
+          "preco_mes_base": 25.1
+        },
+        {
+          "rede": "Stall",
+          "previsto": 25.53,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 25.59,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 25.8,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 25.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 25.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 25.99
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 25.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 25.99
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 26.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 26.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.9
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 27.0,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 27.19,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896273900313": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 9.38,
+      "mediana_prevista": 9.3,
+      "redes": [
+        {
+          "rede": "Triunfo",
+          "previsto": 7.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.89
+        },
+        {
+          "rede": "Condor",
+          "previsto": 8.51,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 8.65,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 8.75,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 8.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 8.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 8.95
+        },
+        {
+          "rede": "Harger",
+          "previsto": 8.98,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 8.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 8.99
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 8.99,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 9.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 9.29,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 9.31,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 9.38,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.38
+        },
+        {
+          "rede": "Italo",
+          "previsto": 9.39,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 9.43,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 9.51,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 9.83,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 9.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.89
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 9.9,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 9.96,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 9.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 9.99
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 11.69,
+          "origem": "preco_rede",
+          "preco_mes_base": 11.69
+        }
+      ]
+    },
+    "7896275970611": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 5.98,
+      "mediana_prevista": 5.93,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 5.19,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.19
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 5.29,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.29
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 5.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 5.58,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 5.67,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 5.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 5.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 5.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 5.89,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 5.9,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 5.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 5.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.98
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 5.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.99
+        },
+        {
+          "rede": "Stall",
+          "previsto": 6.09,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 6.11,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 6.16,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 6.24,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 6.3,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.3
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 6.49,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 6.53,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896279600538": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 7.49,
+      "mediana_prevista": 7.7,
+      "redes": [
+        {
+          "rede": "Telêmaco",
+          "previsto": 6.79,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.79
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 6.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 7.05,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 7.17,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 7.25,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 7.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 7.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 7.45,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 7.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.49
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 7.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 7.7,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 7.72,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 7.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 7.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 7.88,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 8.0,
+          "origem": "preco_rede",
+          "preco_mes_base": 8.0
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 8.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 8.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 8.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 8.43,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896279600750": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 24.99,
+      "mediana_prevista": 24.9,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 21.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 21.99
+        },
+        {
+          "rede": "Hipermercado Condor Novo Mundo",
+          "previsto": 23.3,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Supermercados Colatusso",
+          "previsto": 24.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 24.25,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 24.7,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 24.79,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.79
+        },
+        {
+          "rede": "Harger",
+          "previsto": 24.9,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 24.93,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 24.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.99
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 25.22,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 25.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 28.2,
+          "origem": "preco_rede",
+          "preco_mes_base": 28.2
+        }
+      ]
+    },
+    "7896290300011": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 32.9,
+      "mediana_prevista": 32.38,
+      "redes": [
+        {
+          "rede": "Palmeira",
+          "previsto": 29.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 29.95
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 30.25,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 30.47,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 30.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 31.3,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 31.49,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 31.89,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 31.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 31.99
+        },
+        {
+          "rede": "Harger",
+          "previsto": 32.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 32.19,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 32.56,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 32.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 32.9
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 32.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 32.99
+        },
+        {
+          "rede": "Stall",
+          "previsto": 33.25,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 33.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 34.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 34.87,
+          "origem": "preco_rede",
+          "preco_mes_base": 34.87
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 35.17,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 35.42,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 35.66,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896290300332": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 28.95,
+      "mediana_prevista": 28.95,
+      "redes": [
+        {
+          "rede": "Gabão",
+          "previsto": 24.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 24.98
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 26.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 26.99
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 27.01,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 27.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 27.63,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 27.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 28.47,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 28.7,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 28.73,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 28.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 28.95
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 29.07,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 29.68,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 30.0,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 30.39,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 31.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 31.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 31.83,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 33.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 33.9
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 35.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 35.99
+        }
+      ]
+    },
+    "7896412800122": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 3.99,
+      "mediana_prevista": 3.81,
+      "redes": [
+        {
+          "rede": "Condor",
+          "previsto": 2.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 2.99
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 3.19,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.19
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 3.59,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 3.61,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 3.66,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 3.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 3.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 3.81,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 3.82,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 3.87,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 3.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 3.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.99
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 4.06,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 4.35,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.35
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 4.6,
+          "origem": "preco_rede",
+          "preco_mes_base": 4.6
+        }
+      ]
+    },
+    "7896508200041": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 16.85,
+      "mediana_prevista": 16.93,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 14.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 14.99
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 15.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 15.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 15.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 15.99
+        },
+        {
+          "rede": "Condor",
+          "previsto": 16.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 16.29,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 16.48,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 16.57,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 16.79,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 16.85,
+          "origem": "preco_rede",
+          "preco_mes_base": 16.85
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 16.9,
+          "origem": "preco_rede",
+          "preco_mes_base": 16.9
+        },
+        {
+          "rede": "Harger",
+          "previsto": 16.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 16.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 17.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 17.5,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 17.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 17.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 17.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 17.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 17.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 17.99
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 17.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 17.99
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 18.51,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 18.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7896894900037": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 17.98,
+      "mediana_prevista": 18.18,
+      "redes": [
+        {
+          "rede": "Atacadão",
+          "previsto": 15.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 15.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 15.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 15.99
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 17.09,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 17.22,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 17.49,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 17.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 18.02,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 18.17,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 18.19,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 18.83,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 19.23,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 19.87,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 19.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.98
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 19.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 19.99
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 20.01,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 20.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7897001010014": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 7.69,
+      "mediana_prevista": 7.55,
+      "redes": [
+        {
+          "rede": "Gabão",
+          "previsto": 6.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.99
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 7.22,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 7.25,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.25
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 7.3,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 7.35,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 7.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 7.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.49
+        },
+        {
+          "rede": "Harger",
+          "previsto": 7.5,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 7.51,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 7.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 7.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 7.77,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 7.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 7.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.89
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 7.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 8.26,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7898007290196": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 7.59,
+      "mediana_prevista": 7.6,
+      "redes": [
+        {
+          "rede": "Gabão",
+          "previsto": 6.29,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.29
+        },
+        {
+          "rede": "SACOLÃO POPULAR",
+          "previsto": 6.41,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 7.19,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.19
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 7.21,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 7.38,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 7.46,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 7.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 7.66,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 7.67,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 8.11,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 8.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 8.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 8.95
+        }
+      ]
+    },
+    "7898007290202": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 5.99,
+      "mediana_prevista": 6.02,
+      "redes": [
+        {
+          "rede": "SACOLÃO POPULAR",
+          "previsto": 5.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 5.68,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.68
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 5.71,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 5.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 5.91,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 5.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.98
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 5.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.99
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 6.02,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 6.07,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 6.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 6.28,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 6.39,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.39
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 6.43,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 6.59,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 6.69,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7898171400049": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 6.79,
+      "mediana_prevista": 6.76,
+      "redes": [
+        {
+          "rede": "Super Curitiba",
+          "previsto": 5.98,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.98
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 6.09,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.09
+        },
+        {
+          "rede": "Condor",
+          "previsto": 6.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 6.3,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 6.37,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 6.41,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 6.49,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 6.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.49
+        },
+        {
+          "rede": "Harger",
+          "previsto": 6.54,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 6.55,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 6.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 6.76,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 6.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 6.79,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.79
+        },
+        {
+          "rede": "Italo",
+          "previsto": 6.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 6.87,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 6.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 7.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 7.2,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.2
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 7.21,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 7.25,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 7.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.49
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 7.89,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.89
+        }
+      ]
+    },
+    "7898171400209": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 5.99,
+      "mediana_prevista": 5.88,
+      "redes": [
+        {
+          "rede": "Super Curitiba",
+          "previsto": 3.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 3.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 5.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 5.49
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 5.53,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 5.59,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 5.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 5.7,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 5.74,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 5.75,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 5.82,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Stall",
+          "previsto": 5.94,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 5.95,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 6.0,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Boni Bacacheri",
+          "previsto": 6.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 6.28,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 6.37,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 6.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.49
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 6.5,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 6.55,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.55
+        }
+      ]
+    },
+    "7898215157403": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 7.49,
+      "mediana_prevista": 7.47,
+      "redes": [
+        {
+          "rede": "Max Atacadista",
+          "previsto": 6.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 6.97,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 6.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.99
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 7.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 7.16,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Agricer",
+          "previsto": 7.2,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 7.2,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.2
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 7.29,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 7.35,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 7.36,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 7.45,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 7.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.49
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 7.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.49
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 7.5,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.5
+        },
+        {
+          "rede": "Stall",
+          "previsto": 7.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 7.62,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 7.68,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 7.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 7.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.99
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 8.04,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 8.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 8.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7898247780297": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 7.19,
+      "mediana_prevista": 7.36,
+      "redes": [
+        {
+          "rede": "Gabão",
+          "previsto": 6.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.49
+        },
+        {
+          "rede": "Atacadão",
+          "previsto": 6.79,
+          "origem": "preco_rede",
+          "preco_mes_base": 6.79
+        },
+        {
+          "rede": "Assaí",
+          "previsto": 7.07,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Supermercados Colatusso",
+          "previsto": 7.11,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 7.15,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 7.19,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.19
+        },
+        {
+          "rede": "Jacomar",
+          "previsto": 7.29,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 7.44,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Curitiba",
+          "previsto": 7.49,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.49
+        },
+        {
+          "rede": "Stall",
+          "previsto": 7.6,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 7.6,
+          "origem": "preco_rede",
+          "preco_mes_base": 7.6
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 7.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 8.03,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 8.09,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    },
+    "7898912374011": {
+      "mes_base": "2026-10",
+      "mes_previsto": "2026-11",
+      "referencia_mes_base": 1.99,
+      "mediana_prevista": 1.97,
+      "redes": [
+        {
+          "rede": "Super Curitiba",
+          "previsto": 1.75,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.75
+        },
+        {
+          "rede": "Max Atacadista",
+          "previsto": 1.78,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Condor",
+          "previsto": 1.79,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Muffato",
+          "previsto": 1.84,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Harger",
+          "previsto": 1.89,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Rio verde",
+          "previsto": 1.89,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Super Dia",
+          "previsto": 1.92,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Gabão",
+          "previsto": 1.95,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.95
+        },
+        {
+          "rede": "Stall",
+          "previsto": 1.96,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "REDE MASTER",
+          "previsto": 1.96,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Italo",
+          "previsto": 1.98,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "MIG ATACADO E VAREJO",
+          "previsto": 1.99,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Araucária",
+          "previsto": 1.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.99
+        },
+        {
+          "rede": "Palmeira",
+          "previsto": 1.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.99
+        },
+        {
+          "rede": "Telêmaco",
+          "previsto": 1.99,
+          "origem": "preco_rede",
+          "preco_mes_base": 1.99
+        },
+        {
+          "rede": "Carrefour",
+          "previsto": 2.0,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Mini Preço",
+          "previsto": 2.07,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Angeloni",
+          "previsto": 2.08,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Festval",
+          "previsto": 2.1,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        },
+        {
+          "rede": "Triunfo",
+          "previsto": 2.14,
+          "origem": "nivel_rede",
+          "preco_mes_base": null
+        }
+      ]
+    }
+  }
+}

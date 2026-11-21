@@ -1,0 +1,1494 @@
+{
+  "retrieved_on": "2026-11-09",
+  "valid_from": "2026-11-01",
+  "valid_through": "2026-11-30",
+  "status": "source_based_demonstration_conditions_assumed",
+  "sources": {
+    "sn": "https://www2.camara.leg.br/legin/fed/leicom/2006/leicomplementar-123-14-dezembro-2006-548099-normaatualizada-pl.html",
+    "beverages": "https://www2.camara.leg.br/legin/fed/lei/2015/lei-13097-19-janeiro-2015-780071-normaatualizada-pl.html",
+    "beverage_guidance": "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/restituicao-ressarcimento-reembolso-e-compensacao/conformidade-tributaria/Creditos-Indevidos-de-PIS-Pasep-Cofins-Setor-Supermercadista",
+    "dental": "https://www2.camara.leg.br/legin/fed/lei/2004/lei-10925-23-julho-2004-533112-normaatualizada-pl.html",
+    "lc224": "https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-224-26-dezembro-2025-798608-normaatualizada-pl.html",
+    "st_beverages": "https://www.fazenda.pr.gov.br/Pagina/Pauta-de-bebidas",
+    "st_dental": "https://www.legislacao.pr.gov.br/legislacao/listarAtosAno.do?action=exibirImpressao&codAto=381258",
+    "sn_rules": "https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=92278",
+    "sn_zero": "https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/PerguntaoSN.pdf",
+    "pr_modal": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=321803&codItemAto=2038037",
+    "credit_base": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14592.htm",
+    "st_base_exclusion": "https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?cod_tema_final=1125&cod_tema_inicial=1125&novaConsulta=true&tipo_pesquisa=T",
+    "food_federal": "https://www2.camara.leg.br/legin/fed/lei/2004/lei-10925-23-julho-2004-533112-normaatualizada-pl.html",
+    "food_annex": "https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html",
+    "food_pr": "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibirImpressao&codAto=284",
+    "sn_pr": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=553&codItemAto=31414",
+    "ricms_pr": "https://www.sefanet.pr.gov.br/dados/SEFADOCUMENTOS/106201707871.pdf",
+    "fecop_pr": "https://atendimento.fazenda.pr.gov.br/sacsefa/portal/assuntosReferente/16",
+    "water_ex": "https://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=69369"
+  },
+  "products": {
+    "7894900027013": {
+      "ncm": "22021000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Refrigerante 2 L",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891528029498": {
+      "ncm": "33061000",
+      "label": "Revenda de dentifricio: ST na compra; beneficio federal com reducao linear em 2026.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Operacao nao possui imunidade, incentivo oneroso ou outra excecao a LC 224/2025.",
+        "Para excluir ICMS-ST da base PIS/Cofins, a parcela documentada e simulada internamente como 10% do custo bruto. Nao e aliquota legal; precisa da NF-e em uso real. A parcela continua no custo, sem credito.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS."
+      ],
+      "simples_excluded_share": "0.34",
+      "regular_pis_cofins_factor": "0.1",
+      "source_keys": [
+        "sn",
+        "dental",
+        "lc224",
+        "st_dental",
+        "sn_rules",
+        "sn_zero",
+        "st_base_exclusion",
+        "sn_pr"
+      ],
+      "interpretation_note": "Lei 10925 art. 1 XXVII: aliquota zero comum, nao confundir com monofasico. LC224 art.4: cenario cumulativo 0,065%+0,30%; nao cumulativo 0,165%+0,76%, sem criar credito vedado. No Simples, retira somente parcela ICMS-ST.",
+      "purchase_st_exclusion_fraction": "0.10",
+      "family": "hygiene_st_linear_reduction",
+      "catalog_group": "Creme dental",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7893500020158": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Arroz para consumo humano do catalogo (polido/parboilizado); enquadramento na descricao estadual deve ser confirmado na operacao real."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "10063021",
+      "catalog_group": "Arroz",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896267004102": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Arroz para consumo humano do catalogo (polido/parboilizado); enquadramento na descricao estadual deve ser confirmado na operacao real."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "10063021",
+      "catalog_group": "Arroz",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896038321032": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Arroz para consumo humano do catalogo (polido/parboilizado); enquadramento na descricao estadual deve ser confirmado na operacao real."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "10063021",
+      "catalog_group": "Arroz",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896290300011": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Arroz para consumo humano do catalogo (polido/parboilizado); enquadramento na descricao estadual deve ser confirmado na operacao real."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "10063021",
+      "catalog_group": "Arroz",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896038306039": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Arroz para consumo humano do catalogo (polido/parboilizado); enquadramento na descricao estadual deve ser confirmado na operacao real."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "10063011",
+      "catalog_group": "Arroz",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896267000135": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Arroz para consumo humano do catalogo (polido/parboilizado); enquadramento na descricao estadual deve ser confirmado na operacao real."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "10063011",
+      "catalog_group": "Arroz",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896290300332": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Arroz para consumo humano do catalogo (polido/parboilizado); enquadramento na descricao estadual deve ser confirmado na operacao real."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "10063011",
+      "catalog_group": "Arroz",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7898171400049": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "07133319",
+      "catalog_group": "Feijão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7898007290202": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "07133319",
+      "catalog_group": "Feijão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7898171400209": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "07133319",
+      "catalog_group": "Feijão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896038388059": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "07133319",
+      "catalog_group": "Feijão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896273900313": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "07133399",
+      "catalog_group": "Feijão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7898007290196": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso V.",
+      "ncm": "07133399",
+      "catalog_group": "Feijão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896022205744": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Massa seca com ovos, nao cozida, nao recheada, subposicao1902.1. Nao generalizar para massa pronta ou recheada."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XVIII.",
+      "ncm": "19021100",
+      "catalog_group": "Macarrão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896412800122": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Massa seca com ovos, nao cozida, nao recheada, subposicao1902.1. Nao generalizar para massa pronta ou recheada."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XVIII.",
+      "ncm": "19021100",
+      "catalog_group": "Macarrão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896005281710": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Massa seca com ovos, nao cozida, nao recheada, subposicao1902.1. Nao generalizar para massa pronta ou recheada."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XVIII.",
+      "ncm": "19021100",
+      "catalog_group": "Macarrão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896005286579": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Massa seca com ovos, nao cozida, nao recheada, subposicao1902.1. Nao generalizar para massa pronta ou recheada."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XVIII.",
+      "ncm": "19021100",
+      "catalog_group": "Macarrão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896022200282": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado.",
+        "Massa seca com ovos, nao cozida, nao recheada, subposicao1902.1. Nao generalizar para massa pronta ou recheada."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XVIII.",
+      "ncm": "19021100",
+      "catalog_group": "Macarrão",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896508200041": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXII.",
+      "ncm": "17019900",
+      "catalog_group": "Açúcar",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896894900037": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXII.",
+      "ncm": "17019900",
+      "catalog_group": "Açúcar",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891910008353": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXII.",
+      "ncm": "17019900",
+      "catalog_group": "Açúcar",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896019112116": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896045102440": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896089011357": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896279600750": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891021006934": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896089016215": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896035733449": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896016700149": {
+      "family": "food_basket_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Lei 10.925/2004 art.1 e LC224 art.4 par.8 III: alimento protegido do Anexo I LC214; PIS/Cofins zero fora do Simples. Isencao ordinaria nao elimina PIS/Cofins do DAS. Inciso XXI.",
+      "ncm": "09012100",
+      "catalog_group": "Café",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7892840800246": {
+      "ncm": "22021000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Refrigerante 2 L",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891991001342": {
+      "ncm": "22021000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Refrigerante 2 L",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896188403077": {
+      "ncm": "22021000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Refrigerante 2 L",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891024035047": {
+      "ncm": "34011190",
+      "label": "Sabao de toucador em barra: ST assumida e beneficio federal reduzido.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Operacao nao possui imunidade, incentivo oneroso ou outra excecao a LC 224/2025.",
+        "Para excluir ICMS-ST da base PIS/Cofins, a parcela documentada e simulada internamente como 10% do custo bruto. Nao e aliquota legal; precisa da NF-e em uso real. A parcela continua no custo, sem credito.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Protex em barra 85g assumido como sabao de toucador Ex01, CEST20.034.00, nao lenco umedecido; confirmar enquadramento e NF-e para uso real."
+      ],
+      "simples_excluded_share": "0.34",
+      "regular_pis_cofins_factor": "0.1",
+      "source_keys": [
+        "sn",
+        "dental",
+        "lc224",
+        "st_dental",
+        "sn_rules",
+        "sn_zero",
+        "st_base_exclusion",
+        "sn_pr"
+      ],
+      "interpretation_note": "Lei 10.925 art.1 XXVI: cenario condicionado ao Ex01 (sabao de toucador), nao apenas ao NCM34011190. LC224: mesmas aliquotas residuais do dentifricio; nao tratar como monofasico.",
+      "purchase_st_exclusion_fraction": "0.10",
+      "family": "hygiene_st_linear_reduction",
+      "catalog_group": "Sabonete",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896262500050": {
+      "ncm": "22011000",
+      "label": "Agua mineral natural: excecao Ex01/Ex02 ao regime federal de bebidas frias; ST assumida.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo.",
+        "Agua mineral natural do catalogo, recipiente inferior a 10 L, Ex01; confirmar rotulo. Nao e agua adicionada de sais nem gaseificada artificialmente.",
+        "Parcela de ICMS-ST para exclusao da base PIS/Cofins simulada como 10% do custo bruto: valor ficticio, nao aliquota legal. Credito recuperavel do Real conservadoramente nao modelado sem NF-e."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "1",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr",
+        "water_ex"
+      ],
+      "interpretation_note": "Lei13097 art.14 II exclui Ex01 e Ex02 do NCM22011000. Nao usar zero do art.28 para agua mineral natural. PIS/Cofins comuns por regime; Simples sem retirar parcela federal. Creditos elegiveis do Real nao reconstruidos sem documento da compra; cenario conservador sem credito, nao vedacao legal generica.",
+      "purchase_st_exclusion_fraction": ".10",
+      "family": "natural_mineral_water_st",
+      "catalog_group": "Água mineral",
+      "purchase_credit_basis": "Hipotese conservadora sem credito reconstruido por falta de NF-e; nao representa vedacao legal de todo credito PIS/Cofins no Real."
+    },
+    "7898912374011": {
+      "ncm": "22011000",
+      "label": "Agua mineral natural: excecao Ex01/Ex02 ao regime federal de bebidas frias; ST assumida.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo.",
+        "Agua mineral natural do catalogo, recipiente inferior a 10 L, Ex01; confirmar rotulo. Nao e agua adicionada de sais nem gaseificada artificialmente.",
+        "Parcela de ICMS-ST para exclusao da base PIS/Cofins simulada como 10% do custo bruto: valor ficticio, nao aliquota legal. Credito recuperavel do Real conservadoramente nao modelado sem NF-e."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "1",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr",
+        "water_ex"
+      ],
+      "interpretation_note": "Lei13097 art.14 II exclui Ex01 e Ex02 do NCM22011000. Nao usar zero do art.28 para agua mineral natural. PIS/Cofins comuns por regime; Simples sem retirar parcela federal. Creditos elegiveis do Real nao reconstruidos sem documento da compra; cenario conservador sem credito, nao vedacao legal generica.",
+      "purchase_st_exclusion_fraction": ".10",
+      "family": "natural_mineral_water_st",
+      "catalog_group": "Água mineral",
+      "purchase_credit_basis": "Hipotese conservadora sem credito reconstruido por falta de NF-e; nao representa vedacao legal de todo credito PIS/Cofins no Real."
+    },
+    "7891097018251": {
+      "family": "uht_milk_retail_st",
+      "label": "Leite UHT: nao aplicar isencao estadual da cesta basica; cenario com ST previamente retida.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Leite UHT integral 1 L, destinado ao consumo humano; nao composto lacteo, nao leite em po. Compra com ST previamente recolhida e embutida no custo e premissa da operacao, nao confirmacao de NF-e."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Federal: Lei10925 art.1 XI e AnexoI item2 LC214 protegido pela LC224. Estadual: UHT e excecao na Lei14978 art.1 VI; ausencia de novo debito decorre da ST assumida, nao daquela isencao.",
+      "ncm": "04012010",
+      "catalog_group": "Leite",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896034610017": {
+      "family": "uht_milk_retail_st",
+      "label": "Leite UHT: nao aplicar isencao estadual da cesta basica; cenario com ST previamente retida.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Leite UHT integral 1 L, destinado ao consumo humano; nao composto lacteo, nao leite em po. Compra com ST previamente recolhida e embutida no custo e premissa da operacao, nao confirmacao de NF-e."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Federal: Lei10925 art.1 XI e AnexoI item2 LC214 protegido pela LC224. Estadual: UHT e excecao na Lei14978 art.1 VI; ausencia de novo debito decorre da ST assumida, nao daquela isencao.",
+      "ncm": "04012010",
+      "catalog_group": "Leite",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896256600223": {
+      "family": "uht_milk_retail_st",
+      "label": "Leite UHT: nao aplicar isencao estadual da cesta basica; cenario com ST previamente retida.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Leite UHT integral 1 L, destinado ao consumo humano; nao composto lacteo, nao leite em po. Compra com ST previamente recolhida e embutida no custo e premissa da operacao, nao confirmacao de NF-e."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Federal: Lei10925 art.1 XI e AnexoI item2 LC214 protegido pela LC224. Estadual: UHT e excecao na Lei14978 art.1 VI; ausencia de novo debito decorre da ST assumida, nao daquela isencao.",
+      "ncm": "04012010",
+      "catalog_group": "Leite",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896275970611": {
+      "family": "uht_milk_retail_st",
+      "label": "Leite UHT: nao aplicar isencao estadual da cesta basica; cenario com ST previamente retida.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Leite UHT integral 1 L, destinado ao consumo humano; nao composto lacteo, nao leite em po. Compra com ST previamente recolhida e embutida no custo e premissa da operacao, nao confirmacao de NF-e."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Federal: Lei10925 art.1 XI e AnexoI item2 LC214 protegido pela LC224. Estadual: UHT e excecao na Lei14978 art.1 VI; ausencia de novo debito decorre da ST assumida, nao daquela isencao.",
+      "ncm": "04012010",
+      "catalog_group": "Leite",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7898215157403": {
+      "family": "uht_milk_retail_st",
+      "label": "Leite UHT: nao aplicar isencao estadual da cesta basica; cenario com ST previamente retida.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Leite UHT integral 1 L, destinado ao consumo humano; nao composto lacteo, nao leite em po. Compra com ST previamente recolhida e embutida no custo e premissa da operacao, nao confirmacao de NF-e."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": "0",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Federal: Lei10925 art.1 XI e AnexoI item2 LC214 protegido pela LC224. Estadual: UHT e excecao na Lei14978 art.1 VI; ausencia de novo debito decorre da ST assumida, nao daquela isencao.",
+      "ncm": "04012010",
+      "catalog_group": "Leite",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896036090244": {
+      "family": "soybean_oil_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": ".1",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Oleo refinado de soja: Lei10925 art.1 XXIII. Esta no Anexo VII, e nao no Anexo I/XV protegido da LC214; cenario de reducao linear LC224, sem criar credito antes vedado.",
+      "ncm": "15079011",
+      "catalog_group": "Óleo de soja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896279600538": {
+      "family": "soybean_oil_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": ".1",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Oleo refinado de soja: Lei10925 art.1 XXIII. Esta no Anexo VII, e nao no Anexo I/XV protegido da LC214; cenario de reducao linear LC224, sem criar credito antes vedado.",
+      "ncm": "15079011",
+      "catalog_group": "Óleo de soja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7897001010014": {
+      "family": "soybean_oil_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": ".1",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Oleo refinado de soja: Lei10925 art.1 XXIII. Esta no Anexo VII, e nao no Anexo I/XV protegido da LC214; cenario de reducao linear LC224, sem criar credito antes vedado.",
+      "ncm": "15079011",
+      "catalog_group": "Óleo de soja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7898247780297": {
+      "family": "soybean_oil_retail_exempt",
+      "label": "Alimento: venda interna PR ao consumidor final isenta de ICMS; tratamento federal por produto.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "Credito de compra nao presumido a partir do imposto na venda. Neste cenario nao ha credito recuperavel; apuracao real exige documento fiscal.",
+        "Revenda interna a consumidor final no PR, dentro da descricao legal da cesta basica; compra sem credito recuperavel (ou com estorno exigivel na saida isenta).",
+        "Sem credito presumido, ressarcimento ou incentivo industrial simulado; custo bruto integral preservado."
+      ],
+      "simples_excluded_share": ".34",
+      "regular_pis_cofins_factor": ".1",
+      "purchase_st_exclusion_fraction": "0",
+      "source_keys": [
+        "sn",
+        "sn_pr",
+        "sn_zero",
+        "food_federal",
+        "food_annex",
+        "lc224",
+        "food_pr"
+      ],
+      "interpretation_note": "Oleo refinado de soja: Lei10925 art.1 XXIII. Esta no Anexo VII, e nao no Anexo I/XV protegido da LC214; cenario de reducao linear LC224, sem criar credito antes vedado.",
+      "ncm": "15079011",
+      "catalog_group": "Óleo de soja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891149200504": {
+      "ncm": "22030000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo.",
+        "Confirmar lata x long neck antes de usar pauta/ST real; a revisao fiscal nao torna atual o historico de precos encerrado em fevereiro de 2026."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Cerveja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891991000796": {
+      "ncm": "22030000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo.",
+        "Confirmar lata x long neck antes de usar pauta/ST real; a revisao fiscal nao torna atual o historico de precos encerrado em fevereiro de 2026."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Cerveja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7896045512317": {
+      "ncm": "22030000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo.",
+        "Confirmar lata x long neck antes de usar pauta/ST real; a revisao fiscal nao torna atual o historico de precos encerrado em fevereiro de 2026."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Cerveja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    },
+    "7891149010509": {
+      "ncm": "22030000",
+      "label": "Bebida fria no varejo: ST retida na compra; regra federal especifica.",
+      "conditions": [
+        "Varejista de Curitiba/PR, revenda interna a consumidor final; nao fabricante ou importador.",
+        "Aquisicao com ICMS-ST ja retido; custo informado e o total bruto por unidade, incluindo tributos embutidos.",
+        "Sem creditos recuperaveis da compra nem restituicao/complementacao de ST simulados; confirmar documento fiscal para uso real.",
+        "Custos, despesas e faturamento sao ficticios e nao pertencem a empresa real.",
+        "Empresa demonstrativa atende ao criterio de varejista do art. 17 da Lei 13.097/2015 (75% de receita a consumidor final).",
+        "Perfil Simples ficticio: RBT12 de R$ 360 mil, Anexo I faixa 2; isencao da parcela ICMS/PR conforme Lei 15.562/2007 art.2. Nao somar duas exclusoes de ICMS.",
+        "FECOP e ICMS retidos estao incluidos no custo bruto quando devidos; sem segundo debito da mesma retencao. Sem restituicao/complementacao de ST neste demonstrativo.",
+        "Confirmar lata x long neck antes de usar pauta/ST real; a revisao fiscal nao torna atual o historico de precos encerrado em fevereiro de 2026."
+      ],
+      "simples_excluded_share": "0.495",
+      "regular_pis_cofins_factor": "0",
+      "source_keys": [
+        "sn",
+        "beverages",
+        "beverage_guidance",
+        "st_beverages",
+        "sn_rules",
+        "st_base_exclusion",
+        "sn_pr",
+        "fecop_pr",
+        "ricms_pr"
+      ],
+      "interpretation_note": "Art. 28 inclui Simples; art. 29 veda credito da bebida revendida com reducao. Aliquota zero da revenda especifica mantida no cenario conforme orientacao atual da RFB; nao generalizar para atacadista.",
+      "purchase_st_exclusion_fraction": "0",
+      "family": "cold_beverage_retail_st",
+      "catalog_group": "Cerveja",
+      "purchase_credit_basis": "Cenario demonstrativo sem credito recuperavel da compra; custo bruto integral. Ver condicoes e fontes deste SKU."
+    }
+  }
+}

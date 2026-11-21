@@ -1,0 +1,38 @@
+{
+  "reference": {
+    "id_produto": "7896045512317",
+    "camada": "observado",
+    "janela": [
+      "2025-12",
+      "2026-01",
+      "2026-02"
+    ],
+    "aggregation": "median_across_stores",
+    "mediana": 2.99,
+    "p25": 2.89,
+    "p75": 2.99,
+    "n_obs": 31,
+    "n_lojas": 13,
+    "n_redes": 10,
+    "ultima_obs": "2026-02-02",
+    "cobertura_ok": true
+  },
+  "per_network_brl": {
+    "Agrimar": 3.49,
+    "Assaí": 2.99,
+    "Carrefour": 2.99,
+    "Condor": 2.99,
+    "Festval": 2.79,
+    "Fuchspan": 2.79,
+    "Harger": 2.99,
+    "Jacomar": 2.99,
+    "REDE MASTER": 2.99,
+    "Super Muffato": 2.89
+  },
+  "por_rede": {
+    "mediana": 2.99,
+    "p25": 2.92,
+    "p75": 2.99
+  },
+  "source": "Clique Economia (mensal + diário); janela 2025-12..2026-02; loja-mes -> loja -> rede; status historica; mercado/exportar.py@3dd3188"
+}

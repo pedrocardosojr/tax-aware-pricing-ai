@@ -1,0 +1,1025 @@
+{
+  "executed_at_utc": "2026-11-05T22:24:05.518536+00:00",
+  "engine": {
+    "versaoApp": "1.5.4",
+    "versaoDb": "V0059",
+    "descricaoVersaoDb": "Habilitação de 820 para NFSe.",
+    "dataVersaoDb": "2026-09-30",
+    "ambiente": "offline"
+  },
+  "products": 50,
+  "distinct_ncms": 14,
+  "catalog_sha256": "167b8bb0f58983cdece1ea3a062dbcf2ab733fa66c4e6a2df687241f69d48942",
+  "profiles_sha256": "3b6e8653e3d1e6009290abdb7f85832572ca37b65f9cda3a0427cff4dff5f951",
+  "nominal_rates_2033_illustrative_percent": {
+    "cbs": 8.8,
+    "ibsEstadual": 8.85,
+    "ibsMunicipal": 8.85
+  },
+  "tax_base_brl": "133.34",
+  "passed": 92,
+  "blocked": 8,
+  "errors": 0,
+  "rows": [
+    {
+      "ean": "7893500020158",
+      "ncm": "10063021",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7893500020158",
+      "ncm": "10063021",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896267004102",
+      "ncm": "10063021",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896267004102",
+      "ncm": "10063021",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896038321032",
+      "ncm": "10063021",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896038321032",
+      "ncm": "10063021",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896290300011",
+      "ncm": "10063021",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896290300011",
+      "ncm": "10063021",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896038306039",
+      "ncm": "10063011",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896038306039",
+      "ncm": "10063011",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896267000135",
+      "ncm": "10063011",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896267000135",
+      "ncm": "10063011",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896290300332",
+      "ncm": "10063011",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896290300332",
+      "ncm": "10063011",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7898171400049",
+      "ncm": "07133319",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7898171400049",
+      "ncm": "07133319",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7898007290202",
+      "ncm": "07133319",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7898007290202",
+      "ncm": "07133319",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7898171400209",
+      "ncm": "07133319",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7898171400209",
+      "ncm": "07133319",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896038388059",
+      "ncm": "07133319",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896038388059",
+      "ncm": "07133319",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896273900313",
+      "ncm": "07133399",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896273900313",
+      "ncm": "07133399",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7898007290196",
+      "ncm": "07133399",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7898007290196",
+      "ncm": "07133399",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896022205744",
+      "ncm": "19021100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896022205744",
+      "ncm": "19021100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896412800122",
+      "ncm": "19021100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896412800122",
+      "ncm": "19021100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896005281710",
+      "ncm": "19021100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896005281710",
+      "ncm": "19021100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896005286579",
+      "ncm": "19021100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896005286579",
+      "ncm": "19021100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896022200282",
+      "ncm": "19021100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896022200282",
+      "ncm": "19021100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896508200041",
+      "ncm": "17019900",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896508200041",
+      "ncm": "17019900",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896894900037",
+      "ncm": "17019900",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896894900037",
+      "ncm": "17019900",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7891910008353",
+      "ncm": "17019900",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7891910008353",
+      "ncm": "17019900",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896019112116",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896019112116",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896045102440",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896045102440",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896089011357",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896089011357",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896279600750",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896279600750",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7891021006934",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7891021006934",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896089016215",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896089016215",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896035733449",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896035733449",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896016700149",
+      "ncm": "09012100",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896016700149",
+      "ncm": "09012100",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7894900027013",
+      "ncm": "22021000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7894900027013",
+      "ncm": "22021000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    },
+    {
+      "ean": "7892840800246",
+      "ncm": "22021000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7892840800246",
+      "ncm": "22021000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    },
+    {
+      "ean": "7891991001342",
+      "ncm": "22021000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7891991001342",
+      "ncm": "22021000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    },
+    {
+      "ean": "7896188403077",
+      "ncm": "22021000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7896188403077",
+      "ncm": "22021000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    },
+    {
+      "ean": "7891528029498",
+      "ncm": "33061000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.53",
+      "simulated": false
+    },
+    {
+      "ean": "7891528029498",
+      "ncm": "33061000",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "14.13",
+      "simulated": true
+    },
+    {
+      "ean": "7891024035047",
+      "ncm": "34011190",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.53",
+      "simulated": false
+    },
+    {
+      "ean": "7891024035047",
+      "ncm": "34011190",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "14.13",
+      "simulated": true
+    },
+    {
+      "ean": "7896262500050",
+      "ncm": "22011000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7896262500050",
+      "ncm": "22011000",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "35.33",
+      "simulated": true
+    },
+    {
+      "ean": "7898912374011",
+      "ncm": "22011000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7898912374011",
+      "ncm": "22011000",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "35.33",
+      "simulated": true
+    },
+    {
+      "ean": "7891097018251",
+      "ncm": "04012010",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7891097018251",
+      "ncm": "04012010",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896034610017",
+      "ncm": "04012010",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896034610017",
+      "ncm": "04012010",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896256600223",
+      "ncm": "04012010",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896256600223",
+      "ncm": "04012010",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896275970611",
+      "ncm": "04012010",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7896275970611",
+      "ncm": "04012010",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7898215157403",
+      "ncm": "04012010",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": false
+    },
+    {
+      "ean": "7898215157403",
+      "ncm": "04012010",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.00",
+      "simulated": true
+    },
+    {
+      "ean": "7896036090244",
+      "ncm": "15079011",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.53",
+      "simulated": false
+    },
+    {
+      "ean": "7896036090244",
+      "ncm": "15079011",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "14.13",
+      "simulated": true
+    },
+    {
+      "ean": "7896279600538",
+      "ncm": "15079011",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.53",
+      "simulated": false
+    },
+    {
+      "ean": "7896279600538",
+      "ncm": "15079011",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "14.13",
+      "simulated": true
+    },
+    {
+      "ean": "7897001010014",
+      "ncm": "15079011",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.53",
+      "simulated": false
+    },
+    {
+      "ean": "7897001010014",
+      "ncm": "15079011",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "14.13",
+      "simulated": true
+    },
+    {
+      "ean": "7898247780297",
+      "ncm": "15079011",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "0.53",
+      "simulated": false
+    },
+    {
+      "ean": "7898247780297",
+      "ncm": "15079011",
+      "year": 2033,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "14.13",
+      "simulated": true
+    },
+    {
+      "ean": "7891149200504",
+      "ncm": "22030000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7891149200504",
+      "ncm": "22030000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    },
+    {
+      "ean": "7891991000796",
+      "ncm": "22030000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7891991000796",
+      "ncm": "22030000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    },
+    {
+      "ean": "7896045512317",
+      "ncm": "22030000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7896045512317",
+      "ncm": "22030000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    },
+    {
+      "ean": "7891149010509",
+      "ncm": "22030000",
+      "year": 2026,
+      "status": "passed",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "ibs_cbs": "1.33",
+      "simulated": false
+    },
+    {
+      "ean": "7891149010509",
+      "ncm": "22030000",
+      "year": 2033,
+      "status": "blocked",
+      "fiscal_review_status": "pending",
+      "scope": "experimental_ibs_cbs_only",
+      "reason": "RTC requires explicit Imposto Seletivo data",
+      "http_status": 422
+    }
+  ]
+}

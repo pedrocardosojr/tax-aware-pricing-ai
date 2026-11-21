@@ -1,0 +1,242 @@
+{
+  "modelo": "gemini-flash-lite-latest",
+  "conjunto": "grupo",
+  "resumo": {
+    "perguntas": 8,
+    "com_fonte_esperada": 6,
+    "fora_do_acervo": 2,
+    "a_app": {
+      "recusas_corretas": 2
+    },
+    "b_modelo_com_dados": {
+      "sem_resposta": 0,
+      "numeros_do_calculo": 8,
+      "fonte_esperada_citada": 0,
+      "recusas_corretas": 2
+    },
+    "c_modelo_com_trechos": {
+      "sem_resposta": 0,
+      "numeros_do_calculo": 8,
+      "fonte_esperada_citada": 2,
+      "recusas_corretas": 1
+    }
+  },
+  "respostas": [
+    {
+      "pergunta": "Esses numeros sao confiaveis? de onde vem?",
+      "esperado": [
+        "clique_origem",
+        "cafe_metodo"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre a confiabilidade ou origem dos números.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Sim, os números são conferidos por um validador antes de serem exibidos, que verifica se cada seção utiliza exatamente os fatos calculados pelo app [validador]. Em 01/10/2026, o preço avaliado está R$ 0,15 (1,27%) acima da mediana observada, índice que usa a mediana como referência 100. Após as deduções, sobram R$ 3,56 por unidade (29,65%) para cobrir despesas fixas e formar o resultado da operação. Além disso, a Black Friday em 23/11 conta com pesquisas do setor citando mais vendas de refrigerante 2 L, sendo apenas uma sugestão e não uma previsão para a sua loja.",
+        "recuperado": [
+          "validador"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Esses nuemros sao de lojas reais e tem quantas lojas?",
+      "esperado": [
+        "cafe_janela",
+        "clique_origem"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para confirmar se os números são de lojas reais ou quantas lojas existem.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Os números apresentados utilizam dados de 43 a 60 lojas e de 20 a 27 redes, dependendo do uso do diário no recorte de maio a outubro [cafe_janela]. O índice de preço avaliado em 01/10/2026 está R$ 0,15 acima da mediana, que serve como referência 100 [position]. Além disso, sobram R$ 3,56 por unidade (29,65%) para cobrir despesas fixas e formar o resultado após as deduções [contribution]. Como sugestão do setor, pesquisas citam mais vendas de refrigerante 2 L na Black Friday em 23/11, o que não constitui uma previsão para a sua loja [season].",
+        "recuperado": [
+          "cafe_janela"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Se eu fizer uma promocação vai valer a pena?",
+      "esperado": [
+        "simulador"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Como os trechos fornecidos não contêm informações sobre promoções, não há evidência nas fontes do projeto para responder se a promoção vai valer a pena. No entanto, pesquisas do setor citam mais vendas de refrigerante 2 L na Black Friday em 23/11, sendo esta apenas uma sugestão do setor e não uma previsão para a sua loja [season]. Antes de alterar o preço, você deve comparar a contribuição nos cenários da faixa, pois um preço maior pode reduzir o volume vendido e esse efeito ainda não é medido pelo app [action].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Não encontrei essa informação nas fontes do projeto.",
+        "recuperado": [],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Se eu trocar meu regime tributario vale a pena para esse SKU?",
+      "esperado": [
+        "premissas_tributarias",
+        null
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para responder se vale a pena trocar o regime tributário.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "As fontes do projeto não apresentam evidências sobre a vantagem da troca de regime tributário para este SKU. A tributação estimada utiliza perfis demonstrativos de três regimes para um varejista de Curitiba vendendo para consumidor final, com ICMS-ST já recolhido e incluído no custo bruto, tratando-se de condições fictícias e sem apuração fiscal real [premissas_tributarias].",
+        "recuperado": [
+          "premissas_tributarias"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": true,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Nesse mes que eu to entrando faz sentido focar nesse SKU ou fazer promoção? Chegando dia dos pais ou Natal sei la",
+      "esperado": [
+        null,
+        "simulador"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto sobre o mês atual de entrada ou sobre datas comemorativas como o Dia dos Pais ou o Natal. Sobre a Black Friday em 23/11, pesquisas do setor citam mais vendas de refrigerante 2 L nesta data; lembre-se que é uma sugestão do setor, não uma previsão para a sua loja [season]. Antes de alterar o preço, compare a contribuição nos cenários da faixa, pois um preço maior pode reduzir o volume vendido e esse efeito ainda não é medido pelo app [action]. Atualmente, sobram R$ 3,56 por unidade (29,65%) para cobrir despesas fixas e formar o resultado da operação [contribution].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Para o Dia dos Pais, pesquisas do setor apontam crescimento em volume de itens como pão de alho, carne bovina, cerveja, carne suína, linguiça e farofa [saz_dia_dos_pais], o que serve apenas como sugestão e não como previsão para a sua loja. No cenário atual, sobra R$ 3,56 por unidade (29,65%) após as deduções para cobrir despesas fixas e formar o resultado da operação. O preço avaliado está R$ 0,15 (1,27%) acima da mediana observada. Recomenda-se comparar a contribuição nos cenários da faixa antes de alterar o preço, pois um valor maior pode reduzir o volume vendido.",
+        "recuperado": [
+          "saz_dia_dos_pais"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Se eu pensar em sazonalinade e comportamrnto do consumidor nessa epoca do ano faz sentido?",
+      "esperado": [
+        null
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Como os trechos não respondem à sua pergunta, não há evidência nas fontes do projeto. No entanto, pesquisas do setor citam mais vendas de refrigerante 2 L na Black Friday em 23/11, sendo uma sugestão do setor e não uma previsão para a sua loja [season].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Sim, faz sentido considerar a sazonalidade e o comportamento do consumidor, pois pesquisas do setor citam mais vendas de refrigerante 2 L na Black Friday em 23/11 [season]. Além disso, dados do IBGE apontam que novembro fica 3% acima da média do ano e dezembro 21% acima para o setor de supermercados no Paraná, embora isso seja para o setor inteiro no estado e não uma previsão para a sua loja [saz_supermercados_pr]. Ao avaliar o preço, lembre-se de que um valor maior pode reduzir o volume vendido, efeito que ainda não é medido pelo app [action].",
+        "recuperado": [
+          "saz_supermercados_pr"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": false
+      }
+    },
+    {
+      "pergunta": "Existe alguma forma de eu melhorar minha margem nesse cenario sem prejudicar tanto meu cliente?",
+      "esperado": [
+        "simulador"
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Como não há trechos recuperados nas fontes do projeto, não é possível responder com base neles. No entanto, com base nos dados disponíveis, o preço avaliado está R$ 0,15 acima da mediana [position]. É recomendado comparar a contribuição nos cenários da faixa antes de alterar o preço, pois um valor maior pode reduzir o volume vendido [action]. Além disso, pesquisas do setor citam mais vendas de refrigerante 2 L na Black Friday em 23/11, sendo esta uma sugestão do setor e não uma previsão para a sua loja [season].",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": false,
+        "acertou_recusa": null
+      },
+      "c_modelo_com_trechos": {
+        "texto": "Para melhorar sua margem sem prejudicar tanto o cliente, você pode usar o simulador de contribuição e volume para recalcular a contribuição por unidade com outro preço de venda, avaliando a variação de volume necessária para manter a contribuição total [simulador]. Atualmente, sobram R$ 3,56 por unidade (29,65%) após as deduções, e o preço avaliado está R$ 0,15 (1,27%) acima da mediana observada. Antes de alterar o preço, compare a contribuição nos cenários da faixa, pois um preço maior pode reduzir o volume vendido, um efeito que ainda não é medido pelo app. Além disso, como sugestão do setor, pesquisas citam mais vendas de refrigerante 2 L na Black Friday em 23/11, lembrando que isso não é uma previsão para a sua loja ou produto.",
+        "recuperado": [
+          "simulador"
+        ],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": true,
+        "recusou": false,
+        "acertou_recusa": null
+      }
+    },
+    {
+      "pergunta": "Esse imposto eu pago em qual momento?",
+      "esperado": [
+        null
+      ],
+      "a_app": {
+        "texto": "Tente perguntar sobre um assunto por vez: posição no mercado, desconto, margem de contribuição ou tributação estimada.",
+        "recusou": true
+      },
+      "b_modelo_com_dados": {
+        "texto": "Não há evidência nas fontes do projeto para responder em qual momento o imposto é pago.",
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      },
+      "c_modelo_com_trechos": {
+        "texto": "A tributação do app usa perfis demonstrativos por regime. Não tem os dados fiscais da sua empresa; para a carga real, consulte a sua contabilidade.",
+        "recuperado": [],
+        "numeros_do_calculo": true,
+        "citou_fonte_esperada": false,
+        "recusou": true,
+        "acertou_recusa": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "scope": "demonstration_profiles_and_observed_market_snapshot",
+  "files": {
+    "dados/tributos/perfis_demo_mvp.json": "135e7e41e63687ae4ea82f47d5001eef46f1e5b605edd40a828c50b96e695f2f",
+    "tax_pricing/demo_profile.py": "833a5d7c485151ac381ab549d3d9f6138d405a3a4567d420b49237a6f09aad98",
+    "tax_pricing/mvp_analysis.py": "744e829ab0eada4a5939e43e345fb05dc1fbe596ff05428de02c8d6f1bb0c4f8",
+    "scripts/demo_mvp.py": "95aa1abfbcae8ca585d251805536502cf7b94b0c6a0c16ffa77f7c802792d85b"
+  },
+  "successful_live_rtc_calls_in_this_demo": 0
+}

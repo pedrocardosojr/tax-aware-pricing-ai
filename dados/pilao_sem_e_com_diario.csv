@@ -1,0 +1,5 @@
+cenario,janela_meses,mes_ini,mes_fim,lojas,mediana_loja,p25,p75,ic_lo,ic_hi,largura_pct,observacoes,coletas_datas,redes,ultima_coleta,regra_loja_mes
+sem_diario,3,2026-08,2026-10,26,25.98,24.06,28.67,24.99,27.99,11.55,26,3,14,2026-10-01,loja=endereco_completo; mes=__mes na base mensal e mes da data real no diario; 1 ponto por loja por mes (mediana das coletas do mes); mediana por loja
+sem_diario,6,2026-05,2026-10,43,26.98,25.09,29.67,25.98,28.98,11.12,56,6,20,2026-10-01,loja=endereco_completo; mes=__mes na base mensal e mes da data real no diario; 1 ponto por loja por mes (mediana das coletas do mes); mediana por loja
+com_diario,3,2026-08,2026-10,57,25.89,23.2,26.99,23.99,25.99,7.72,200,21,25,2026-10-29,loja=endereco_completo; mes=__mes na base mensal e mes da data real no diario; 1 ponto por loja por mes (mediana das coletas do mes); mediana por loja
+com_diario,6,2026-05,2026-10,60,25.98,24.3,28.09,25.55,26.96,5.44,230,24,27,2026-10-29,loja=endereco_completo; mes=__mes na base mensal e mes da data real no diario; 1 ponto por loja por mes (mediana das coletas do mes); mediana por loja

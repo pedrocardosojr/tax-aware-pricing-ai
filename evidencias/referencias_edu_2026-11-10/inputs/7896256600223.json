@@ -1,0 +1,52 @@
+{
+  "reference": {
+    "id_produto": "7896256600223",
+    "camada": "observado",
+    "janela": [
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "aggregation": "median_across_stores",
+    "mediana": 5.29,
+    "p25": 4.87,
+    "p75": 5.49,
+    "n_obs": 182,
+    "n_lojas": 51,
+    "n_redes": 24,
+    "ultima_obs": "2026-10-29",
+    "cobertura_ok": true
+  },
+  "per_network_brl": {
+    "Agricer": 4.95,
+    "Araucária": 4.69,
+    "Assaí": 5.29,
+    "Atacadão": 4.69,
+    "Carrefour": 4.29,
+    "Condor": 5.29,
+    "Fuchspan": 4.99,
+    "Gabão": 5.49,
+    "Harger": 4.74,
+    "Jacomar": 4.99,
+    "Michel": 5.99,
+    "Mini Preço": 5.49,
+    "Palmeira": 5.78,
+    "REDE MASTER": 5.32,
+    "SACOLÃO POPULAR": 5.79,
+    "Stall": 4.57,
+    "Super Boni": 3.99,
+    "Super Curitiba": 5.99,
+    "Super Muffato": 5.49,
+    "Telêmaco": 5.49,
+    "Tissi": 6.64,
+    "Tok Super": 5.59,
+    "Triunfo": 5.89,
+    "Zamprogna": 4.99
+  },
+  "por_rede": {
+    "mediana": 5.3,
+    "p25": 4.9,
+    "p75": 5.64
+  },
+  "source": "Clique Economia (mensal + diário); janela 2026-08..2026-10; loja-mes -> loja -> rede; status atual; mercado/exportar.py@3dd3188"
+}

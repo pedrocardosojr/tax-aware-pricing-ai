@@ -1,0 +1,7 @@
+{
+ "fonte": "IBGE, Pesquisa Mensal de Comércio, tabela 8882",
+ "url": "https://servicodados.ibge.gov.br/api/v3/agregados/8882/periodos/202201-202609/variaveis/7169?localidades=N3[41]&classificacao=11046[56734]|85[103154]",
+ "baixado_em": "2026-11-14",
+ "recorte": "Paraná (N3=41), Hipermercados e supermercados (85=103154), índice de volume (11046=56734), número-índice sem ajuste sazonal (7169)",
+ "metodo": "para cada ano de 2022 a 2025, índice do mês dividido pela média do ano; média das quatro razões"
+}

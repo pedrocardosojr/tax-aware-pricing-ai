@@ -1,0 +1,10 @@
+[
+  ["Esses numeros sao confiaveis? de onde vem?", ["clique_origem", "cafe_metodo"]],
+  ["Esses nuemros sao de lojas reais e tem quantas lojas?", ["cafe_janela", "clique_origem"]],
+  ["Se eu fizer uma promocação vai valer a pena?", ["simulador"]],
+  ["Se eu trocar meu regime tributario vale a pena para esse SKU?", ["premissas_tributarias", null]],
+  ["Nesse mes que eu to entrando faz sentido focar nesse SKU ou fazer promoção? Chegando dia dos pais ou Natal sei la", [null, "simulador"]],
+  ["Se eu pensar em sazonalinade e comportamrnto do consumidor nessa epoca do ano faz sentido?", [null]],
+  ["Existe alguma forma de eu melhorar minha margem nesse cenario sem prejudicar tanto meu cliente?", ["simulador"]],
+  ["Esse imposto eu pago em qual momento?", [null]]
+]

@@ -1,0 +1,100 @@
+{
+  "04012010": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Explicit candidate for engine compatibility testing. Independent fiscal review and IS parameters remain pending.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "07133319": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "07133399": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "09012100": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "10063011": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "10063021": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "15079011": {
+    "cclass": "200034",
+    "cst": "200",
+    "note": "Experimental candidate from RTC class 200034 (Anexo VII). Compatibility accepted in 2026 and 2033; class 200003 rejected. Engine 1.5.4/V0059 on 2026-11-05. Independent fiscal review pending.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "17019900": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "19021100": {
+    "cclass": "200003",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "22011000": {
+    "cclass": "000001",
+    "cst": "000",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "22021000": {
+    "cclass": "000001",
+    "cst": "000",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "22030000": {
+    "cclass": "000001",
+    "cst": "000",
+    "note": "Explicit candidate for engine compatibility testing. Independent fiscal review and IS parameters remain pending.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "33061000": {
+    "cclass": "200035",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  },
+  "34011190": {
+    "cclass": "200035",
+    "cst": "200",
+    "note": "Manually declared experimental candidate; engine compatibility is not fiscal validation.",
+    "scope": "ibs_cbs_only",
+    "status": "candidate"
+  }
+}

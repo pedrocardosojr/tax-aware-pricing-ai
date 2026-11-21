@@ -1,0 +1,16 @@
+{
+  "method": "TF-IDF char 3-5 ranking after brand, quantity, group and explicit variant guards; no automatic identity approval.",
+  "comparison": "Potential additions against exact-code monthly plus daily observations, excluding same-store/date overlap.",
+  "ambiguous_source_descriptions": 0,
+  "stats": [
+    {
+      "origin": "monthly",
+      "candidate_rows": 1450,
+      "unique_candidate_keys": 1243,
+      "conflicting_keys_excluded": 0,
+      "potential_additional_keys": 1204,
+      "products": 9
+    }
+  ],
+  "limitations": "Candidates only. Packaging and source code reuse need team review. This does not replace Rodrigo mappings."
+}

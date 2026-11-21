@@ -1,0 +1,966 @@
+{
+  "sources": [
+    {
+      "path": "dados/catalogo/skus_37.json",
+      "sha256": "7c8cee47989f8c98de596cc508330b0fb4e3b40c072fe8c80ca5ec229b65a3a9",
+      "original_provenance": {
+        "source_pr": "https://github.com/pedrocardosojr/tax-pricing/pull/6",
+        "source_commit": "d62870d1f1dd9d2bc42e67aa4ff2e75f23821cfa",
+        "source_xlsx_sha256": "0fb93198b7bd4952b9852d57782a494ef3983f4efa14bb4996976267a85001bb",
+        "note": "Snapshot for integration tests; preserves Rodrigo catalog, no fiscal approval implied. Package volumes made explicit from descriptions."
+      }
+    },
+    {
+      "repository_path": "dados/ncm_rastreabilidade_37.csv",
+      "commit": "94443f8cfb931f121fd725c71a2d6b0be3fb4672",
+      "sha256": "b778fe645d33bae74c5b27513abafb5da4a6733673d78bc755322cb0bbf4a31c",
+      "note": "Versão pública: só NCM final, status e revisor; respostas brutas do serviço de consulta removidas."
+    },
+    {
+      "repository_path": "dados/catalogo_expansao_13.csv",
+      "commit": "9cfcb86cef0be76fed4f593b3be02b5c111ac990",
+      "sha256": "a575d3ced9c25cd8530b5b2712bbfb3dbb323bd876fedf4d02f4905b31bf96af",
+      "note": "Versão pública: só NCM final, status e revisor; respostas brutas do serviço de consulta removidas."
+    }
+  ],
+  "note": "Experimental integration snapshot. Source reviews and exceptions preserved; independent fiscal review pending.",
+  "products": [
+    {
+      "ean": "7893500020158",
+      "description": "ARROZ POLIDO -TIO JOAO -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Arroz",
+        "id_produto": "7893500020158",
+        "descricao": "ARROZ POLIDO -TIO JOAO -5 KG",
+        "ncm_final": "10063021",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896267004102",
+      "description": "ARROZ POLIDO -BURITI -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Arroz",
+        "id_produto": "7896267004102",
+        "descricao": "ARROZ POLIDO -BURITI -5 KG",
+        "ncm_final": "10063021",
+        "status_ncm": "corrigido",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896038321032",
+      "description": "ARROZ POLIDO -TIO URBANO -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Arroz",
+        "id_produto": "7896038321032",
+        "descricao": "ARROZ POLIDO -TIO URBANO -5 KG",
+        "ncm_final": "10063021",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896290300011",
+      "description": "ARROZ POLIDO -PRATO FINO -5 KG",
+      "group": "Arroz",
+      "type": "polido",
+      "package": "5 kg",
+      "ncm": "10063021",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Arroz",
+        "id_produto": "7896290300011",
+        "descricao": "ARROZ POLIDO -PRATO FINO -5 KG",
+        "ncm_final": "10063021",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896038306039",
+      "description": "ARROZ PARBOILIZADO -URBANO -5 KG",
+      "group": "Arroz",
+      "type": "parboilizado",
+      "package": "5 kg",
+      "ncm": "10063011",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Arroz",
+        "id_produto": "7896038306039",
+        "descricao": "ARROZ PARBOILIZADO -URBANO -5 KG",
+        "ncm_final": "10063011",
+        "status_ncm": "corrigido",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896267000135",
+      "description": "ARROZ PARBOILIZADO -BURITI -5 KG",
+      "group": "Arroz",
+      "type": "parboilizado",
+      "package": "5 kg",
+      "ncm": "10063011",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Arroz",
+        "id_produto": "7896267000135",
+        "descricao": "ARROZ PARBOILIZADO -BURITI -5 KG",
+        "ncm_final": "10063011",
+        "status_ncm": "corrigido",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896290300332",
+      "description": "ARROZ PARBOILIZADO -PRATO FINO -5 KG",
+      "group": "Arroz",
+      "type": "parboilizado",
+      "package": "5 kg",
+      "ncm": "10063011",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Arroz",
+        "id_produto": "7896290300332",
+        "descricao": "ARROZ PARBOILIZADO -PRATO FINO -5 KG",
+        "ncm_final": "10063011",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7898171400049",
+      "description": "FEIJAO PRETO -PE VERMELHO -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Feijão",
+        "id_produto": "7898171400049",
+        "descricao": "FEIJAO PRETO -PE VERMELHO -1 KG",
+        "ncm_final": "07133319",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7898007290202",
+      "description": "FEIJAO PRETO -PONTAROLLO PREMIUM -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Feijão",
+        "id_produto": "7898007290202",
+        "descricao": "FEIJAO PRETO -PONTAROLLO PREMIUM -1 KG",
+        "ncm_final": "07133319",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7898171400209",
+      "description": "FEIJAO PRETO -RESERVA -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Feijão",
+        "id_produto": "7898171400209",
+        "descricao": "FEIJAO PRETO -RESERVA -1 KG",
+        "ncm_final": "07133319",
+        "status_ncm": "corrigido",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896038388059",
+      "description": "FEIJAO PRETO -URBANO -1 KG",
+      "group": "Feijão",
+      "type": "preto",
+      "package": "1 kg",
+      "ncm": "07133319",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Feijão",
+        "id_produto": "7896038388059",
+        "descricao": "FEIJAO PRETO -URBANO -1 KG",
+        "ncm_final": "07133319",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896273900313",
+      "description": "FEIJAO CARIOCA -CALDO BOM -1 KG",
+      "group": "Feijão",
+      "type": "carioca",
+      "package": "1 kg",
+      "ncm": "07133399",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Feijão",
+        "id_produto": "7896273900313",
+        "descricao": "FEIJAO CARIOCA -CALDO BOM -1 KG",
+        "ncm_final": "07133399",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7898007290196",
+      "description": "FEIJAO CARIOCA -PONTAROLLO -1 KG",
+      "group": "Feijão",
+      "type": "carioca",
+      "package": "1 kg",
+      "ncm": "07133399",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Feijão",
+        "id_produto": "7898007290196",
+        "descricao": "FEIJAO CARIOCA -PONTAROLLO -1 KG",
+        "ncm_final": "07133399",
+        "status_ncm": "corrigido",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896022205744",
+      "description": "MACARRAO COM OVOS PENA -TODESCHINI -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos pena/penne",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Macarrão",
+        "id_produto": "7896022205744",
+        "descricao": "MACARRAO COM OVOS PENA -TODESCHINI -500 GR",
+        "ncm_final": "19021100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896412800122",
+      "description": "MACARRAO COM OVOS PENA -ORQUIDEA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos pena/penne",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Macarrão",
+        "id_produto": "7896412800122",
+        "descricao": "MACARRAO COM OVOS PENA -ORQUIDEA -500 GR",
+        "ncm_final": "19021100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896005281710",
+      "description": "MACARRAO COM OVOS PENNE -DONA BENTA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos pena/penne",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Macarrão",
+        "id_produto": "7896005281710",
+        "descricao": "MACARRAO COM OVOS PENNE -DONA BENTA -500 GR",
+        "ncm_final": "19021100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896005286579",
+      "description": "MACARRAO COM OVOS ESPAGUETE -DONA BENTA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos espaguete",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Macarrão",
+        "id_produto": "7896005286579",
+        "descricao": "MACARRAO COM OVOS ESPAGUETE -DONA BENTA -500 GR",
+        "ncm_final": "19021100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896022200282",
+      "description": "MACARRAO COM OVOS ESPAGUETE -RENATA -500 GR",
+      "group": "Macarrão",
+      "type": "com ovos espaguete",
+      "package": "500 g",
+      "ncm": "19021100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Macarrão",
+        "id_produto": "7896022200282",
+        "descricao": "MACARRAO COM OVOS ESPAGUETE -RENATA -500 GR",
+        "ncm_final": "19021100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896508200041",
+      "description": "ACUCAR REFINADO -ALTO ALEGRE -5 KG",
+      "group": "Açúcar",
+      "type": "refinado",
+      "package": "5 kg",
+      "ncm": "17019900",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Açúcar",
+        "id_produto": "7896508200041",
+        "descricao": "ACUCAR REFINADO -ALTO ALEGRE -5 KG",
+        "ncm_final": "17019900",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896894900037",
+      "description": "ACUCAR REFINADO -CARAVELAS -5 KG",
+      "group": "Açúcar",
+      "type": "refinado",
+      "package": "5 kg",
+      "ncm": "17019900",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Açúcar",
+        "id_produto": "7896894900037",
+        "descricao": "ACUCAR REFINADO -CARAVELAS -5 KG",
+        "ncm_final": "17019900",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891910008353",
+      "description": "ACUCAR REFINADO -UNIAO -5 KG",
+      "group": "Açúcar",
+      "type": "refinado",
+      "package": "5 kg",
+      "ncm": "17019900",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Açúcar",
+        "id_produto": "7891910008353",
+        "descricao": "ACUCAR REFINADO -UNIAO -5 KG",
+        "ncm_final": "17019900",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896019112116",
+      "description": "CAFE VACUO -DAMASCO -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7896019112116",
+        "descricao": "CAFE VACUO -DAMASCO -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896045102440",
+      "description": "CAFE VACUO -3 CORACOES -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7896045102440",
+        "descricao": "CAFE VACUO -3 CORACOES -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896089011357",
+      "description": "CAFE VACUO -PILAO -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7896089011357",
+        "descricao": "CAFE VACUO -PILAO -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896279600750",
+      "description": "CAFE VACUO -COAMO -500 GR",
+      "group": "Café",
+      "type": "vácuo tradicional",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7896279600750",
+        "descricao": "CAFE VACUO -COAMO -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891021006934",
+      "description": "CAFE VACUO EXTRA FORTE -MELITTA -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7891021006934",
+        "descricao": "CAFE VACUO EXTRA FORTE -MELITTA -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896089016215",
+      "description": "CAFE VACUO EXTRA FORTE -CABOCLO -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7896089016215",
+        "descricao": "CAFE VACUO EXTRA FORTE -CABOCLO -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896035733449",
+      "description": "CAFE VACUO EXTRA FORTE -BOM JESUS -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7896035733449",
+        "descricao": "CAFE VACUO EXTRA FORTE -BOM JESUS -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896016700149",
+      "description": "CAFE VACUO EXTRA FORTE -ALVORADA -500 GR",
+      "group": "Café",
+      "type": "vácuo extra forte",
+      "package": "500 g",
+      "ncm": "09012100",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Café",
+        "id_produto": "7896016700149",
+        "descricao": "CAFE VACUO EXTRA FORTE -ALVORADA -500 GR",
+        "ncm_final": "09012100",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7894900027013",
+      "description": "REFRIGERANTE -COCA COLA -2 LITRO",
+      "group": "Refrigerante 2 L",
+      "type": "cola",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Refrigerante 2 L",
+        "id_produto": "7894900027013",
+        "descricao": "REFRIGERANTE -COCA COLA -2 LITRO",
+        "ncm_final": "22021000",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7892840800246",
+      "description": "REFRIGERANTE SABOR COLA - PEPSI - 2 LITROS",
+      "group": "Refrigerante 2 L",
+      "type": "cola",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Refrigerante 2 L",
+        "id_produto": "7892840800246",
+        "descricao": "REFRIGERANTE COCA COLA -PEPSI -2 LITRO",
+        "ncm_final": "22021000",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891991001342",
+      "description": "REFRIGERANTE GUARANA -ANTARTICA -2 LITRO",
+      "group": "Refrigerante 2 L",
+      "type": "guaraná",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Refrigerante 2 L",
+        "id_produto": "7891991001342",
+        "descricao": "REFRIGERANTE GUARANA -ANTARTICA -2 LITRO",
+        "ncm_final": "22021000",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896188403077",
+      "description": "REFRIGERANTE GUARANA -CINI -2 LITRO",
+      "group": "Refrigerante 2 L",
+      "type": "guaraná",
+      "package": "2 L",
+      "ncm": "22021000",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Refrigerante 2 L",
+        "id_produto": "7896188403077",
+        "descricao": "REFRIGERANTE GUARANA -CINI -2 LITRO",
+        "ncm_final": "22021000",
+        "status_ncm": "corrigido",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891528029498",
+      "description": "CREME DENTAL TRIPLA LIMPEZA COMPLETA -SORRISO -70 GR",
+      "group": "Creme dental",
+      "type": "tripla limpeza",
+      "package": "70 g",
+      "ncm": "33061000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Creme dental",
+        "id_produto": "7891528029498",
+        "descricao": "CREME DENTAL TRIPLA LIMPEZA COMPLETA -SORRISO -70 GR",
+        "ncm_final": "33061000",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891024035047",
+      "description": "SABONETE ANTIBACTERIANO -PROTEX -85 GR",
+      "group": "Sabonete",
+      "type": "barra antibacteriano",
+      "package": "85 g",
+      "ncm": "34011190",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Sabonete",
+        "id_produto": "7891024035047",
+        "descricao": "SABONETE ANTIBACTERIANO -PROTEX -85 GR",
+        "ncm_final": "34011190",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896262500050",
+      "description": "AGUA MINERAL -OURO FINO -500 ML",
+      "group": "Água mineral",
+      "type": "sem gás",
+      "package": "500 ml",
+      "ncm": "22011000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Água mineral",
+        "id_produto": "7896262500050",
+        "descricao": "AGUA MINERAL -OURO FINO -500 ML",
+        "ncm_final": "22011000",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7898912374011",
+      "description": "AGUA MINERAL -FONT LIFE -510 ML",
+      "group": "Água mineral",
+      "type": "sem gás",
+      "package": "510 ml",
+      "ncm": "22011000",
+      "supplier_review_status": "confirmado",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Água mineral",
+        "id_produto": "7898912374011",
+        "descricao": "AGUA MINERAL -FONT LIFE -510 ML",
+        "ncm_final": "22011000",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891097018251",
+      "description": "LEITE LONGA VIDA INTEGRAL -BATAVO -1 LITRO",
+      "group": "Leite",
+      "type": "UHT integral",
+      "package": "1 L",
+      "ncm": "04012010",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Leite",
+        "id_produto": "7891097018251",
+        "descricao": "LEITE LONGA VIDA INTEGRAL -BATAVO -1 LITRO",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896034610017",
+      "description": "LEITE LONGA VIDA INTEGRAL -PARMALAT -1 LITRO",
+      "group": "Leite",
+      "type": "UHT integral",
+      "package": "1 L",
+      "ncm": "04012010",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Leite",
+        "id_produto": "7896034610017",
+        "descricao": "LEITE LONGA VIDA INTEGRAL -PARMALAT -1 LITRO",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896256600223",
+      "description": "LEITE LONGA VIDA INTEGRAL -TIROL -1 LITRO",
+      "group": "Leite",
+      "type": "UHT integral",
+      "package": "1 L",
+      "ncm": "04012010",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Leite",
+        "id_produto": "7896256600223",
+        "descricao": "LEITE LONGA VIDA INTEGRAL -TIROL -1 LITRO",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896275970611",
+      "description": "LEITE LONGA VIDA INTEGRAL -FRIMESA -1 LITRO",
+      "group": "Leite",
+      "type": "UHT integral",
+      "package": "1 L",
+      "ncm": "04012010",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Leite",
+        "id_produto": "7896275970611",
+        "descricao": "LEITE LONGA VIDA INTEGRAL -FRIMESA -1 LITRO",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7898215157403",
+      "description": "LEITE LONGA VIDA INTEGRAL -NINHO -1 LITRO",
+      "group": "Leite",
+      "type": "UHT integral",
+      "package": "1 L",
+      "ncm": "04012010",
+      "supplier_review_status": "corrigido",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Leite",
+        "id_produto": "7898215157403",
+        "descricao": "LEITE LONGA VIDA INTEGRAL -NINHO -1 LITRO",
+        "status_ncm": "corrigido",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896036090244",
+      "description": "OLEO DE SOJA -LIZA -900 ML",
+      "group": "Óleo de soja",
+      "type": "soja",
+      "package": "900 ml",
+      "ncm": "15079011",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Óleo de soja",
+        "id_produto": "7896036090244",
+        "descricao": "OLEO DE SOJA -LIZA -900 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896279600538",
+      "description": "OLEO DE SOJA -COAMO -900 ML",
+      "group": "Óleo de soja",
+      "type": "soja",
+      "package": "900 ml",
+      "ncm": "15079011",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Óleo de soja",
+        "id_produto": "7896279600538",
+        "descricao": "OLEO DE SOJA -COAMO -900 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7897001010014",
+      "description": "OLEO DE SOJA -COCAMAR -900 ML",
+      "group": "Óleo de soja",
+      "type": "soja",
+      "package": "900 ml",
+      "ncm": "15079011",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Óleo de soja",
+        "id_produto": "7897001010014",
+        "descricao": "OLEO DE SOJA -COCAMAR -900 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7898247780297",
+      "description": "OLEO DE SOJA -VITALIV -900 ML",
+      "group": "Óleo de soja",
+      "type": "soja",
+      "package": "900 ml",
+      "ncm": "15079011",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Óleo de soja",
+        "id_produto": "7898247780297",
+        "descricao": "OLEO DE SOJA -VITALIV -900 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891149200504",
+      "description": "CERVEJA -SKOL -350 ML",
+      "group": "Cerveja",
+      "type": "embalagem a confirmar",
+      "package": "350 ml",
+      "ncm": "22030000",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Cerveja",
+        "id_produto": "7891149200504",
+        "descricao": "CERVEJA -SKOL -350 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891991000796",
+      "description": "CERVEJA -ANTÁRTICA -350 ML",
+      "group": "Cerveja",
+      "type": "embalagem a confirmar",
+      "package": "350 ml",
+      "ncm": "22030000",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Cerveja",
+        "id_produto": "7891991000796",
+        "descricao": "CERVEJA -ANTÁRTICA -350 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7896045512317",
+      "description": "CERVEJA -KAISER -350 ML",
+      "group": "Cerveja",
+      "type": "embalagem a confirmar",
+      "package": "350 ml",
+      "ncm": "22030000",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Cerveja",
+        "id_produto": "7896045512317",
+        "descricao": "CERVEJA -KAISER -350 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    },
+    {
+      "ean": "7891149010509",
+      "description": "CERVEJA -BRAHMA -350 ML",
+      "group": "Cerveja",
+      "type": "embalagem a confirmar",
+      "package": "350 ml",
+      "ncm": "22030000",
+      "supplier_review_status": "confirmado (tabela Siscomex)",
+      "fiscal_review_status": "pending",
+      "ncm_trace": {
+        "grupo": "Cerveja",
+        "id_produto": "7891149010509",
+        "descricao": "CERVEJA -BRAHMA -350 ML",
+        "status_ncm": "confirmado",
+        "revisor": "Rodrigo",
+        "fonte_ncm": "Tabela NCM oficial (Siscomex), revisão da equipe"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "base_commit": "ef094f5807799e530373e7eb193ad8840cdbe8d2",
+  "source_hashes": {
+    "tax_pricing/catalog.py": "f5c92dab35c5bb828fea58adf477a2c6ed4ac3ea31ae5932720f62e0988dd9bb",
+    "tax_pricing/tax_summary.py": "db1cec97fc3b4bb03a72e215c688bead7979c15aa4e6a641368dc07dc9644917",
+    "tax_pricing/__init__.py": "6111e7db15494fa47492c788e993cead09985a29f82d5172c19b4b47b1baeb62",
+    "tax_pricing/rtc.py": "4c083f113abd834241f63be2264eb2bfd346a46d5b64a5f90dcf99a2a23b69e4",
+    "scripts/test_catalog_rtc.py": "49bcb4e01028c8a2a90a858ed6926510ed209bb4bb5329004e930dbcb150f0e1",
+    "tests/test_tax_summary.py": "8d12bdfcf342ea1ee9a65b6aad2d8eb7fedd8d95fbca2d0a02d8f1628932fb2a",
+    "tests/test_catalog.py": "ece529e547c7f166ed94db8a9b568fb7363baf61ab486fcde1d21574bc731cb3",
+    "tests/test_catalog_integration_contract.py": "c3aed0408dd70bad02daa9e046cf665857e75bd63558c6fd3108a279df01d940",
+    "tests/test_rtc.py": "27ec62fbb21b595b3a4e847011bb7294c555ad91930aab217d29ef4b62397668",
+    "tests/fixtures/rtc_2026_examples.json": "dee9caf8bdbaa43246f84980f16e2d35c90d945c1af44d633389c5c9ada502a0",
+    "dados/catalogo/skus_50.json": "167b8bb0f58983cdece1ea3a062dbcf2ab733fa66c4e6a2df687241f69d48942",
+    "dados/catalogo/classificacoes_experimentais.json": "3b6e8653e3d1e6009290abdb7f85832572ca37b65f9cda3a0427cff4dff5f951"
+  },
+  "validation": {
+    "unit_tests_passed": 15,
+    "pylint": "10.00/10",
+    "mypy": "no issues in 5 source files",
+    "live_passed": 50,
+    "live_blocked": 0,
+    "live_errors": 0
+  },
+  "scope": "Calculated IBS/CBS details. Total taxpayer burden and payment assessment require a separate profile."
+}

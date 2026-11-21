@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-11-07T16:18:21.004869+00:00",
+  "package_source": "https://consumo.tributos.gov.br/servico/calcular-tributos-consumo/api/calculadora/download/url?platform=jar",
+  "package_file": "calculadora-jar.zip",
+  "package_sha256": "2f5e797698db0428f4b11bf30212265023cf8995e73a08ff1f680b101862b01c",
+  "engine_app": "1.6.2",
+  "engine_db": "V0066",
+  "scope": "2026 IBS/CBS and personalized arithmetic from supplied taxpayer components",
+  "files": {
+    "tax_pricing/rtc_service.py": "a627436f0868782b01ac7f0050d6d1a4e03e7939f2f91150617c72d55367ff92",
+    "tax_pricing/personalized_tax.py": "8c18f4e62c3841796eb9bdde80f61f220d6a11b626f9a535dc8a5f6ebbe91125",
+    "tax_pricing/product_analysis.py": "7cfbe4fb4b061cbfbed2858fbc48127359119f337dffb35a8113b0568dbd0928",
+    "scripts/verify_current_tax.py": "d836842921084c334957612591d585f16798a216db5168ea0ddd6e145c6fd89e",
+    "scripts/demo_personalized.py": "a10b51171f27efb2f0dc4ee078c343f4b06b5e1ae854a6b417cd45c4b6b0eb05",
+    "dados/catalogo/skus_50.json": "167b8bb0f58983cdece1ea3a062dbcf2ab733fa66c4e6a2df687241f69d48942",
+    "dados/catalogo/classificacoes_experimentais.json": "3b6e8653e3d1e6009290abdb7f85832572ca37b65f9cda3a0427cff4dff5f951"
+  }
+}

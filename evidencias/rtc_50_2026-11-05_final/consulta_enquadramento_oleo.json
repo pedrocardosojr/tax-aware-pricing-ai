@@ -1,0 +1,88 @@
+[
+  {
+    "path": "/calculadora/dados-abertos/classificacoes-tributarias/ncm-aplicavel?cClassTrib=200003&ncm=15079011&dataOcorrenciaFatoGerador=2026-10-01",
+    "request": null,
+    "status": 200,
+    "body": {
+      "cClassTrib": "200003",
+      "ncm": "15079011",
+      "dataOcorrenciaFatoGerador": "2026-10-01",
+      "valido": false
+    }
+  },
+  {
+    "path": "/calculadora/dados-abertos/classificacoes-tributarias/ncm-aplicavel?cClassTrib=200034&ncm=15079011&dataOcorrenciaFatoGerador=2026-10-01",
+    "request": null,
+    "status": 200,
+    "body": {
+      "cClassTrib": "200034",
+      "ncm": "15079011",
+      "dataOcorrenciaFatoGerador": "2026-10-01",
+      "valido": true
+    }
+  },
+  {
+    "path": "/calculadora/dados-abertos/classificacoes-tributarias/ncm-aplicavel?cClassTrib=200003&ncm=15079011&dataOcorrenciaFatoGerador=2033-10-01",
+    "request": null,
+    "status": 200,
+    "body": {
+      "cClassTrib": "200003",
+      "ncm": "15079011",
+      "dataOcorrenciaFatoGerador": "2033-10-01",
+      "valido": false
+    }
+  },
+  {
+    "path": "/calculadora/dados-abertos/classificacoes-tributarias/ncm-aplicavel?cClassTrib=200034&ncm=15079011&dataOcorrenciaFatoGerador=2033-10-01",
+    "request": null,
+    "status": 200,
+    "body": {
+      "cClassTrib": "200034",
+      "ncm": "15079011",
+      "dataOcorrenciaFatoGerador": "2033-10-01",
+      "valido": true
+    }
+  },
+  {
+    "path": "/calculadora/dados-abertos/classificacoes-tributarias/cbs-ibs/class-trib/200034?data=2026-10-01",
+    "request": null,
+    "status": 200,
+    "body": {
+      "codigo": "200034",
+      "descricao": "Fornecimento dos alimentos destinados ao consumo humano (Anexo VII)",
+      "tipoAliquota": "Padrão",
+      "nomenclatura": "NCM",
+      "descricaoTratamentoTributario": "Alíquota reduzida em 60%",
+      "incompativelComSuspensao": false,
+      "exigeGrupoDesoneracao": false,
+      "possuiPercentualReducao": true,
+      "indicaApropriacaoCreditoAdquirenteCbs": true,
+      "indicaApropriacaoCreditoAdquirenteIbs": true,
+      "indicaCreditoPresumidoFornecedor": false,
+      "indicaCreditoPresumidoAdquirente": false,
+      "creditoOperacaoAntecedente": "Manutenção",
+      "percentualReducaoCbs": "60.0",
+      "percentualReducaoIbsUf": "60.0",
+      "percentualReducaoIbsMun": "60.0",
+      "tipoReceitaBrutaSimplesNacional": 1,
+      "tiposDfeClassificacao": [
+        {
+          "tipo": 55,
+          "sigla": "NF-e",
+          "descricao": "Nota Fiscal Eletrônica"
+        },
+        {
+          "tipo": 65,
+          "sigla": "NFC-e",
+          "descricao": "Nota Fiscal de Consumidor Eletrônica"
+        },
+        {
+          "tipo": 96,
+          "sigla": "Duimp",
+          "descricao": "Declaração Única de Importação "
+        }
+      ],
+      "dataAtualizacao": "2025-12-15"
+    }
+  }
+]

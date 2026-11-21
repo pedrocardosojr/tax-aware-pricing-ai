@@ -1,0 +1,11 @@
+{
+  "instruction": "Escreva um resumo de até três frases para o lojista, usando somente os fatos fornecidos. Indique que o combo está vencido, que a simulação exige 58,2% mais unidades e que falta oferta avulsa vigente. Não aconselhe baixar o preço com base no encarte antigo. Mencione Condor se citar o anúncio. Use português do Brasil.",
+  "facts": {
+    "produto": "Coca-Cola Tradicional PET 2 L",
+    "oferta": "Condor Paraná, Clube, combo Tradicional + Zero 2 L, R$ 20,38; expirou em 24/12/2025; R$ 10,49 era condicionado ao combo",
+    "simulacao": "Se o lojista baixasse de R$ 12,00 para R$ 10,49, a contribuição unitária cairia de R$ 3,90 para R$ 2,47; 58,2% mais unidades para manter a contribuição total. Demanda não foi estimada.",
+    "categoria": "IBGE, região de Curitiba, setembro de 2026: refrigerante e água mineral -0,94% no mês. É variação de categoria.",
+    "cobertura": "Nenhuma oferta avulsa vigente validada nesta amostra."
+  },
+  "response": "O combo de Coca-Cola Tradicional e Zero 2 L da Condor Paraná está vencido. Para manter a contribuição, a simulação indica uma necessidade de 58,2% mais unidades. Não há oferta avulsa disponível. Recomenda-se não baixar o preço com base no encarte antigo."
+}

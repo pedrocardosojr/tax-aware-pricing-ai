@@ -1,0 +1,754 @@
+{
+  "example_kind": "synthetic_taxpayer_plus_live_rtc",
+  "fiscal_date": "2026-11-07",
+  "pricing": {
+    "selling_price": "30",
+    "gross_cost": "20",
+    "price_origin": "user_price",
+    "expenses": {
+      "rate": "0.05",
+      "per_unit_brl": "0.50"
+    }
+  },
+  "tax_base_brl": "30",
+  "passed": 3,
+  "rows": [
+    {
+      "regime": "simples_nacional",
+      "passed": true,
+      "expected_contribution_brl": "6.305",
+      "analysis": {
+        "ean": "7894900027013",
+        "ncm": "22021000",
+        "price_origin": "user_price",
+        "personalized": {
+          "regime": "simples_nacional",
+          "competence": "2026-11",
+          "status": "calculated_from_supplied_profile",
+          "missing_fields": [],
+          "scope": "synthetic test case; not an actual taxpayer assessment",
+          "fiscal_validation": "not_certified",
+          "margin": {
+            "selling_price_brl": "30",
+            "net_cost_brl": "20",
+            "tax_brl": "1.6950",
+            "expense_brl": "2.00",
+            "contribution_brl": "6.3050",
+            "contribution_percent": "21.01666666666666666666666667"
+          },
+          "tax_components": [
+            {
+              "name": "DAS",
+              "base_brl": "30",
+              "rate": "0.0565",
+              "amount_brl": "1.6950",
+              "basis": "selling_price",
+              "source": "fictional supplied rate, not a prescribed legal rate"
+            }
+          ],
+          "tax_total_brl": "1.6950",
+          "purchase_credit_source": "explicit fictional test credit"
+        },
+        "rtc": {
+          "status": "calculated_ibs_cbs",
+          "result": {
+            "ean": "7894900027013",
+            "ncm": "22021000",
+            "engine": {
+              "versaoApp": "1.6.2",
+              "descricaoVersaoApp": "1.6.2",
+              "versaoDb": "V0066",
+              "descricaoVersaoDb": "Exclui classificação indevida da tabela CLASSIF_NBS_INDOP_LC.",
+              "dataVersaoDb": "2026-10-28",
+              "ambiente": "offline"
+            },
+            "request": {
+              "id": "current-7894900027013-2026-11-07",
+              "versao": "0.0.1",
+              "dhFatoGerador": "2026-11-07T12:00:00-03:00",
+              "municipio": 4106902,
+              "uf": "PR",
+              "tpDoc": 65,
+              "itens": [
+                {
+                  "numero": 1,
+                  "ncm": "22021000",
+                  "cst": "000",
+                  "cClassTrib": "000001",
+                  "baseCalculo": 30.0,
+                  "quantidade": 1,
+                  "unidade": "UN"
+                }
+              ]
+            },
+            "summary": {
+              "tax_base_brl": "30.00",
+              "classification": {
+                "cst": "000",
+                "cclass": "000001"
+              },
+              "simulated": false,
+              "components": [
+                {
+                  "label": "CBS",
+                  "reference_rate_percent": "0.90",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.90",
+                  "amount_brl": "0.27"
+                },
+                {
+                  "label": "IBS estadual",
+                  "reference_rate_percent": "0.10",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.10",
+                  "amount_brl": "0.03"
+                },
+                {
+                  "label": "IBS municipal",
+                  "reference_rate_percent": "0.00",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.00",
+                  "amount_brl": "0.00"
+                }
+              ],
+              "ibs_official_total_brl": "0.03",
+              "total_ibs_cbs_brl": "0.30",
+              "coverage": "IBS/CBS calculated by RTC",
+              "total_tax_burden_calculated": false,
+              "payment_assessment": "requires_taxpayer_profile",
+              "other_taxes": {
+                "ICMS": "outside_response",
+                "PIS/COFINS": "outside_response",
+                "DAS": "outside_response"
+              }
+            },
+            "classification_review": "pending",
+            "company_tax_assessment": "not_calculated",
+            "calls": [
+              {
+                "path": "/calculadora/dados-abertos/versao",
+                "request": null,
+                "status": 200,
+                "body": {
+                  "versaoApp": "1.6.2",
+                  "descricaoVersaoApp": "1.6.2",
+                  "versaoDb": "V0066",
+                  "descricaoVersaoDb": "Exclui classificação indevida da tabela CLASSIF_NBS_INDOP_LC.",
+                  "dataVersaoDb": "2026-10-28",
+                  "ambiente": "offline"
+                }
+              },
+              {
+                "path": "/calculadora/dados-abertos/classificacoes-tributarias/ncm-aplicavel?cClassTrib=000001&ncm=22021000&dataOcorrenciaFatoGerador=2026-11-07",
+                "request": null,
+                "status": 200,
+                "body": {
+                  "cClassTrib": "000001",
+                  "ncm": "22021000",
+                  "dataOcorrenciaFatoGerador": "2026-11-07",
+                  "valido": true
+                }
+              },
+              {
+                "path": "/calculadora/regime-geral",
+                "request": {
+                  "id": "current-7894900027013-2026-11-07",
+                  "versao": "0.0.1",
+                  "dhFatoGerador": "2026-11-07T12:00:00-03:00",
+                  "municipio": 4106902,
+                  "uf": "PR",
+                  "tpDoc": 65,
+                  "itens": [
+                    {
+                      "numero": 1,
+                      "ncm": "22021000",
+                      "cst": "000",
+                      "cClassTrib": "000001",
+                      "baseCalculo": 30.0,
+                      "quantidade": 1,
+                      "unidade": "UN"
+                    }
+                  ]
+                },
+                "status": 200,
+                "body": {
+                  "objetos": [
+                    {
+                      "nObj": 1,
+                      "tribCalc": {
+                        "IBSCBS": {
+                          "CST": "000",
+                          "cClassTrib": "000001",
+                          "gIBSCBS": {
+                            "vBC": "30.00",
+                            "gIBSUF": {
+                              "pIBSUF": "0.10",
+                              "vIBSUF": "0.03",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.100000%."
+                            },
+                            "gIBSMun": {
+                              "pIBSMun": "0.00",
+                              "vIBSMun": "0.00",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.000000%."
+                            },
+                            "vIBS": "0.03",
+                            "gCBS": {
+                              "pCBS": "0.90",
+                              "vCBS": "0.27",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.900000%."
+                            }
+                          }
+                        }
+                      },
+                      "calculoSimulado": false
+                    }
+                  ],
+                  "total": {
+                    "tribCalc": {
+                      "IBSCBSTot": {
+                        "vBCIBSCBS": "30.00",
+                        "gIBS": {
+                          "gIBSUF": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSUF": "0.03"
+                          },
+                          "gIBSMun": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSMun": "0.00"
+                          },
+                          "vIBS": "0.03",
+                          "vCredPres": "0.00",
+                          "vCredPresCondSus": "0.00"
+                        },
+                        "gCBS": {
+                          "vDif": "0.00",
+                          "vDevTrib": "0.00",
+                          "vCBS": "0.27",
+                          "vCredPres": "0.00",
+                          "vCredPresCondSus": "0.00"
+                        },
+                        "gMono": {
+                          "vIBSMono": "0.00",
+                          "vCBSMono": "0.00",
+                          "vIBSMonoReten": "0.00",
+                          "vCBSMonoReten": "0.00",
+                          "vIBSMonoRet": "0.00",
+                          "vCBSMonoRet": "0.00"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+      }
+    },
+    {
+      "regime": "lucro_presumido",
+      "passed": true,
+      "expected_contribution_brl": "1.7021",
+      "analysis": {
+        "ean": "7894900027013",
+        "ncm": "22021000",
+        "price_origin": "user_price",
+        "personalized": {
+          "regime": "lucro_presumido",
+          "competence": "2026-11",
+          "status": "calculated_from_supplied_profile",
+          "missing_fields": [],
+          "scope": "synthetic test case; not an actual taxpayer assessment",
+          "fiscal_validation": "not_certified",
+          "margin": {
+            "selling_price_brl": "30",
+            "net_cost_brl": "20",
+            "tax_brl": "6.297900",
+            "expense_brl": "2.00",
+            "contribution_brl": "1.702100",
+            "contribution_percent": "5.673666666666666666666666667"
+          },
+          "tax_components": [
+            {
+              "name": "ICMS",
+              "base_brl": "30",
+              "rate": "0.18",
+              "amount_brl": "5.40",
+              "basis": "selling_price",
+              "source": "fictional supplied rate, not a prescribed legal rate"
+            },
+            {
+              "name": "PIS",
+              "base_brl": "24.60",
+              "rate": "0.0065",
+              "amount_brl": "0.159900",
+              "basis": "selling_price_less_icms",
+              "source": "fictional supplied rate, not a prescribed legal rate"
+            },
+            {
+              "name": "COFINS",
+              "base_brl": "24.60",
+              "rate": "0.03",
+              "amount_brl": "0.7380",
+              "basis": "selling_price_less_icms",
+              "source": "fictional supplied rate, not a prescribed legal rate"
+            }
+          ],
+          "tax_total_brl": "6.297900",
+          "purchase_credit_source": "explicit fictional test credit"
+        },
+        "rtc": {
+          "status": "calculated_ibs_cbs",
+          "result": {
+            "ean": "7894900027013",
+            "ncm": "22021000",
+            "engine": {
+              "versaoApp": "1.6.2",
+              "descricaoVersaoApp": "1.6.2",
+              "versaoDb": "V0066",
+              "descricaoVersaoDb": "Exclui classificação indevida da tabela CLASSIF_NBS_INDOP_LC.",
+              "dataVersaoDb": "2026-10-28",
+              "ambiente": "offline"
+            },
+            "request": {
+              "id": "current-7894900027013-2026-11-07",
+              "versao": "0.0.1",
+              "dhFatoGerador": "2026-11-07T12:00:00-03:00",
+              "municipio": 4106902,
+              "uf": "PR",
+              "tpDoc": 65,
+              "itens": [
+                {
+                  "numero": 1,
+                  "ncm": "22021000",
+                  "cst": "000",
+                  "cClassTrib": "000001",
+                  "baseCalculo": 30.0,
+                  "quantidade": 1,
+                  "unidade": "UN"
+                }
+              ]
+            },
+            "summary": {
+              "tax_base_brl": "30.00",
+              "classification": {
+                "cst": "000",
+                "cclass": "000001"
+              },
+              "simulated": false,
+              "components": [
+                {
+                  "label": "CBS",
+                  "reference_rate_percent": "0.90",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.90",
+                  "amount_brl": "0.27"
+                },
+                {
+                  "label": "IBS estadual",
+                  "reference_rate_percent": "0.10",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.10",
+                  "amount_brl": "0.03"
+                },
+                {
+                  "label": "IBS municipal",
+                  "reference_rate_percent": "0.00",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.00",
+                  "amount_brl": "0.00"
+                }
+              ],
+              "ibs_official_total_brl": "0.03",
+              "total_ibs_cbs_brl": "0.30",
+              "coverage": "IBS/CBS calculated by RTC",
+              "total_tax_burden_calculated": false,
+              "payment_assessment": "requires_taxpayer_profile",
+              "other_taxes": {
+                "ICMS": "outside_response",
+                "PIS/COFINS": "outside_response",
+                "DAS": "outside_response"
+              }
+            },
+            "classification_review": "pending",
+            "company_tax_assessment": "not_calculated",
+            "calls": [
+              {
+                "path": "/calculadora/dados-abertos/versao",
+                "request": null,
+                "status": 200,
+                "body": {
+                  "versaoApp": "1.6.2",
+                  "descricaoVersaoApp": "1.6.2",
+                  "versaoDb": "V0066",
+                  "descricaoVersaoDb": "Exclui classificação indevida da tabela CLASSIF_NBS_INDOP_LC.",
+                  "dataVersaoDb": "2026-10-28",
+                  "ambiente": "offline"
+                }
+              },
+              {
+                "path": "/calculadora/dados-abertos/classificacoes-tributarias/ncm-aplicavel?cClassTrib=000001&ncm=22021000&dataOcorrenciaFatoGerador=2026-11-07",
+                "request": null,
+                "status": 200,
+                "body": {
+                  "cClassTrib": "000001",
+                  "ncm": "22021000",
+                  "dataOcorrenciaFatoGerador": "2026-11-07",
+                  "valido": true
+                }
+              },
+              {
+                "path": "/calculadora/regime-geral",
+                "request": {
+                  "id": "current-7894900027013-2026-11-07",
+                  "versao": "0.0.1",
+                  "dhFatoGerador": "2026-11-07T12:00:00-03:00",
+                  "municipio": 4106902,
+                  "uf": "PR",
+                  "tpDoc": 65,
+                  "itens": [
+                    {
+                      "numero": 1,
+                      "ncm": "22021000",
+                      "cst": "000",
+                      "cClassTrib": "000001",
+                      "baseCalculo": 30.0,
+                      "quantidade": 1,
+                      "unidade": "UN"
+                    }
+                  ]
+                },
+                "status": 200,
+                "body": {
+                  "objetos": [
+                    {
+                      "nObj": 1,
+                      "tribCalc": {
+                        "IBSCBS": {
+                          "CST": "000",
+                          "cClassTrib": "000001",
+                          "gIBSCBS": {
+                            "vBC": "30.00",
+                            "gIBSUF": {
+                              "pIBSUF": "0.10",
+                              "vIBSUF": "0.03",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.100000%."
+                            },
+                            "gIBSMun": {
+                              "pIBSMun": "0.00",
+                              "vIBSMun": "0.00",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.000000%."
+                            },
+                            "vIBS": "0.03",
+                            "gCBS": {
+                              "pCBS": "0.90",
+                              "vCBS": "0.27",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.900000%."
+                            }
+                          }
+                        }
+                      },
+                      "calculoSimulado": false
+                    }
+                  ],
+                  "total": {
+                    "tribCalc": {
+                      "IBSCBSTot": {
+                        "vBCIBSCBS": "30.00",
+                        "gIBS": {
+                          "gIBSUF": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSUF": "0.03"
+                          },
+                          "gIBSMun": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSMun": "0.00"
+                          },
+                          "vIBS": "0.03",
+                          "vCredPres": "0.00",
+                          "vCredPresCondSus": "0.00"
+                        },
+                        "gCBS": {
+                          "vDif": "0.00",
+                          "vDevTrib": "0.00",
+                          "vCBS": "0.27",
+                          "vCredPres": "0.00",
+                          "vCredPresCondSus": "0.00"
+                        },
+                        "gMono": {
+                          "vIBSMono": "0.00",
+                          "vCBSMono": "0.00",
+                          "vIBSMonoReten": "0.00",
+                          "vCBSMonoReten": "0.00",
+                          "vIBSMonoRet": "0.00",
+                          "vCBSMonoRet": "0.00"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+      }
+    },
+    {
+      "regime": "lucro_real",
+      "passed": true,
+      "expected_contribution_brl": "1.3245",
+      "analysis": {
+        "ean": "7894900027013",
+        "ncm": "22021000",
+        "price_origin": "user_price",
+        "personalized": {
+          "regime": "lucro_real",
+          "competence": "2026-11",
+          "status": "calculated_from_supplied_profile",
+          "missing_fields": [],
+          "scope": "synthetic test case; not an actual taxpayer assessment",
+          "fiscal_validation": "not_certified",
+          "margin": {
+            "selling_price_brl": "30",
+            "net_cost_brl": "19",
+            "tax_brl": "7.675500",
+            "expense_brl": "2.00",
+            "contribution_brl": "1.324500",
+            "contribution_percent": "4.415000"
+          },
+          "tax_components": [
+            {
+              "name": "ICMS",
+              "base_brl": "30",
+              "rate": "0.18",
+              "amount_brl": "5.40",
+              "basis": "selling_price",
+              "source": "fictional supplied rate, not a prescribed legal rate"
+            },
+            {
+              "name": "PIS",
+              "base_brl": "24.60",
+              "rate": "0.0165",
+              "amount_brl": "0.405900",
+              "basis": "selling_price_less_icms",
+              "source": "fictional supplied rate, not a prescribed legal rate"
+            },
+            {
+              "name": "COFINS",
+              "base_brl": "24.60",
+              "rate": "0.076",
+              "amount_brl": "1.86960",
+              "basis": "selling_price_less_icms",
+              "source": "fictional supplied rate, not a prescribed legal rate"
+            }
+          ],
+          "tax_total_brl": "7.675500",
+          "purchase_credit_source": "explicit fictional test credit"
+        },
+        "rtc": {
+          "status": "calculated_ibs_cbs",
+          "result": {
+            "ean": "7894900027013",
+            "ncm": "22021000",
+            "engine": {
+              "versaoApp": "1.6.2",
+              "descricaoVersaoApp": "1.6.2",
+              "versaoDb": "V0066",
+              "descricaoVersaoDb": "Exclui classificação indevida da tabela CLASSIF_NBS_INDOP_LC.",
+              "dataVersaoDb": "2026-10-28",
+              "ambiente": "offline"
+            },
+            "request": {
+              "id": "current-7894900027013-2026-11-07",
+              "versao": "0.0.1",
+              "dhFatoGerador": "2026-11-07T12:00:00-03:00",
+              "municipio": 4106902,
+              "uf": "PR",
+              "tpDoc": 65,
+              "itens": [
+                {
+                  "numero": 1,
+                  "ncm": "22021000",
+                  "cst": "000",
+                  "cClassTrib": "000001",
+                  "baseCalculo": 30.0,
+                  "quantidade": 1,
+                  "unidade": "UN"
+                }
+              ]
+            },
+            "summary": {
+              "tax_base_brl": "30.00",
+              "classification": {
+                "cst": "000",
+                "cclass": "000001"
+              },
+              "simulated": false,
+              "components": [
+                {
+                  "label": "CBS",
+                  "reference_rate_percent": "0.90",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.90",
+                  "amount_brl": "0.27"
+                },
+                {
+                  "label": "IBS estadual",
+                  "reference_rate_percent": "0.10",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.10",
+                  "amount_brl": "0.03"
+                },
+                {
+                  "label": "IBS municipal",
+                  "reference_rate_percent": "0.00",
+                  "reduction_percent": "0",
+                  "effective_rate_percent": "0.00",
+                  "amount_brl": "0.00"
+                }
+              ],
+              "ibs_official_total_brl": "0.03",
+              "total_ibs_cbs_brl": "0.30",
+              "coverage": "IBS/CBS calculated by RTC",
+              "total_tax_burden_calculated": false,
+              "payment_assessment": "requires_taxpayer_profile",
+              "other_taxes": {
+                "ICMS": "outside_response",
+                "PIS/COFINS": "outside_response",
+                "DAS": "outside_response"
+              }
+            },
+            "classification_review": "pending",
+            "company_tax_assessment": "not_calculated",
+            "calls": [
+              {
+                "path": "/calculadora/dados-abertos/versao",
+                "request": null,
+                "status": 200,
+                "body": {
+                  "versaoApp": "1.6.2",
+                  "descricaoVersaoApp": "1.6.2",
+                  "versaoDb": "V0066",
+                  "descricaoVersaoDb": "Exclui classificação indevida da tabela CLASSIF_NBS_INDOP_LC.",
+                  "dataVersaoDb": "2026-10-28",
+                  "ambiente": "offline"
+                }
+              },
+              {
+                "path": "/calculadora/dados-abertos/classificacoes-tributarias/ncm-aplicavel?cClassTrib=000001&ncm=22021000&dataOcorrenciaFatoGerador=2026-11-07",
+                "request": null,
+                "status": 200,
+                "body": {
+                  "cClassTrib": "000001",
+                  "ncm": "22021000",
+                  "dataOcorrenciaFatoGerador": "2026-11-07",
+                  "valido": true
+                }
+              },
+              {
+                "path": "/calculadora/regime-geral",
+                "request": {
+                  "id": "current-7894900027013-2026-11-07",
+                  "versao": "0.0.1",
+                  "dhFatoGerador": "2026-11-07T12:00:00-03:00",
+                  "municipio": 4106902,
+                  "uf": "PR",
+                  "tpDoc": 65,
+                  "itens": [
+                    {
+                      "numero": 1,
+                      "ncm": "22021000",
+                      "cst": "000",
+                      "cClassTrib": "000001",
+                      "baseCalculo": 30.0,
+                      "quantidade": 1,
+                      "unidade": "UN"
+                    }
+                  ]
+                },
+                "status": 200,
+                "body": {
+                  "objetos": [
+                    {
+                      "nObj": 1,
+                      "tribCalc": {
+                        "IBSCBS": {
+                          "CST": "000",
+                          "cClassTrib": "000001",
+                          "gIBSCBS": {
+                            "vBC": "30.00",
+                            "gIBSUF": {
+                              "pIBSUF": "0.10",
+                              "vIBSUF": "0.03",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.100000%."
+                            },
+                            "gIBSMun": {
+                              "pIBSMun": "0.00",
+                              "vIBSMun": "0.00",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.000000%."
+                            },
+                            "vIBS": "0.03",
+                            "gCBS": {
+                              "pCBS": "0.90",
+                              "vCBS": "0.27",
+                              "memoriaCalculo": "Operação de consumo com enquadramento legal em LC 214/2025, tributada conforme Tributação integral. A base de cálculo utilizada é de R$ 30.00000000, com alíquota de 0.900000%."
+                            }
+                          }
+                        }
+                      },
+                      "calculoSimulado": false
+                    }
+                  ],
+                  "total": {
+                    "tribCalc": {
+                      "IBSCBSTot": {
+                        "vBCIBSCBS": "30.00",
+                        "gIBS": {
+                          "gIBSUF": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSUF": "0.03"
+                          },
+                          "gIBSMun": {
+                            "vDif": "0.00",
+                            "vDevTrib": "0.00",
+                            "vIBSMun": "0.00"
+                          },
+                          "vIBS": "0.03",
+                          "vCredPres": "0.00",
+                          "vCredPresCondSus": "0.00"
+                        },
+                        "gCBS": {
+                          "vDif": "0.00",
+                          "vDevTrib": "0.00",
+                          "vCBS": "0.27",
+                          "vCredPres": "0.00",
+                          "vCredPresCondSus": "0.00"
+                        },
+                        "gMono": {
+                          "vIBSMono": "0.00",
+                          "vCBSMono": "0.00",
+                          "vIBSMonoReten": "0.00",
+                          "vCBSMonoReten": "0.00",
+                          "vIBSMonoRet": "0.00",
+                          "vCBSMonoRet": "0.00"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "rtc_role": "separate_ibs_cbs_evidence_not_added_to_margin"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+grupo,id_produto,descricao,ncm_final,status_ncm,fonte_ncm,revisor
+Arroz,7893500020158,ARROZ POLIDO -TIO JOAO -5 KG,10063021,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Arroz,7896267004102,ARROZ POLIDO -BURITI -5 KG,10063021,corrigido,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Arroz,7896038321032,ARROZ POLIDO -TIO URBANO -5 KG,10063021,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Arroz,7896290300011,ARROZ POLIDO -PRATO FINO -5 KG,10063021,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Arroz,7896038306039,ARROZ PARBOILIZADO -URBANO -5 KG,10063011,corrigido,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Arroz,7896267000135,ARROZ PARBOILIZADO -BURITI -5 KG,10063011,corrigido,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Arroz,7896290300332,ARROZ PARBOILIZADO -PRATO FINO -5 KG,10063011,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Feijão,7898171400049,FEIJAO PRETO -PE VERMELHO -1 KG,07133319,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Feijão,7898007290202,FEIJAO PRETO -PONTAROLLO PREMIUM -1 KG,07133319,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Feijão,7898171400209,FEIJAO PRETO -RESERVA -1 KG,07133319,corrigido,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Feijão,7896038388059,FEIJAO PRETO -URBANO -1 KG,07133319,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Feijão,7896273900313,FEIJAO CARIOCA -CALDO BOM -1 KG,07133399,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Feijão,7898007290196,FEIJAO CARIOCA -PONTAROLLO -1 KG,07133399,corrigido,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Macarrão,7896022205744,MACARRAO COM OVOS PENA -TODESCHINI -500 GR,19021100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Macarrão,7896412800122,MACARRAO COM OVOS PENA -ORQUIDEA -500 GR,19021100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Macarrão,7896005281710,MACARRAO COM OVOS PENNE -DONA BENTA -500 GR,19021100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Macarrão,7896005286579,MACARRAO COM OVOS ESPAGUETE -DONA BENTA -500 GR,19021100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Macarrão,7896022200282,MACARRAO COM OVOS ESPAGUETE -RENATA -500 GR,19021100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Açúcar,7896508200041,ACUCAR REFINADO -ALTO ALEGRE -5 KG,17019900,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Açúcar,7896894900037,ACUCAR REFINADO -CARAVELAS -5 KG,17019900,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Açúcar,7891910008353,ACUCAR REFINADO -UNIAO -5 KG,17019900,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7896019112116,CAFE VACUO -DAMASCO -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7896045102440,CAFE VACUO -3 CORACOES -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7896089011357,CAFE VACUO -PILAO -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7896279600750,CAFE VACUO -COAMO -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7891021006934,CAFE VACUO EXTRA FORTE -MELITTA -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7896089016215,CAFE VACUO EXTRA FORTE -CABOCLO -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7896035733449,CAFE VACUO EXTRA FORTE -BOM JESUS -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Café,7896016700149,CAFE VACUO EXTRA FORTE -ALVORADA -500 GR,09012100,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Refrigerante 2 L,7894900027013,REFRIGERANTE -COCA COLA -2 LITRO,22021000,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Refrigerante 2 L,7892840800246,REFRIGERANTE COCA COLA -PEPSI -2 LITRO,22021000,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Refrigerante 2 L,7891991001342,REFRIGERANTE GUARANA -ANTARTICA -2 LITRO,22021000,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Refrigerante 2 L,7896188403077,REFRIGERANTE GUARANA -CINI -2 LITRO,22021000,corrigido,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Creme dental,7891528029498,CREME DENTAL TRIPLA LIMPEZA COMPLETA -SORRISO -70 GR,33061000,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Sabonete,7891024035047,SABONETE ANTIBACTERIANO -PROTEX -85 GR,34011190,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Água mineral,7896262500050,AGUA MINERAL -OURO FINO -500 ML,22011000,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo
+Água mineral,7898912374011,AGUA MINERAL -FONT LIFE -510 ML,22011000,confirmado,"Tabela NCM oficial (Siscomex), revisão da equipe",Rodrigo

@@ -1,0 +1,2 @@
+~/.pyenv/versions/3.12.9/bin/python -m mypy tax_pricing scripts/test_catalog_rtc.py scripts/demo_commercial.py scripts/demo_profile.py scripts/verify_current_tax.py scripts/demo_personalized.py
+Success: no issues found in 17 source files

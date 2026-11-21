@@ -1,0 +1,140 @@
+~/.pyenv/versions/3.12.9/bin/python -m unittest discover -s tests -v
+test_catalog_is_not_limited_to_37_products (test_catalog.CatalogTests.test_catalog_is_not_limited_to_37_products)
+Expanding to 50 is data input, with no pricing code change. ... ok
+test_default_scope_is_only_2026 (test_catalog_integration_contract.CatalogIntegrationContractTests.test_default_scope_is_only_2026)
+The agreed delivery must not require future nominal rates. ... ok
+test_missing_is_remains_blocked_with_evidence (test_catalog_integration_contract.CatalogIntegrationContractTests.test_missing_is_remains_blocked_with_evidence)
+Preserve the engine's IS refusal rather than force zero tax. ... ok
+test_offline_service_does_not_return_zero_tax (test_catalog_integration_contract.CatalogIntegrationContractTests.test_offline_service_does_not_return_zero_tax)
+Connectivity failure is explicit rather than a made-up estimate. ... ok
+test_credit_is_explicit_and_applied_once (test_commercial.CommercialTests.test_credit_is_explicit_and_applied_once)
+A declared fifty-cent usable credit reduces cost to 5.50. ... ok
+test_invalid_cost_credit_and_price (test_commercial.CommercialTests.test_invalid_cost_credit_and_price)
+Reject absent, nonfinite, negative and oversized credits. ... ok
+test_invalid_rates_expenses_and_target (test_commercial.CommercialTests.test_invalid_rates_expenses_and_target)
+Reject impossible rate totals and nonfinite parameters. ... ok
+test_market_reference_and_direction (test_commercial.CommercialTests.test_market_reference_and_direction)
+Index 100 equals reference; values above and below keep sign. ... ok
+test_missing_tax_is_not_zero (test_commercial.CommercialTests.test_missing_tax_is_not_zero)
+An unknown tax input must not silently become tax-free. ... ok
+test_negative_margin_remains_visible (test_commercial.CommercialTests.test_negative_margin_remains_visible)
+An unprofitable selling price is valid evidence, not an error. ... ok
+test_price_tree_reconciles_and_margin_is_on_sales (test_commercial.CommercialTests.test_price_tree_reconciles_and_margin_is_on_sales)
+Ten reais less six cost, one tax and one expense leaves two. ... ok
+test_target_price_is_minimum_cent_and_round_trips (test_commercial.CommercialTests.test_target_price_is_minimum_cent_and_round_trips)
+The first cent meets the target and the preceding cent fails. ... ok
+test_zero_cost_and_full_credit_are_explicit (test_commercial.CommercialTests.test_zero_cost_and_full_credit_are_explicit)
+Zero net cost is supported, but cannot produce a zero sale. ... ok
+test_gross_to_net_rejects_invalid_inputs (test_economics.EconomicsTests.test_gross_to_net_rejects_invalid_inputs)
+Reject negative or non-finite gross costs and factors. ... ok
+test_gross_to_net_uses_the_measured_factor (test_economics.EconomicsTests.test_gross_to_net_uses_the_measured_factor)
+The 2033 factor returned by the engine removes the credit. ... ok
+test_gross_to_net_without_credit (test_economics.EconomicsTests.test_gross_to_net_without_credit)
+A zero factor leaves the gross cost untouched. ... ok
+test_invalid_inputs (test_economics.EconomicsTests.test_invalid_inputs)
+Reject non-finite, infeasible and negative inputs explicitly. ... ok
+test_invalid_revenue_and_expenses (test_economics.EconomicsTests.test_invalid_revenue_and_expenses)
+Reject unusable revenue and expense fractions. ... ok
+test_invalid_unified_rate_is_rejected (test_economics.EconomicsTests.test_invalid_unified_rate_is_rejected)
+An out-of-range effective rate must fail loudly. ... ok
+test_margin_can_be_negative (test_economics.EconomicsTests.test_margin_can_be_negative)
+A loss-making scenario must remain visible. ... ok
+test_regime_decides_whether_the_credit_applies (test_economics.EconomicsTests.test_regime_decides_whether_the_credit_applies)
+The same invoice total yields a different cost per regime. ... ok
+test_required_base_and_inverse (test_economics.EconomicsTests.test_required_base_and_inverse)
+The returned cent covers the target; the previous cent does not. ... ok
+test_same_invoice_total_prices_differently_by_regime (test_economics.EconomicsTests.test_same_invoice_total_prices_differently_by_regime)
+The selector must change the result, not just the wording. ... ok
+test_unified_rate_only_reduces_revenue_under_simples (test_economics.EconomicsTests.test_unified_rate_only_reduces_revenue_under_simples)
+IBS/CBS sits on top of revenue; the Simples amount comes out of it. ... ok
+test_unsupported_regime_is_rejected (test_economics.EconomicsTests.test_unsupported_regime_is_rejected)
+An unvalidated regime must fail instead of guessing a cost. ... ok
+test_zero_cost_is_valid (test_economics.EconomicsTests.test_zero_cost_is_valid)
+A zero acquisition cost is valid but zero revenue has no margin. ... ok
+test_actual_rtc_evidence_never_completes_company_profile (test_fiscal_profile.FiscalProfileTests.test_actual_rtc_evidence_never_completes_company_profile)
+Both zero rice and nonzero soda leave taxpayer data unresolved. ... ok
+test_complete_illustrative_profile_computes_conditional_margin (test_fiscal_profile.FiscalProfileTests.test_complete_illustrative_profile_computes_conditional_margin)
+Profile assumptions drive arithmetic, not the company regime key. ... ok
+test_explicit_credit_is_used_once (test_fiscal_profile.FiscalProfileTests.test_explicit_credit_is_used_once)
+A purchase credit changes cost only by its declared BRL amount. ... ok
+test_invalid_regime_date_status_and_parameters (test_fiscal_profile.FiscalProfileTests.test_invalid_regime_date_status_and_parameters)
+Reject unsupported identifiers and invalid fiscal assumptions. ... ok
+test_invalid_simples_inputs (test_fiscal_profile.FiscalProfileTests.test_invalid_simples_inputs)
+Zero revenue, inconsistent deduction and nonfinite values fail. ... ok
+test_regime_alone_cannot_produce_margin (test_fiscal_profile.FiscalProfileTests.test_regime_alone_cannot_produce_margin)
+Every regime needs fiscal inputs and provenance. ... ok
+test_supplied_simples_formula (test_fiscal_profile.FiscalProfileTests.test_supplied_simples_formula)
+Declared bracket values produce 5.65%, before revenue treatment. ... ok
+test_zero_rate_requires_explicit_provenance (test_fiscal_profile.FiscalProfileTests.test_zero_rate_requires_explicit_provenance)
+A deliberate zero can calculate; unknown or unsourced cannot. ... ok
+test_distinct_bases_and_amount_reconciliation (test_personalized_tax.PersonalizedTaxTests.test_distinct_bases_and_amount_reconciliation)
+A supplied 18% ICMS leaves an 82-real base for the other rules. ... ok
+test_invalid_or_duplicate_rules_fail_explicitly (test_personalized_tax.PersonalizedTaxTests.test_invalid_or_duplicate_rules_fail_explicitly)
+Do not permit duplicate deductions or unsupported base recipes. ... ok
+test_missing_component_or_source_does_not_become_zero (test_personalized_tax.PersonalizedTaxTests.test_missing_component_or_source_does_not_become_zero)
+A partial profile never produces an apparently complete margin. ... ok
+test_scenario_prices_recompute_amounts_without_a_margin_target (test_personalized_tax.PersonalizedTaxTests.test_scenario_prices_recompute_amounts_without_a_margin_target)
+The same declared rate recipes apply to each corridor candidate. ... ok
+test_simples_icms_cannot_be_counted_twice (test_personalized_tax.PersonalizedTaxTests.test_simples_icms_cannot_be_counted_twice)
+Outside-DAS ICMS requires an explicit exclusion in the DAS rule. ... ok
+test_three_regimes_use_their_explicit_components (test_personalized_tax.PersonalizedTaxTests.test_three_regimes_use_their_explicit_components)
+Simples uses supplied DAS, while Real uses supplied credit/rules. ... ok
+test_total_tax_above_price_remains_a_visible_loss (test_personalized_tax.PersonalizedTaxTests.test_total_tax_above_price_remains_a_visible_loss)
+An extreme explicit deduction cannot wrap into a positive margin. ... ok
+test_zero_tax_with_source_is_valid (test_personalized_tax.PersonalizedTaxTests.test_zero_tax_with_source_is_valid)
+Explicit zero rates can represent the user's sourced treatment. ... ok
+test_declared_credit_and_inverse_margin (test_pricing.PricingTests.test_declared_credit_and_inverse_margin)
+Use the explicit credit rather than inferring it from NCM. ... ok
+test_invalid_or_incompatible_inputs (test_pricing.PricingTests.test_invalid_or_incompatible_inputs)
+Reject hidden credits, double taxes and infeasible margin. ... ok
+test_simples_is_declared_arithmetic (test_pricing.PricingTests.test_simples_is_declared_arithmetic)
+Effective rate is a premise, not a regime-geral API response. ... ok
+test_corridor_scenario_does_not_need_target_margin (test_product_analysis.ProductAnalysisTests.test_corridor_scenario_does_not_need_target_margin)
+Scenario origin is explicit, without presenting it as actual price. ... ok
+test_mismatched_competence_and_missing_origin_fail (test_product_analysis.ProductAnalysisTests.test_mismatched_competence_and_missing_origin_fail)
+Do not silently price with a different period or unknown origin. ... ok
+test_missing_fiscal_base_does_not_use_acquisition_cost (test_product_analysis.ProductAnalysisTests.test_missing_fiscal_base_does_not_use_acquisition_cost)
+The user's purchase cost is not the RTC sale tax base. ... ok
+test_rtc_amount_is_not_added_to_personalized_deductions (test_product_analysis.ProductAnalysisTests.test_rtc_amount_is_not_added_to_personalized_deductions)
+A 0.30 RTC calculation does not turn the 1.20 DAS input into 1.50. ... ok
+test_unavailable_rtc_keeps_the_personalized_result_and_status (test_product_analysis.ProductAnalysisTests.test_unavailable_rtc_keeps_the_personalized_result_and_status)
+A failed panel cannot be shown as a successful zero-tax panel. ... ok
+test_aggregate_tax_is_preserved (test_rtc.RtcTests.test_aggregate_tax_is_preserved)
+Rounded IBS components need not sum to the official aggregate. ... ok
+test_future_rates_are_explicit (test_rtc.RtcTests.test_future_rates_are_explicit)
+A future year cannot silently select presumed legal rates. ... ok
+test_invalid_or_fractional_cent_base (test_rtc.RtcTests.test_invalid_or_fractional_cent_base)
+Reject invalid bases before making any HTTP request. ... ok
+test_missing_classification_is_rejected (test_rtc.RtcTests.test_missing_classification_is_rejected)
+NCM alone must not silently choose a classification. ... ok
+test_negative_or_missing_tax_fails_closed (test_rtc.RtcTests.test_negative_or_missing_tax_fails_closed)
+Malformed tax cannot become an apparent zero-tax quote. ... ok
+test_preserve_leading_zero_ncm (test_rtc.RtcTests.test_preserve_leading_zero_ncm)
+Fiscal codes must stay textual in the payload. ... ok
+test_explicit_date_base_and_scope (test_rtc_service.CurrentTaxTests.test_explicit_date_base_and_scope)
+Use the requested fiscal base/date and preserve IBS/CBS scope. ... ok
+test_incompatible_classification_or_http_error_stops_calculation (test_rtc_service.CurrentTaxTests.test_incompatible_classification_or_http_error_stops_calculation)
+No fallback to zero when compatibility or HTTP checks fail. ... ok
+test_invalid_dates_fail_before_transport (test_rtc_service.CurrentTaxTests.test_invalid_dates_fail_before_transport)
+Do not silently replace an absent, future or invalid date. ... ok
+test_new_engine_requires_the_matching_database (test_rtc_service.CurrentTaxTests.test_new_engine_requires_the_matching_database)
+Accept the evaluated release, not arbitrary application/db pairs. ... ok
+test_response_must_match_request (test_rtc_service.CurrentTaxTests.test_response_must_match_request)
+Reject another base, classification or simulation flag. ... ok
+test_version_and_service_failures_are_explicit (test_rtc_service.CurrentTaxTests.test_version_and_service_failures_are_explicit)
+An untested motor version or an outage cannot produce a quote. ... ok
+test_full_rate_without_reduction_group (test_tax_summary.TaxSummaryTests.test_full_rate_without_reduction_group)
+The refrigerant result exposes 1% combined effective rates. ... ok
+test_missing_or_invalid_fields_are_rejected (test_tax_summary.TaxSummaryTests.test_missing_or_invalid_fields_are_rejected)
+Missing details and invalid rates must fail explicitly. ... ok
+test_preserves_official_ibs_aggregate (test_tax_summary.TaxSummaryTests.test_preserves_official_ibs_aggregate)
+Rounded component amounts do not replace the engine aggregate. ... ok
+test_reduced_oil_and_soap (test_tax_summary.TaxSummaryTests.test_reduced_oil_and_soap)
+The 60% reduction produces the recorded nonzero amounts. ... ok
+test_rice_zero_explains_the_full_reduction (test_tax_summary.TaxSummaryTests.test_rice_zero_explains_the_full_reduction)
+A zero amount still carries the rate and reduction evidence. ... ok
+
+----------------------------------------------------------------------
+Ran 67 tests in 0.028s
+
+OK

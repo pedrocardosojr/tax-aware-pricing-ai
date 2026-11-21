@@ -1,0 +1,37 @@
+{
+  "ean": "7894900027013",
+  "date": "2026-10-01",
+  "kind": "observed",
+  "source": "Clique Economia; base-precos@59b1bc5ebb6793e8916e7b17f3fa3c7e06d67c9e; eduardo-estatisticas@bd8fc396dd933272f1b5978b809f39cc55cc446e; exact-code monthly dataset",
+  "source_label": "Clique Economia · base tratada de Edu e Rodrigo",
+  "median": "11.85",
+  "p25": "11.48",
+  "p75": "12.24",
+  "network_count": 15,
+  "store_count": 28,
+  "observation_count": 28,
+  "window": [
+    "2026-08",
+    "2026-09",
+    "2026-10"
+  ],
+  "per_network_brl": {
+    "Araucária": "11.99",
+    "Assaí": "11.64",
+    "Atacadão": "11.99",
+    "Carrefour": "11.29",
+    "Condor": "10.985",
+    "Festval": "12.99",
+    "Gabão": "12.95",
+    "Jacomar": "11.48",
+    "Palmeira": "11.85",
+    "REDE MASTER": "11.49",
+    "Stall": "11.48",
+    "Super Curitiba": "12.98",
+    "Super Muffato": "10.98",
+    "Telêmaco": "11.99",
+    "Triunfo": "12.48"
+  },
+  "team_coverage_ok": true,
+  "aggregation": "median_within_network_then_between_networks"
+}

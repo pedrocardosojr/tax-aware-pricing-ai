@@ -1,0 +1,12 @@
+{
+  "fiscal_date": "2026-11-09",
+  "scenarios": 12,
+  "company_data": "fictional",
+  "conditions": "assumed_not_invoice_verified",
+  "rtc_mode": "offline_closed_local_port_no_official_calculation",
+  "reconciliation": "sale - gross_cost + credit - taxes - expenses",
+  "sha256": {
+    "dados/tributos/perfis_demo_mvp.json": "247ef9a93558a54664d09ed6d7c0df5348ab82bb2386034636ed01ea82adb2e9",
+    "dados/tributos/revisao_2026_11.json": "ac7bd90d5e7fb621c2779896c20dc6633f0372bf337c2db6b7354d5bb8988158"
+  }
+}

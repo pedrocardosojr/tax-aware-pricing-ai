@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-19",
+  "cases": 1728,
+  "passed": 1728,
+  "skus": 50,
+  "regimes": 3,
+  "modes": 2,
+  "skipped_initial_scenarios": [
+    {
+      "ean": "7891149200504",
+      "regime": "simples_nacional",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891149200504",
+      "regime": "lucro_presumido",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891149200504",
+      "regime": "lucro_real",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891991000796",
+      "regime": "simples_nacional",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891991000796",
+      "regime": "lucro_presumido",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891991000796",
+      "regime": "lucro_real",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7896045512317",
+      "regime": "simples_nacional",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7896045512317",
+      "regime": "lucro_presumido",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7896045512317",
+      "regime": "lucro_real",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891149010509",
+      "regime": "simples_nacional",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891149010509",
+      "regime": "lucro_presumido",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    },
+    {
+      "ean": "7891149010509",
+      "regime": "lucro_real",
+      "mode": "suggestion",
+      "status": "pending_market_data"
+    }
+  ],
+  "rtc": "simulated unavailable; slider calculations made no extra RTC calls",
+  "costs_and_prices": "hypothetical scenarios derived from the observed median"
+}

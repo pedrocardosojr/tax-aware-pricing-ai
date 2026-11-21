@@ -1,0 +1,74 @@
+{
+  "mode": "demonstration",
+  "fiscal_date": "2026-11-09",
+  "notice": "Tributação estimada com perfil demonstrativo. A margem de contribuição usa as premissas exibidas; não é a apuração fiscal real da empresa.",
+  "margin_label": "Margem de contribuição",
+  "tax_label": "Tributação estimada",
+  "margin_note": "Preço menos custo de aquisição e tributação estimada.",
+  "rtc_base_rule": "scenario_selling_price_as_demonstration_base",
+  "expense_rate": "0",
+  "expense_per_unit_brl": "0",
+  "market_min_networks": 3,
+  "market_max_age_days": 60,
+  "profiles": {
+    "simples_nacional": {
+      "rbt12_brl": "360000",
+      "nominal_fraction": "0.073",
+      "deduction_brl": "5940",
+      "purchase_credit_fraction": "0",
+      "components": [
+        {
+          "name": "DAS",
+          "formula": "simples_effective_rate",
+          "basis": "selling_price"
+        }
+      ],
+      "purchase_credit_basis": "Optante do Simples nao se credita de ICMS nem de PIS/COFINS na compra."
+    },
+    "lucro_presumido": {
+      "purchase_credit_fraction": "0.195",
+      "components": [
+        {
+          "name": "ICMS",
+          "rate": "0.195",
+          "basis": "selling_price"
+        },
+        {
+          "name": "PIS",
+          "rate": "0.0065",
+          "basis": "selling_price_less_icms"
+        },
+        {
+          "name": "COFINS",
+          "rate": "0.03",
+          "basis": "selling_price_less_icms"
+        }
+      ],
+      "purchase_credit_basis": "Hipotese de compra tributada e com credito elegivel: ICMS 19,5% sobre custo bruto; PIS/COFINS, quando elegiveis, sobre custo sem ICMS. Nao aplicar automaticamente a ST ou aliquota zero."
+    },
+    "lucro_real": {
+      "purchase_credit_fraction": "0.2694625",
+      "components": [
+        {
+          "name": "ICMS",
+          "rate": "0.195",
+          "basis": "selling_price"
+        },
+        {
+          "name": "PIS",
+          "rate": "0.0165",
+          "basis": "selling_price_less_icms"
+        },
+        {
+          "name": "COFINS",
+          "rate": "0.076",
+          "basis": "selling_price_less_icms"
+        }
+      ],
+      "purchase_credit_basis": "Hipotese de compra tributada e com credito elegivel: ICMS 19,5% sobre custo bruto; PIS/COFINS, quando elegiveis, sobre custo sem ICMS. Nao aplicar automaticamente a ST ou aliquota zero."
+    }
+  },
+  "credit_rule": "Os 50 SKUs usam receitas condicionais por produto, sem credito recuperavel no cenario escolhido. Perfil sem SKU permanece apenas hipotese generica.",
+  "icms_st_premissa": "Bebidas, higiene e leite UHT: compra com ST previamente retida, incluida no custo; demais alimentos: cenario de saida interna isenta ao consumidor final PR. Ver fontes e condicoes de cada SKU.",
+  "icms_rate_premissa": "Referencia modal PR: 19,5%, Decreto 5.143/2024, alteracao 933, efeitos 18/03/2024. Taxa especifica de cada produto nao se deduz da modal. Exemplos ST nao repetem ICMS na revenda."
+}

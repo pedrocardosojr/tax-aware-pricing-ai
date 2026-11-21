@@ -1,0 +1,63 @@
+{
+  "reference": {
+    "id_produto": "7896019112116",
+    "camada": "observado",
+    "janela": [
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "aggregation": "median_across_stores",
+    "mediana": 25.74,
+    "p25": 23.9,
+    "p75": 27.5,
+    "n_obs": 258,
+    "n_lojas": 65,
+    "n_redes": 32,
+    "ultima_obs": "2026-10-29",
+    "cobertura_ok": true
+  },
+  "per_network_brl": {
+    "Agricer": 25.74,
+    "Angeloni": 25.72,
+    "Araucária": 29.97,
+    "Armazem da Maria": 21.58,
+    "Assaí": 25.52,
+    "Atacadão": 24.8,
+    "Carrefour": 25.94,
+    "Condor": 22.02,
+    "Festval": 28.99,
+    "Fuchspan": 27.64,
+    "Gabão": 28.44,
+    "Harger": 26.62,
+    "Italo": 27.22,
+    "Jacomar": 25.94,
+    "MIG ATACADO E VAREJO": 26.99,
+    "Max Atacadista": 21.59,
+    "Michel": 27.99,
+    "Mini Preço": 28.49,
+    "Palmeira": 29.15,
+    "REDE MASTER": 25.9,
+    "Rio verde": 22.99,
+    "SACOLÃO POPULAR": 27.5,
+    "Stall": 26.15,
+    "Super Boni": 25.49,
+    "Super Curitiba": 26.99,
+    "Super Dia": 23.99,
+    "Super Muffato": 23.82,
+    "Telêmaco": 29.99,
+    "Tissi": 31.9,
+    "Tok Super": 25.9,
+    "Triunfo": 28.48,
+    "Zamprogna": 23.99
+  },
+  "por_rede": {
+    "mediana": 26.04,
+    "p25": 25.32,
+    "p75": 28.1
+  },
+  "source": "Clique Economia (mensal + diário); janela 2026-05..2026-10; loja-mes -> loja -> rede; status atual; mercado/exportar.py@3dd3188"
+}

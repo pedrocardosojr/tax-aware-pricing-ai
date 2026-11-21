@@ -1,0 +1,20 @@
+{
+  "old_engine": {
+    "versaoApp": "1.5.4",
+    "versaoDb": "V0059",
+    "descricaoVersaoDb": "Habilitação de 820 para NFSe.",
+    "dataVersaoDb": "2026-09-30",
+    "ambiente": "offline"
+  },
+  "new_engine": {
+    "versaoApp": "1.6.2",
+    "descricaoVersaoApp": "1.6.2",
+    "versaoDb": "V0066",
+    "descricaoVersaoDb": "Exclui classificação indevida da tabela CLASSIF_NBS_INDOP_LC.",
+    "dataVersaoDb": "2026-10-28",
+    "ambiente": "offline"
+  },
+  "products_compared": 50,
+  "changed_summary_eans": [],
+  "scope": "IBS/CBS summaries with identical declared classification, date and base"
+}

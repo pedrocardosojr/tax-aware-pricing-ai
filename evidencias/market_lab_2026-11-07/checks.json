@@ -1,0 +1,32 @@
+{
+  "scope": "Observed exploratory price subset + fictional enterprise profile; no new live RTC call",
+  "snapshot_date": "2026-10-01",
+  "store_count": 9,
+  "network_count": 7,
+  "median_brl": "11.99",
+  "mean_stores_brl": "12.30111111111111111111111111",
+  "mean_networks_brl": "12.39",
+  "rank_at_12": {
+    "cheaper": 4,
+    "equal": 0,
+    "dearer": 3,
+    "count": 7,
+    "cheaper_percent": "57.14285714285714285714285714"
+  },
+  "history_months": 25,
+  "last_paired_stores": 0,
+  "common_basket_networks": [
+    "Araucária",
+    "Gabão",
+    "Palmeira",
+    "Super Curitiba",
+    "Triunfo"
+  ],
+  "cohort_skus": [
+    "7894900027013",
+    "7892840800246"
+  ],
+  "demo_cost_brl": "12",
+  "demo_floor_brl": "13.99",
+  "demo_band_status": "all_negative"
+}

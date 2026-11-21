@@ -1,0 +1,9 @@
+{
+ "fonte": "INMET, Normais Climatológicas do Brasil 1991-2020",
+ "pagina": "https://portal.inmet.gov.br/normais",
+ "arquivos": ["https://portal.inmet.gov.br/uploads/normais/Normal-Climatologica-TMEDSECA.xlsx",
+              "https://portal.inmet.gov.br/uploads/normais/Normal-Climatologica-TMAX.xlsx",
+              "https://portal.inmet.gov.br/uploads/normais/Normal-Climatologica-TMIN.xlsx"],
+ "estacao": "83842 CURITIBA (PR)",
+ "baixado_em": "2026-11-14"
+}

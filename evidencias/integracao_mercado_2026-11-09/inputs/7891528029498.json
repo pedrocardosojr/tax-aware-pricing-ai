@@ -1,0 +1,36 @@
+{
+  "reference": {
+    "id_produto": "7891528029498",
+    "janela": [
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "camada": "observado",
+    "mediana": 3.39,
+    "p25": 3.2,
+    "p75": 4.29,
+    "n_obs": 26,
+    "n_lojas": 26,
+    "n_redes": 14,
+    "ultima_obs": "2026-10-01",
+    "cobertura_ok": true
+  },
+  "per_network_brl": {
+    "Araucária": 3.99,
+    "Assaí": 3.24,
+    "Atacadão": 3.29,
+    "Carrefour": 4.39,
+    "Condor": 3.6900000000000004,
+    "Festval": 2.99,
+    "Gabão": 4.45,
+    "Jacomar": 4.45,
+    "Max Atacadista": 3.19,
+    "Stall": 3.25,
+    "Super Curitiba": 2.98,
+    "Super Muffato": 3.49,
+    "Telêmaco": 1.99,
+    "Triunfo": 4.98
+  },
+  "source": "Clique Economia; base-precos@59b1bc5ebb6793e8916e7b17f3fa3c7e06d67c9e; eduardo-estatisticas@bd8fc396dd933272f1b5978b809f39cc55cc446e; exact-code monthly dataset"
+}

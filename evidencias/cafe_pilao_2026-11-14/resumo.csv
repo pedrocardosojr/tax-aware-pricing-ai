@@ -1,0 +1,5 @@
+cenario,unidade,mediana,p25,p75,n_obs,n_lojas,n_redes,ultima_obs
+mensal,por_loja,25.98,24.07,28.67,26,26,14,2026-10-01
+mensal,por_rede,27.49,24.88,28.96,26,26,14,2026-10-01
+mensal_diario,por_loja,25.89,23.2,26.99,200,57,25,2026-10-29
+mensal_diario,por_rede,26.49,23.99,28.9,200,57,25,2026-10-29
