@@ -1,6 +1,7 @@
 """Render business results without duplicating domain calculations."""
 import csv
 import io
+import logging
 import re
 from datetime import datetime
 from decimal import Decimal, ROUND_HALF_UP
@@ -21,7 +22,8 @@ from tax_pricing.source_search import (
     build_messages, citations_are_valid, find_sources, strip_fact_tags,
 )
 from tax_pricing.ui.grounded_explanation import (
-    explanation_facts, markdown_safe, request_answer, season_context, sourced_answer_is_valid,
+    explanation_facts, invented_numbers, markdown_safe, request_answer, season_context,
+    sourced_answer_is_valid,
 )
 from tax_pricing.ui.price_brief import position_insight, prioritize_brief, promotion_insight
 from tax_pricing.ui.price_questions import answer_question
@@ -29,6 +31,7 @@ from tax_pricing.ui.reading import decision_text
 from tax_pricing.ui import forecast_view, lab_view
 
 GENERIC_ANSWERS = ('Tente perguntar',)
+ANSWER_ATTEMPTS = 2
 SEASON_QUESTION = 'Vale promoção nesta época do ano?'
 STORE_QUESTION = 'Por que cada loja conta uma vez?'
 BAND_QUESTION = 'O que significa a faixa de preço?'
@@ -352,6 +355,23 @@ def source_facts(result: dict) -> dict[str, str]:
     return facts
 
 
+def _checked_answer(question: str, facts: dict[str, str], evidence, model: str,
+                    api_key: str) -> str | None:
+    """Try twice and keep only an answer whose figures and citations pass."""
+    allowed = ' '.join([question, *facts.values(),
+                        *(item.text for item in evidence.excerpts)])
+    for attempt in range(1, ANSWER_ATTEMPTS + 1):
+        answer = request_answer(build_messages(question, facts, evidence), model=model,
+                                api_key=api_key, url=_llm_setting('TAX_PRICING_LLM_URL'))
+        cites = citations_are_valid(answer or '', evidence)
+        if sourced_answer_is_valid(answer, allowed, cites):
+            return answer
+        logging.getLogger(__name__).warning(
+            'Sourced answer rejected: attempt=%s empty=%s citations=%s invented=%s',
+            attempt, not answer, cites, invented_numbers(answer, allowed))
+    return None
+
+
 def _sourced_answer(question: str, result: dict) -> bool:
     """Answer from the retrieved sources; show it only if every check passes."""
     evidence = find_sources(question)
@@ -359,20 +379,15 @@ def _sourced_answer(question: str, result: dict) -> bool:
     model = _llm_setting('TAX_PRICING_LLM_MODEL')
     if not (evidence.answerable and api_key and model):
         return False
-    facts = source_facts(result)
     answers = st.session_state.setdefault('source_answers', {})
     if question not in answers:
         with st.spinner('Buscando nas fontes...'):
-            answers[question] = request_answer(
-                build_messages(question, facts, evidence), model=model,
-                api_key=api_key, url=_llm_setting('TAX_PRICING_LLM_URL'))
+            answers[question] = _checked_answer(question, source_facts(result), evidence,
+                                                model, api_key)
     answer = answers[question]
-    allowed = ' '.join([question, *facts.values(),
-                        *(item.text for item in evidence.excerpts)])
-    if not sourced_answer_is_valid(answer, allowed,
-                                   citations_are_valid(answer or '', evidence)):
+    if answer is None:
         return False
-    shown = strip_fact_tags(answer or '')
+    shown = strip_fact_tags(answer)
     for number, item in enumerate(evidence.excerpts, start=1):
         shown = shown.replace(f'[{item.source_id}]', f'[{number}]')
     st.markdown(markdown_safe(shown))
@@ -425,6 +440,10 @@ def _questions(result: dict) -> None:
                 suggested, width='stretch', on_click=st.session_state.pop,
                 args=('price_question', None)):
             selection = suggested
+            source_question = SOURCE_QUESTIONS.get(suggested, suggested)
+            answers = st.session_state.get('source_answers', {})
+            if answers.get(source_question, '') is None:
+                del answers[source_question]
             st.session_state['suggested_price_question'] = suggested
     question = st.text_input('Ou escreva sua pergunta', key='price_question',
                              max_chars=240,

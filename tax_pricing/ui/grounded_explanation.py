@@ -1,5 +1,6 @@
 """Let a model write the pricing brief, then show it only if it stays grounded."""
 import json
+import logging
 import re
 import unicodedata
 from datetime import date
@@ -13,6 +14,7 @@ from tax_pricing.ui.reading import decision_text
 
 NUMBER = re.compile(r'\d+(?:[.,]\d+)*')
 UNESCAPED_DOLLAR = re.compile(r'(?<!\\)\$')
+LOGGER = logging.getLogger(__name__)
 MAX_CHARS = 800
 OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
 # Gemini models think before answering and the thinking counts against the
@@ -317,8 +319,10 @@ def request_answer(messages: list[dict[str, str]], *, model: str, api_key: str,
         content = choice['message']['content']
         if choice['finish_reason'] == 'stop' and isinstance(content, str):
             return content
-    except (OSError, ValueError, KeyError, IndexError, TypeError):
-        pass
+        LOGGER.warning('Model answer not usable: finish_reason=%s', choice['finish_reason'])
+    except (OSError, ValueError, KeyError, IndexError, TypeError) as error:
+        LOGGER.warning('Model request failed: %s status=%s', type(error).__name__,
+                       getattr(error, 'code', None))
     return None
 
 
@@ -333,6 +337,11 @@ def sourced_answer_is_valid(answer: str | None, allowed_text: str,
         return False
     invented = _numbers(answer) - _numbers(allowed_text)
     return cites_retrieved and not invented
+
+
+def invented_numbers(answer: str | None, allowed_text: str) -> list[str]:
+    """List figures in the answer that the facts and excerpts do not contain."""
+    return sorted(str(value) for value in _numbers(answer or '') - _numbers(allowed_text))
 
 
 def markdown_safe(text: str) -> str:

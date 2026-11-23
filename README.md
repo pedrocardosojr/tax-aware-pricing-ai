@@ -32,7 +32,7 @@ market intelligence and details.
   numbers and citations are checked before anything is shown.
 - **Market intelligence**: sector seasonality (IBGE), climate (INMET), retail
   calendar and a 7-day weather forecast as context.
-- **Engineering**: 203 automated tests, lint and type checks in GitHub Actions.
+- **Engineering**: 204 automated tests, lint and type checks in GitHub Actions.
 
 **Stack:** Python · pandas · scikit-learn · Plotly · Streamlit · Gemini API
 (OpenAI-compatible endpoint) · official RTC tax calculator · GitHub Actions.

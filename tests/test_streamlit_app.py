@@ -276,13 +276,30 @@ class StreamlitAppTests(unittest.TestCase):
                             if b.label == 'Por que cada loja conta uma vez?')
             question.click().run()
             self.assertFalse(self.app.exception)
-            request.assert_called_once()
+            self.assertEqual(request.call_count, 2)
             prompt = request.call_args.args[0][1]['content']
             self.assertIn('purchase_st:', prompt)
             self.assertIn('tax:', prompt)
             self.assertEqual(request.call_args.kwargs, {
                 'api_key': config['OPENAI_API_KEY'],
                 'model': config['TAX_PRICING_LLM_MODEL'], 'url': ''})
+
+    def test_sourced_answer_retries_after_a_failed_call(self):
+        """A temporary model failure does not hide the answer for the session."""
+        config = {'OPENAI_API_KEY': 'secret-test-key',
+                  'TAX_PRICING_LLM_MODEL': 'secret-test-model'}
+        self.app.secrets.update(config)
+        with patch.dict(os.environ, dict.fromkeys(config, '')), patch(
+                'tax_pricing.ui.view.request_answer',
+                side_effect=[None, 'Cada loja conta uma vez [cafe_metodo].']) as request:
+            self.app.selectbox(key='regime').select('lucro_real').run()
+            self.app.button(key='analyze').click().run()
+            next(b for b in self.app.button
+                 if b.label == 'Por que cada loja conta uma vez?').click().run()
+            self.assertFalse(self.app.exception)
+            self.assertEqual(request.call_count, 2)
+            self.assertTrue(any('Cada loja conta uma vez [1].' in item.value
+                                for item in self.app.markdown))
 
     def test_invalid_optional_bundle_keeps_main_result(self):
         """An incompatible history file must not remove the checked margin."""
