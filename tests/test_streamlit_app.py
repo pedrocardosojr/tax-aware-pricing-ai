@@ -229,6 +229,24 @@ class StreamlitAppTests(unittest.TestCase):
         slider.set_value(slider.min).run()
         self.assertFalse(self.app.exception)
 
+    def test_typed_price_moves_the_slider_and_the_summary(self):
+        """The presenter can type an exact price instead of aiming the slider."""
+        self.app.selectbox(key='regime').select('lucro_real').run()
+        self.app.button(key='analyze').click().run()
+        typed = next(item for item in self.app.number_input
+                     if item.label == 'Digitar Preço simulado (R$)')
+        typed.set_value(11.48).run()
+        self.assertFalse(self.app.exception)
+        slider = next(item for item in self.app.slider
+                      if item.label == 'Preço simulado (R$)')
+        self.assertEqual(slider.value, 11.48)
+        metrics = {metric.label: metric.value for metric in self.app.metric}
+        self.assertEqual(metrics['Margem simulada'], 'R$ 4,48')
+        slider.set_value(11.6).run()
+        typed = next(item for item in self.app.number_input
+                     if item.label == 'Digitar Preço simulado (R$)')
+        self.assertEqual(typed.value, 11.6)
+
     def test_summary_is_calculated_and_has_no_rewrite_button(self):
         """The diagnosis comes from the app; the AI is only in its own block."""
         with patch.dict(os.environ, {'OPENAI_API_KEY': 'test-key',

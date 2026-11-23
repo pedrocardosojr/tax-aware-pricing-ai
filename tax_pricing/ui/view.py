@@ -36,14 +36,17 @@ SOURCE_QUESTIONS = {
     STORE_QUESTION: 'Por que a referência é por loja?',
     BAND_QUESTION: 'Como interpretar a faixa P25–P75?',
 }
+CHRISTMAS_QUESTION = 'O que a pesquisa diz sobre bebidas no Natal?'
+BLACK_FRIDAY_QUESTION = 'O que a pesquisa diz sobre a Black Friday?'
 CONTEXT_QUESTIONS = (
     STORE_QUESTION,
     'Qual a fonte dos preços do Clique Economia?',
     BAND_QUESTION,
     SEASON_QUESTION,
     'Quais são as premissas da tributação estimada?',
-    'O que a pesquisa diz sobre bebidas no Natal?',
+    CHRISTMAS_QUESTION,
 )
+BEVERAGE_GROUPS = frozenset({'Refrigerante 2 L', 'Cerveja', 'Água mineral'})
 SOURCE_ASK = re.compile(r'\b(por que|porque|de onde|fonte|origem|confi|como .*calcul|'
                         r'metodo|método|diario|diário)', re.IGNORECASE)
 
@@ -184,7 +187,7 @@ def _market_view(result: dict) -> None:
         st.info('Sem preços observados por rede para exibir neste cenário.')
         return
     has_band = market.get('p25') is not None and market.get('p75') is not None
-    band_legend = ('<span><i class="market-band"></i>Faixa típica de preços</span>'
+    band_legend = ('<span><i class="market-band"></i>Faixa central de preços</span>'
                    if has_band else '')
     st.markdown(
         '<div class="market-legend">'
@@ -202,7 +205,7 @@ def _market_view(result: dict) -> None:
         coverage = f"{market['store_count']} lojas · " + coverage
     st.caption(f'{source} · {_period(market)} · {coverage}')
     if has_band:
-        st.caption(f"Cada ponto é uma rede. A área sombreada reúne a metade central "
+        st.caption(f"Cada ponto é uma rede. A área sombreada é a faixa central, com a metade "
                    f"dos preços por {unit}: **{brl_markdown(market['p25'])} "
                    f"a {brl_markdown(market['p75'])}.**")
     else:
@@ -404,12 +407,20 @@ def _price_brief(result: dict) -> None:
             st.caption('Prioridades sugeridas com apoio de IA.')
 
 
+def _group_questions(group: str) -> tuple[str, ...]:
+    """Offer the beverage study only for products it describes."""
+    if group in BEVERAGE_GROUPS:
+        return CONTEXT_QUESTIONS
+    return tuple(BLACK_FRIDAY_QUESTION if question == CHRISTMAS_QUESTION else question
+                 for question in CONTEXT_QUESTIONS)
+
+
 def _questions(result: dict) -> None:
     """Questions that add context: calculations first, then cited sources."""
     st.caption('Clique em uma pergunta para consultar as fontes.')
     columns = st.columns(2)
     selection = st.session_state.get('suggested_price_question', '')
-    for index, suggested in enumerate(CONTEXT_QUESTIONS):
+    for index, suggested in enumerate(_group_questions(result['product']['group'])):
         if columns[index % len(columns)].button(
                 suggested, width='stretch', on_click=st.session_state.pop,
                 args=('price_question', None)):
@@ -428,7 +439,7 @@ def _questions(result: dict) -> None:
 
 def _answer(selected: str, result: dict) -> None:
     """Calculations come from the simulator; context comes from the sources."""
-    if selected in CONTEXT_QUESTIONS:
+    if selected in (*CONTEXT_QUESTIONS, BLACK_FRIDAY_QUESTION):
         question_for_sources = SOURCE_QUESTIONS.get(selected, selected)
         if _sourced_answer(question_for_sources, result):
             return

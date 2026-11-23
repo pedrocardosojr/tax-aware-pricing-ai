@@ -164,6 +164,27 @@ def _promotion_summary(result: dict, sim: dict, floor: Decimal) -> None:
                    'depende da sua loja.')
 
 
+def _copy_control(source: str, target: str) -> None:
+    """Keep the slider and the typed value on the same cent."""
+    st.session_state[target] = round(float(st.session_state[source]), 2)
+
+
+def _linked_control(column, label: str, bounds: tuple[float, float],
+                    initial: float, key: str) -> float:
+    """Offer a slider to explore and a field to type an exact value."""
+    low, high = bounds
+    input_key = f'{key}_input'
+    for name in (key, input_key):
+        st.session_state.setdefault(name, initial)
+    slider_col, input_col = column.columns([3, 2], vertical_alignment='bottom')
+    value = slider_col.slider(label, min_value=low, max_value=high, step=.01, key=key,
+                              on_change=_copy_control, args=(key, input_key))
+    input_col.number_input(f'Digitar {label}', min_value=low, max_value=high, step=.01,
+                           format='%.2f', key=input_key, label_visibility='collapsed',
+                           on_change=_copy_control, args=(input_key, key))
+    return value
+
+
 def _volume_control(result: dict, curve: list[dict]) -> dict:
     """Keep the submitted scenario fixed while moving price and purchase cost."""
     low, high = (float(curve[i]['price_brl']) for i in (0, -1))
@@ -175,18 +196,15 @@ def _volume_control(result: dict, curve: list[dict]) -> dict:
     price_col, cost_col = st.columns(2)
     price = initial
     if low < high:
-        price = price_col.slider('Preço simulado (R$)', min_value=low, max_value=high,
-                                 value=initial, step=.01, key=f'volume_price_{signature}')
-    chosen_cost = cost_col.slider(
-        'Custo simulado (R$)', min_value=0.0, max_value=max(.01, float(cost) * 1.5),
-        value=float(cost), step=.01, key=f'volume_cost_{signature}')
-    price_value, cost_value = Decimal(str(price)), Decimal(str(chosen_cost))
-    if low < high:
-        price_col.caption(f'**{brl_markdown(price_value)}** · de {brl_markdown(str(low))} '
-                          f'a {brl_markdown(str(high))}')
-    cost_col.caption(f'**{brl_markdown(cost_value)}** · custo informado: '
-                     f'{brl_markdown(cost)}')
-    return volume_scenario(result, price_value, acquisition_cost=cost_value)
+        price = _linked_control(price_col, 'Preço simulado (R$)', (low, high), initial,
+                                f'volume_price_{signature}')
+        price_col.caption(f'De {brl_markdown(str(low))} a {brl_markdown(str(high))}')
+    chosen_cost = _linked_control(cost_col, 'Custo simulado (R$)',
+                                  (0.0, max(.01, float(cost) * 1.5)), float(cost),
+                                  f'volume_cost_{signature}')
+    cost_col.caption(f'Custo informado: {brl_markdown(cost)}')
+    return volume_scenario(result, Decimal(str(price)),
+                           acquisition_cost=Decimal(str(chosen_cost)))
 
 
 def scenarios(result: dict) -> None:
@@ -221,7 +239,10 @@ def scenarios(result: dict) -> None:
                'da linha pontilhada de margem zero, a venda gera perda por unidade.')
     st.plotly_chart(contribution_curve(analysis, result['market'],
                                        result['evaluated_price_brl'],
-                                       simulated=sim['price_brl']),
+                                       simulated=sim['price_brl'],
+                                       price_label=('Preço atual'
+                                                    if result['price_origin'] == 'user_price'
+                                                    else 'Preço de partida')),
                     width='stretch', config={'displayModeBar': False})
     with st.expander('Ver os detalhes da simulação'):
         st.caption('No preço mínimo, o arredondamento em centavos pode resultar '

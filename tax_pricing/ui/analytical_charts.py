@@ -39,7 +39,8 @@ def distribution_chart(snapshot: dict, price: Decimal) -> go.Figure:
 
 
 def contribution_curve(scenarios: dict, snapshot: dict, price: Decimal,
-                       simulated: Decimal | None = None) -> go.Figure:
+                       simulated: Decimal | None = None,
+                       price_label: str = 'Preço atual') -> go.Figure:
     """Show unit contribution versus selling price, without demand inference.
 
     Parameters
@@ -68,7 +69,7 @@ def contribution_curve(scenarios: dict, snapshot: dict, price: Decimal,
     if snapshot.get('usable_for_band'):
         figure.add_vrect(x0=float(snapshot['p25']), x1=float(snapshot['p75']),
                          fillcolor='rgba(112,135,220,.19)', line_width=0, layer='below',
-                         name='Faixa típica do mercado', showlegend=True, legendrank=50)
+                         name='Faixa central do mercado', showlegend=True, legendrank=50)
     points = [(float(scenarios['zero_contribution_price_brl']), 'Margem zero', '#C25B5B')]
     if snapshot.get('usable_for_band'):
         points += [(float(snapshot['p25']), 'Início da faixa', '#4F6B1F'),
@@ -81,9 +82,9 @@ def contribution_curve(scenarios: dict, snapshot: dict, price: Decimal,
             hovertemplate=f'{label}<br>Preço R$ %{{x:.2f}}<br>Margem R$ %{{y:.2f}}<extra></extra>'))
     own = _interpolate(xs, ys, float(price))
     figure.add_trace(go.Scatter(
-        x=[float(price)], y=[own], mode='markers', name='Preço de partida',
+        x=[float(price)], y=[own], mode='markers', name=price_label,
         marker={'size': 15, 'color': PRICE, 'line': {'color': 'white', 'width': 3}},
-        hovertemplate='Preço de partida R$ %{x:.2f}<br>Margem R$ %{y:.2f}<extra></extra>'))
+        hovertemplate=f'{price_label} R$ %{{x:.2f}}<br>Margem R$ %{{y:.2f}}<extra></extra>'))
     if simulated is not None and simulated != price:
         sim = _interpolate(xs, ys, float(simulated))
         figure.add_vline(x=float(simulated), line_dash='dot', line_width=2,
@@ -250,7 +251,7 @@ def network_heatmap(table) -> go.Figure:
     text = [[_brl_text(v) if not math.isnan(v) else '' for v in row] for row in values]
     figure = go.Figure(go.Heatmap(
         z=values, x=[_month_label(month) for month in table.columns], y=list(table.index),
-        text=text, texttemplate='%{text}', textfont={'size': 10},
+        text=text, texttemplate='%{text}', textfont={'size': 12},
         colorscale=[[0, '#F3F8EE'], [.5, '#8FC1A9'], [1, '#006963']],
         hovertemplate='%{y} · %{x}<br>R$ %{z:.2f}<extra></extra>',
         colorbar={'title': 'R$', 'thickness': 10, 'tickprefix': 'R$ '}, xgap=2, ygap=2))

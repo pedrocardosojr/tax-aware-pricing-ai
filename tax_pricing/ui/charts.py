@@ -21,8 +21,9 @@ def _layout(figure: go.Figure, height: int) -> go.Figure:
         paper_bgcolor='white', plot_bgcolor='white', separators=',.',
         legend={'orientation': 'h', 'y': 1.12, 'x': 0},
         hoverlabel={'bgcolor': 'white'})
-    figure.update_xaxes(automargin=True)
-    figure.update_yaxes(automargin=True)
+    axis_text = {'tickfont': {'size': 14, 'color': INK}, 'title_font': {'size': 14, 'color': INK}}
+    figure.update_xaxes(automargin=True, **axis_text)
+    figure.update_yaxes(automargin=True, **axis_text)
     return figure
 
 
@@ -71,9 +72,9 @@ def market_chart(snapshot: dict, price: Decimal) -> go.Figure | None:
                         nticks=5, tickangle=0, gridcolor='#E7ECF6', zeroline=False,
                         range=[max(0, left - padding), right + padding])
     figure.update_yaxes(autorange='reversed', showgrid=False, tickmode='array',
-                        tickvals=names, tickfont={'size': 11})
+                        tickvals=names)
     figure.update_layout(showlegend=False)
-    return _layout(figure, max(280, len(names) * 17 + 85))
+    return _layout(figure, max(300, len(names) * 22 + 90))
 
 
 
@@ -127,7 +128,7 @@ def price_tree(margin: dict, credit: Decimal = Decimal(0)) -> go.Figure:
     }
     figure.update_xaxes(tickmode='array', tickvals=labels,
                         ticktext=[short_labels[label] for label in labels],
-                        tickfont={'size': 11}, tickangle=0)
+                        tickangle=0)
     figure.update_yaxes(tickprefix='R$ ', gridcolor='#EDF1F7', zeroline=False,
                         range=[low - padding, high + padding])
     figure.update_layout(showlegend=False)
