@@ -3,6 +3,9 @@ import json
 
 from tax_pricing.ui.grounded_explanation import request_answer
 
+# The order is optional: past this, the summary keeps its standard order.
+BRIEF_TIMEOUT_SECONDS = 5
+
 
 def position_insight(result: dict) -> str:
     """Explain how to use the price comparison without repeating the chart."""
@@ -55,7 +58,7 @@ def prioritize_brief(lines: dict[str, str], *, model: str, api_key: str,
          'referência e se faz sentido testar promoção. Responda só com um '
          'array JSON com todas as chaves recebidas, cada uma exatamente uma vez.'},
         {'role': 'user', 'content': json.dumps(lines, ensure_ascii=False)},
-    ], model=model, api_key=api_key, url=url)
+    ], model=model, api_key=api_key, url=url, timeout=BRIEF_TIMEOUT_SECONDS)
     try:
         order = json.loads(reply or 'null')
     except ValueError:

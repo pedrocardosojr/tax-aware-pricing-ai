@@ -300,11 +300,16 @@ def request_explanation(facts: PricingExplanation, priority: str, *,
 
 
 def request_answer(messages: list[dict[str, str]], *, model: str, api_key: str,
-                   url: str = '') -> str | None:
-    """Ask the configured model for a short sourced answer in plain text."""
+                   url: str = '', timeout: int | None = None) -> str | None:
+    """Ask the configured model for a short sourced answer in plain text.
+
+    A caller whose answer is optional can pass a shorter ``timeout``.
+    """
     url = url or OPENAI_URL
     openai = url == OPENAI_URL
     limits = OPENAI_LIMITS if openai else OTHER_LIMITS
+    if timeout is not None:
+        limits = {**limits, 'timeout': min(timeout, limits['timeout'])}
     payload: dict = {'model': model, 'messages': messages,
                      'max_completion_tokens': limits['max_completion_tokens']}
     if openai:

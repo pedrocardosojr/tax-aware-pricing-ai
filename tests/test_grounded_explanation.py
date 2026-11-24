@@ -6,9 +6,10 @@ from unittest.mock import patch
 from datetime import date
 
 from tax_pricing.ui.grounded_explanation import (
-    PricingExplanation, rejection_reason, request_explanation, season_fact,
-    validated_explanation,
+    PricingExplanation, rejection_reason, request_answer, request_explanation,
+    season_fact, validated_explanation,
 )
+from tax_pricing.ui.price_brief import prioritize_brief
 
 
 def _reply(contribution: str, position: str = '') -> str:
@@ -137,6 +138,19 @@ class GroundedExplanationTests(unittest.TestCase):
             self.assertIsNone(request_explanation(
                 self.facts, 'contribution', model='test-model',
                 api_key='test-key'))
+
+    def test_optional_brief_order_waits_at_most_five_seconds(self):
+        """A slow model only drops the suggested order of the summary."""
+        gemini = ('https://generativelanguage.googleapis.com/v1beta/'
+                  'openai/chat/completions')
+        lines = {'Posicionamento': 'a', 'Promoção': 'b'}
+        with patch('tax_pricing.ui.grounded_explanation.urlopen') as send:
+            send.side_effect = TimeoutError
+            self.assertEqual(prioritize_brief(
+                lines, model='gemini-test', api_key='test-key', url=gemini), ())
+            self.assertEqual(send.call_args.kwargs['timeout'], 5)
+            request_answer([], model='gemini-test', api_key='test-key', url=gemini)
+            self.assertEqual(send.call_args.kwargs['timeout'], 30)
 
 
 class SeasonFactTests(unittest.TestCase):
