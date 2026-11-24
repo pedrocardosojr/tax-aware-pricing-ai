@@ -106,28 +106,27 @@ def _promotion_answer(result: dict) -> str:
     """Compare the first observed band point with the evaluated contribution."""
     points = result['corridor_points']
     if not points:
-        return ('Para testar um desconto com referência ao mercado, precisamos '
-                'de uma faixa observada dentro da janela e com cobertura '
-                'suficiente. Confira a data e a amostra na aba de mercado.')
+        return ('Para testar um desconto com base no mercado, o app precisa de '
+                'preços recentes de lojas suficientes, e este produto ainda não tem. '
+                'Você pode testar um preço, como "E se eu vender a R$ 10,90?".')
     lower = points[0]
     price = lower['price_brl']
     if price >= result['evaluated_price_brl']:
-        return ('Seu preço avaliado já está no limite inferior da faixa '
-                f'central observada ou abaixo dele ({brl_markdown(price)}). '
-                'Essa referência não fornece um cenário de redução.')
+        return ('Seu preço já está entre os mais baixos da metade do meio das lojas '
+                f'({brl_markdown(price)}) ou abaixo deles. Pelo mercado, não há '
+                'um preço menor para sugerir.')
     current = result['analysis']['personalized']['margin']['contribution_brl']
     discounted = lower['contribution_brl']
-    context = (f'No limite inferior da faixa central ({brl_markdown(price)}), '
-               f'a contribuição seria de {brl_markdown(discounted)} por unidade, '
-               f'ante {brl_markdown(current)} no preço avaliado. ')
+    context = (f'Baixando para {brl_markdown(price)}, o preço mais baixo da metade do '
+               f'meio das lojas, sobrariam {brl_markdown(discounted)} por unidade, '
+               f'contra {brl_markdown(current)} hoje. ')
     if discounted <= 0:
-        return context + ('Nesse preço, vender mais não gera contribuição '
-                          'positiva. Revise o custo e o preço.')
+        return context + ('Nesse preço você perde dinheiro em cada venda, '
+                          'então vender mais não ajuda. Revise o custo e o preço.')
     extra = (current / discounted - 1) * Decimal(100)
-    return (context + f'Para manter a mesma contribuição total, seria preciso '
-            f'vender {percent(extra)} a mais. É uma simulação com as '
-            'premissas atuais. A faixa observada não identifica promoções e '
-            'o app não estima a reação da demanda.')
+    return (context + f'Para ganhar o mesmo no total, você precisaria vender '
+            f'{percent(extra)} a mais. É só uma conta: os preços coletados não mostram '
+            'se a loja está em promoção, e o app não sabe quanto as vendas subiriam.')
 
 
 def _proposed_price(question: str, current: Decimal) -> Decimal | None:
@@ -170,30 +169,35 @@ def _simulation_answer(result: dict, price: Decimal, *, tax: bool = False) -> st
     """Show the same repricing numbers as the slider, with market coverage."""
     scenario = volume_scenario(result, price)
     if tax:
-        return (f"A {brl_markdown(price)}, a tributação estimada na venda é de "
-                f"{brl_markdown(scenario['tax_brl'])} por unidade no perfil demonstrativo.")
+        return (f"A {brl_markdown(price)}, o imposto estimado na venda é de "
+                f"{brl_markdown(scenario['tax_brl'])} por unidade, no perfil de exemplo do app.")
     contribution = scenario['contribution_brl']
-    text = (f"A {brl_markdown(price)}, a contribuição fica em "
-            f"{brl_markdown(contribution)} por unidade "
-            f"({percent(scenario['contribution_percent'])} do preço). ")
+    text = (f"A {brl_markdown(price)}, sobram {brl_markdown(contribution)} por unidade "
+            f"({percent(scenario['contribution_percent'])} do preço) depois do custo e dos "
+            'impostos. ')
     change = scenario['volume_change_percent']
     if contribution <= 0:
-        text += 'Aumentar o volume nesse preço não gera contribuição positiva. '
+        text += 'Nesse preço você perde dinheiro em cada venda, então vender mais não ajuda. '
     elif change is None:
-        text += 'A comparação de volume exige uma contribuição inicial positiva. '
+        text += 'Hoje não sobra nada por unidade, então não dá para comparar volumes. '
     elif change == 0:
-        text += 'O mesmo volume mantém a contribuição total do cenário inicial. '
+        text += 'Vendendo a mesma quantidade, você ganha o mesmo que hoje. '
+    elif change > 0:
+        text += (f"Para ganhar o mesmo no total, você precisaria vender "
+                 f"{percent(change)} a mais. ")
     else:
-        direction = 'a mais' if change > 0 else 'a menos'
-        text += (f"Para manter a contribuição total, o volume seria "
-                 f"{percent(abs(change))} {direction}. ")
+        text += (f"Você pode vender até {percent(abs(change))} menos e ainda ganhar "
+                 'o mesmo no total. ')
     position = scenario['position']
     if position is not None:
-        text += ('Diferença para a mediana de mercado: '
-                 f"{percent(position['gap_percent'], signed=True)}. ")
+        gap = position['gap_percent']
+        side = 'acima' if gap > 0 else 'abaixo'
+        text += (f"Esse preço fica {percent(abs(gap))} {side} da mediana do mercado "
+                 '(o preço do meio das lojas). ' if gap else
+                 'Esse preço é igual à mediana do mercado (o preço do meio das lojas). ')
     else:
-        text += 'A comparação atual de mercado está indisponível. '
-    return text + 'Simulação com as premissas atuais, sem previsão de demanda.'
+        text += 'Ainda não há preços de mercado recentes para comparar. '
+    return text + 'É só uma conta: o app não prevê quanto as vendas mudariam.'
 
 
 def _market_facts(market: dict) -> str:
@@ -333,21 +337,22 @@ def answer_question(question: str, result: dict) -> str:
         return (prefix + _simulation_answer(result, price, tax=is_tax) if price is not None else
                 'Informe um único preço de venda em reais, como R$ 11,48.')
     if topic is None:
-        return ('Tente perguntar sobre um assunto por vez: posição no mercado, '
-                'desconto, margem de contribuição ou tributação estimada.')
+        return ('Tente perguntar sobre um assunto por vez, por exemplo: estou caro? '
+                'Vale dar desconto? Quanto sobra por unidade? Quanto pago de imposto?')
     if topic == 'promotion':
         return _promotion_answer(result)
     if topic == 'tax':
         margin = result['analysis']['personalized']['margin']
         share = margin['tax_brl'] * 100 / result['evaluated_price_brl']
-        detail = ' Veja as premissas e o detalhe tributário na aba Detalhes.'
+        detail = ' A conta completa do imposto está na aba Detalhes.'
         treatment = result['assumptions'].get('product_tax') or {}
         if margin['tax_brl'] == 0 and treatment.get('purchase_icms_st_assumed'):
-            detail = (' O perfil assume ICMS-ST retido na compra e '
-                      'incluído no custo informado.')
-        return (f"Tributação estimada na venda: {brl_markdown(margin['tax_brl'])} "
-                f"por unidade ({percent(share)} do preço) no perfil "
-                f"demonstrativo.{detail}")
+            detail = (' Aqui ele é zero porque o perfil assume ICMS-ST retido na compra: '
+                      'o imposto já foi pago antes, pelo fornecedor, e está dentro do '
+                      'custo de compra.')
+        return (f"Você paga cerca de {brl_markdown(margin['tax_brl'])} de imposto por "
+                f"unidade vendida ({percent(share)} do preço), no perfil de exemplo do app. "
+                f"É uma estimativa, não o imposto real da sua empresa.{detail}")
     reading = decision_text(result)
     return (reading['contribution'] if topic == 'margin' else
             f"{reading['position']} {reading['action']}")

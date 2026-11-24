@@ -462,7 +462,7 @@ def _seasonal_context(group: str, question: str, excerpts: tuple[Excerpt, ...],
     chart.update_layout(height=220, margin={'l': 8, 'r': 8, 't': 5, 'b': 8})
     chart.update_yaxes(ticksuffix='%', zeroline=True, zerolinecolor='#132B32')
     st.plotly_chart(chart, width='stretch', config={'displayModeBar': False}, key=key)
-    st.markdown('Desvio médio em relação à média de cada ano, 2022–2025. '
+    st.markdown('Quanto cada mês vende acima ou abaixo da média do ano, 2022–2025. '
                 '[IBGE · volume de supermercados no Paraná](https://sidra.ibge.gov.br/tabela/8882)')
     dates = upcoming(today, group)
     if dates:

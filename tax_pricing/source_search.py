@@ -40,9 +40,9 @@ FUTURE_DATE = re.compile(r'\b(em|ate) (janeiro|fevereiro|marco|abril|maio|junho|
 REFUSALS = {
     'tempo_real': ('O app usa preços já coletados, com data da última coleta. '
                    'Não consulta preço, promoção ou estoque em tempo real.'),
-    'dados_da_empresa': ('A tributação do app usa perfis demonstrativos por regime. '
-                         'Não tem os dados fiscais da sua empresa; para a carga real, '
-                         'consulte a sua contabilidade.'),
+    'dados_da_empresa': ('O imposto do app vem de empresas de exemplo, os perfis '
+                         'demonstrativos de cada regime. O app não tem os dados fiscais da '
+                         'sua empresa; para saber o imposto real, fale com a sua contabilidade.'),
     'previsao': ('O app não prevê preços, vendas ou indicadores futuros. Mostra preços '
                  'já coletados e simula cenários com as premissas da tela.'),
     'sem_evidencia': 'Não encontrei essa informação nas fontes disponíveis.',

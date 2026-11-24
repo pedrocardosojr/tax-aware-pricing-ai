@@ -90,13 +90,13 @@ class OutputReadingTests(unittest.TestCase):
         question = 'Quanto eu teria de vender a mais se baixasse o preço?'
         answer = answer_question(question, self.scenario())
         self.assertIn('a mais', answer)
-        self.assertIn('não estima a reação da demanda', answer)
+        self.assertIn('não sabe quanto as vendas subiriam', answer)
         old = {**self.snapshot, 'date': '2025-10-01'}
         answer = answer_question(question, self.scenario(market=old))
-        self.assertIn('faixa observada dentro da janela', answer)
+        self.assertIn('preços recentes de lojas suficientes', answer)
         self.assertNotIn('a mais', answer)
         answer = answer_question(question, self.scenario(cost='20'))
-        self.assertIn('vender mais não gera contribuição positiva', answer)
+        self.assertIn('vender mais não ajuda', answer)
 
     def test_zero_tax_answer_mentions_the_configured_icms_st_assumption(self):
         """Read the scenario instead of equating zero at sale with no tax."""
@@ -104,7 +104,7 @@ class OutputReadingTests(unittest.TestCase):
                                  self.scenario(regime='lucro_real'))
         self.assertIn('0,00', answer)
         self.assertIn('ICMS-ST retido na compra', answer)
-        self.assertIn('perfil demonstrativo', answer)
+        self.assertIn('perfil de exemplo', answer)
 
     def test_explicit_price_question_reuses_simulator(self):
         """The question and the slider agree on the proposed contribution."""
@@ -113,7 +113,8 @@ class OutputReadingTests(unittest.TestCase):
         answer = answer_question('E se eu vender a Coca-Cola 2 L por R$ 11,48?', result)
         self.assertIn(brl_markdown(simulated['contribution_brl']), answer)
         self.assertIn(percent(simulated['volume_change_percent']), answer)
-        self.assertIn(percent(simulated['position']['gap_percent'], signed=True), answer)
+        self.assertIn(percent(abs(simulated['position']['gap_percent'])), answer)
+        self.assertIn('preço do meio das lojas', answer)
 
     def test_explicit_price_question_declines_ambiguous_or_invalid_amounts(self):
         """A missing or ambiguous amount never becomes a fabricated price."""
@@ -129,9 +130,9 @@ class OutputReadingTests(unittest.TestCase):
         """Calculate the scenario while withholding unsupported comparisons."""
         old = {**self.snapshot, 'date': '2025-10-01'}
         answer = answer_question('E se eu vender por 11,48?', self.scenario(market=old))
-        self.assertIn('comparação atual de mercado está indisponível', answer)
+        self.assertIn('Ainda não há preços de mercado recentes', answer)
         answer = answer_question('E se eu vender por 1,00?', self.scenario())
-        self.assertIn('não gera contribuição positiva', answer)
+        self.assertIn('perde dinheiro em cada venda', answer)
 
     def test_price_changes_use_the_current_price(self):
         """Distinguish relative changes from a new selling price."""
@@ -155,7 +156,7 @@ class OutputReadingTests(unittest.TestCase):
         result = self.scenario()
         expected = volume_scenario(result, Decimal('11.48'))['tax_brl']
         answer = answer_question('Quanto de imposto pago se vender por R$ 11,48?', result)
-        self.assertIn('tributação estimada na venda', answer)
+        self.assertIn('imposto estimado na venda', answer)
         self.assertIn(brl_markdown(expected), answer)
 
     def test_seasonal_promotion_requests_price_or_runs_the_simulator(self):
@@ -165,7 +166,7 @@ class OutputReadingTests(unittest.TestCase):
         self.assertIn('Informe um único preço', answer_question(question, result))
         answer = answer_question('Vale a pena promoção por R$ 11,48 no Natal?', result)
         self.assertIn(brl_markdown(Decimal('11.48')), answer)
-        self.assertIn('Diferença para a mediana de mercado', answer)
+        self.assertIn('preço do meio das lojas', answer)
 
     def test_percent_discount_and_raise_are_simulated(self):
         """A percentage change becomes a price on the evaluated price."""

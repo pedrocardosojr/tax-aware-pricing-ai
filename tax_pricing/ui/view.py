@@ -102,12 +102,12 @@ def _kpis(result: dict) -> None:
         else:
             gap = position['gap_brl']
             side = 'acima' if gap > 0 else 'abaixo' if gap < 0 else 'igual'
-            value = (brl(abs(gap)) + f' {side}') if gap else 'No preço do meio'
+            value = (brl(abs(gap)) + f' {side}') if gap else 'Igual à mediana'
             st.metric('Seu preço frente ao mercado', value)
             by_store = snapshot.get('aggregation') == STORE_AGGREGATION
             base = (f"{snapshot['store_count']} lojas" if by_store
                     else f"{snapshot['network_count']} redes")
-            st.caption(f"Preço do meio do mercado: {brl(snapshot['median'])} · {base} · "
+            st.caption(f"Mediana do mercado: {brl(snapshot['median'])} · {base} · "
                        f"{percent(position['gap_percent'], signed=True)}")
             if snapshot['status'] == 'historical_reference':
                 st.caption('Preços antigos. Última coleta em '
@@ -195,12 +195,14 @@ def _market_view(result: dict) -> None:
     st.markdown(
         '<div class="market-legend">'
         f'<span><i class="market-own"></i>Seu preço <strong>{brl(price)}</strong></span>'
-        f'<span><i class="market-median"></i>Preço do meio do mercado '
+        f'<span><i class="market-median"></i>Mediana do mercado '
         f'<strong>{brl(market["median"])}</strong></span>'
         '<span><i class="market-observed"></i>Preço observado da rede</span>'
         f'{band_legend}</div>',
         unsafe_allow_html=True)
     st.plotly_chart(figure, width='stretch', config={'displayModeBar': False})
+    if price == Decimal(str(market['median'])):
+        st.caption('Seu preço coincide com a mediana do mercado.')
     source = market.get('source_label', market['source'])
     unit = 'loja' if market.get('aggregation') == STORE_AGGREGATION else 'rede'
     coverage = f"{market['network_count']} redes"

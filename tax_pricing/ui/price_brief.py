@@ -39,13 +39,13 @@ def promotion_insight(result: dict) -> str:
                 'A base atual não sustenta uma promoção de referência.')
     lower = points[0]
     if lower['price_brl'] >= result['evaluated_price_brl']:
-        return ('A faixa observada não oferece um preço menor. '
+        return ('Seu preço já está entre os mais baixos do mercado. '
                 'Antes de dar desconto, confira quanto sobra por unidade.')
     if lower['contribution_brl'] <= 0:
-        return ('O limite inferior da faixa não deixa margem positiva. '
+        return ('No preço mais baixo comum no mercado, você perderia dinheiro. '
                 'Teste um desconto menor no simulador.')
-    return ('Teste o limite inferior da faixa no simulador e confira quanto a mais '
-            'você precisaria vender para manter a contribuição total.')
+    return ('Teste no simulador o preço mais baixo comum no mercado e veja quanto a mais '
+            'você precisaria vender para ganhar o mesmo no total.')
 
 
 def prioritize_brief(lines: dict[str, str], *, model: str, api_key: str,

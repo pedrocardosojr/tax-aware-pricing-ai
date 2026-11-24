@@ -9,7 +9,7 @@ TEAL = '#08715D'
 INK = '#192844'
 PRICE = '#354BB5'
 OBSERVED = '#7486C0'
-MEDIAN = '#62508B'
+MEDIAN = '#475569'
 
 
 def _layout(figure: go.Figure, height: int) -> go.Figure:
@@ -57,8 +57,8 @@ def market_chart(snapshot: dict, price: Decimal) -> go.Figure | None:
                                 'line': {'width': 1.5, 'color': 'white'}},
         name='Preço observado', hovertemplate='%{y}<br>R$ %{x:.2f}<extra></extra>'))
     median = float(snapshot['median'])
-    figure.add_vline(x=median, line_dash='dot', line_width=2, line_color=MEDIAN)
-    figure.add_vline(x=float(price), line_dash='dash', line_width=2, line_color=PRICE)
+    figure.add_vline(x=float(price), line_dash='solid', line_width=4, line_color=PRICE)
+    figure.add_vline(x=median, line_dash='dash', line_width=2, line_color=MEDIAN)
     boundaries = [*values, median, float(price)]
     if snapshot.get('p25') is not None and snapshot.get('p75') is not None:
         low, high = float(snapshot['p25']), float(snapshot['p75'])

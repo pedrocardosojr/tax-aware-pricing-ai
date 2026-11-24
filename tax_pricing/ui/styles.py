@@ -56,8 +56,8 @@ h1 {font-size: clamp(1.85rem, 3.7vw, 2.85rem) !important; line-height: 1.12 !imp
 .market-legend {display:flex; flex-wrap:wrap; gap:.35rem 1rem; color:var(--muted); font-size:.88rem;}
 .market-legend span {display:inline-flex; align-items:center; gap:.35rem;}
 .market-legend i {display:inline-block; width:1.4rem;}
-.market-own {border-top:2px dashed #354BB5;}
-.market-median {border-top:2px dotted #62508B;}
+.market-own {border-top:4px solid #354BB5;}
+.market-median {border-top:2px dashed #475569;}
 .st-key-price_simulator [data-testid="stSliderTickBar"] {display:none;}
 .st-key-price_simulator [data-testid="stSliderThumbValue"] {visibility:hidden;}
 .st-key-price_simulator [data-testid="stSlider"]:active [data-testid="stSliderThumbValue"] {visibility:visible;}

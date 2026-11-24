@@ -224,15 +224,15 @@ class TeamAppTests(unittest.TestCase):
             app.selectbox(key='regime').select('lucro_real').run()
             app.button(key='analyze').click().run()
             app.text_input(key='price_question').set_value('Vale acompanhar uma promoção?').run()
-            self.assertTrue(any('Para manter a mesma contribuição total'
+            self.assertTrue(any('Para ganhar o mesmo no total'
                                 in item.value for item in app.markdown))
             app.text_input(key='price_question').set_value(
                 'Quanto eu teria de vender a mais se baixasse o preço?').run()
             self.assertFalse(app.exception)
             answers = [item.value for item in app.markdown
-                       if 'Para manter a mesma contribuição total' in item.value]
+                       if 'Para ganhar o mesmo no total' in item.value]
             self.assertEqual(len(answers), 1)
-            self.assertIn('não estima a reação da demanda', answers[0])
+            self.assertIn('não sabe quanto as vendas subiriam', answers[0])
 
 
     def test_price_brief_reuses_valid_order_and_falls_back_after_new_analysis(self) -> None:
