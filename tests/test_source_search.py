@@ -57,6 +57,15 @@ class SourceSearchTests(unittest.TestCase):
         messages = build_messages('Vale a pena?', {}, result)
         self.assertIn('nunca como previsão', messages[0]['content'])
 
+    def test_trust_questions_find_the_matching_source(self) -> None:
+        """Trust in prices, taxes and the written explanation each has its own source."""
+        expected = {'Posso confiar nesses dados?': 'clique_origem',
+                    'Posso confiar no imposto?': 'premissas_tributarias',
+                    'Posso confiar na explicação da IA?': 'validador'}
+        for question, source_id in expected.items():
+            with self.subTest(question=question):
+                self.assertEqual(find_sources(question).excerpts[0].source_id, source_id)
+
     def test_prompt_carries_only_facts_and_excerpts(self) -> None:
         """The model sees the calculated values and the retrieved text, nothing else."""
         result = find_sources('Por que a referência é por loja se o gráfico mostra redes?')

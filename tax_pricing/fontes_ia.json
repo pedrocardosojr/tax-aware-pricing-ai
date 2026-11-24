@@ -17,8 +17,8 @@
   "id": "clique_origem",
   "title": "Origem dos preços do Clique Economia",
   "url": "https://github.com/pedrocardosojr/tax-aware-pricing-ai/blob/1bb4da44d88e3701919d8cde2fcbbeaf14ea05f1/pesquisas/ampliacao_modelos_2026-11-07/README.md",
-  "text": "Os preços observados vêm da pesquisa pública Clique Economia de Curitiba. O diário de outubro amplia a base mensal com preços regulares observados de 46 códigos exatos. Os arquivos adicionais trazem preços coletados entre 2 e 29 de outubro de 2026, com origem registrada no manifesto.",
-  "terms": "quem coleta pesquisa pública de preços supermercados Curitiba cidade origem fonte dos dados"
+  "text": "Os preços observados vêm da pesquisa pública Clique Economia de Curitiba. O diário de outubro amplia a base mensal com preços regulares observados de 46 códigos exatos. Os arquivos adicionais trazem preços coletados entre 2 e 29 de outubro de 2026, com origem registrada no manifesto. Para evitar distorções, cada loja conta uma vez na referência, e a faixa de preço só aparece quando a referência é recente e tem cobertura suficiente.",
+  "terms": "quem coleta pesquisa pública de preços supermercados Curitiba cidade origem fonte dos dados de onde vêm os dados posso confiar nesses dados são confiáveis confiança qualidade dos dados"
  },
  {
   "id": "simulador",
@@ -39,7 +39,7 @@
   "title": "Premissas da tributação estimada nos três regimes",
   "url": "https://github.com/pedrocardosojr/tax-aware-pricing-ai/blob/1bb4da44d88e3701919d8cde2fcbbeaf14ea05f1/tax_pricing/demo_profile.py",
   "text": "A tributação estimada usa perfis demonstrativos do Simples Nacional, do Lucro Presumido e do Lucro Real para um varejista de Curitiba vendendo ao consumidor final. O tratamento varia por produto e regime. ICMS-ST retido na compra e incluído no custo só se aplica quando essa premissa estiver indicada no cenário selecionado. As condições são fictícias e visíveis na tela. A margem usa as parcelas e créditos desse perfil. O cálculo oficial de IBS/CBS é um detalhe separado e não deve ser somado novamente à dedução da margem. Não é apuração fiscal de uma empresa real nem homologação dos produtos.",
-  "terms": "imposto impostos tributos tributação regime Simples Nacional Lucro Presumido Lucro Real ICMS ICMS-ST PIS Cofins DAS exemplo demonstrativo cálculo calcula calcular imposto em cada regime"
+  "terms": "imposto impostos tributos tributação regime Simples Nacional Lucro Presumido Lucro Real ICMS ICMS-ST PIS Cofins DAS exemplo demonstrativo cálculo calcula calcular imposto em cada regime posso confiar no imposto"
  },
  {
   "id": "validador",
