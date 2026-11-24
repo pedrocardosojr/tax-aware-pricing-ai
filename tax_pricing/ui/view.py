@@ -477,7 +477,11 @@ def _answer(selected: str, result: dict) -> None:
     if not calculated.startswith(GENERIC_ANSWERS):
         st.write(calculated)
     elif not _sourced_answer(selected, result):
-        st.write(calculated)
+        evidence = find_sources(selected)
+        if evidence.answerable:
+            lab_view.show_excerpts(evidence.excerpts)
+        else:
+            st.write(calculated)
 
 
 def _market_intelligence(result: dict) -> None:

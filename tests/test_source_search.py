@@ -58,10 +58,11 @@ class SourceSearchTests(unittest.TestCase):
         self.assertIn('nunca como previsão', messages[0]['content'])
 
     def test_trust_questions_find_the_matching_source(self) -> None:
-        """Trust in prices, taxes and the written explanation each has its own source."""
+        """Trust questions and the short P25 question each find their own source."""
         expected = {'Posso confiar nesses dados?': 'clique_origem',
                     'Posso confiar no imposto?': 'premissas_tributarias',
-                    'Posso confiar na explicação da IA?': 'validador'}
+                    'Posso confiar na explicação da IA?': 'validador',
+                    'O que é P25?': 'disponibilidade'}
         for question, source_id in expected.items():
             with self.subTest(question=question):
                 self.assertEqual(find_sources(question).excerpts[0].source_id, source_id)

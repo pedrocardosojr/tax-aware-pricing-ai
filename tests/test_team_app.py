@@ -287,3 +287,7 @@ class TeamAppTests(unittest.TestCase):
                     self.assertEqual(app.text_input(key='price_question').value, '')
                     self.assertTrue(any(f'Fonte: [{title}' in item.value
                                         for item in app.caption))
+            app.text_input(key='price_question').input('O que é P25?').run()
+            self.assertFalse(app.exception)
+            self.assertTrue(any('Fonte: [Disponibilidade da referência' in item.value
+                                for item in app.caption))

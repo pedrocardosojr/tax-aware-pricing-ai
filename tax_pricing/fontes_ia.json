@@ -32,7 +32,7 @@
   "title": "Disponibilidade da referência e da faixa de preço",
   "url": "https://github.com/pedrocardosojr/tax-aware-pricing-ai/blob/1bb4da44d88e3701919d8cde2fcbbeaf14ea05f1/mercado/estatisticas.py",
   "text": "A faixa P25–P75 reúne a metade central dos valores consolidados por loja. P25 é o primeiro quartil (percentil 25) e P75 é o terceiro quartil (percentil 75). Eles descrevem dispersão dos preços observados e não são um intervalo de confiança nem um preço ótimo. Referência antiga aparece como histórica e não pode sugerir faixa atual. Para sugerir faixa de preços, a referência deve ser observada, recente e ter cobertura suficiente, com quartis disponíveis. Na ausência de preço de mercado, ainda é possível analisar a contribuição de um preço de venda informado.",
-  "terms": "referência antiga histórica sem faixa sugerida preço ausente sem preço de mercado cobertura insuficiente"
+  "terms": "referência antiga histórica sem faixa sugerida preço ausente sem preço de mercado cobertura insuficiente o que é P25 o que é P75 P25 P75 quartil quartis percentil faixa de preço"
  },
  {
   "id": "premissas_tributarias",
