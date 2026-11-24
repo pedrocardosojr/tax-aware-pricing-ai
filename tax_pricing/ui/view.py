@@ -26,7 +26,7 @@ from tax_pricing.ui.grounded_explanation import (
     sourced_answer_is_valid,
 )
 from tax_pricing.ui.price_brief import position_insight, prioritize_brief, promotion_insight
-from tax_pricing.ui.price_questions import answer_question
+from tax_pricing.ui.price_questions import answer_question, direct_answer
 from tax_pricing.ui.reading import decision_text
 from tax_pricing.ui import forecast_view, lab_view
 
@@ -456,16 +456,25 @@ def _questions(result: dict) -> None:
         _answer(selected, result)
 
 
+def _context_answer(selected: str, result: dict) -> None:
+    """Suggested context questions: sourced answer, season panel or excerpts."""
+    question_for_sources = SOURCE_QUESTIONS.get(selected, selected)
+    if _sourced_answer(question_for_sources, result):
+        return
+    if selected == SEASON_QUESTION:
+        lab_view.question_context(selected, result['product']['group'])
+        return
+    lab_view.show_excerpts(find_sources(question_for_sources).excerpts)
+
+
 def _answer(selected: str, result: dict) -> None:
     """Calculations come from the simulator; context comes from the sources."""
     if selected in (*CONTEXT_QUESTIONS, BLACK_FRIDAY_QUESTION):
-        question_for_sources = SOURCE_QUESTIONS.get(selected, selected)
-        if _sourced_answer(question_for_sources, result):
-            return
-        if selected == SEASON_QUESTION:
-            lab_view.question_context(selected, result['product']['group'])
-            return
-        lab_view.show_excerpts(find_sources(question_for_sources).excerpts)
+        _context_answer(selected, result)
+        return
+    direct = direct_answer(selected, result)
+    if direct:
+        st.write(direct)
         return
     if lab_view.asks_for_source(selected) and _sourced_answer(selected, result):
         return

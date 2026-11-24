@@ -39,13 +39,13 @@ class SourceSearchTests(unittest.TestCase):
         self.assertEqual(result.excerpts, ())
 
     def test_every_source_is_complete_and_pinned(self) -> None:
-        """Project links point to a fixed commit; external ones keep a local copy."""
+        """Project links point to a fixed commit; external ones are sector or official pages."""
         sources = load_sources()
         self.assertEqual(len({source['id'] for source in sources}), len(sources))
         for source in sources:
             if source.get('external'):
                 self.assertTrue(source['url'].startswith('https://'))
-                self.assertTrue(source['id'].startswith('saz_'))
+                self.assertTrue(source['id'].startswith('saz_') or source['id'] == 'reforma')
             else:
                 self.assertRegex(source['url'], r'/blob/[0-9a-f]{40}/')
 
@@ -62,7 +62,8 @@ class SourceSearchTests(unittest.TestCase):
         expected = {'Posso confiar nesses dados?': 'clique_origem',
                     'Posso confiar no imposto?': 'premissas_tributarias',
                     'Posso confiar na explicação da IA?': 'validador',
-                    'O que é P25?': 'disponibilidade'}
+                    'O que é P25?': 'disponibilidade',
+                    'O que muda com a reforma tributária?': 'reforma'}
         for question, source_id in expected.items():
             with self.subTest(question=question):
                 self.assertEqual(find_sources(question).excerpts[0].source_id, source_id)

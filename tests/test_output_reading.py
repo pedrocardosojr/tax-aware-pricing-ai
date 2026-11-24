@@ -10,7 +10,7 @@ from tax_pricing.mvp_analysis import analyze_mvp
 from tax_pricing.pricing_scenarios import volume_scenario
 from tax_pricing.ui.formatting import brl_markdown, network_name, percent, product_name
 from tax_pricing.ui.charts import price_tree
-from tax_pricing.ui.price_questions import answer_question, match_topic
+from tax_pricing.ui.price_questions import answer_question, direct_answer, match_topic
 from tax_pricing.ui.reading import decision_text, observed_spread
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -166,6 +166,33 @@ class OutputReadingTests(unittest.TestCase):
         answer = answer_question('Vale a pena promoção por R$ 11,48 no Natal?', result)
         self.assertIn(brl_markdown(Decimal('11.48')), answer)
         self.assertIn('Diferença para a mediana de mercado', answer)
+
+    def test_percent_discount_and_raise_are_simulated(self):
+        """A percentage change becomes a price on the evaluated price."""
+        result = self.scenario()
+        self.assertIn('para R\\$ 10,80', answer_question('Faz sentido dar desconto de 10%?',
+                                                         result))
+        self.assertIn('para R\\$ 12,60', answer_question('E se eu subir 5%?', result))
+
+    def test_plain_answers_settled_by_the_scenario(self):
+        """Common lay questions get the scenario's own numbers in plain words."""
+        result = self.scenario()
+        market = result['market']
+        expected = {
+            'Quando foi a última coleta?': 'última coleta de preços',
+            'Quantas lojas foram pesquisadas?': f"{market['network_count']} redes",
+            'Qual rede é mais barata?': 'Ver preços por rede',
+            'O que é a mediana?': 'preço do meio',
+            'Por que a margem é essa?': ' = R\\$ 4,66',
+            'Posso subir o preço?': 'Subindo para',
+            'Qual o melhor preço?': 'não calcula um preço ideal',
+        }
+        for question, fragment in expected.items():
+            with self.subTest(question=question):
+                self.assertIn(fragment, direct_answer(question, result) or '')
+        for question in ('Estou caro?', 'E se eu vender a R$ 11,00?', 'Quanto pago de imposto?'):
+            with self.subTest(question=question):
+                self.assertIsNone(direct_answer(question, result))
 
     def test_display_names_restore_accents_and_units(self):
         """Labels read naturally while catalog and network keys stay unchanged."""

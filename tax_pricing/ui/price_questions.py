@@ -6,7 +6,7 @@ import re
 from unicodedata import normalize
 
 from tax_pricing.pricing_scenarios import volume_scenario
-from tax_pricing.ui.formatting import brl_markdown, percent
+from tax_pricing.ui.formatting import brl_markdown, display_date, network_name, percent
 from tax_pricing.ui.reading import decision_text
 
 TOPICS = {
@@ -39,6 +39,19 @@ RELATIVE = re.compile(
 DISCOUNT = re.compile(r'\b(?:dar|aplicar)\s*$')
 PRICE = re.compile(r'(?:\d{1,10}|\d{1,3}(?:\.\d{3}){1,3})(?:,\d{1,2})?')
 DOT_PRICE = re.compile(r'\d{1,10}\.\d{1,2}')
+PERCENT_CHANGE = re.compile(r'(\d{1,2}(?:,\d{1,2})?)\s*%')
+LOWER_WORDS = re.compile(r'\b(?:desconto|baix\w*|reduz\w*|diminu\w*)\b')
+HIGHER_WORDS = re.compile(r'\b(?:sub\w*|aument\w*|reajust\w*)\b')
+LAST_COLLECTION = re.compile(r'\b(?:ultima coleta|data da coleta|quando\b.*\bcolet\w*|'
+                             r'atualizad\w*)')
+STORE_COUNT = re.compile(r'\bquant[ao]s (?:lojas|redes|mercados|supermercados)\b')
+NETWORK_RANK = re.compile(r'\b(?:rede|loja|mercado|supermercado)s?\b.*\bmais (?:barat|car)\w*')
+MEDIAN_MEANING = re.compile(r'\b(?:o que (?:e|significa)|como funciona)\b.*\bmediana\b')
+MARGIN_MEANING = re.compile(r'\b(?:por ?que|como|o que (?:e|significa))\b.*'
+                            r'\b(?:margem|contribuicao)\b')
+BEST_PRICE = re.compile(r'\b(?:melhor|ideal|otimo|certo|correto)\b.*\bpreco\b|'
+                        r'\bpreco\b.*\b(?:ideal|otimo|certo|correto)\b')
+RAISE_ASK = re.compile(r'\b(?:posso|devo|vale|da pra|consigo|e se)\b.*\b(?:sub\w*|aument\w*)\b')
 
 
 STOP_WORDS = frozenset((
@@ -183,6 +196,121 @@ def _simulation_answer(result: dict, price: Decimal, *, tax: bool = False) -> st
     return text + 'Simulação com as premissas atuais, sem previsão de demanda.'
 
 
+def _market_facts(market: dict) -> str:
+    """Date and sample size of the market reference, in plain words."""
+    stores = market.get('store_count')
+    sample = (f"{stores} lojas de {market['network_count']} redes" if stores else
+              f"{market['network_count']} redes")
+    return (f"A última coleta de preços usada aqui é de {display_date(market['date'])}, "
+            f"com preços de {sample} de supermercado em Curitiba.")
+
+
+def _network_answer(market: dict) -> str:
+    """Cheapest and most expensive network in the reference."""
+    prices = sorted((Decimal(str(value)), network_name(name))
+                    for name, value in market['per_network_brl'].items() if value is not None)
+    if len(prices) < 2:
+        return 'Ainda não há redes suficientes para comparar neste produto.'
+    (low, cheapest), (high, priciest) = prices[0], prices[-1]
+    return (f'Na referência de mercado, a rede com o menor preço é {cheapest} '
+            f'({brl_markdown(low)}) e a de maior preço é {priciest} ({brl_markdown(high)}). '
+            'A lista completa está em "Ver preços por rede", na aba Preço e mercado.')
+
+
+def _median_answer(market: dict) -> str:
+    """Explain the median without statistics vocabulary."""
+    return ('A mediana é o preço do meio: se você colocar os preços das lojas em fila, '
+            'do mais barato ao mais caro, é o que fica no centro. Metade das lojas cobra '
+            'até esse valor e a outra metade cobra mais. Aqui ela é de '
+            f"{brl_markdown(market['median'])}. Ela é usada porque um preço muito alto "
+            'ou muito baixo em uma loja não a puxa para cima ou para baixo.')
+
+
+def _margin_answer(result: dict) -> str:
+    """Show the contribution as price minus each deduction."""
+    margin = result['analysis']['personalized']['margin']
+    parts = (f"Preço de venda {brl_markdown(result['evaluated_price_brl'])} − custo de compra "
+             f"{brl_markdown(margin['net_cost_brl'])} − tributos na venda "
+             f"{brl_markdown(margin['tax_brl'])}")
+    if margin['expense_brl']:
+        parts += f" − outras despesas {brl_markdown(margin['expense_brl'])}"
+    return (f"{parts} = {brl_markdown(margin['contribution_brl'])} por unidade "
+            f"({percent(margin['contribution_percent'])} do preço). "
+            'Essa margem de contribuição é o que sobra de cada venda para pagar as '
+            'despesas fixas da loja, como aluguel e salários, e gerar lucro.')
+
+
+def _raise_answer(result: dict) -> str:
+    """Simulate the top of the central market band."""
+    points = result['corridor_points']
+    if not points:
+        return ('Sem uma referência de mercado recente, o app não indica até onde subir. '
+                'Teste um preço, como "E se eu vender a R$ 12,50?".')
+    top = points[-1]['price_brl']
+    if top <= result['evaluated_price_brl']:
+        return (f'Seu preço já está no topo da faixa em que fica a metade do meio das lojas '
+                f'({brl_markdown(top)}) ou acima dela. Subir mais deixa você entre as '
+                'lojas mais caras.')
+    scenario = volume_scenario(result, top)
+    current = result['analysis']['personalized']['margin']['contribution_brl']
+    text = (f"Subindo para {brl_markdown(top)}, o topo da faixa em que fica a metade do meio "
+            f"das lojas, sobram {brl_markdown(scenario['contribution_brl'])} por unidade, "
+            f"contra {brl_markdown(current)} hoje. ")
+    change = scenario['volume_change_percent']
+    if change is not None and change < 0:
+        text += (f'Você pode vender até {percent(abs(change))} menos e ainda ganhar o mesmo '
+                 'no total. ')
+    return text + 'É uma simulação: o app não sabe quanto as vendas cairiam com o aumento.'
+
+
+def _best_price_answer(market: dict) -> str:
+    """Say why there is no single ideal price and what the app offers instead."""
+    text = ('O app não calcula um preço ideal, porque não sabe quanto as vendas mudam '
+            'quando o preço muda. Ele mostra onde o seu preço fica no mercado e quanto '
+            'sobra por unidade em cada preço. ')
+    if market.get('usable_for_band') and market.get('p25') is not None:
+        text += (f"Aqui, a metade do meio das lojas cobra entre {brl_markdown(market['p25'])} "
+                 f"e {brl_markdown(market['p75'])}. ")
+    return text + 'Para testar outros preços, use a aba Margem e promoção.'
+
+
+def direct_answer(question: str, result: dict) -> str | None:
+    """Plain answers to common questions that the scenario itself settles."""
+    if result['status'] != 'ready':
+        return None
+    text = normalize('NFKD', question.casefold()).encode('ascii', 'ignore').decode()
+    market = result['market']
+    has_market = market.get('median') is not None
+    routes = (
+        (has_market and bool(LAST_COLLECTION.search(text) or STORE_COUNT.search(text)),
+         lambda: _market_facts(market)),
+        (has_market and bool(NETWORK_RANK.search(text)), lambda: _network_answer(market)),
+        (has_market and bool(MEDIAN_MEANING.search(text)), lambda: _median_answer(market)),
+        (bool(BEST_PRICE.search(text)), lambda: _best_price_answer(market)),
+        (bool(MARGIN_MEANING.search(text)), lambda: _margin_answer(result)),
+        (bool(RAISE_ASK.search(text)) and not re.search(r'\d', text),
+         lambda: _raise_answer(result)),
+    )
+    return next((answer() for matches, answer in routes if matches), None)
+
+
+def _percent_price(question: str, current: Decimal) -> tuple[Decimal | None, str]:
+    """Turn '10% de desconto' or 'subir 5%' into a price and a short lead-in."""
+    match = PERCENT_CHANGE.search(question)
+    if not match:
+        return None, ''
+    rate = Decimal(match[1].replace(',', '.')) / 100
+    if LOWER_WORDS.search(question):
+        rate = -rate
+    elif not HIGHER_WORDS.search(question):
+        return None, ''
+    price = (current * (1 + rate)).quantize(Decimal('0.01'))
+    if price <= 0:
+        return None, ''
+    return price, (f'Com essa variação, o preço vai de {brl_markdown(current)} '
+                   f'para {brl_markdown(price)}. ')
+
+
 def answer_question(question: str, result: dict) -> str:
     """Route a question to an answer built from the selected result."""
     if result['status'] != 'ready':
@@ -190,16 +318,19 @@ def answer_question(question: str, result: dict) -> str:
                 'para calcular a margem e a tributação estimada.')
     normalized = normalize('NFKD', question.casefold()).encode('ascii', 'ignore').decode()
     price = _proposed_price(normalized, result['evaluated_price_brl'])
+    prefix = ''
+    if price is None:
+        price, prefix = _percent_price(normalized, result['evaluated_price_brl'])
     topic = match_topic(question)
     explicit = PRICE_CHANGE.search(normalized) and (
         CURRENCY.search(normalized) or price is not None
         or normalized.startswith(('e se', 'simul')))
     discount = re.search(r'\b(?:dar|aplicar)\b.*\bdesconto\b', normalized)
     seasonal = PROMOTION.search(normalized) and OCCASION.search(normalized)
-    if explicit or seasonal or (discount and price is not None):
+    if prefix or explicit or seasonal or (discount and price is not None):
         is_tax = (
             topic == 'tax' or bool(re.search(r'\b(?:imposto|tributo|tributacao)\b', normalized)))
-        return (_simulation_answer(result, price, tax=is_tax) if price is not None else
+        return (prefix + _simulation_answer(result, price, tax=is_tax) if price is not None else
                 'Informe um único preço de venda em reais, como R$ 11,48.')
     if topic is None:
         return ('Tente perguntar sobre um assunto por vez: posição no mercado, '

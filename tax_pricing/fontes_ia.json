@@ -42,6 +42,14 @@
   "terms": "imposto impostos tributos tributação regime Simples Nacional Lucro Presumido Lucro Real ICMS ICMS-ST PIS Cofins DAS exemplo demonstrativo cálculo calcula calcular imposto em cada regime posso confiar no imposto"
  },
  {
+  "id": "reforma",
+  "external": true,
+  "title": "O que muda com a reforma tributária",
+  "url": "https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/perguntas-e-respostas/como-sera-a-transicao-para",
+  "text": "A reforma tributária troca os tributos sobre o consumo PIS, Cofins, ICMS e ISS por dois novos: a CBS, do governo federal, e o IBS, de estados e municípios. Em 2027, a CBS substitui PIS e Cofins. A partir de 2029, ICMS e ISS vão sendo trocados aos poucos pelo IBS, e a troca termina em 2033. Na aba Detalhes, em Reforma tributária, o app mostra quanto a margem muda se a tributação na venda subir ou cair 1 ponto percentual em 2027. O quanto cada empresa vai pagar depende do enquadramento do produto e dos créditos de compra.",
+  "terms": "reforma tributária o que muda IBS CBS imposto novo 2027 2033 transição PIS Cofins ICMS ISS substituição calendário"
+ },
+ {
   "id": "validador",
   "title": "Como a explicação escrita pelo modelo é conferida",
   "url": "https://github.com/pedrocardosojr/tax-aware-pricing-ai/blob/1bb4da44d88e3701919d8cde2fcbbeaf14ea05f1/tax_pricing/ui/grounded_explanation.py",
@@ -53,7 +61,7 @@
   "external": true,
   "title": "Em que meses os supermercados do Paraná vendem mais (IBGE)",
   "url": "https://sidra.ibge.gov.br/tabela/8882",
-  "text": "Volume de vendas de hiper e supermercados no Paraná, Pesquisa Mensal de Comércio do IBGE. Na média de 2022 a 2025, dezembro fica 21% acima da média do ano (entre 18% e 25%), novembro 3% acima e outubro 1% acima. Fevereiro é o mês mais fraco, 8% abaixo; junho fica 6% abaixo e janeiro 5% abaixo. É o setor inteiro no estado, não um produto nem uma loja. Cópia em dados/externo/ibge_pmc_pr_supermercados_sazonalidade.csv.",
+  "text": "Volume de vendas de hiper e supermercados no Paraná, Pesquisa Mensal de Comércio do IBGE. Na média de 2022 a 2025, dezembro fica 21% acima da média do ano (entre 18% e 25%), novembro 3% acima e outubro 1% acima. Fevereiro é o mês mais fraco, 8% abaixo; junho fica 6% abaixo e janeiro 5% abaixo. É o setor inteiro no estado, não um produto nem uma loja.",
   "terms": "época do ano mês que vende mais sazonalidade sazonal movimento fim de ano dezembro natal fevereiro supermercado Paraná vale a pena promoção"
  },
  {
@@ -61,7 +69,7 @@
   "external": true,
   "title": "Estações do ano em Curitiba (INMET)",
   "url": "https://portal.inmet.gov.br/normais",
-  "text": "Normais climatológicas 1991–2020 do INMET para a estação de Curitiba. A temperatura média vai de 21,3 °C em janeiro e 21,4 °C em fevereiro a 13,8 °C em julho, com mínima média de 9,3 °C em julho. No verão, de dezembro a março, as máximas médias ficam entre 26 e 27 °C; no inverno, de junho a agosto, entre 20 e 22 °C. Cópia em dados/externo/inmet_normais_1991_2020_curitiba.csv.",
+  "text": "Normais climatológicas 1991–2020 do INMET para a estação de Curitiba. A temperatura média vai de 21,3 °C em janeiro e 21,4 °C em fevereiro a 13,8 °C em julho, com mínima média de 9,3 °C em julho. No verão, de dezembro a março, as máximas médias ficam entre 26 e 27 °C; no inverno, de junho a agosto, entre 20 e 22 °C.",
   "terms": "estação do ano estações verão inverno frio calor clima temperatura Curitiba época"
  },
  {
