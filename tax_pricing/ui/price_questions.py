@@ -209,7 +209,7 @@ def answer_question(question: str, result: dict) -> str:
     if topic == 'tax':
         margin = result['analysis']['personalized']['margin']
         share = margin['tax_brl'] * 100 / result['evaluated_price_brl']
-        detail = ' Veja as premissas e o detalhe tributário abaixo.'
+        detail = ' Veja as premissas e o detalhe tributário na aba Detalhes.'
         treatment = result['assumptions'].get('product_tax') or {}
         if margin['tax_brl'] == 0 and treatment.get('purchase_icms_st_assumed'):
             detail = (' O perfil assume ICMS-ST retido na compra e '

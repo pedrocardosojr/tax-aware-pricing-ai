@@ -277,7 +277,7 @@ class TeamAppTests(unittest.TestCase):
                     ('Qual a fonte dos preços do Clique Economia?', 'Origem dos preços'),
                     ('O que significa a faixa de preço?', 'Disponibilidade da referência'),
                     ('Por que cada loja conta uma vez?',
-                     'Como se calcula a referência do Café Pilão'),
+                     'Como se calcula a referência de preço por loja'),
                     ('Quais são as premissas da tributação estimada?', 'Premissas da tributação'),
                     ('O que a pesquisa diz sobre bebidas no Natal?', 'Bebidas na semana do Natal')):
                 with self.subTest(question=question):
@@ -285,4 +285,5 @@ class TeamAppTests(unittest.TestCase):
                     next(button for button in app.button if button.label == question).click().run()
                     self.assertFalse(app.exception)
                     self.assertEqual(app.text_input(key='price_question').value, '')
-                    self.assertTrue(any(f'[{title}' in item.value for item in app.markdown))
+                    self.assertTrue(any(f'Fonte: [{title}' in item.value
+                                        for item in app.caption))

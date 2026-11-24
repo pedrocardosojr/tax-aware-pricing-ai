@@ -287,6 +287,23 @@ def compare_regimes(result: dict, labels: dict[str, str]) -> None:
                'na margem. A tabela usa os tributos na venda e os créditos '
                'considerados no cálculo da contribuição.')
 
+SOURCE_REQUEST = re.compile(r'\b(?:fonte|origem|confi\w*|de onde|metodologia)\b')
+REAL_TIME_ASK = re.compile(r'\b(?:em promocao|estoque|preco (?:de )?(?:hoje|agora)|'
+                           r'concorren\w*\b.*\b(?:hoje|agora))\b')
+
+
+def show_excerpts(excerpts: tuple[Excerpt, ...]) -> None:
+    """Each source excerpt as text, with its source link set apart below."""
+    for excerpt in excerpts:
+        st.markdown(excerpt.text.replace('$', r'\$'))
+        st.caption(f'Fonte: [{excerpt.title}]({excerpt.url})')
+
+
+def asks_for_source(question: str) -> bool:
+    """Whether the question asks where the data or the method comes from."""
+    return bool(SOURCE_REQUEST.search(normalize(question)))
+
+
 def question_context(question: str, group: str) -> bool:
     """Show cited methodology or sector context for the selected question."""
     text = normalize(question)
@@ -295,22 +312,16 @@ def question_context(question: str, group: str) -> bool:
     seasonal = bool(re.search(
         r'\b(?:natal|pascoa|carnaval|black friday|ano novo|sazonalidade|'
         r'epoca do ano|dia das maes|dia dos pais)\b', text))
-    asks_for_source = re.search(
-        r'\b(?:fonte|origem|confi\w*|de onde|metodologia)\b', text)
-    if reason == 'tempo_real' and re.search(
-            r'\b(?:em promocao|estoque|preco (?:de )?(?:hoje|agora))\b', text):
+    if reason == 'tempo_real' and REAL_TIME_ASK.search(text):
         st.markdown(REFUSALS['tempo_real'])
         return True
     if seasonal and reason is None:
-        _seasonal_context(group, text, evidence.excerpts)
-    elif asks_for_source or reason in ('previsao', 'dados_da_empresa'):
+        _seasonal_context(group, text, evidence.excerpts, key='season_answer_chart')
+    elif SOURCE_REQUEST.search(text) or reason in ('previsao', 'dados_da_empresa'):
         if evidence.answerable:
-            st.markdown('**Fontes para esta resposta**')
-            for excerpt in evidence.excerpts:
-                st.write(excerpt.text)
-                st.markdown(f'[{excerpt.title}]({excerpt.url})')
-        else:
-            st.markdown(evidence.reason)
+            show_excerpts(evidence.excerpts)
+            return True
+        st.markdown(evidence.reason)
     return False
 
 
@@ -432,14 +443,14 @@ def season_panel(group: str) -> None:
     _seasonal_context(group, '', ())
 
 
-def _seasonal_context(group: str, question: str, excerpts: tuple[Excerpt, ...]) -> None:
+def _seasonal_context(group: str, question: str, excerpts: tuple[Excerpt, ...],
+                      key: str = 'season_panel_chart') -> None:
     """Show the sector signal and upcoming dates, with sources."""
     today = datetime.now(ZoneInfo('America/Sao_Paulo')).date()
     st.markdown('#### Época do ano · sinais do setor')
-    for excerpt in excerpts:
-        if excerpt.source_id.startswith('saz_') and excerpt.source_id != 'saz_supermercados_pr':
-            st.write(excerpt.text)
-            st.markdown(f'[{excerpt.title}]({excerpt.url})')
+    show_excerpts(tuple(
+        excerpt for excerpt in excerpts
+        if excerpt.source_id.startswith('saz_') and excerpt.source_id != 'saz_supermercados_pr'))
     st.caption('Dados do setor. O app não tem as vendas da sua loja.')
     month_data = sector_by_month()
     focus = 'dez' if 'natal' in question else MONTHS[today.month - 1]
@@ -450,7 +461,7 @@ def _seasonal_context(group: str, question: str, excerpts: tuple[Excerpt, ...]) 
         hovertemplate='%{x}: %{y:+.1f}%<extra></extra>'))
     chart.update_layout(height=220, margin={'l': 8, 'r': 8, 't': 5, 'b': 8})
     chart.update_yaxes(ticksuffix='%', zeroline=True, zerolinecolor='#132B32')
-    st.plotly_chart(chart, width='stretch', config={'displayModeBar': False})
+    st.plotly_chart(chart, width='stretch', config={'displayModeBar': False}, key=key)
     st.markdown('Desvio médio em relação à média de cada ano, 2022–2025. '
                 '[IBGE · volume de supermercados no Paraná](https://sidra.ibge.gov.br/tabela/8882)')
     dates = upcoming(today, group)

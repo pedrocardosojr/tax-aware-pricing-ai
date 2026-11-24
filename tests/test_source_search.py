@@ -3,8 +3,8 @@ import unittest
 
 from tax_pricing.source_search import (SearchResult, build_messages,
                                        citations_are_valid, find_sources,
-                                       load_sources, out_of_scope_reason,
-                                       strip_fact_tags)
+                                       collapse_citations, load_sources,
+                                       out_of_scope_reason, strip_fact_tags)
 
 
 class SourceSearchTests(unittest.TestCase):
@@ -88,6 +88,13 @@ class SourceSearchTests(unittest.TestCase):
                          'Amostra do cenário. Método por loja [cafe_metodo].')
         self.assertEqual(strip_fact_tags(answer),
                          'Usa as lojas [cafe_metodo]. Sobram R$ 3,56.')
+
+    def test_shown_answer_has_no_internal_tags_or_repeated_markers(self) -> None:
+        """Grouped fact tags disappear; one marker closes each run of a source."""
+        self.assertEqual(strip_fact_tags('Custo com ST [tax, purchase_st]. Perfil [1].'),
+                         'Custo com ST. Perfil [1].')
+        self.assertEqual(collapse_citations('A [1]. B [1]. C [2]. D [1].\nE [1]. F [1].'),
+                         'A. B [1]. C [2]. D [1].\nE. F [1].')
 
 
 if __name__ == '__main__':

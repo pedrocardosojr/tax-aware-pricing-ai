@@ -203,4 +203,22 @@ def citations_are_valid(answer: str, result: SearchResult) -> bool:
 
 def strip_fact_tags(answer: str) -> str:
     """Remove tags such as [contribution] that point to a calculated fact."""
-    return re.sub(r'\s*\[(' + '|'.join(sorted(FACT_TAGS)) + r')\]', '', answer)
+    tag = '(?:' + '|'.join(sorted(FACT_TAGS)) + ')'
+    return re.sub(r'\s*\[' + tag + r'(?:\s*,\s*' + tag + r')*\]', '', answer)
+
+
+def collapse_citations(answer: str) -> str:
+    """Keep one marker per run of sentences that cite the same source.
+
+    "A [1]. B [1]." becomes "A. B [1]." in the same paragraph.
+    """
+    paragraphs = []
+    for paragraph in answer.split('\n'):
+        markers = list(re.finditer(r'\s*(\[\d+\])', paragraph))
+        drop = {index for index, (marker, following) in enumerate(zip(markers, markers[1:]))
+                if marker.group(1) == following.group(1)}
+        for index in sorted(drop, reverse=True):
+            marker = markers[index]
+            paragraph = paragraph[:marker.start()] + paragraph[marker.end():]
+        paragraphs.append(paragraph)
+    return '\n'.join(paragraphs)

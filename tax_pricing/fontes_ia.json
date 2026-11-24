@@ -1,9 +1,9 @@
 [
  {
   "id": "cafe_metodo",
-  "title": "Como se calcula a referência do Café Pilão",
+  "title": "Como se calcula a referência de preço por loja",
   "url": "https://github.com/pedrocardosojr/tax-aware-pricing-ai/blob/1bb4da44d88e3701919d8cde2fcbbeaf14ea05f1/mercado/pilao_referencia.py",
-  "text": "A referência do Café Pilão 500 g usa mediana por loja. Cada loja conta uma vez para que uma loja visitada mais vezes não ganhe mais peso na referência. Para consolidar, calcula-se um preço mediano por endereço em cada mês e depois a mediana dos meses de cada loja. Os quartis P25 e P75 vêm da distribuição desses valores por loja. O gráfico resume a amostra com um ponto por rede, enquanto o número principal usa as lojas.",
+  "text": "Cada loja conta uma vez para que uma loja visitada mais vezes não ganhe mais peso na referência de preço. Para consolidar, calcula-se um preço mediano por endereço em cada mês e depois a mediana dos meses de cada loja. Os quartis P25 e P75 vêm da distribuição desses valores por loja. O gráfico resume a amostra com um ponto por rede, enquanto o número principal usa as lojas. O método foi detalhado no estudo do Café Pilão 500 g.",
   "terms": "mediana preço central por loja endereço várias coletas consolidar quartis P25 P75 rede gráfico ponto por rede"
  },
  {
@@ -31,7 +31,7 @@
   "id": "disponibilidade",
   "title": "Disponibilidade da referência e da faixa de preço",
   "url": "https://github.com/pedrocardosojr/tax-aware-pricing-ai/blob/1bb4da44d88e3701919d8cde2fcbbeaf14ea05f1/mercado/estatisticas.py",
-  "text": "Referência antiga aparece como histórica e não pode sugerir faixa atual. Para sugerir faixa de preços, a referência deve ser observada, recente e ter cobertura suficiente, com quartis disponíveis. Na ausência de preço de mercado, ainda é possível analisar a contribuição de um preço de venda informado. A faixa P25–P75 reúne a metade central dos valores consolidados por loja. P25 é o primeiro quartil (percentil 25) e P75 é o terceiro quartil (percentil 75). Eles descrevem dispersão dos preços observados e não são um intervalo de confiança nem um preço ótimo.",
+  "text": "A faixa P25–P75 reúne a metade central dos valores consolidados por loja. P25 é o primeiro quartil (percentil 25) e P75 é o terceiro quartil (percentil 75). Eles descrevem dispersão dos preços observados e não são um intervalo de confiança nem um preço ótimo. Referência antiga aparece como histórica e não pode sugerir faixa atual. Para sugerir faixa de preços, a referência deve ser observada, recente e ter cobertura suficiente, com quartis disponíveis. Na ausência de preço de mercado, ainda é possível analisar a contribuição de um preço de venda informado.",
   "terms": "referência antiga histórica sem faixa sugerida preço ausente sem preço de mercado cobertura insuficiente"
  },
  {

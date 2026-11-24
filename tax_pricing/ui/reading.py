@@ -63,11 +63,10 @@ def decision_text(result: dict) -> dict[str, str]:
                  else 'mediana observada')
         comparison = (f"Em {display_date(market['date'])}, o preço avaliado "
                       f'está {brl_markdown(abs(position["gap_brl"]))} '
-                      f'({percent(abs(gap))}) {direction} da {label}. '
-                      'O índice usa a mediana como referência 100.')
+                      f'({percent(abs(gap))}) {direction} da {label}.')
         if gap == 0:
             comparison = (f"Em {display_date(market['date'])}, o preço "
-                          f'coincide com a {label}: índice de preço 100.')
+                          f'coincide com a {label}.')
     if contribution < 0:
         action = ('Reveja custo e preço antes de '
                   'usar esse cenário como referência comercial.')

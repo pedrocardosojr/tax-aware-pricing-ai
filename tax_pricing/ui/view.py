@@ -19,7 +19,7 @@ from tax_pricing.ui.formatting import (
     brl, brl_markdown, display_date, display_month, network_name, percent, product_name,
 )
 from tax_pricing.source_search import (
-    build_messages, citations_are_valid, find_sources, strip_fact_tags,
+    build_messages, citations_are_valid, collapse_citations, find_sources, strip_fact_tags,
 )
 from tax_pricing.ui.grounded_explanation import (
     explanation_facts, invented_numbers, markdown_safe, request_answer, season_context,
@@ -390,7 +390,7 @@ def _sourced_answer(question: str, result: dict) -> bool:
     shown = strip_fact_tags(answer)
     for number, item in enumerate(evidence.excerpts, start=1):
         shown = shown.replace(f'[{item.source_id}]', f'[{number}]')
-    st.markdown(markdown_safe(shown))
+    st.markdown(markdown_safe(collapse_citations(shown)))
     links = ' · '.join(f'[{number}] [{item.title}]({item.url})'
                        for number, item in enumerate(evidence.excerpts, start=1))
     st.caption('Resposta com IA · fontes consultadas: ' + links)
@@ -465,9 +465,9 @@ def _answer(selected: str, result: dict) -> None:
         if selected == SEASON_QUESTION:
             lab_view.question_context(selected, result['product']['group'])
             return
-        for excerpt in find_sources(question_for_sources).excerpts:
-            st.write(excerpt.text)
-            st.markdown(f'[{excerpt.title}]({excerpt.url})')
+        lab_view.show_excerpts(find_sources(question_for_sources).excerpts)
+        return
+    if lab_view.asks_for_source(selected) and _sourced_answer(selected, result):
         return
     if lab_view.question_context(selected, result['product']['group']):
         return
